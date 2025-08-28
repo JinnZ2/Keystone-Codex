@@ -1,0 +1,53 @@
+{
+  "id": "indus_plumbing",
+  "name": "Indus Valley Decentralized Plumbing & Sanitation",
+  "domain": "infrastructure",
+  "region": "Indus Valley",
+  "era": {
+    "start": -2600,
+    "end": -1700
+  },
+  "summary": "House\u2011level drains, wells, and sewers integrated into urban grids; decentralized sanitation engineered for public health.",
+  "metrics": {
+    "longevity_years": 600,
+    "replication_regions": 2,
+    "decentralization_score": 0.85,
+    "ethical_alignment": 0.7
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Neighborhood\u2011scale sanitation reduced disease burden",
+      "evidence_refs": [
+        "e1"
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Design was standardized across cities (Mohenjo\u2011Daro, Harappa)",
+      "evidence_refs": [
+        "e2"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Excavation reports of street drains & soak pits",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Comparative urban archaeology of Indus sites",
+      "quality": 0.7
+    }
+  ],
+  "unlocks": [
+    "public_health_infrastructure",
+    "modular_urbanism",
+    "household_utilities"
+  ],
+  "notes": "Infrastructure as ethical tech \u2014 sanitation embedded as a right."
+}

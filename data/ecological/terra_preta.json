@@ -1,0 +1,61 @@
+{
+  "id": "terra_preta",
+  "name": "Terra Preta (Amazonian Dark Earth)",
+  "domain": "ecological",
+  "region": "Amazon Basin",
+  "era": {
+    "start": -1000,
+    "end": 1500
+  },
+  "summary": "Engineered, biochar\u2011rich soils combining charcoal, organics, and pottery shards to create long\u2011lived fertility and carbon sequestration.",
+  "metrics": {
+    "longevity_years": 500,
+    "replication_regions": 3,
+    "decentralization_score": 0.8,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Soil fertility persists for centuries after creation",
+      "evidence_refs": [
+        "e1",
+        "e2"
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Technique is replicable and revives degraded soils",
+      "evidence_refs": [
+        "e3"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Glaser & Woods (2004) Amazonian Dark Earths",
+      "uri": "doi:10.1007/978-3-662-05568-0",
+      "quality": 0.9
+    },
+    {
+      "id": "e2",
+      "type": "archaeological_record",
+      "source": "Sites in Central Amazon with radiocarbon dating",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "field_measurement",
+      "source": "Modern biochar field trials restoring yields",
+      "quality": 0.7
+    }
+  ],
+  "unlocks": [
+    "regenerative_agriculture",
+    "carbon_sequestration",
+    "circular_waste_systems"
+  ],
+  "notes": "Ethical tech: fertility without extraction; aligns with community\u2011scale production."
+}

@@ -1,0 +1,60 @@
+{
+  "id": "lathe",
+  "name": "Precision Lathe",
+  "domain": "material",
+  "region": "Global (Industrial Europe origins)",
+  "era": {
+    "start": 1797,
+    "end": 2025
+  },
+  "summary": "Rotational machining enabling standardized threads, shafts, and precision parts; the mother of machine tools.",
+  "metrics": {
+    "longevity_years": 200,
+    "replication_regions": 5,
+    "decentralization_score": 0.5,
+    "ethical_alignment": 0.4
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Standardized screw\u2011cutting enabled interchangeable parts",
+      "evidence_refs": [
+        "e1",
+        "e2"
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "All major machine tools descend from the lathe concept",
+      "evidence_refs": [
+        "e3"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "engineering_record",
+      "source": "Maudslay screw\u2011cutting lathe (1797)",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "standards_spec",
+      "source": "Whitworth thread standards",
+      "quality": 0.7
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "History of machine tools surveys",
+      "quality": 0.6
+    }
+  ],
+  "unlocks": [
+    "machine_tools_family",
+    "industrial_mass_production",
+    "precision_engineering"
+  ],
+  "notes": "Keystone for industrialization; downstream of this are mills, drills, presses."
+}

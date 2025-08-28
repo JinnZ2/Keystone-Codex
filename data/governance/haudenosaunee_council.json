@@ -1,0 +1,53 @@
+{
+  "id": "great_law_of_peace",
+  "name": "Haudenosaunee Confederacy Councils (Great Law of Peace)",
+  "domain": "governance",
+  "region": "Northeastern North America",
+  "era": {
+    "start": 1200,
+    "end": 2025
+  },
+  "summary": "Distributed council system with checks (including women\u2019s roles) that enabled inter\u2011nation peace and resilient decision\u2011making.",
+  "metrics": {
+    "longevity_years": 500,
+    "replication_regions": 2,
+    "decentralization_score": 0.9,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Distributed governance reduced single\u2011point failure",
+      "evidence_refs": [
+        "e1"
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Influenced later federal structures",
+      "evidence_refs": [
+        "e2"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "primary_text",
+      "source": "Recensions of the Great Law; oral histories",
+      "quality": 0.7
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Comparative political analyses",
+      "quality": 0.6
+    }
+  ],
+  "unlocks": [
+    "federalism_templates",
+    "consensus_protocols",
+    "veto_ethics"
+  ],
+  "notes": "Ethical and social keystone; embeds reciprocity and balance of power."
+}

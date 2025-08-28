@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Keystone",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "domain",
+    "region",
+    "era",
+    "summary",
+    "metrics",
+    "claims",
+    "evidence",
+    "unlocks"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "ecological",
+        "economic",
+        "social",
+        "governance",
+        "information",
+        "material",
+        "ethical",
+        "infrastructure"
+      ]
+    },
+    "region": {
+      "type": "string"
+    },
+    "era": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "type": "integer"
+        }
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "longevity_years",
+        "replication_regions",
+        "decentralization_score"
+      ],
+      "properties": {
+        "longevity_years": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "replication_regions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "decentralization_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ethical_alignment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "evidence_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "quality": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "unlocks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "quipu",
+  "name": "Quipu (Khipu)",
+  "domain": "information",
+  "region": "Andes",
+  "era": {
+    "start": 1200,
+    "end": 1600
+  },
+  "summary": "Knotted\u2011cord information system for accounting, censuses, and narratives; decentralized, durable, low\u2011infrastructure data tech.",
+  "metrics": {
+    "longevity_years": 300,
+    "replication_regions": 2,
+    "decentralization_score": 0.8,
+    "ethical_alignment": 0.6
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Encodes structured quantitative data",
+      "evidence_refs": [
+        "e1"
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Operable without script, electricity, or printing",
+      "evidence_refs": [
+        "e2"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Urton (2003) Signs of the Inka Khipu",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "archaeological_record",
+      "source": "Recovered quipu with administrative contexts",
+      "quality": 0.7
+    }
+  ],
+  "unlocks": [
+    "low_bandwidth_data",
+    "resilient_accounting",
+    "tactile_coding"
+  ],
+  "notes": "Shows that information tech need not be electronic to be advanced."
+}

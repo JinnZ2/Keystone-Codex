@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProofTrace",
+  "type": "object",
+  "required": [
+    "id",
+    "is_keystone",
+    "score",
+    "trace"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "is_keystone": {
+      "type": "boolean"
+    },
+    "score": {
+      "type": "number"
+    },
+    "trace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rule": {
+            "type": "string"
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "details": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
