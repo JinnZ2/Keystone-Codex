@@ -44,15 +44,9 @@
       "notes": "Mutual aid and risk-pooling systems without corporate intermediaries."
     },
     {
-      "id": "reciprocity_norms",
-      "suggested_domain": "social",
-      "referenced_by": ["gift_economy"],
-      "notes": "Social expectations of mutual giving that underpin community cohesion."
-    },
-    {
       "id": "social_safety_nets",
       "suggested_domain": "social",
-      "referenced_by": ["gift_economy"],
+      "referenced_by": ["gift_economy", "reciprocity_norms", "apprenticeship_systems", "conflict_mediation"],
       "notes": "Community-based systems ensuring no member falls below a survival threshold."
     },
     {

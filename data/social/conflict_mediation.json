@@ -1,0 +1,61 @@
+{
+  "id": "conflict_mediation",
+  "name": "Conflict Mediation and Peacemaking Practices",
+  "domain": "social",
+  "region": "Global (East Africa, Pacific Islands, Indigenous Americas, South Asia, West Africa, Scandinavia)",
+  "era": {"start": -10000, "end": 2025},
+  "summary": "Community-embedded practices for resolving disputes without centralised authority — mediation circles, elder councils, palaver, restorative dialogue, and peace treaties — the social immune system that prevents conflicts from destroying the group.",
+  "metrics": {
+    "longevity_years": 12000,
+    "replication_regions": 8,
+    "decentralization_score": 0.9,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The Gacaca courts of Rwanda adapted traditional community mediation to process over 1.9 million genocide cases, demonstrating that indigenous conflict resolution can scale to national-level crises where formal justice systems fail",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "West African palaver (community assembly under a tree for dispute resolution) is documented across dozens of ethnic groups and has operated continuously for millennia; it was the model for modern restorative justice conferencing",
+      "evidence_refs": ["e2"]
+    },
+    {
+      "id": "c3",
+      "statement": "Polynesian ho'oponopono (family conflict resolution through confession, restitution, and forgiveness) and Navajo peacemaking (horizontal justice through talking circles) both demonstrate that mediation without punishment produces more durable peace than adversarial systems",
+      "evidence_refs": ["e3", "e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Clark & Kaufman (2009) After Genocide: Transitional Justice, Post-Conflict Reconstruction and Reconciliation in Rwanda and Beyond, Columbia UP",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Boege (2006) Traditional Approaches to Conflict Transformation — Potentials and Limits, Berghof Research Center for Constructive Conflict Management",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Shook (1985) Ho'oponopono: Contemporary Uses of a Hawaiian Problem-Solving Process, University of Hawaii Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Yazzie & Zion (1996) Navajo Restorative Justice: The Law of Equality and Justice, in Restorative Justice: International Perspectives, Criminal Justice Press",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "social_safety_nets"
+  ],
+  "notes": "New social-domain entry. Distinct from restorative_justice (ethical domain) — this is the practice, not the philosophy. Every society that lasted had a way to resolve disputes without destroying itself. Modern legal systems externalised this to professionals and lost the community ownership that made it work. The 'hidden' technology the user correctly identified."
+}

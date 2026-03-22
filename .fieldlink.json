@@ -43,7 +43,7 @@
         "analogy": "Motherboard + Bus — routing, governance, social fabric",
         "keystone_domains": ["social", "governance"],
         "biogrid_subsystems": ["protocols.consensus", "protocols.federation"],
-        "entry_ids": ["gift_economy", "great_law_of_peace", "consensus_protocols", "communitarian_governance", "federalism_templates"]
+        "entry_ids": ["gift_economy", "great_law_of_peace", "consensus_protocols", "communitarian_governance", "federalism_templates", "reciprocity_norms", "apprenticeship_systems", "conflict_mediation"]
       },
       {
         "layer": "io_system",

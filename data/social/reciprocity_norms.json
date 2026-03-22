@@ -1,0 +1,57 @@
+{
+  "id": "reciprocity_norms",
+  "name": "Reciprocity Norms",
+  "domain": "social",
+  "region": "Global (every documented human society)",
+  "era": {"start": -100000, "end": 2025},
+  "summary": "The universal social expectation that gifts, favours, and obligations will be returned — the invisible protocol that makes trust, exchange, and cooperation possible without enforcement.",
+  "metrics": {
+    "longevity_years": 100000,
+    "replication_regions": 12,
+    "decentralization_score": 1.0,
+    "ethical_alignment": 0.8
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Reciprocity is documented in every known human society; Mauss demonstrated that gift exchange creates binding social obligations that predate and underpin all formal economic systems",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "Experimental economics confirms that humans enforce reciprocity norms even at personal cost (ultimatum games, public goods games), indicating these norms are not merely cultural but deeply embedded in human cognition",
+      "evidence_refs": ["e2"]
+    },
+    {
+      "id": "c3",
+      "statement": "Indirect reciprocity (helping strangers because reputation circulates) scales cooperation beyond kin and small groups, enabling the large-scale societies that all other keystone technologies depend on",
+      "evidence_refs": ["e3"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "primary_text",
+      "source": "Mauss (1925) Essai sur le don (The Gift), L'Année Sociologique; English trans. Routledge 1990",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Fehr & Gächter (2000) Fairness and Retaliation: The Economics of Reciprocity, Journal of Economic Perspectives 14(3)",
+      "uri": "doi:10.1257/jep.14.3.159",
+      "quality": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Nowak & Sigmund (2005) Evolution of Indirect Reciprocity, Nature 437(7063)",
+      "uri": "doi:10.1038/nature04131",
+      "quality": 0.9
+    }
+  ],
+  "unlocks": [
+    "social_safety_nets"
+  ],
+  "notes": "Resolves 1 inbound link from gift_economy. This is arguably the most fundamental social technology — the one without which none of the others function. Discounted in modern economics because it is invisible, unpriced, and omnipresent. Mauss's insight: the gift is never free, it is the original social contract."
+}

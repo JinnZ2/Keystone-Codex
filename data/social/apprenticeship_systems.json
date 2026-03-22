@@ -1,0 +1,62 @@
+{
+  "id": "apprenticeship_systems",
+  "name": "Apprenticeship and Knowledge Transmission Systems",
+  "domain": "social",
+  "region": "Global (every documented civilisation)",
+  "era": {"start": -50000, "end": 2025},
+  "summary": "Structured person-to-person knowledge transfer — apprenticeship, mentorship, initiation, and pedagogical lineage — the mechanism by which every other keystone technology survives across generations.",
+  "metrics": {
+    "longevity_years": 50000,
+    "replication_regions": 12,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.85
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Stone tool traditions (Acheulean, Levallois) show progressive refinement over tens of thousands of years that is impossible without structured teaching; experimental archaeology demonstrates these techniques cannot be acquired by observation alone",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "Medieval guild systems in Europe, Islamic waqf-funded madrasas, and West African griot lineages all independently formalised apprenticeship as the primary mechanism for preserving and transmitting complex knowledge",
+      "evidence_refs": ["e2", "e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Indigenous knowledge systems (Aboriginal songline custodianship, Polynesian navigation apprenticeships, Andean quipu-keeper lineages) maintained precision scientific knowledge across centuries without writing, through structured mentorship and initiation",
+      "evidence_refs": ["e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Stout (2011) Stone Toolmaking and the Evolution of Human Culture and Cognition, Philosophical Transactions of the Royal Society B 366(1567)",
+      "uri": "doi:10.1098/rstb.2010.0369",
+      "quality": 0.9
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Epstein (1991) Wage Labor and Guilds in Medieval Europe, University of North Carolina Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Hale (1998) Griots and Griottes: Masters of Words and Music, Indiana University Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Kimmerer (2013) Braiding Sweetgrass: Indigenous Wisdom, Scientific Knowledge and the Teachings of Plants, Milkweed Editions",
+      "quality": 0.75
+    }
+  ],
+  "unlocks": [
+    "social_safety_nets"
+  ],
+  "notes": "New social-domain entry. Teaching is the meta-technology: the one that transmits all others. Every entry in this codex — terra preta, quipu, damascus steel, the Great Law — survived because someone taught someone else. Modern economies discount mentorship because it is slow, relational, and unscalable. That is precisely why it works."
+}
