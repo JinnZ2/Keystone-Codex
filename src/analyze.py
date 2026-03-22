@@ -18,11 +18,19 @@ def load_items():
     data_dir = os.path.join(ROOT, "data")
     for base, _, files in os.walk(data_dir):
         for f in files:
-            if f.endswith(".json"):
+            if f.endswith(".json") and f != "candidates.json":
                 p = os.path.join(base, f)
                 with open(p) as fh:
                     items.append(json.load(fh))
     return items
+
+def load_candidates():
+    path = os.path.join(ROOT, "data", "candidates.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path) as f:
+        data = json.load(f)
+    return {c["id"]: c for c in data.get("candidates", [])}
 
 def main():
     items = load_items()
@@ -69,13 +77,24 @@ def main():
             if u not in entry_ids:
                 dangling.add(u)
 
+    candidates = load_candidates()
+    tracked = dangling & set(candidates.keys())
+    untracked = dangling - tracked
+
     print("=== Unlock Graph Integrity ===")
     print(f"  Total unlock references: {len(all_unlocks)}")
     print(f"  Resolved (have entries): {len(all_unlocks - dangling)}")
-    print(f"  Dangling (no entry):     {len(dangling)}")
-    if dangling:
-        for d in sorted(dangling):
-            print(f"    → {d}")
+    print(f"  Tracked candidates:      {len(tracked)}")
+    print(f"  Untracked (unknown):     {len(untracked)}")
+    if tracked:
+        print("  Candidates (awaiting full entry):")
+        for cid in sorted(tracked):
+            c = candidates[cid]
+            print(f"    → {cid} [{c.get('suggested_domain', '?')}] — {c.get('notes', '')[:60]}")
+    if untracked:
+        print("  Untracked references:")
+        for d in sorted(untracked):
+            print(f"    ⚠ {d}")
     print()
 
     # Evidence type distribution
@@ -103,7 +122,7 @@ def main():
     if empty_domains:
         print(f"  Missing domains:   {', '.join(empty_domains)}")
     print(f"  Unique regions:    {len(region_counts)}")
-    print(f"  Dangling unlocks:  {len(dangling)}")
+    print(f"  Dangling unlocks:  {len(dangling)} ({len(tracked)} tracked, {len(untracked)} untracked)")
 
 if __name__ == "__main__":
     main()

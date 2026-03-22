@@ -11,7 +11,7 @@ def load_items():
     data_dir = os.path.join(ROOT, "data")
     for base, _, files in os.walk(data_dir):
         for f in files:
-            if f.endswith(".json"):
+            if f.endswith(".json") and f != "candidates.json":
                 p = os.path.join(base, f)
                 with open(p) as fh:
                     items.append(json.load(fh))

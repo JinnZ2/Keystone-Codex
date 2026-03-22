@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.10", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Validate data entries
+        run: python3 -m src validate
+
+      - name: Run proof scoring
+        run: python3 -m src score
+
+      - name: Build graph
+        run: python3 -m src graph
+
+      - name: Render timeline
+        run: python3 -m src timeline
+
+      - name: Run analysis
+        run: python3 -m src analyze
+
+      - name: Run tests
+        run: python3 -m unittest discover -s tests -v
