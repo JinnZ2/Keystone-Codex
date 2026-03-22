@@ -34,7 +34,7 @@
     {
       "id": "federalism_templates",
       "suggested_domain": "governance",
-      "referenced_by": ["great_law_of_peace", "consensus_protocols"],
+      "referenced_by": ["great_law_of_peace", "consensus_protocols", "communitarian_governance"],
       "notes": "Distributed governance structures with shared sovereignty."
     },
     {
@@ -44,15 +44,9 @@
       "notes": "Ethical frameworks embedding the right to block harmful decisions."
     },
     {
-      "id": "low_bandwidth_data",
-      "suggested_domain": "information",
-      "referenced_by": ["quipu", "songlines", "arabic_numerals", "tactile_coding"],
-      "notes": "Information systems that function without electricity or high infrastructure."
-    },
-    {
       "id": "resilient_accounting",
       "suggested_domain": "information",
-      "referenced_by": ["quipu", "songlines", "arabic_numerals"],
+      "referenced_by": ["quipu", "songlines", "arabic_numerals", "low_bandwidth_data"],
       "notes": "Record-keeping systems that survive infrastructure collapse."
     },
     {
@@ -68,15 +62,9 @@
       "notes": "Factory-scale manufacturing enabled by interchangeable parts."
     },
     {
-      "id": "cooperative_banking",
-      "suggested_domain": "economic",
-      "referenced_by": ["rotating_credit", "microfinance", "cowrie_currency", "silk_road"],
-      "notes": "Member-owned financial institutions (credit unions, building societies)."
-    },
-    {
       "id": "community_insurance",
       "suggested_domain": "economic",
-      "referenced_by": ["rotating_credit", "microfinance", "cowrie_currency", "silk_road"],
+      "referenced_by": ["rotating_credit", "microfinance", "cowrie_currency", "silk_road", "cooperative_banking"],
       "notes": "Mutual aid and risk-pooling systems without corporate intermediaries."
     },
     {
@@ -96,12 +84,6 @@
       "suggested_domain": "economic",
       "referenced_by": ["gift_economy", "cowrie_currency"],
       "notes": "Mechanisms that prevent extreme accumulation and spread resources."
-    },
-    {
-      "id": "communitarian_governance",
-      "suggested_domain": "governance",
-      "referenced_by": ["ubuntu_philosophy", "restorative_justice", "consensus_protocols"],
-      "notes": "Governance grounded in collective welfare and relational personhood."
     },
     {
       "id": "relational_ai_ethics",
