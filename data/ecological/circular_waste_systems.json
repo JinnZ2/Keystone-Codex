@@ -1,0 +1,61 @@
+{
+  "id": "circular_waste_systems",
+  "name": "Circular Waste Systems",
+  "domain": "ecological",
+  "region": "Global (Japan, China, India, West Africa, Mesoamerica, Northern Europe)",
+  "era": {"start": -5000, "end": 2025},
+  "summary": "Waste-as-resource loops where outputs of one process become inputs for another — composting, night soil recycling, biochar, nutrient cycling, and closed-loop craft production.",
+  "metrics": {
+    "longevity_years": 7000,
+    "replication_regions": 7,
+    "decentralization_score": 0.9,
+    "ethical_alignment": 0.85
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Edo-period Japan (1603–1868) operated a near-zero-waste urban economy: human waste was sold as fertiliser, broken ceramics were repaired with lacquer (kintsugi), and old clothing was recycled through multiple use-cycles down to paper fiber",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "Chinese night soil systems sustained intensive agriculture for 4000+ years without synthetic fertilisers, as documented by F.H. King's comparative study of Eastern farming",
+      "evidence_refs": ["e2"]
+    },
+    {
+      "id": "c3",
+      "statement": "West African compound farming integrates livestock waste, crop residues, and household organics into soil fertility management, maintaining yields on the same plots for centuries",
+      "evidence_refs": ["e3"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Hanley (1997) Everyday Things in Premodern Japan: The Hidden Legacy of Material Culture, University of California Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "primary_text",
+      "source": "King (1911) Farmers of Forty Centuries: Organic Farming in China, Korea, and Japan, Mrs. F.H. King",
+      "quality": 0.75
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Fairhead & Leach (1996) Misreading the African Landscape: Society and Ecology in a Forest–Savanna Mosaic, Cambridge UP",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "McDonough & Braungart (2002) Cradle to Cradle: Remaking the Way We Make Things, North Point Press",
+      "quality": 0.75
+    }
+  ],
+  "unlocks": [
+    "climate_resilient_agriculture"
+  ],
+  "notes": "Resolves 2 inbound links (terra_preta, regenerative_agriculture). Edo Japan is the most complete historical example of industrial-scale circular economy. The modern 'circular economy' movement is rediscovering principles that were standard practice for millennia."
+}

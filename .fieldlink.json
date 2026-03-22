@@ -29,7 +29,7 @@
         "analogy": "PSU — baseline energy and ecological stability",
         "keystone_domains": ["ecological"],
         "biogrid_subsystems": ["sensors.soil", "sensors.water", "protocols.nutrient_cycle"],
-        "entry_ids": ["terra_preta", "regenerative_agriculture"]
+        "entry_ids": ["terra_preta", "regenerative_agriculture", "carbon_sequestration", "circular_waste_systems"]
       },
       {
         "layer": "cpu_memory",
@@ -43,7 +43,7 @@
         "analogy": "Motherboard + Bus — routing, governance, social fabric",
         "keystone_domains": ["social", "governance"],
         "biogrid_subsystems": ["protocols.consensus", "protocols.federation"],
-        "entry_ids": ["gift_economy", "great_law_of_peace", "consensus_protocols", "communitarian_governance"]
+        "entry_ids": ["gift_economy", "great_law_of_peace", "consensus_protocols", "communitarian_governance", "federalism_templates"]
       },
       {
         "layer": "io_system",
@@ -64,7 +64,7 @@
         "analogy": "Peripherals + Fabrication — machine tools, physical structures",
         "keystone_domains": ["material", "infrastructure"],
         "biogrid_subsystems": ["sensors.structural", "protocols.fabrication"],
-        "entry_ids": ["lathe", "precision_engineering", "damascus_steel", "indus_plumbing", "roman_aqueducts"]
+        "entry_ids": ["lathe", "precision_engineering", "damascus_steel", "indus_plumbing", "roman_aqueducts", "machine_tools_family"]
       }
     ]
   },
