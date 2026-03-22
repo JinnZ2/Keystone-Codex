@@ -2,60 +2,68 @@
 """
 Apply keystone rules, score, and produce proof traces per item.
 """
-import os, json, math, datetime
+import os, json, datetime
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 
-rules = json.load(open(os.path.join(ROOT,"rules","keystone_rules.json")))
-criteria = rules["criteria"]
+with open(os.path.join(ROOT, "rules", "keystone_rules.json")) as f:
+    rules = json.load(f)
+
+criteria_by_name = {c["name"]: c for c in rules["criteria"]}
 PASS_SCORE = rules["pass_score"]
 
 def load_items():
     items = []
-    data_dir = os.path.join(ROOT,"data")
+    data_dir = os.path.join(ROOT, "data")
     for base, _, files in os.walk(data_dir):
         for f in files:
             if f.endswith(".json"):
-                p = os.path.join(base,f)
-                obj = json.load(open(p))
-                items.append(obj)
+                p = os.path.join(base, f)
+                with open(p) as fh:
+                    items.append(json.load(fh))
     return items
 
 def score_item(x):
     m = x["metrics"]
     trace = []
+
     # Longevity
-    lon = m.get("longevity_years",0)
-    thr = [c for c in criteria if c["name"]=="longevity"][0]
-    passed = lon >= thr["threshold"]
-    trace.append({"rule":"longevity>=300","passed":passed,"details":f"longevity_years={lon}", "weight":thr["weight"]})
+    lon = m.get("longevity_years", 0)
+    crit = criteria_by_name["longevity"]
+    passed = lon >= crit["threshold"]
+    trace.append({"rule": f"longevity>={crit['threshold']}", "passed": passed,
+                   "details": f"longevity_years={lon}", "weight": crit["weight"]})
+
     # Replication
-    rep = m.get("replication_regions",0)
-    thr = [c for c in criteria if c["name"]=="replication"][0]
-    passed_rep = rep >= thr["threshold"]
-    trace.append({"rule":"replication>=2","passed":passed_rep,"details":f"replication_regions={rep}","weight":thr["weight"]})
+    rep = m.get("replication_regions", 0)
+    crit = criteria_by_name["replication"]
+    passed_rep = rep >= crit["threshold"]
+    trace.append({"rule": f"replication>={crit['threshold']}", "passed": passed_rep,
+                   "details": f"replication_regions={rep}", "weight": crit["weight"]})
+
     # Unlocks
-    unlocks = x.get("unlocks",[])
-    thr = [c for c in criteria if c["name"]=="unlocks_lineage"][0]
-    passed_unlocks = len(unlocks) >= thr["threshold"]
-    trace.append({"rule":"unlocks>=1","passed":passed_unlocks,"details":f"unlocks={len(unlocks)}","weight":thr["weight"]})
+    unlocks = x.get("unlocks", [])
+    crit = criteria_by_name["unlocks_lineage"]
+    passed_unlocks = len(unlocks) >= crit["threshold"]
+    trace.append({"rule": f"unlocks>={crit['threshold']}", "passed": passed_unlocks,
+                   "details": f"unlocks={len(unlocks)}", "weight": crit["weight"]})
+
     # Decentralization
-    dec = m.get("decentralization_score",0.0)
-    thr = [c for c in criteria if c["name"]=="decentralization"][0]
-    passed_dec = dec >= thr["threshold"]
-    trace.append({"rule":"decentralization>=0.5","passed":passed_dec,"details":f"decentralization_score={dec}","weight":thr["weight"]})
+    dec = m.get("decentralization_score", 0.0)
+    crit = criteria_by_name["decentralization"]
+    passed_dec = dec >= crit["threshold"]
+    trace.append({"rule": f"decentralization>={crit['threshold']}", "passed": passed_dec,
+                   "details": f"decentralization_score={dec}", "weight": crit["weight"]})
+
     # Weighted score
-    score = 0.0
-    for t in trace:
-        if t["passed"]:
-            score += t["weight"]
+    score = sum(t["weight"] for t in trace if t["passed"])
     is_keystone = score >= PASS_SCORE
-    return {"id": x["id"], "is_keystone": is_keystone, "score": round(score,3), "trace": trace}
+    return {"id": x["id"], "is_keystone": is_keystone, "score": round(score, 3), "trace": trace}
 
 def write_reports(results):
-    out_dir = ROOT
     # JSON traces
-    with open(os.path.join(out_dir,"proof_traces.json"),"w") as f:
+    traces_path = os.path.join(ROOT, "proof_traces.json")
+    with open(traces_path, "w") as f:
         json.dump(results, f, indent=2)
     # Markdown report
     lines = ["# Proof Report", f"_Generated: {datetime.datetime.utcnow().isoformat()}Z_", ""]
@@ -65,7 +73,9 @@ def write_reports(results):
             mark = "✔" if t["passed"] else "✖"
             lines.append(f"- {mark} **{t['rule']}** — {t['details']} (w={t['weight']})")
         lines.append("")
-    open(os.path.join(out_dir,"proof_report.md"),"w").write("\n".join(lines))
+    report_path = os.path.join(ROOT, "proof_report.md")
+    with open(report_path, "w") as f:
+        f.write("\n".join(lines))
 
 def main():
     items = load_items()
