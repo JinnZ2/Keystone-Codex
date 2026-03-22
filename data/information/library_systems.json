@@ -1,0 +1,74 @@
+{
+  "id": "library_systems",
+  "name": "Library and Archival Systems",
+  "domain": "information",
+  "region": "Global (Mesopotamia, Egypt, Greece, India, China, Islamic world, Europe, Mesoamerica)",
+  "era": {"start": -2600, "end": 2025},
+  "summary": "Organized institutions for collecting, cataloguing, preserving, and providing access to recorded knowledge — from Sumerian tablet archives to the House of Wisdom to modern digital repositories — the filesystem that makes accumulated knowledge retrievable.",
+  "metrics": {
+    "longevity_years": 4625,
+    "replication_regions": 8,
+    "decentralization_score": 0.55,
+    "ethical_alignment": 0.65
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Curated archives enabled knowledge accumulation across generations by preventing loss, organizing retrieval, and standardizing cataloguing — creating institutional memory that outlives individuals",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "The Islamic House of Wisdom and translation movement systematically preserved and transmitted Greek, Persian, and Indian knowledge that would otherwise have been lost, demonstrating libraries as cross-cultural knowledge bridges",
+      "evidence_refs": ["e3", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Library systems emerged independently in Mesopotamia, China, Mesoamerica, and India, converging on similar organizational principles (cataloguing, classification, controlled access)",
+      "evidence_refs": ["e5", "e6"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Pedersén (1998) Archives and Libraries in the Ancient Near East 1500–300 BC, CDL Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "archaeological_record",
+      "source": "Casson (2001) Libraries in the Ancient World, Yale University Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Gutas (1998) Greek Thought, Arabic Culture: The Graeco-Arabic Translation Movement in Baghdad, Routledge",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "primary_text",
+      "source": "al-Nadim (987 CE) Kitab al-Fihrist (The Catalogue), translation by Dodge (1970), Columbia University Press",
+      "quality": 0.75
+    },
+    {
+      "id": "e5",
+      "type": "peer_reviewed_study",
+      "source": "Lerner (2009) The Story of Libraries: From the Invention of Writing to the Computer Age, 2nd ed., Continuum",
+      "quality": 0.75
+    },
+    {
+      "id": "e6",
+      "type": "archaeological_record",
+      "source": "Robson (2019) Ancient Knowledge Networks: A Social Geography of Cuneiform Scholarship, UCL Press",
+      "uri": "doi:10.14324/111.9781787350113",
+      "quality": 0.85
+    }
+  ],
+  "unlocks": [
+    "resilient_accounting"
+  ],
+  "notes": "The convergence point of all knowledge media. Living systems, monuments, writing, and paper all need a library to become retrievable at scale. Ashurbanipal's library at Nineveh (668–627 BCE) was deliberately comprehensive — he ordered copies of every text in the empire. The same impulse drives the Internet Archive today. Note the moderate decentralization score (0.55): libraries concentrate knowledge, which enables both preservation and censorship. Monastery scriptoria saved classical texts through the European Dark Ages; the burning of the Library of Alexandria and the House of Wisdom destroyed irreplaceable knowledge. The medium is durable; the institution is fragile."
+}

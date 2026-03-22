@@ -1,0 +1,76 @@
+{
+  "id": "monumental_encoding",
+  "name": "Monumental Knowledge Encoding",
+  "domain": "information",
+  "region": "Global (British Isles, Egypt, Mesoamerica, Cambodia, India, North America, Polynesia)",
+  "era": {"start": -5000, "end": 1600},
+  "summary": "Temples, stone circles, pyramids, and medicine wheels that encode astronomical, agricultural, and calendrical data in durable architecture — functioning as stone hard drives readable across millennia without literacy.",
+  "metrics": {
+    "longevity_years": 6600,
+    "replication_regions": 7,
+    "decentralization_score": 0.5,
+    "ethical_alignment": 0.7
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Stone circles and megalithic alignments encode solstice, equinox, and lunar cycle data with precision sufficient for agricultural calendaring, verified by archaeoastronomical survey",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Mesoamerican and Southeast Asian temple complexes embed astronomical and mathematical knowledge in architectural geometry, functioning as permanent observatories and data references",
+      "evidence_refs": ["e3", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Plains medicine wheels and Pacific navigational stones independently encode directional and seasonal data in non-literate cultures, demonstrating global convergence of architectural data storage",
+      "evidence_refs": ["e5", "e6"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Ruggles (1999) Astronomy in Prehistoric Britain and Ireland, Yale University Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Pearson et al. (2007) The Age of Stonehenge, Antiquity 81(313)",
+      "uri": "doi:10.1017/S0003598X00095624",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Aveni (2001) Skywatchers: A Revised and Updated Version of Skywatchers of Ancient Mexico, University of Texas Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "archaeological_record",
+      "source": "Mannikka (1996) Angkor Wat: Time, Space, and Kingship, University of Hawaii Press",
+      "quality": 0.75
+    },
+    {
+      "id": "e5",
+      "type": "archaeological_record",
+      "source": "Eddy (1974) Astronomical Alignment of the Big Horn Medicine Wheel, Science 184(4141)",
+      "uri": "doi:10.1126/science.184.4141.1035",
+      "quality": 0.8
+    },
+    {
+      "id": "e6",
+      "type": "field_measurement",
+      "source": "Lewis (1972) We, the Navigators: The Ancient Art of Landfinding in the Pacific, University of Hawaii Press",
+      "quality": 0.7
+    }
+  ],
+  "unlocks": [
+    "writing_systems",
+    "library_systems"
+  ],
+  "notes": "The transition from living knowledge systems to inert-material knowledge storage. Where a grove self-timestamps, a stone circle is permanent but static — it trades self-repair for extreme durability. These are not 'ceremonial' in the modern dismissive sense; they are databases in stone. Kelly (2016) argues convincingly that memory palaces and songlines are the cognitive software that runs on this architectural hardware."
+}
