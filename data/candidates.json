@@ -46,20 +46,14 @@
     {
       "id": "low_bandwidth_data",
       "suggested_domain": "information",
-      "referenced_by": ["quipu"],
+      "referenced_by": ["quipu", "songlines", "arabic_numerals", "tactile_coding"],
       "notes": "Information systems that function without electricity or high infrastructure."
     },
     {
       "id": "resilient_accounting",
       "suggested_domain": "information",
-      "referenced_by": ["quipu"],
+      "referenced_by": ["quipu", "songlines", "arabic_numerals"],
       "notes": "Record-keeping systems that survive infrastructure collapse."
-    },
-    {
-      "id": "tactile_coding",
-      "suggested_domain": "information",
-      "referenced_by": ["quipu"],
-      "notes": "Non-visual encoding systems (knots, beads, notches, Braille)."
     },
     {
       "id": "machine_tools_family",

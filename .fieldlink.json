@@ -36,7 +36,7 @@
         "analogy": "CPU + Memory — encoding, calculation, records",
         "keystone_domains": ["information"],
         "biogrid_subsystems": ["protocols.data_encoding", "sensors.signal"],
-        "entry_ids": ["quipu"]
+        "entry_ids": ["quipu", "songlines", "arabic_numerals", "tactile_coding"]
       },
       {
         "layer": "motherboard_bus",
