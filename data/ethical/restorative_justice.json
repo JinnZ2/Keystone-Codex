@@ -1,0 +1,69 @@
+{
+  "id": "restorative_justice",
+  "name": "Restorative Justice",
+  "domain": "ethical",
+  "region": "Global (Indigenous traditions, New Zealand, South Africa, Canada)",
+  "era": {"start": -500, "end": 2025},
+  "summary": "Justice frameworks centred on repairing harm through dialogue between victims, offenders, and community rather than punitive retribution.",
+  "metrics": {
+    "longevity_years": 2500,
+    "replication_regions": 6,
+    "decentralization_score": 0.85,
+    "ethical_alignment": 0.95
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Restorative justice reduces recidivism compared to conventional criminal justice systems",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Indigenous peacemaking circles predate colonial legal systems by centuries and remain in active use",
+      "evidence_refs": ["e3", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "South Africa's Truth and Reconciliation Commission demonstrated restorative principles at national scale",
+      "evidence_refs": ["e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Sherman & Strang (2007) Restorative Justice: The Evidence, Smith Institute",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Latimer, Dowden & Muise (2005) The Effectiveness of Restorative Justice Practices, Prison Journal 85(2)",
+      "uri": "doi:10.1177/0032885505276969",
+      "quality": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "oral_tradition_encoded",
+      "source": "Navajo Peacemaking Courts, documented by Yazzie & Zion (1996)",
+      "quality": 0.7
+    },
+    {
+      "id": "e4",
+      "type": "primary_text",
+      "source": "Maori family group conferencing model adopted in New Zealand Children, Young Persons, and Their Families Act 1989",
+      "quality": 0.8
+    },
+    {
+      "id": "e5",
+      "type": "primary_text",
+      "source": "Truth and Reconciliation Commission of South Africa Report (1998), Volumes 1-5",
+      "quality": 0.9
+    }
+  ],
+  "unlocks": [
+    "consensus_protocols",
+    "communitarian_governance"
+  ],
+  "notes": "Rooted in Ubuntu philosophy and Indigenous peacemaking; represents ethics as functional infrastructure rather than abstract principle."
+}

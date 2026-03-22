@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Query and filter keystone entries.
-Usage: python3 -m src query [--domain X] [--region X] [--era-after Y] [--era-before Y] [--min-score S] [--keystones-only]
+Usage: python3 -m src query [--domain X] [--region X] [--era-after Y] [--era-before Y] [--min-score S] [--keystones-only] [--format json|text]
 """
 import os, sys, json
 
@@ -44,6 +44,8 @@ def parse_args(argv):
             opts["min_score"] = float(argv[i + 1]); i += 2
         elif a == "--keystones-only":
             opts["keystones_only"] = True; i += 1
+        elif a == "--format" and i + 1 < len(argv):
+            opts["format"] = argv[i + 1]; i += 2
         else:
             i += 1
     return opts
@@ -71,7 +73,7 @@ def matches(item, scores, opts):
 def main():
     argv = sys.argv[2:] if len(sys.argv) > 2 else sys.argv[1:]
     if not argv:
-        print("Usage: python3 -m src query [--domain X] [--region X] [--era-after Y] [--era-before Y] [--min-score S] [--keystones-only]")
+        print("Usage: python3 -m src query [--domain X] [--region X] [--era-after Y] [--era-before Y] [--min-score S] [--keystones-only] [--format json|text]")
         print("\nRun 'python3 -m src score' first to enable score-based filtering.")
         sys.exit(0)
 
@@ -82,21 +84,44 @@ def main():
     results = [it for it in items if matches(it, scores, opts)]
     results.sort(key=lambda x: x["era"]["start"])
 
-    if not results:
-        print("No entries match the query.")
-        sys.exit(0)
+    fmt = opts.get("format", "text")
 
-    print(f"Found {len(results)} entries:\n")
-    for it in results:
-        sc = scores.get(it["id"])
-        score_str = f"score={sc['score']}" if sc else "score=N/A"
-        keystone_str = ""
-        if sc:
-            keystone_str = " [KEYSTONE]" if sc["is_keystone"] else ""
-        s, e = it["era"]["start"], it["era"]["end"]
-        print(f"  {it['id']:30s}  {it['domain']:15s}  {s:>6}→{e:<6}  {score_str}{keystone_str}")
-        print(f"    {it['summary'][:90]}")
+    if fmt == "json":
+        output = []
+        for it in results:
+            sc = scores.get(it["id"])
+            rec = {
+                "id": it["id"],
+                "name": it["name"],
+                "domain": it["domain"],
+                "region": it["region"],
+                "era": it["era"],
+                "summary": it["summary"],
+                "metrics": it["metrics"],
+                "unlocks": it.get("unlocks", []),
+                "score": sc["score"] if sc else None,
+                "is_keystone": sc["is_keystone"] if sc else None,
+                "evidence_quality": sc.get("evidence_quality") if sc else None
+            }
+            output.append(rec)
+        json.dump(output, sys.stdout, indent=2)
         print()
+    else:
+        if not results:
+            print("No entries match the query.")
+            sys.exit(0)
+
+        print(f"Found {len(results)} entries:\n")
+        for it in results:
+            sc = scores.get(it["id"])
+            score_str = f"score={sc['score']}" if sc else "score=N/A"
+            keystone_str = ""
+            if sc:
+                keystone_str = " [KEYSTONE]" if sc["is_keystone"] else ""
+            s, e = it["era"]["start"], it["era"]["end"]
+            print(f"  {it['id']:30s}  {it['domain']:15s}  {s:>6}→{e:<6}  {score_str}{keystone_str}")
+            print(f"    {it['summary'][:90]}")
+            print()
 
 if __name__ == "__main__":
     main()

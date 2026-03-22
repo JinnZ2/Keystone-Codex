@@ -2,21 +2,15 @@
   "_description": "Candidate keystones referenced in 'unlocks' fields but not yet documented. Each entry here is a placeholder awaiting a full data file.",
   "candidates": [
     {
-      "id": "regenerative_agriculture",
-      "suggested_domain": "ecological",
-      "referenced_by": ["terra_preta"],
-      "notes": "Farming systems that restore soil health; direct descendant of terra preta techniques."
-    },
-    {
       "id": "carbon_sequestration",
       "suggested_domain": "ecological",
-      "referenced_by": ["terra_preta"],
+      "referenced_by": ["terra_preta", "regenerative_agriculture"],
       "notes": "Technologies and practices that capture and store atmospheric carbon."
     },
     {
       "id": "circular_waste_systems",
       "suggested_domain": "ecological",
-      "referenced_by": ["terra_preta"],
+      "referenced_by": ["terra_preta", "regenerative_agriculture"],
       "notes": "Waste-as-resource loops; composting, biochar, nutrient cycling."
     },
     {
@@ -40,14 +34,8 @@
     {
       "id": "federalism_templates",
       "suggested_domain": "governance",
-      "referenced_by": ["great_law_of_peace"],
+      "referenced_by": ["great_law_of_peace", "consensus_protocols"],
       "notes": "Distributed governance structures with shared sovereignty."
-    },
-    {
-      "id": "consensus_protocols",
-      "suggested_domain": "governance",
-      "referenced_by": ["great_law_of_peace"],
-      "notes": "Decision-making systems requiring broad agreement rather than majority rule."
     },
     {
       "id": "veto_ethics",
@@ -76,37 +64,25 @@
     {
       "id": "machine_tools_family",
       "suggested_domain": "material",
-      "referenced_by": ["lathe"],
+      "referenced_by": ["lathe", "precision_engineering"],
       "notes": "The lineage of mills, drills, presses, and grinders descended from lathe principles."
     },
     {
       "id": "industrial_mass_production",
       "suggested_domain": "economic",
-      "referenced_by": ["lathe"],
+      "referenced_by": ["lathe", "precision_engineering"],
       "notes": "Factory-scale manufacturing enabled by interchangeable parts."
-    },
-    {
-      "id": "precision_engineering",
-      "suggested_domain": "material",
-      "referenced_by": ["lathe"],
-      "notes": "Measurement and machining to tight tolerances."
-    },
-    {
-      "id": "microfinance",
-      "suggested_domain": "economic",
-      "referenced_by": ["rotating_credit"],
-      "notes": "Small-scale lending to underserved populations; formalized descendant of ROSCAs."
     },
     {
       "id": "cooperative_banking",
       "suggested_domain": "economic",
-      "referenced_by": ["rotating_credit"],
+      "referenced_by": ["rotating_credit", "microfinance"],
       "notes": "Member-owned financial institutions (credit unions, building societies)."
     },
     {
       "id": "community_insurance",
       "suggested_domain": "economic",
-      "referenced_by": ["rotating_credit"],
+      "referenced_by": ["rotating_credit", "microfinance"],
       "notes": "Mutual aid and risk-pooling systems without corporate intermediaries."
     },
     {
@@ -128,15 +104,9 @@
       "notes": "Mechanisms that prevent extreme accumulation and spread resources."
     },
     {
-      "id": "restorative_justice",
-      "suggested_domain": "ethical",
-      "referenced_by": ["ubuntu_philosophy"],
-      "notes": "Justice systems focused on healing harm rather than punishment."
-    },
-    {
       "id": "communitarian_governance",
       "suggested_domain": "governance",
-      "referenced_by": ["ubuntu_philosophy"],
+      "referenced_by": ["ubuntu_philosophy", "restorative_justice", "consensus_protocols"],
       "notes": "Governance grounded in collective welfare and relational personhood."
     },
     {

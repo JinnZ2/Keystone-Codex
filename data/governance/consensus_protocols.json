@@ -1,0 +1,68 @@
+{
+  "id": "consensus_protocols",
+  "name": "Consensus Decision-Making Protocols",
+  "domain": "governance",
+  "region": "Global (Haudenosaunee, Quaker, Anabaptist, East African, Polynesian)",
+  "era": {"start": -1200, "end": 2025},
+  "summary": "Decision-making systems requiring broad agreement through structured deliberation rather than simple majority rule, originating independently across multiple cultures.",
+  "metrics": {
+    "longevity_years": 3200,
+    "replication_regions": 5,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Haudenosaunee consensus process directly influenced Quaker decision-making practices through colonial-era contact",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Consensus protocols produce more durable agreements than majority-vote systems in community-scale governance",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Multiple independent origins demonstrate convergent social evolution toward consensus under conditions of political equality",
+      "evidence_refs": ["e4", "e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "primary_text",
+      "source": "Jennings (1984) The Ambiguous Iroquois Empire, Norton",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Sheeran (1983) Beyond Majority Rule: Voteless Decisions in the Religious Society of Friends",
+      "quality": 0.75
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Susskind & Cruikshank (1987) Breaking the Impasse: Consensual Approaches to Resolving Public Disputes, Basic Books",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "archaeological_record",
+      "source": "East African village council archaeology, Connah (2001) African Civilizations",
+      "quality": 0.65
+    },
+    {
+      "id": "e5",
+      "type": "oral_tradition_encoded",
+      "source": "Polynesian fono (council) traditions documented by Mead (1969)",
+      "quality": 0.6
+    }
+  ],
+  "unlocks": [
+    "federalism_templates",
+    "communitarian_governance"
+  ],
+  "notes": "Cross-links: unlocked by both haudenosaunee council (Great Law of Peace) and restorative justice; feeds into federalism templates. Demonstrates that governance innovations flow across cultural boundaries."
+}

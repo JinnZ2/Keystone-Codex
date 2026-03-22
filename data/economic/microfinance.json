@@ -1,0 +1,64 @@
+{
+  "id": "microfinance",
+  "name": "Microfinance and Microlending",
+  "domain": "economic",
+  "region": "Global (Bangladesh, India, Bolivia, Kenya, Indonesia)",
+  "era": {"start": 1976, "end": 2025},
+  "summary": "Small-scale lending to underserved populations without traditional collateral, formalizing and scaling the mutual-aid principles of rotating credit associations.",
+  "metrics": {
+    "longevity_years": 49,
+    "replication_regions": 5,
+    "decentralization_score": 0.65,
+    "ethical_alignment": 0.7
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Grameen Bank's group lending model achieved 97% repayment rates among borrowers below the poverty line",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Microfinance independently emerged from ROSCA-like structures across South Asia, Latin America, and East Africa",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Mobile money platforms (M-Pesa) extended microfinance reach to unbanked populations at unprecedented scale",
+      "evidence_refs": ["e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Yunus (1999) Banker to the Poor: Micro-Lending and the Battle Against World Poverty, PublicAffairs",
+      "quality": 0.75
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Morduch (1999) The Microfinance Promise, Journal of Economic Literature 37(4)",
+      "uri": "doi:10.1257/jel.37.4.1569",
+      "quality": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Armendariz & Morduch (2010) The Economics of Microfinance, 2nd ed., MIT Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "field_measurement",
+      "source": "Jack & Suri (2014) Risk Sharing and Transactions Costs: Evidence from Kenya's Mobile Money Revolution, American Economic Review 104(1)",
+      "uri": "doi:10.1257/aer.104.1.183",
+      "quality": 0.9
+    }
+  ],
+  "unlocks": [
+    "cooperative_banking",
+    "community_insurance"
+  ],
+  "notes": "Will fail keystone threshold on longevity (49 years vs 300 required). Important test case: high replication and ethical alignment but too young. Demonstrates that the scoring system correctly filters for durability, not just popularity."
+}
