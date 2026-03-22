@@ -13,6 +13,7 @@ Commands:
     query             Query/filter entries by domain, score, region, era
     analyze           Cross-entry analysis (coverage, gaps, shared evidence)
     new               Scaffold a new keystone entry template
+    fieldlink-export  Export entries to BioGrid2.0 glyph/protocol format
     all               Run full pipeline (validate → score → graph → timeline)
 """
 import sys, os
@@ -49,6 +50,9 @@ def main():
         run()
     elif cmd == "new":
         from src.scaffold import main as run
+        run()
+    elif cmd == "fieldlink-export":
+        from src.fieldlink_export import main as run
         run()
     elif cmd == "all":
         from src.validate import run as validate

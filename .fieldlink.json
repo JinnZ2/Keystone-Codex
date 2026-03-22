@@ -1,16 +1,138 @@
 {
-  "fieldlink": {
-    "atlas_repo": "https://github.com/JinnZ2/BioGrid2.0",
+  "_description": "Bridge contract between Keystone-Codex and BioGrid2.0 Atlas. Maps keystone technologies to system layers, defines data exchange formats, and tracks cross-repo references.",
+
+  "source": {
+    "repo": "JinnZ2/Keystone-Codex",
+    "data_root": "data/",
+    "schema": "schema/keystone.schema.json",
+    "entry_count_minimum": 8,
+    "domains": [
+      "ecological", "economic", "social", "governance",
+      "information", "material", "ethical", "infrastructure"
+    ]
+  },
+
+  "target": {
+    "repo": "JinnZ2/BioGrid2.0",
+    "url": "https://github.com/JinnZ2/BioGrid2.0",
     "atlas_paths": [
       "planned/glyphs/atlas.json",
       "registry/atlas.glyphs.json"
+    ]
+  },
+
+  "layer_map": {
+    "_description": "Maps keystone domains to BioGrid system-architecture layers (see SYSTEMS_ANALOGY.md). Each layer has a role, the domains it draws from, and the BioGrid subsystems it feeds.",
+    "layers": [
+      {
+        "layer": "power_supply",
+        "analogy": "PSU — baseline energy and ecological stability",
+        "keystone_domains": ["ecological"],
+        "biogrid_subsystems": ["sensors.soil", "sensors.water", "protocols.nutrient_cycle"],
+        "entry_ids": ["terra_preta"]
+      },
+      {
+        "layer": "cpu_memory",
+        "analogy": "CPU + Memory — encoding, calculation, records",
+        "keystone_domains": ["information"],
+        "biogrid_subsystems": ["protocols.data_encoding", "sensors.signal"],
+        "entry_ids": ["quipu"]
+      },
+      {
+        "layer": "motherboard_bus",
+        "analogy": "Motherboard + Bus — routing, governance, social fabric",
+        "keystone_domains": ["social", "governance"],
+        "biogrid_subsystems": ["protocols.consensus", "protocols.federation"],
+        "entry_ids": ["gift_economy", "great_law_of_peace"]
+      },
+      {
+        "layer": "io_system",
+        "analogy": "I/O — economic exchange, resource flow",
+        "keystone_domains": ["economic"],
+        "biogrid_subsystems": ["protocols.exchange", "sensors.flow"],
+        "entry_ids": ["rotating_credit"]
+      },
+      {
+        "layer": "bios_firmware",
+        "analogy": "BIOS/Firmware — ethical constraints, what the system can and cannot run",
+        "keystone_domains": ["ethical"],
+        "biogrid_subsystems": ["protocols.constraint", "protocols.alignment"],
+        "entry_ids": ["ubuntu_philosophy"]
+      },
+      {
+        "layer": "peripherals_fabrication",
+        "analogy": "Peripherals + Fabrication — machine tools, physical structures",
+        "keystone_domains": ["material", "infrastructure"],
+        "biogrid_subsystems": ["sensors.structural", "protocols.fabrication"],
+        "entry_ids": ["lathe", "indus_plumbing"]
+      }
+    ]
+  },
+
+  "field_map": {
+    "_description": "How Keystone-Codex fields translate to BioGrid2.0 manifest fields. Used by any future sync tooling.",
+    "keystone_to_biogrid": {
+      "id":                        "glyph.source_id",
+      "name":                      "glyph.label",
+      "domain":                    "glyph.layer (via layer_map)",
+      "region":                    "glyph.origin_region",
+      "era.start":                 "glyph.epoch_start",
+      "era.end":                   "glyph.epoch_end",
+      "summary":                   "glyph.description",
+      "metrics.longevity_years":   "protocol.durability_years",
+      "metrics.replication_regions": "protocol.spread_count",
+      "metrics.decentralization_score": "protocol.decentralization",
+      "metrics.ethical_alignment": "protocol.ethical_score",
+      "unlocks":                   "glyph.edges_out",
+      "evidence":                  "protocol.sources",
+      "evidence[].quality":        "protocol.source_confidence"
+    }
+  },
+
+  "glyphs": {
+    "_description": "Visual identifiers for each keystone in the BioGrid atlas. Shape encodes domain, fill encodes keystone status.",
+    "shape_by_domain": {
+      "ecological":     "hexagon",
+      "economic":       "diamond",
+      "social":         "circle",
+      "governance":     "octagon",
+      "information":    "square",
+      "material":       "triangle",
+      "ethical":        "star",
+      "infrastructure": "pentagon"
+    },
+    "fill_rules": {
+      "is_keystone_true":  "solid",
+      "is_keystone_false": "dashed",
+      "candidate":         "dotted"
+    }
+  },
+
+  "sync": {
+    "_description": "Contract for keeping Keystone-Codex and BioGrid2.0 in sync.",
+    "direction": "keystone → biogrid",
+    "trigger": "manual (run export command)",
+    "export_command": "python3 -m src fieldlink-export",
+    "export_outputs": [
+      {
+        "file": "fieldlink_export.json",
+        "format": "json",
+        "contains": "All keystone entries mapped to BioGrid glyph/protocol format"
+      }
     ],
-    "local_manifests": [
-      "glyphs/**",
-      "protocols/**",
-      "sensors/**",
-      "atlas/shapes.json"
-    ],
-    "role": "sensors|protocols|shapes|hub"
-  }
+    "validation": {
+      "pre_export": "python3 -m src validate",
+      "post_export": "Verify all entry_ids in layer_map exist in data/"
+    },
+    "offline_first": true,
+    "no_runtime_fetch": true
+  },
+
+  "integrity_checks": [
+    "Every entry_id in layer_map.layers[].entry_ids must exist in data/",
+    "Every keystone domain must appear in exactly one layer",
+    "layer_map must cover all 8 domains",
+    "Candidate entries (data/candidates.json) map to layers via suggested_domain",
+    "No orphan layers (each layer must have at least one entry_id or candidate)"
+  ]
 }
