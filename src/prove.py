@@ -23,6 +23,13 @@ def load_items():
                     items.append(json.load(fh))
     return items
 
+def evidence_quality(x):
+    """Compute average evidence quality for an entry (0-1). Returns 0 if no quality scores."""
+    qualities = [ev["quality"] for ev in x.get("evidence", []) if "quality" in ev]
+    if not qualities:
+        return 0.0
+    return sum(qualities) / len(qualities)
+
 def score_item(x):
     m = x["metrics"]
     trace = []
@@ -55,10 +62,23 @@ def score_item(x):
     trace.append({"rule": f"decentralization>={crit['threshold']}", "passed": passed_dec,
                    "details": f"decentralization_score={dec}", "weight": crit["weight"]})
 
-    # Weighted score
-    score = sum(t["weight"] for t in trace if t["passed"])
+    # Weighted score (criteria pass/fail)
+    raw_score = sum(t["weight"] for t in trace if t["passed"])
+
+    # Evidence quality modifier: scales the raw score by avg evidence quality.
+    # High-quality evidence preserves the score; low quality penalizes it.
+    avg_quality = evidence_quality(x)
+    quality_factor = 0.7 + 0.3 * avg_quality  # range [0.7, 1.0] — quality can reduce score by up to 30%
+    score = raw_score * quality_factor
+
     is_keystone = score >= PASS_SCORE
-    return {"id": x["id"], "is_keystone": is_keystone, "score": round(score, 3), "trace": trace}
+    return {
+        "id": x["id"],
+        "is_keystone": is_keystone,
+        "score": round(score, 3),
+        "evidence_quality": round(avg_quality, 3),
+        "trace": trace
+    }
 
 def write_reports(results):
     # JSON traces
@@ -68,7 +88,8 @@ def write_reports(results):
     # Markdown report
     lines = ["# Proof Report", f"_Generated: {datetime.datetime.utcnow().isoformat()}Z_", ""]
     for r in results:
-        lines.append(f"## {r['id']} — {'✅ Keystone' if r['is_keystone'] else '❌ Not yet'} (score {r['score']})")
+        eq = r.get('evidence_quality', 0)
+        lines.append(f"## {r['id']} — {'✅ Keystone' if r['is_keystone'] else '❌ Not yet'} (score {r['score']}, evidence quality {eq})")
         for t in r["trace"]:
             mark = "✔" if t["passed"] else "✖"
             lines.append(f"- {mark} **{t['rule']}** — {t['details']} (w={t['weight']})")

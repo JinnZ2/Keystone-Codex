@@ -1,0 +1,57 @@
+{
+  "id": "rotating_credit",
+  "name": "Rotating Savings & Credit Associations (ROSCAs)",
+  "domain": "economic",
+  "region": "Global (Africa, Asia, Caribbean, Latin America)",
+  "era": {
+    "start": -200,
+    "end": 2025
+  },
+  "summary": "Peer-based savings circles where members contribute fixed amounts and take turns receiving the pooled sum; banking without banks.",
+  "metrics": {
+    "longevity_years": 2000,
+    "replication_regions": 6,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.85
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "ROSCAs provide credit access to populations excluded from formal banking systems",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "The mechanism has independently emerged across dozens of cultures on every inhabited continent",
+      "evidence_refs": ["e3"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Ardener (1964) The Comparative Study of Rotating Credit Associations",
+      "uri": "doi:10.1093/jrai/94.2.201",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "field_measurement",
+      "source": "World Bank surveys on informal finance in Sub-Saharan Africa",
+      "quality": 0.75
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Besley, Coate & Loury (1993) The Economics of Rotating Savings and Credit Associations",
+      "uri": "doi:10.1257/aer.83.4.792",
+      "quality": 0.9
+    }
+  ],
+  "unlocks": [
+    "microfinance",
+    "cooperative_banking",
+    "community_insurance"
+  ],
+  "notes": "Known as susu (Ghana), chit fund (India), tandas (Mexico), hui (China), stokvel (South Africa). Entirely trust-based, no collateral."
+}

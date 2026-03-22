@@ -1,3 +1,6 @@
+# Python
+__pycache__/
+
 # Generated pipeline outputs
 proof_traces.json
 proof_report.md

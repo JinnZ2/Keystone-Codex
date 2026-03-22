@@ -112,7 +112,8 @@ def check_item(p, obj):
         return False
     return True
 
-def main():
+def run():
+    """Run validation, return True if all OK."""
     all_ok = True
     count = 0
     for p, obj in iter_items():
@@ -123,6 +124,10 @@ def main():
             print(f"[OK]   {p}")
     if count == 0:
         print("[WARN] No data files found")
+    return all_ok
+
+def main():
+    all_ok = run()
     sys.exit(0 if all_ok else 1)
 
 if __name__ == "__main__":
