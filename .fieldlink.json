@@ -50,7 +50,7 @@
         "analogy": "I/O — economic exchange, resource flow",
         "keystone_domains": ["economic"],
         "biogrid_subsystems": ["protocols.exchange", "sensors.flow"],
-        "entry_ids": ["rotating_credit", "microfinance"]
+        "entry_ids": ["rotating_credit", "microfinance", "cowrie_currency", "silk_road"]
       },
       {
         "layer": "bios_firmware",
@@ -64,7 +64,7 @@
         "analogy": "Peripherals + Fabrication — machine tools, physical structures",
         "keystone_domains": ["material", "infrastructure"],
         "biogrid_subsystems": ["sensors.structural", "protocols.fabrication"],
-        "entry_ids": ["lathe", "precision_engineering", "indus_plumbing"]
+        "entry_ids": ["lathe", "precision_engineering", "damascus_steel", "indus_plumbing", "roman_aqueducts"]
       }
     ]
   },

@@ -16,13 +16,13 @@
     {
       "id": "public_health_infrastructure",
       "suggested_domain": "infrastructure",
-      "referenced_by": ["indus_plumbing"],
+      "referenced_by": ["indus_plumbing", "roman_aqueducts"],
       "notes": "Sanitation, water treatment, and disease prevention infrastructure."
     },
     {
       "id": "modular_urbanism",
       "suggested_domain": "infrastructure",
-      "referenced_by": ["indus_plumbing"],
+      "referenced_by": ["indus_plumbing", "roman_aqueducts"],
       "notes": "Standardized, repeatable urban design patterns."
     },
     {
@@ -58,7 +58,7 @@
     {
       "id": "machine_tools_family",
       "suggested_domain": "material",
-      "referenced_by": ["lathe", "precision_engineering"],
+      "referenced_by": ["lathe", "precision_engineering", "damascus_steel"],
       "notes": "The lineage of mills, drills, presses, and grinders descended from lathe principles."
     },
     {
@@ -70,13 +70,13 @@
     {
       "id": "cooperative_banking",
       "suggested_domain": "economic",
-      "referenced_by": ["rotating_credit", "microfinance"],
+      "referenced_by": ["rotating_credit", "microfinance", "cowrie_currency", "silk_road"],
       "notes": "Member-owned financial institutions (credit unions, building societies)."
     },
     {
       "id": "community_insurance",
       "suggested_domain": "economic",
-      "referenced_by": ["rotating_credit", "microfinance"],
+      "referenced_by": ["rotating_credit", "microfinance", "cowrie_currency", "silk_road"],
       "notes": "Mutual aid and risk-pooling systems without corporate intermediaries."
     },
     {
@@ -94,7 +94,7 @@
     {
       "id": "wealth_redistribution",
       "suggested_domain": "economic",
-      "referenced_by": ["gift_economy"],
+      "referenced_by": ["gift_economy", "cowrie_currency"],
       "notes": "Mechanisms that prevent extreme accumulation and spread resources."
     },
     {

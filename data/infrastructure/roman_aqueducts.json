@@ -1,0 +1,63 @@
+{
+  "id": "roman_aqueducts",
+  "name": "Roman Aqueduct System",
+  "domain": "infrastructure",
+  "region": "Mediterranean (Italy, Gaul, Iberia, North Africa, Levant)",
+  "era": {"start": -312, "end": 500},
+  "summary": "Gravity-fed water conveyance networks using arched bridges, siphons, and underground channels that supplied cities with clean water at scales not matched again until the 19th century.",
+  "metrics": {
+    "longevity_years": 812,
+    "replication_regions": 5,
+    "decentralization_score": 0.4,
+    "ethical_alignment": 0.6
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Rome's 11 aqueducts delivered approximately 1 million cubic metres of water daily, serving a population of over 1 million",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Aqueduct engineering was replicated across the empire with local adaptation — the Pont du Gard, Segovia, and Carthage systems each solved different terrain challenges",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Some aqueduct segments remained in continuous use for over 1000 years; the Aqua Virgo (19 BCE) still feeds Rome's Trevi Fountain",
+      "evidence_refs": ["e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "primary_text",
+      "source": "Frontinus (c. 97 CE) De Aquaeductu Urbis Romae, translated by Herschel (1899)",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "engineering_record",
+      "source": "Hodge (1992) Roman Aqueducts and Water Supply, Duckworth",
+      "quality": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "archaeological_record",
+      "source": "Wilson (2008) Hydraulic Engineering and Water Supply, in Oleson (ed.) Oxford Handbook of Engineering and Technology in the Classical World",
+      "uri": "doi:10.1093/oxfordhb/9780195187311.013.0011",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "field_measurement",
+      "source": "ACEA SpA maintenance records for Acqua Vergine (modern continuation of Aqua Virgo), Rome",
+      "quality": 0.7
+    }
+  ],
+  "unlocks": [
+    "public_health_infrastructure",
+    "modular_urbanism"
+  ],
+  "notes": "Low decentralisation (state-directed) but extraordinary longevity and replication. Paired with Indus plumbing, these two infrastructure entries show convergent evolution: different cultures solved water distribution independently with radically different governance models."
+}

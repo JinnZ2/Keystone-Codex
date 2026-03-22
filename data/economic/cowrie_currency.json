@@ -1,0 +1,70 @@
+{
+  "id": "cowrie_currency",
+  "name": "Cowrie Shell Currency",
+  "domain": "economic",
+  "region": "Global (China, India, West Africa, Oceania, Southeast Asia)",
+  "era": {"start": -1200, "end": 1900},
+  "summary": "Natural shell-based monetary system that functioned as standardised currency across three continents for over 3000 years, requiring no central mint and resisting counterfeiting.",
+  "metrics": {
+    "longevity_years": 3100,
+    "replication_regions": 5,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.7
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Cowrie shells served as currency in Shang Dynasty China (c. 1200 BCE) and remained legal tender in parts of West Africa into the 20th century",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "The system required no centralised minting authority — shells were naturally standardised, portable, durable, and difficult to counterfeit",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Cowrie networks connected Indian Ocean, West African, and East Asian trade systems independently of European monetary frameworks",
+      "evidence_refs": ["e4", "e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Peng (2000) A Monetary History of China, Western Washington University",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Hogendorn & Johnson (1986) The Shell Money of the Slave Trade, Cambridge UP",
+      "uri": "doi:10.1017/CBO9780511563089",
+      "quality": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Yang (2011) A Commodity-Money Theory of Cowrie Shells in Ancient China, Economic History Review 64(2)",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "archaeological_record",
+      "source": "Maldivian cowrie shell export sites, dating 1st millennium CE, documented by Heimann (1980)",
+      "quality": 0.7
+    },
+    {
+      "id": "e5",
+      "type": "peer_reviewed_study",
+      "source": "Pallaver (2009) A Recognized Currency in Beads: Glass Beads as Money in 19th-Century East Africa, Africa 79(3)",
+      "quality": 0.75
+    }
+  ],
+  "unlocks": [
+    "cooperative_banking",
+    "community_insurance",
+    "wealth_redistribution"
+  ],
+  "notes": "Maximum decentralisation: no mint, no state backing, no forgery problem. Demonstrates that robust monetary systems can emerge without central authority — the I/O system can self-organise."
+}
