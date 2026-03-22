@@ -4,7 +4,7 @@
   "domain": "information",
   "region": "Global (North America, Australia, Andes, East Africa, Europe, Central Asia)",
   "era": {"start": -40000, "end": 2025},
-  "summary": "Reading natural rock striations, crystal formations, and sedimentary layers as temporal reference systems — cliff faces as timelines, mineral deposits as era markers — enabling communication about deep time without notation, using the Earth itself as a pre-written record.",
+  "summary": "Reading natural rock striations, crystal formations, and sedimentary layers as temporal reference systems — cliff faces as timelines, mineral deposits as era markers — with specialized knowledge holders (medicine women) trained to correlate matching layers across seasonal sites, enabling portable deep-time reference without notation.",
   "metrics": {
     "longevity_years": 42000,
     "replication_regions": 6,
@@ -26,6 +26,11 @@
       "id": "c3",
       "statement": "Oral traditions referencing geological features have been independently verified against modern stratigraphy and radiometric dating, confirming accurate transmission of deep-time knowledge across hundreds of generations",
       "evidence_refs": ["e5", "e6"]
+    },
+    {
+      "id": "c4",
+      "statement": "Medicine women and specialized knowledge holders maintained the discipline of cross-site stratigraphic correlation — matching rock layers at one seasonal location to equivalent layers at another — making the geological timeline portable across a people's entire territory rather than fixed to a single cliff face",
+      "evidence_refs": ["e2", "e7"]
     }
   ],
   "evidence": [
@@ -66,6 +71,12 @@
       "type": "peer_reviewed_study",
       "source": "Hamacher (2012) Geomythology and the Geological Record in Aboriginal Australian Traditions, in Oral Tradition and Geology, Geological Society of America",
       "quality": 0.8
+    },
+    {
+      "id": "e7",
+      "type": "oral_tradition_encoded",
+      "source": "Cajete (2000) Native Science: Natural Laws of Interdependence, Clear Light Publishers — documents role of specialist knowledge holders in maintaining geological and ecological knowledge across seasonal territories",
+      "quality": 0.75
     }
   ],
   "unlocks": [
@@ -73,5 +84,5 @@
     "living_knowledge_systems",
     "resilient_accounting"
   ],
-  "notes": "Possibly the oldest information technology after songlines — and deeply entangled with them. The cliff face is not built; it is read. Each striation is a time period. Each crystal formation encodes the conditions of its making. The key insight is selectivity: you point to the layer relevant to the conversation you are having. That is an index operation on a geological database. Western science eventually formalized this as stratigraphy (Steno, 1669), but the practice of reading rock layers as time records is far older. This entry sits between songlines (knowledge encoded in landscape mentally) and monumental encoding (knowledge encoded in built stone) — it is knowledge encoded in unbuilt stone, the Earth's own record read as data."
+  "notes": "Possibly the oldest information technology after songlines — and deeply entangled with them. The cliff face is not built; it is read. Each striation is a time period. Each crystal formation encodes the conditions of its making. The key insight is selectivity: you point to the layer relevant to the conversation you are having. That is an index operation on a geological database. Critically, this was not fixed to one site. Medicine women held the correlation map — knowing which striation at the winter camp matched which layer at the summer site. When the people moved seasonally, the timeline moved with them because the specialist could locate the equivalent layer at the new place. This is stratigraphic correlation: the same technique William Smith formalized in 1815 to build the first geological map of England. The medicine women were doing it across their territories for millennia before that, carrying the cross-reference in trained memory rather than on paper. Western science eventually formalized reading rock layers as stratigraphy (Steno, 1669) and cross-site correlation (Smith, 1815), but the practices are far older. This entry sits between songlines (knowledge encoded in landscape mentally) and monumental encoding (knowledge encoded in built stone) — it is knowledge encoded in unbuilt stone, the Earth's own record read as data."
 }
