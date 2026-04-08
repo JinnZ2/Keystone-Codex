@@ -1,0 +1,536 @@
+{
+  "version": "1.0",
+  "description": "Shadow catalogue of keystone technology candidates. Confirmed entries have full JSON in data/; shadow entries are candidates awaiting full encoding.",
+  "entries": [
+    {
+      "id": "terra_preta",
+      "name": "Terra Preta (Amazonian Dark Earth)",
+      "domain": "ecological",
+      "region": "Amazon Basin",
+      "era": {"start": -1000, "end": 1500},
+      "description": "Engineered biochar-rich soils combining charcoal, organics, and pottery shards for long-lived fertility and carbon sequestration.",
+      "status": "confirmed",
+      "tags": ["soil", "biochar", "regenerative", "carbon", "agriculture"]
+    },
+    {
+      "id": "andean_terraces",
+      "name": "Andean Terraces",
+      "domain": "ecological",
+      "region": "Peru/Bolivia",
+      "era": {"start": -1000, "end": 2025},
+      "description": "Slope stabilization and microclimate agriculture on mountain terrain.",
+      "status": "shadow",
+      "tags": ["agriculture", "terrain", "microclimate", "mountain", "irrigation"]
+    },
+    {
+      "id": "firestick_farming",
+      "name": "Australian Firestick Farming",
+      "domain": "ecological",
+      "region": "Australia",
+      "era": {"start": -50000, "end": 2025},
+      "description": "Biodiversity management via controlled burns; landscape-scale ecological engineering.",
+      "status": "shadow",
+      "tags": ["fire", "biodiversity", "landscape", "indigenous", "ecology"]
+    },
+    {
+      "id": "nile_flood_agriculture",
+      "name": "Nile Flood Basin Agriculture",
+      "domain": "ecological",
+      "region": "Egypt",
+      "era": {"start": -5000, "end": 1970},
+      "description": "Natural silt fertilization cycles harnessing annual flood patterns.",
+      "status": "shadow",
+      "tags": ["flood", "silt", "fertilization", "river", "cycles"]
+    },
+    {
+      "id": "chinampas",
+      "name": "Chinampas",
+      "domain": "ecological",
+      "region": "Mesoamerica",
+      "era": {"start": -1200, "end": 2025},
+      "description": "Floating gardens; high-yield wetland agriculture on lake beds.",
+      "status": "shadow",
+      "tags": ["wetland", "floating", "gardens", "aquaculture", "lake"]
+    },
+    {
+      "id": "ifugao_rice_terraces",
+      "name": "Ifugao Rice Terraces",
+      "domain": "ecological",
+      "region": "Philippines",
+      "era": {"start": -2000, "end": 2025},
+      "description": "Communal management of mountainous rice systems; living cultural landscape.",
+      "status": "shadow",
+      "tags": ["rice", "terraces", "communal", "mountain", "irrigation"]
+    },
+    {
+      "id": "west_african_agroforestry",
+      "name": "Agroforestry in West Africa",
+      "domain": "ecological",
+      "region": "West Africa",
+      "era": {"start": -3000, "end": 2025},
+      "description": "Integrating crops with nitrogen-fixing trees (e.g., Faidherbia) for soil renewal.",
+      "status": "shadow",
+      "tags": ["trees", "nitrogen", "soil", "crops", "intercropping"]
+    },
+    {
+      "id": "wampum_belts",
+      "name": "Wampum Belts",
+      "domain": "economic",
+      "region": "NE North America",
+      "era": {"start": 1000, "end": 1800},
+      "description": "Treaty and value exchange encoded in mnemonic shell bead form.",
+      "status": "shadow",
+      "tags": ["treaty", "currency", "mnemonic", "shell", "diplomacy"]
+    },
+    {
+      "id": "potlatch",
+      "name": "Potlatch",
+      "domain": "economic",
+      "region": "Pacific NW Coast",
+      "era": {"start": -500, "end": 2025},
+      "description": "Redistributive wealth regulation through ceremonial giving.",
+      "status": "shadow",
+      "tags": ["redistribution", "ceremony", "wealth", "gift", "reciprocity"]
+    },
+    {
+      "id": "cowrie_currency",
+      "name": "Cowrie Shell Currency",
+      "domain": "economic",
+      "region": "Africa/Asia",
+      "era": {"start": -1200, "end": 1900},
+      "description": "Durable, portable, hard-to-counterfeit natural currency spanning continents.",
+      "status": "shadow",
+      "tags": ["currency", "shells", "trade", "portable", "durable"]
+    },
+    {
+      "id": "silk_road",
+      "name": "Silk Road Trade Network",
+      "domain": "economic",
+      "region": "Eurasia",
+      "era": {"start": -130, "end": 1450},
+      "description": "Distributed, redundant transcontinental supply chain for goods and knowledge.",
+      "status": "shadow",
+      "tags": ["trade", "network", "distributed", "transcontinental", "supply_chain"]
+    },
+    {
+      "id": "salt_trade",
+      "name": "Salt Trade",
+      "domain": "economic",
+      "region": "Sahara/Himalayas",
+      "era": {"start": -2500, "end": 1900},
+      "description": "Critical preservation commodity forming the basis of wealth and exchange routes.",
+      "status": "shadow",
+      "tags": ["salt", "preservation", "trade_routes", "commodity", "wealth"]
+    },
+    {
+      "id": "maya_cacao_currency",
+      "name": "Maya Cacao Currency",
+      "domain": "economic",
+      "region": "Mesoamerica",
+      "era": {"start": -600, "end": 1500},
+      "description": "Dual role as ritual medium and trade currency; biodegradable wealth.",
+      "status": "shadow",
+      "tags": ["cacao", "ritual", "trade", "biodegradable", "agriculture"]
+    },
+    {
+      "id": "roman_coinage",
+      "name": "Roman Coinage Standardization",
+      "domain": "economic",
+      "region": "Mediterranean/Europe",
+      "era": {"start": -300, "end": 476},
+      "description": "Early centralized minting for wide empire economic cohesion.",
+      "status": "shadow",
+      "tags": ["coins", "standardization", "minting", "empire", "centralized"]
+    },
+    {
+      "id": "haudenosaunee_council",
+      "name": "Great Law of Peace (Haudenosaunee)",
+      "domain": "governance",
+      "region": "NE North America",
+      "era": {"start": 1200, "end": 2025},
+      "description": "Distributed councils with women's veto; federated governance model.",
+      "status": "confirmed",
+      "tags": ["federation", "consensus", "veto", "democracy", "women"]
+    },
+    {
+      "id": "athenian_sortition",
+      "name": "Athenian Sortition",
+      "domain": "governance",
+      "region": "Greece",
+      "era": {"start": -508, "end": -322},
+      "description": "Randomized citizen governance; lottery-based democracy.",
+      "status": "shadow",
+      "tags": ["lottery", "democracy", "random", "citizen", "participation"]
+    },
+    {
+      "id": "ubuntu",
+      "name": "Ubuntu",
+      "domain": "governance",
+      "region": "Southern Africa",
+      "era": {"start": -1000, "end": 2025},
+      "description": "Relational ethics: 'I am because we are.' Communal personhood philosophy.",
+      "status": "shadow",
+      "tags": ["relational", "ethics", "communal", "personhood", "philosophy"]
+    },
+    {
+      "id": "indus_sanitation_committees",
+      "name": "Indus Valley Sanitation Committees",
+      "domain": "governance",
+      "region": "Indus Valley",
+      "era": {"start": -2600, "end": -1700},
+      "description": "Decentralized civic planning for public sanitation infrastructure.",
+      "status": "shadow",
+      "tags": ["civic", "planning", "sanitation", "decentralized", "urban"]
+    },
+    {
+      "id": "songhai_bureaucracy",
+      "name": "Songhai Bureaucracy",
+      "domain": "governance",
+      "region": "West Africa",
+      "era": {"start": 1464, "end": 1591},
+      "description": "Early centralized recordkeeping for empire-scale administration.",
+      "status": "shadow",
+      "tags": ["bureaucracy", "recordkeeping", "administration", "empire", "centralized"]
+    },
+    {
+      "id": "icelandic_althing",
+      "name": "Icelandic Althing",
+      "domain": "governance",
+      "region": "Iceland",
+      "era": {"start": 930, "end": 2025},
+      "description": "One of the world's oldest parliaments; consensus-based lawmaking.",
+      "status": "shadow",
+      "tags": ["parliament", "consensus", "law", "assembly", "longstanding"]
+    },
+    {
+      "id": "polynesian_chiefly_councils",
+      "name": "Polynesian Chiefly Councils",
+      "domain": "governance",
+      "region": "Polynesia",
+      "era": {"start": -1000, "end": 1800},
+      "description": "Distributed navigation and resource decisions across islands.",
+      "status": "shadow",
+      "tags": ["navigation", "islands", "distributed", "resource", "maritime"]
+    },
+    {
+      "id": "quipu",
+      "name": "Quipu (Khipu)",
+      "domain": "information",
+      "region": "Andes",
+      "era": {"start": 1200, "end": 1600},
+      "description": "Knotted-cord information system for census, accounts, and narratives; low-infrastructure data tech.",
+      "status": "confirmed",
+      "tags": ["knots", "data", "accounting", "census", "tactile"]
+    },
+    {
+      "id": "songlines",
+      "name": "Songlines",
+      "domain": "information",
+      "region": "Australia",
+      "era": {"start": -50000, "end": 2025},
+      "description": "Oral-mnemonic geospatial maps encoding navigation, law, and ecology in song.",
+      "status": "shadow",
+      "tags": ["oral", "mnemonic", "geospatial", "navigation", "song"]
+    },
+    {
+      "id": "printing_press",
+      "name": "Printing Press",
+      "domain": "information",
+      "region": "Europe",
+      "era": {"start": 1440, "end": 2025},
+      "description": "Scalable replication of text; democratized knowledge distribution.",
+      "status": "shadow",
+      "tags": ["printing", "text", "replication", "mass_production", "knowledge"]
+    },
+    {
+      "id": "arabic_numerals",
+      "name": "Arabic Numerals",
+      "domain": "information",
+      "region": "India/Islamic World/Europe",
+      "era": {"start": -300, "end": 2025},
+      "description": "Positional decimal system enabling advanced mathematics and commerce.",
+      "status": "shadow",
+      "tags": ["numerals", "decimal", "positional", "mathematics", "commerce"]
+    },
+    {
+      "id": "maya_long_count",
+      "name": "Maya Long Count Calendar",
+      "domain": "information",
+      "region": "Mesoamerica",
+      "era": {"start": -3114, "end": 1500},
+      "description": "Precise astronomical tracking with cycles spanning millennia.",
+      "status": "shadow",
+      "tags": ["calendar", "astronomy", "cycles", "timekeeping", "precision"]
+    },
+    {
+      "id": "house_of_wisdom",
+      "name": "House of Wisdom (Baghdad)",
+      "domain": "information",
+      "region": "Mesopotamia",
+      "era": {"start": 762, "end": 1258},
+      "description": "Translation and preservation hub; cross-cultural scholarly synthesis.",
+      "status": "shadow",
+      "tags": ["translation", "preservation", "library", "synthesis", "scholarly"]
+    },
+    {
+      "id": "oracle_bone_script",
+      "name": "Oracle Bone Script",
+      "domain": "information",
+      "region": "China",
+      "era": {"start": -1200, "end": -1050},
+      "description": "Earliest durable logographic writing; divination records on bone and shell.",
+      "status": "shadow",
+      "tags": ["writing", "logographic", "divination", "bone", "script"]
+    },
+    {
+      "id": "library_of_alexandria",
+      "name": "Library of Alexandria",
+      "domain": "information",
+      "region": "Egypt",
+      "era": {"start": -283, "end": 391},
+      "description": "Cataloging and scholarly correspondence as infrastructure; knowledge nexus.",
+      "status": "shadow",
+      "tags": ["library", "cataloging", "scholarship", "correspondence", "knowledge"]
+    },
+    {
+      "id": "lathe",
+      "name": "Precision Lathe",
+      "domain": "material",
+      "region": "Industrial Europe",
+      "era": {"start": 1797, "end": 2025},
+      "description": "Mother of machine tools; enabled precision manufacturing at scale.",
+      "status": "confirmed",
+      "tags": ["machining", "precision", "manufacturing", "industrial", "tools"]
+    },
+    {
+      "id": "arch_dome",
+      "name": "Arch and Dome",
+      "domain": "material",
+      "region": "Mesopotamia/Rome",
+      "era": {"start": -4000, "end": 2025},
+      "description": "Enduring architecture distributing force through curvature.",
+      "status": "shadow",
+      "tags": ["architecture", "curvature", "force", "stone", "enduring"]
+    },
+    {
+      "id": "compass",
+      "name": "Compass",
+      "domain": "material",
+      "region": "China",
+      "era": {"start": -200, "end": 2025},
+      "description": "Magnetic navigation enabling oceanic exploration and trade.",
+      "status": "shadow",
+      "tags": ["navigation", "magnetic", "exploration", "maritime", "trade"]
+    },
+    {
+      "id": "gunpowder",
+      "name": "Gunpowder",
+      "domain": "material",
+      "region": "China",
+      "era": {"start": 850, "end": 2025},
+      "description": "Chemistry-driven military and mining applications; transformative energetics.",
+      "status": "shadow",
+      "tags": ["chemistry", "explosive", "military", "mining", "energy"]
+    },
+    {
+      "id": "stirrups",
+      "name": "Stirrups",
+      "domain": "material",
+      "region": "Central Asia",
+      "era": {"start": 300, "end": 2025},
+      "description": "Revolutionized mounted mobility and cavalry warfare.",
+      "status": "shadow",
+      "tags": ["cavalry", "mobility", "warfare", "horse", "riding"]
+    },
+    {
+      "id": "damascus_steel",
+      "name": "Damascus Steel",
+      "domain": "material",
+      "region": "Middle East/India",
+      "era": {"start": 300, "end": 1750},
+      "description": "Metallurgical innovation combining strength and flexibility; nanotube patterns.",
+      "status": "shadow",
+      "tags": ["metallurgy", "steel", "nanostructure", "blades", "forging"]
+    },
+    {
+      "id": "benin_bronze",
+      "name": "Benin Bronze Casting",
+      "domain": "material",
+      "region": "West Africa",
+      "era": {"start": 1200, "end": 1897},
+      "description": "Lost-wax precision casting unmatched for centuries; art and engineering fused.",
+      "status": "shadow",
+      "tags": ["bronze", "casting", "lost_wax", "precision", "art"]
+    },
+    {
+      "id": "paper",
+      "name": "Paper",
+      "domain": "material",
+      "region": "China",
+      "era": {"start": -200, "end": 2025},
+      "description": "Scalable medium for knowledge storage and spread.",
+      "status": "shadow",
+      "tags": ["writing", "medium", "scalable", "knowledge", "pulp"]
+    },
+    {
+      "id": "windmills",
+      "name": "Windmills",
+      "domain": "material",
+      "region": "Persia",
+      "era": {"start": 850, "end": 2025},
+      "description": "First industrial-scale harnessing of wind for grinding and pumping.",
+      "status": "shadow",
+      "tags": ["wind", "energy", "grinding", "industrial", "renewable"]
+    },
+    {
+      "id": "womens_war_councils",
+      "name": "Women's War Councils",
+      "domain": "ethical",
+      "region": "Haudenosaunee/Akan",
+      "era": {"start": -500, "end": 2025},
+      "description": "Women's veto power on violence; gendered checks on aggression.",
+      "status": "shadow",
+      "tags": ["women", "veto", "peace", "violence", "gender"]
+    },
+    {
+      "id": "resource_taboos",
+      "name": "Resource Taboos",
+      "domain": "ethical",
+      "region": "Pacific/Arctic",
+      "era": {"start": -5000, "end": 2025},
+      "description": "Ecological law embedded in culture; sacred limits on resource extraction.",
+      "status": "shadow",
+      "tags": ["taboo", "ecology", "limits", "sacred", "extraction"]
+    },
+    {
+      "id": "hospitality_codes",
+      "name": "Hospitality Codes",
+      "domain": "ethical",
+      "region": "Bedouin/Celtic/Greek",
+      "era": {"start": -3000, "end": 2025},
+      "description": "Safety through reciprocity; sacred obligation to shelter strangers.",
+      "status": "shadow",
+      "tags": ["hospitality", "reciprocity", "strangers", "shelter", "sacred"]
+    },
+    {
+      "id": "restorative_justice",
+      "name": "Restorative Justice Circles",
+      "domain": "ethical",
+      "region": "Indigenous/Africa",
+      "era": {"start": -3000, "end": 2025},
+      "description": "Reintegration over exclusion; community-centered conflict resolution.",
+      "status": "shadow",
+      "tags": ["justice", "reintegration", "community", "circle", "conflict"]
+    },
+    {
+      "id": "bushido",
+      "name": "Bushido",
+      "domain": "ethical",
+      "region": "Japan",
+      "era": {"start": 1185, "end": 1876},
+      "description": "Codified ethics of honor and duty, balancing violence with restraint.",
+      "status": "shadow",
+      "tags": ["honor", "duty", "restraint", "warrior", "ethics"]
+    },
+    {
+      "id": "monastic_rule",
+      "name": "Monastic Rule of St. Benedict",
+      "domain": "ethical",
+      "region": "Europe",
+      "era": {"start": 529, "end": 2025},
+      "description": "Regulated labor, prayer, and education in communities; blueprint for institutional life.",
+      "status": "shadow",
+      "tags": ["monastic", "labor", "education", "community", "rule"]
+    },
+    {
+      "id": "ashokas_edicts",
+      "name": "Ashoka's Edicts",
+      "domain": "ethical",
+      "region": "India",
+      "era": {"start": -268, "end": -232},
+      "description": "Stone-carved ethical governance: animal welfare, tolerance, non-violence at state scale.",
+      "status": "shadow",
+      "tags": ["edicts", "stone", "tolerance", "animal_welfare", "governance"]
+    },
+    {
+      "id": "indus_plumbing",
+      "name": "Indus Valley Plumbing",
+      "domain": "infrastructure",
+      "region": "Indus Valley",
+      "era": {"start": -2600, "end": -1700},
+      "description": "Decentralized drains and sewers; earliest urban sanitation at scale.",
+      "status": "confirmed",
+      "tags": ["plumbing", "drains", "sewers", "sanitation", "urban"]
+    },
+    {
+      "id": "roman_aqueducts",
+      "name": "Roman Aqueducts",
+      "domain": "infrastructure",
+      "region": "Mediterranean/Europe",
+      "era": {"start": -312, "end": 476},
+      "description": "Centralized but high-reliability gravity-fed water supply over vast distances.",
+      "status": "shadow",
+      "tags": ["water", "gravity", "engineering", "supply", "monumental"]
+    },
+    {
+      "id": "polynesian_fishponds",
+      "name": "Polynesian Fishponds",
+      "domain": "infrastructure",
+      "region": "Polynesia/Hawaii",
+      "era": {"start": 1000, "end": 2025},
+      "description": "Sustainable aquaculture infrastructure; managed coastal ecosystems.",
+      "status": "shadow",
+      "tags": ["aquaculture", "fishponds", "coastal", "sustainable", "managed"]
+    },
+    {
+      "id": "great_zimbabwe",
+      "name": "Great Zimbabwe Walls",
+      "domain": "infrastructure",
+      "region": "Southern Africa",
+      "era": {"start": 1100, "end": 1450},
+      "description": "Dry-stone engineering without mortar; monumental precision construction.",
+      "status": "shadow",
+      "tags": ["stone", "dry_wall", "construction", "monumental", "precision"]
+    },
+    {
+      "id": "qanat",
+      "name": "Qanat Irrigation",
+      "domain": "infrastructure",
+      "region": "Persia",
+      "era": {"start": -1000, "end": 2025},
+      "description": "Underground channels tapping groundwater; gravity-driven desert irrigation.",
+      "status": "shadow",
+      "tags": ["underground", "groundwater", "gravity", "irrigation", "desert"]
+    },
+    {
+      "id": "stepwells",
+      "name": "Stepwells",
+      "domain": "infrastructure",
+      "region": "India",
+      "era": {"start": -3000, "end": 2025},
+      "description": "Civic water management combined with community gathering spaces.",
+      "status": "shadow",
+      "tags": ["water", "civic", "gathering", "architecture", "community"]
+    },
+    {
+      "id": "cathedral_networks",
+      "name": "Medieval Cathedral Networks",
+      "domain": "infrastructure",
+      "region": "Europe",
+      "era": {"start": 1000, "end": 1500},
+      "description": "Knowledge transmission through stonemasonry guilds; distributed building schools.",
+      "status": "shadow",
+      "tags": ["cathedral", "guilds", "masonry", "knowledge", "transmission"]
+    },
+    {
+      "id": "inca_road_system",
+      "name": "Inca Road System",
+      "domain": "infrastructure",
+      "region": "Andes",
+      "era": {"start": 1400, "end": 1572},
+      "description": "40,000 km of paths and rope bridges knitting empire without wheels.",
+      "status": "shadow",
+      "tags": ["roads", "bridges", "network", "logistics", "empire"]
+    }
+  ]
+}
