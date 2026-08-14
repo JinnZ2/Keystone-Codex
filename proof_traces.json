@@ -1,0 +1,452 @@
+[
+  {
+    "id": "budj_bim",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=6600",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": true,
+        "details": "mean_evidence_quality=0.850 over 4 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": true,
+        "details": "distinct_evidence_types=4 (archaeological_record, oral_tradition_encoded, primary_text, radiocarbon_date)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=3/3 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "great_law_of_peace",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": true,
+        "details": "mean_evidence_quality=0.762 over 4 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": true,
+        "details": "distinct_evidence_types=3 (oral_tradition_encoded, peer_reviewed_study, primary_text)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=3/3 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "hxaro",
+    "is_keystone": false,
+    "score": 0.68,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=125",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": true,
+        "details": "mean_evidence_quality=0.800 over 4 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": true,
+        "details": "distinct_evidence_types=4 (archaeological_record, ethnographic_record, oral_tradition_encoded, peer_reviewed_study)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=3/3 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "indus_plumbing",
+    "is_keystone": true,
+    "score": 0.86,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=600",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": true,
+        "details": "mean_evidence_quality=0.750 over 2 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": false,
+        "details": "distinct_evidence_types=2 (archaeological_record, peer_reviewed_study)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=2/2 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "kula_ring",
+    "is_keystone": true,
+    "score": 0.86,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": true,
+        "details": "mean_evidence_quality=0.750 over 4 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": true,
+        "details": "distinct_evidence_types=4 (archaeological_record, ethnographic_record, oral_tradition_encoded, peer_reviewed_study)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=3/3 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "lathe",
+    "is_keystone": false,
+    "score": 0.62,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=200",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.5",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": false,
+        "details": "mean_evidence_quality=0.700 over 3 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": true,
+        "details": "distinct_evidence_types=3 (engineering_record, peer_reviewed_study, standards_spec)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=2/2 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "nunuku_covenant",
+    "is_keystone": true,
+    "score": 0.86,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=335",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.7",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": true,
+        "details": "mean_evidence_quality=0.762 over 4 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": true,
+        "details": "distinct_evidence_types=4 (archaeological_record, oral_tradition_encoded, peer_reviewed_study, primary_text)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=4/4 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "quipu",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=300",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": true,
+        "details": "mean_evidence_quality=0.750 over 3 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": true,
+        "details": "distinct_evidence_types=3 (archaeological_record, oral_tradition_encoded, peer_reviewed_study)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=2/2 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  },
+  {
+    "id": "terra_preta",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.1",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.18
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=3",
+        "weight": 0.14
+      },
+      {
+        "rule": "unlocks_lineage>=2",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.12
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.1
+      },
+      {
+        "rule": "evidence_strength>=0.75",
+        "passed": true,
+        "details": "mean_evidence_quality=0.775 over 4 items",
+        "weight": 0.2
+      },
+      {
+        "rule": "evidence_independence>=3",
+        "passed": true,
+        "details": "distinct_evidence_types=4 (archaeological_record, field_measurement, peer_reviewed_study, replication_record)",
+        "weight": 0.14
+      },
+      {
+        "rule": "claim_coverage>=1.0",
+        "passed": true,
+        "details": "claims_backed=2/2 (1.00)",
+        "weight": 0.12
+      }
+    ]
+  }
+]

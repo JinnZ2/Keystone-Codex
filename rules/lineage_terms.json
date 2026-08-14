@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "description": "Declared downstream technology families that an entry's `unlocks` may point at. Created in response to run-001-baseline, which falsified H002: all 15 unlock targets in the corpus resolved to nothing, so build_graph.py was drawing edges to invented nodes and the unlocks_lineage criterion was counting strings. An unlock target must now be either another keystone id (a direct descent claim) or a term declared here (a family claim). Adding a term is cheap; adding it silently is what this file prevents.",
+  "terms": [
+    {
+      "id": "regenerative_agriculture",
+      "name": "Regenerative agriculture",
+      "domain": "ecological",
+      "description": "Cultivation that increases soil carbon and fertility over time rather than drawing it down."
+    },
+    {
+      "id": "carbon_sequestration",
+      "name": "Carbon sequestration",
+      "domain": "ecological",
+      "description": "Deliberate long-residence storage of carbon in soils, biomass, or minerals."
+    },
+    {
+      "id": "circular_waste_systems",
+      "name": "Circular waste systems",
+      "domain": "ecological",
+      "description": "Designs in which the output of one process is the required input of another."
+    },
+    {
+      "id": "drought_resilience",
+      "name": "Drought resilience",
+      "domain": "ecological",
+      "description": "Practices that carry a population through predictable subsistence failure."
+    },
+    {
+      "id": "landscape_engineering",
+      "name": "Landscape engineering",
+      "domain": "ecological",
+      "description": "Modification of hydrology, fire regime, or terrain at watershed scale."
+    },
+    {
+      "id": "managed_aquaculture",
+      "name": "Managed aquaculture",
+      "domain": "ecological",
+      "description": "Deliberate husbandry of aquatic species through built water infrastructure."
+    },
+    {
+      "id": "low_bandwidth_data",
+      "name": "Low-bandwidth data systems",
+      "domain": "information",
+      "description": "Encoding that survives without electricity, print, or continuous power."
+    },
+    {
+      "id": "resilient_accounting",
+      "name": "Resilient accounting",
+      "domain": "information",
+      "description": "Record systems that remain auditable after institutional collapse."
+    },
+    {
+      "id": "tactile_coding",
+      "name": "Tactile coding",
+      "domain": "information",
+      "description": "Information carried in physical form readable by touch."
+    },
+    {
+      "id": "federalism_templates",
+      "name": "Federalism templates",
+      "domain": "governance",
+      "description": "Nested sovereignty: local autonomy under a binding common law."
+    },
+    {
+      "id": "consensus_protocols",
+      "name": "Consensus protocols",
+      "domain": "governance",
+      "description": "Procedures for reaching binding agreement without majority coercion."
+    },
+    {
+      "id": "veto_ethics",
+      "name": "Veto ethics",
+      "domain": "ethical",
+      "description": "Structural power to block, held by those who bear a decision's cost."
+    },
+    {
+      "id": "binding_pacifism",
+      "name": "Binding pacifism",
+      "domain": "ethical",
+      "description": "Renunciation of lethal force enforced as law rather than urged as virtue."
+    },
+    {
+      "id": "conflict_ritualization",
+      "name": "Conflict ritualization",
+      "domain": "ethical",
+      "description": "Channelling dispute into bounded contest that terminates before killing."
+    },
+    {
+      "id": "intergenerational_covenants",
+      "name": "Intergenerational covenants",
+      "domain": "ethical",
+      "description": "Commitments binding on people who did not consent to them and cannot renegotiate."
+    },
+    {
+      "id": "machine_tools_family",
+      "name": "Machine tool family",
+      "domain": "material",
+      "description": "Mills, drills, planers, grinders, and presses descending from rotational machining."
+    },
+    {
+      "id": "industrial_mass_production",
+      "name": "Industrial mass production",
+      "domain": "material",
+      "description": "Interchangeable parts manufactured to tolerance at volume."
+    },
+    {
+      "id": "precision_engineering",
+      "name": "Precision engineering",
+      "domain": "material",
+      "description": "Design premised on reproducible dimensional accuracy."
+    },
+    {
+      "id": "public_health_infrastructure",
+      "name": "Public health infrastructure",
+      "domain": "infrastructure",
+      "description": "Built systems whose function is population-scale disease reduction."
+    },
+    {
+      "id": "modular_urbanism",
+      "name": "Modular urbanism",
+      "domain": "infrastructure",
+      "description": "Cities composed of repeatable units that can be extended without redesign."
+    },
+    {
+      "id": "household_utilities",
+      "name": "Household utilities",
+      "domain": "infrastructure",
+      "description": "Service delivery terminating inside the dwelling rather than at a public point."
+    },
+    {
+      "id": "sedentary_forager_settlement",
+      "name": "Sedentary forager settlement",
+      "domain": "infrastructure",
+      "description": "Permanent settlement supported without domesticated staple crops."
+    },
+    {
+      "id": "regional_trust_networks",
+      "name": "Regional trust networks",
+      "domain": "economic",
+      "description": "Standing relationships that make exchange safe across political boundaries."
+    },
+    {
+      "id": "non_market_exchange",
+      "name": "Non-market exchange",
+      "domain": "economic",
+      "description": "Circulation of goods governed by obligation rather than price."
+    },
+    {
+      "id": "reputation_systems",
+      "name": "Reputation systems",
+      "domain": "economic",
+      "description": "Durable public record of conduct used to price trust."
+    },
+    {
+      "id": "distributed_risk_pooling",
+      "name": "Distributed risk pooling",
+      "domain": "social",
+      "description": "Spreading subsistence shock across a network wider than the co-resident group."
+    },
+    {
+      "id": "mutual_aid_networks",
+      "name": "Mutual aid networks",
+      "domain": "social",
+      "description": "Reciprocal support obligations maintained outside kinship and outside the state."
+    }
+  ]
+}

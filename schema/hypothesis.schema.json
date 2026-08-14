@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hypothesis",
+  "description": "A falsifiable claim about the codex or its corpus, bound to a test kind implemented in src/falsify.py.",
+  "type": "object",
+  "required": ["id", "statement", "rationale", "prediction", "test", "status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^H[0-9]{3}$"
+    },
+    "statement": {
+      "type": "string",
+      "description": "The claim, written so that a result can contradict it."
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Why this is worth testing — what breaks if the claim is false."
+    },
+    "prediction": {
+      "type": "string",
+      "description": "What the run must show for the claim to survive. Stated before the run."
+    },
+    "test": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "description": "Key into the TESTS registry in src/falsify.py.",
+          "enum": [
+            "id_consistency",
+            "unlock_resolution",
+            "era_longevity_coherence",
+            "evidence_floor",
+            "domain_coverage",
+            "rubric_discrimination",
+            "phi_significance",
+            "taxonomy_exercised"
+          ]
+        },
+        "params": {
+          "type": "object",
+          "description": "Thresholds and settings. Changing these is a revision and belongs in the revisions array."
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "supported", "falsified", "retired"],
+      "description": "Written by the engine on each run. 'open' means never run."
+    },
+    "revisions": {
+      "type": "array",
+      "description": "Edits made to the claim after a falsification. Append only; the ledger holds the runs that forced them.",
+      "items": {
+        "type": "object",
+        "required": ["run", "because"],
+        "properties": {
+          "run": {"type": "string"},
+          "was": {"type": "string"},
+          "became": {"type": "string"},
+          "because": {"type": "string"}
+        }
+      }
+    },
+    "last_result": {
+      "type": "object",
+      "description": "Written by the engine. The ledger is the durable record; this is a convenience.",
+      "properties": {
+        "run": {"type": "string"},
+        "passed": {"type": "boolean"},
+        "summary": {"type": "string"}
+      }
+    }
+  }
+}

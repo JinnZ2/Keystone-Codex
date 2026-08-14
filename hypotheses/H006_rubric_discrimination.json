@@ -1,0 +1,20 @@
+{
+  "id": "H006",
+  "statement": "The keystone rule set discriminates: run over the corpus it separates entries rather than admitting all of them.",
+  "rationale": "A test that everything passes is not a test. If every encoded entry clears the bar, the proof engine is confirming the selection that put those entries in the repository, not evaluating them.",
+  "prediction": "No more than 90% of encoded entries score as keystones, and the spread between the highest and lowest score is at least 0.2.",
+  "test": {
+    "kind": "rubric_discrimination",
+    "params": {
+      "max_pass_fraction": 0.9,
+      "min_score_spread": 0.2
+    }
+  },
+  "status": "supported",
+  "revisions": [],
+  "last_result": {
+    "run": "run-003-full-pipeline",
+    "passed": true,
+    "summary": "7/9 pass, spread 0.380 \u2014 rubric discriminates"
+  }
+}

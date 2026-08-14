@@ -1,0 +1,30 @@
+{
+  "id": "H008",
+  "statement": "The evidence taxonomy in CITATIONS.md describes how the codex actually works \u2014 every declared type is used, and no entry uses a type the taxonomy does not declare.",
+  "rationale": "CITATIONS.md lists oral_tradition_encoded as admissible evidence. If no entry ever uses it, the codex claims an openness to non-textual knowledge that its data does not practise, and the declared list is decoration.",
+  "prediction": "Each of the nine declared evidence types appears at least once in the encoded corpus, and every type used is declared.",
+  "test": {
+    "kind": "taxonomy_exercised",
+    "params": {
+      "declared_types": [
+        "archaeological_record",
+        "ethnographic_record",
+        "peer_reviewed_study",
+        "primary_text",
+        "engineering_record",
+        "replication_record",
+        "radiocarbon_date",
+        "standards_spec",
+        "field_measurement",
+        "oral_tradition_encoded"
+      ]
+    }
+  },
+  "status": "supported",
+  "revisions": [],
+  "last_result": {
+    "run": "run-003-full-pipeline",
+    "passed": true,
+    "summary": "all 10 declared evidence types exercised"
+  }
+}

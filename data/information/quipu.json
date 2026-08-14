@@ -26,7 +26,8 @@
       "id": "c2",
       "statement": "Operable without script, electricity, or printing",
       "evidence_refs": [
-        "e2"
+        "e2",
+        "e3"
       ]
     }
   ],
@@ -40,8 +41,14 @@
     {
       "id": "e2",
       "type": "archaeological_record",
-      "source": "Recovered quipu with administrative contexts",
+      "source": "Recovered khipu in administrative contexts, including matched pairs from Inka provincial centres",
       "quality": 0.7
+    },
+    {
+      "id": "e3",
+      "type": "oral_tradition_encoded",
+      "source": "Village-held patrimonial khipu (Rapaz, San Juan de Collata) whose reading conventions survive in community custodianship rather than in any archive; Hyland, S. (2017) Writing with Twisted Cords, Current Anthropology 58(3)",
+      "quality": 0.75
     }
   ],
   "unlocks": [

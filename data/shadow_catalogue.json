@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "description": "Shadow catalogue of keystone technology candidates. Confirmed entries have full JSON in data/; shadow entries are candidates awaiting full encoding.",
+  "version": "1.2",
+  "description": "Shadow catalogue of keystone technology candidates. A row with status 'confirmed' MUST have a fully encoded entry at data/<domain>/ carrying the same id — H001 checks this both ways, after run-001-baseline found the Great Law of Peace filed under two different ids. A row with status 'shadow' is a candidate nobody has encoded yet; it is a research target, not a claim.",
   "entries": [
     {
       "id": "terra_preta",
@@ -143,7 +143,7 @@
       "tags": ["coins", "standardization", "minting", "empire", "centralized"]
     },
     {
-      "id": "haudenosaunee_council",
+      "id": "great_law_of_peace",
       "name": "Great Law of Peace (Haudenosaunee)",
       "domain": "governance",
       "region": "NE North America",
@@ -531,6 +531,316 @@
       "description": "40,000 km of paths and rope bridges knitting empire without wheels.",
       "status": "shadow",
       "tags": ["roads", "bridges", "network", "logistics", "empire"]
+    },
+
+    {
+      "id": "budj_bim",
+      "name": "Budj Bim Eel Aquaculture (Gunditjmara)",
+      "domain": "infrastructure",
+      "region": "Western Victoria, Australia",
+      "era": {"start": -4650, "end": 2025},
+      "description": "Stone channels, weirs, and holding ponds cut into a lava flow to farm short-finned eels; hydraulic infrastructure built without agriculture.",
+      "status": "confirmed",
+      "tags": ["aquaculture", "eels", "hydraulic", "stone", "sedentary", "indigenous"],
+      "source_note": "Channels radiocarbon-dated to at least c. 6600 cal BP (McNiven et al. 2012); UNESCO World Heritage 2019."
+    },
+    {
+      "id": "kula_ring",
+      "name": "Kula Ring (Massim ceremonial exchange)",
+      "domain": "economic",
+      "region": "Massim archipelago, Papua New Guinea",
+      "era": {"start": 1500, "end": 2025},
+      "description": "Inter-island circuit in which two classes of never-consumed valuable move in fixed opposite directions, carrying trust and ordinary trade with them.",
+      "status": "confirmed",
+      "tags": ["exchange", "reciprocity", "trust", "reputation", "maritime", "non_market"],
+      "source_note": "Malinowski (1922); substantially revised by Leach & Leach (1983)."
+    },
+    {
+      "id": "nunuku_covenant",
+      "name": "Nunuku-whenua's Covenant (Moriori)",
+      "domain": "ethical",
+      "region": "Rēkohu / Chatham Islands",
+      "era": {"start": 1500, "end": 1835},
+      "description": "Absolute proscription on killing enforced as law for roughly three centuries, with bounded staff combat substituted for lethal violence.",
+      "status": "confirmed",
+      "tags": ["pacifism", "law", "covenant", "conflict", "ritual", "indigenous"],
+      "source_note": "Moriori oral tradition; King (1989); 1870 Native Land Court testimony; absence of pā-type fortification."
+    },
+    {
+      "id": "hxaro",
+      "name": "Hxaro (Ju/'hoansi delayed reciprocal exchange)",
+      "domain": "social",
+      "region": "Kalahari, southern Africa",
+      "era": {"start": 1900, "end": 2025},
+      "description": "Named lifelong partnerships with deliberately delayed, non-equivalent return, maintaining callable claims on distant groups' resources.",
+      "status": "confirmed",
+      "tags": ["reciprocity", "risk", "insurance", "network", "communal", "mutual_aid"],
+      "source_note": "Wiessner (1982, 2002). Encoded deliberately failing the rubric — see data/social/hxaro.json."
+    },
+
+    {
+      "id": "gadaa",
+      "name": "Gadaa System",
+      "domain": "governance",
+      "region": "Oromia, Ethiopia",
+      "era": {"start": 1500, "end": 2025},
+      "description": "Generational grade system rotating political, ritual, and military authority on a fixed eight-year cycle with mandatory handover.",
+      "status": "shadow",
+      "tags": ["generational", "rotation", "term_limits", "consensus", "assembly"],
+      "source_note": "UNESCO Intangible Cultural Heritage 2016. Notable as term limits enforced by cosmology rather than by constitution."
+    },
+    {
+      "id": "xeer",
+      "name": "Xeer (Somali customary law)",
+      "domain": "governance",
+      "region": "Somali Peninsula",
+      "era": {"start": 1500, "end": 2025},
+      "description": "Polycentric customary law of compensation and elder arbitration, contracted between lineage groups and operating without a state.",
+      "status": "shadow",
+      "tags": ["customary_law", "arbitration", "compensation", "polycentric", "stateless"],
+      "source_note": "Continued to function through the post-1991 collapse of central government — a rare natural experiment in law without a state."
+    },
+    {
+      "id": "subak",
+      "name": "Subak Water Temple Networks",
+      "domain": "ecological",
+      "region": "Bali, Indonesia",
+      "era": {"start": 1000, "end": 2025},
+      "description": "Irrigation coordinated through a hierarchy of water temples whose ritual calendar sets planting schedules across a whole watershed.",
+      "status": "shadow",
+      "tags": ["irrigation", "watershed", "coordination", "communal", "consensus", "rice"],
+      "source_note": "UNESCO 2012. Lansing's modelling showed the temple schedule approximates the optimum trade-off between water sharing and pest control — the Green Revolution's attempt to override it reduced yields."
+    },
+    {
+      "id": "acequia",
+      "name": "Acequia Ditch Commons",
+      "domain": "infrastructure",
+      "region": "Iberia and the Rio Grande basin",
+      "era": {"start": 900, "end": 2025},
+      "description": "Gravity irrigation ditches governed as a commons by shared labour obligation under an elected mayordomo.",
+      "status": "shadow",
+      "tags": ["irrigation", "commons", "gravity", "labour", "governance", "water"],
+      "source_note": "Andalusi origin, transmitted via New Spain; still legally recognised as political subdivisions in New Mexico."
+    },
+    {
+      "id": "waru_waru",
+      "name": "Waru Waru Raised Fields",
+      "domain": "ecological",
+      "region": "Lake Titicaca basin",
+      "era": {"start": -1000, "end": 2025},
+      "description": "Raised planting platforms separated by water channels whose stored daytime heat buffers night frost at 3800m.",
+      "status": "shadow",
+      "tags": ["raised_fields", "frost", "microclimate", "altitude", "water", "agriculture"],
+      "source_note": "Abandoned pre-conquest; experimentally rebuilt from the 1980s with measured frost protection and yield gains."
+    },
+    {
+      "id": "nabataean_runoff_farming",
+      "name": "Nabataean Runoff Farming",
+      "domain": "ecological",
+      "region": "Negev and northern Arabia",
+      "era": {"start": -300, "end": 600},
+      "description": "Micro-catchment terraces and conduits concentrating scarce runoff onto small plots in under 100mm annual rainfall.",
+      "status": "shadow",
+      "tags": ["runoff", "desert", "catchment", "terraces", "water_harvesting"],
+      "source_note": "Reconstructed and operated experimentally at Avdat and Shivta through the 20th century."
+    },
+    {
+      "id": "yakhchal",
+      "name": "Yakhchāl Ice Storage",
+      "domain": "infrastructure",
+      "region": "Iranian plateau",
+      "era": {"start": -400, "end": 1900},
+      "description": "Conical mudbrick chambers using radiative night cooling, evaporative shading, and subterranean mass to hold ice through desert summers.",
+      "status": "shadow",
+      "tags": ["cooling", "storage", "passive", "desert", "thermal", "ice"],
+      "source_note": "Paired with qanats and windcatchers; a working passive refrigeration system with no energy input."
+    },
+    {
+      "id": "marshall_stick_charts",
+      "name": "Marshallese Stick Charts",
+      "domain": "information",
+      "region": "Marshall Islands",
+      "era": {"start": 1500, "end": 2025},
+      "description": "Lattice charts encoding ocean swell refraction and interference around islands — a map of wave behaviour, not of coastline.",
+      "status": "shadow",
+      "tags": ["navigation", "swell", "mnemonic", "maritime", "tactile", "wayfinding"],
+      "source_note": "Mattang, meddo, and rebbelib classes. Memorised on land and not carried aboard: the artefact is a teaching device for a body skill."
+    },
+    {
+      "id": "polynesian_star_compass",
+      "name": "Polynesian Non-Instrument Wayfinding",
+      "domain": "information",
+      "region": "Oceania",
+      "era": {"start": -1000, "end": 2025},
+      "description": "Deep-ocean navigation by star houses, swell, cloud, and bird behaviour, holding a dead-reckoned position across weeks without instruments.",
+      "status": "shadow",
+      "tags": ["navigation", "stars", "swell", "oral", "maritime", "wayfinding"],
+      "source_note": "Near-extinguished, then transmitted from Mau Piailug (Satawal) to the Polynesian Voyaging Society; demonstrated by Hōkūle'a from 1976."
+    },
+    {
+      "id": "talking_drums",
+      "name": "Talking Drums (surrogate speech)",
+      "domain": "information",
+      "region": "West and Central Africa",
+      "era": {"start": 1000, "end": 2025},
+      "description": "Tonal languages transposed onto drum pitch, transmitting arbitrary sentences over distance with stock phrases supplying redundancy.",
+      "status": "shadow",
+      "tags": ["signalling", "tonal", "distance", "redundancy", "encoding", "oral"],
+      "source_note": "A speech-surrogate channel with built-in error correction, roughly a millennium before information theory named the problem."
+    },
+    {
+      "id": "lakota_winter_counts",
+      "name": "Winter Counts (waníyetu wowápi)",
+      "domain": "information",
+      "region": "Northern Plains, North America",
+      "era": {"start": 1600, "end": 1900},
+      "description": "Pictographic chronologies on hide, one image per year, maintained by a designated keeper as a shared index for oral history.",
+      "status": "shadow",
+      "tags": ["chronology", "pictographic", "keeper", "calendar", "oral", "index"],
+      "source_note": "Independent counts can be cross-checked against each other and against dated events such as the 1833 Leonid meteor storm."
+    },
+    {
+      "id": "gobekli_tepe",
+      "name": "Göbekli Tepe and the Taş Tepeler enclosures",
+      "domain": "infrastructure",
+      "region": "Upper Mesopotamia",
+      "era": {"start": -9500, "end": -8000},
+      "description": "Monumental carved-pillar enclosures raised by populations without agriculture, domesticated animals, or pottery.",
+      "status": "shadow",
+      "tags": ["monumental", "pre_agricultural", "stone", "gathering", "ritual"],
+      "source_note": "Direct counter-evidence to surplus-first models of monumental construction. Karahan Tepe and related sites show it was not a one-off."
+    },
+    {
+      "id": "upano_valley_urbanism",
+      "name": "Upano Valley Urbanism",
+      "domain": "infrastructure",
+      "region": "Upano, eastern Ecuador",
+      "era": {"start": -500, "end": 600},
+      "description": "Thousands of earthen platforms linked by wide sunken roads across the Amazonian foothills, revealed by airborne LIDAR.",
+      "status": "shadow",
+      "tags": ["urbanism", "earthworks", "roads", "amazonia", "lidar", "platforms"],
+      "source_note": "Rostain et al. (2024), Science. A major recent revision to how densely the pre-Columbian Amazon was settled."
+    },
+    {
+      "id": "cahokia",
+      "name": "Cahokia",
+      "domain": "infrastructure",
+      "region": "Mississippi Valley, North America",
+      "era": {"start": 1050, "end": 1350},
+      "description": "Planned mound city with an engineered central plaza and solar calendar posts; the largest pre-Columbian settlement north of Mexico.",
+      "status": "shadow",
+      "tags": ["mounds", "urban", "planned", "plaza", "calendar", "earthworks"],
+      "source_note": "Rapid coalescence around 1050 and near-complete depopulation by 1350 — as much a case study in collapse as in construction."
+    },
+    {
+      "id": "nan_madol",
+      "name": "Nan Madol",
+      "domain": "infrastructure",
+      "region": "Pohnpei, Micronesia",
+      "era": {"start": 1200, "end": 1700},
+      "description": "Ceremonial complex of roughly a hundred artificial islets built from columnar basalt logs laid in a lagoon.",
+      "status": "shadow",
+      "tags": ["megalithic", "basalt", "artificial_islands", "lagoon", "monumental"],
+      "source_note": "The transport method for basalt columns weighing several tonnes each remains unresolved."
+    },
+    {
+      "id": "hohokam_canals",
+      "name": "Hohokam Canal Network",
+      "domain": "infrastructure",
+      "region": "Sonoran Desert, North America",
+      "era": {"start": 500, "end": 1450},
+      "description": "Several hundred kilometres of hand-dug gravity canals irrigating the Salt and Gila valleys without draft animals or metal tools.",
+      "status": "shadow",
+      "tags": ["canals", "irrigation", "desert", "gravity", "survey", "earthworks"],
+      "source_note": "Modern Phoenix canals follow Hohokam alignments — the survey work was good enough to reuse."
+    },
+    {
+      "id": "brewarrina_fish_traps",
+      "name": "Baiame's Ngunnhu (Brewarrina fish traps)",
+      "domain": "infrastructure",
+      "region": "Barwon River, New South Wales",
+      "era": {"start": -2000, "end": 2025},
+      "description": "Stone weirs and holding pens across half a kilometre of river, worked cooperatively by several nations under agreed protocol.",
+      "status": "shadow",
+      "tags": ["fish_traps", "stone", "river", "cooperative", "protocol", "indigenous"],
+      "source_note": "Candidate independent replication for budj_bim; the two systems would settle the replication_regions question for Aboriginal aquaculture."
+    },
+    {
+      "id": "chuno",
+      "name": "Chuño Freeze-Drying",
+      "domain": "material",
+      "region": "Andean altiplano",
+      "era": {"start": -1000, "end": 2025},
+      "description": "Alternating night frost, day sun, and treading to dehydrate potatoes into a form storable for years and detoxified of glycoalkaloids.",
+      "status": "shadow",
+      "tags": ["preservation", "freeze_drying", "altitude", "storage", "detoxification"],
+      "source_note": "Underwrote Andean state granaries; the technology is a climate exploit, requiring the altiplano's specific diurnal swing."
+    },
+    {
+      "id": "meroe_iron",
+      "name": "Meroitic Iron Production",
+      "domain": "material",
+      "region": "Kush, middle Nile",
+      "era": {"start": -500, "end": 350},
+      "description": "Large-scale bloomery smelting with slag heaps still standing metres high around the royal city.",
+      "status": "shadow",
+      "tags": ["iron", "smelting", "metallurgy", "industrial", "slag"],
+      "source_note": "Long read through a colonial frame as derivative of Egypt or Assyria; the metallurgical evidence does not require that reading."
+    },
+    {
+      "id": "inuit_kayak",
+      "name": "Kayak (qajaq)",
+      "domain": "material",
+      "region": "Arctic North America and Greenland",
+      "era": {"start": -1000, "end": 2025},
+      "description": "Skin-on-frame hull built to its individual paddler's body dimensions, with a recovery roll making capsize survivable in lethal water.",
+      "status": "shadow",
+      "tags": ["boat", "bespoke", "arctic", "skin", "self_rescue", "hunting"],
+      "source_note": "Bespoke fit as a design principle — the anthropometric standard is one person, not a population mean."
+    },
+    {
+      "id": "hema",
+      "name": "Hima Rangeland Reserves",
+      "domain": "ethical",
+      "region": "Arabian Peninsula and the Levant",
+      "era": {"start": 600, "end": 2025},
+      "description": "Grazing reserves closed or rotated under customary and religious authority, with community enforcement of the closure.",
+      "status": "shadow",
+      "tags": ["commons", "grazing", "reserve", "customary", "sacred", "limits"],
+      "source_note": "One of the longest continuously documented commons regimes; heavily eroded during 20th-century land nationalisations, with partial revival since."
+    },
+    {
+      "id": "gacaca",
+      "name": "Gacaca Community Courts",
+      "domain": "ethical",
+      "region": "Rwanda",
+      "era": {"start": 2001, "end": 2012},
+      "description": "Customary dispute-resolution form scaled up by statute to process roughly 1.9 million genocide cases before elected lay judges.",
+      "status": "shadow",
+      "tags": ["justice", "restorative", "community", "scale", "reintegration", "conflict"],
+      "source_note": "Included precisely because its record is contested — throughput and participation were extraordinary, and documented failures of due process and witness protection are serious. A codex that only encodes successes is a brochure."
+    },
+    {
+      "id": "age_set_systems",
+      "name": "Age-Set Systems",
+      "domain": "social",
+      "region": "Eastern Africa",
+      "era": {"start": -500, "end": 2025},
+      "description": "Cohorts initiated together and moving through graded roles for life, creating bonds that deliberately cut across lineage and locality.",
+      "status": "shadow",
+      "tags": ["cohort", "initiation", "cross_cutting", "solidarity", "communal", "lifecycle"],
+      "source_note": "Structurally a redundancy mechanism: loyalties that cross descent lines make lineage feud harder to sustain."
+    },
+    {
+      "id": "sande_poro",
+      "name": "Sande and Poro Societies",
+      "domain": "social",
+      "region": "Upper Guinea coast, West Africa",
+      "era": {"start": 1500, "end": 2025},
+      "description": "Parallel women's and men's initiation societies holding regulatory authority over knowledge, conduct, and dispute across ethnic boundaries.",
+      "status": "shadow",
+      "tags": ["initiation", "parallel", "authority", "women", "knowledge", "regulation"],
+      "source_note": "Authority spanning several language groups; among the few widely documented cases of parallel gendered institutions with genuinely separate jurisdictions."
     }
   ]
 }

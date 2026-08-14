@@ -140,9 +140,14 @@
     },
     "unlocks": {
       "type": "array",
+      "description": "Downstream families or keystones this entry enabled. Each target must resolve to another entry id or to a term in rules/lineage_terms.json.",
       "items": {
         "type": "string"
       }
+    },
+    "longevity_basis": {
+      "type": "string",
+      "description": "Required whenever metrics.longevity_years cannot be derived from era.end - era.start within 25%. States what the number actually measures — attested continuous operation, persistence after abandonment, or a conservative floor under a contested start date. Added after run-001-baseline falsified H003."
     },
     "notes": {
       "type": "string"

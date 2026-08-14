@@ -1,0 +1,17 @@
+{
+  "id": "H002",
+  "statement": "The `unlocks` field states a lineage claim that can be checked: every target names something the repository defines.",
+  "rationale": "build_graph.py draws an edge for every unlock target. If the targets are free text, the graph has invented nodes and the 'unlocks_lineage' scoring criterion is counting strings rather than lineages.",
+  "prediction": "Every unlock target resolves either to another encoded keystone id or to a term declared in rules/lineage_terms.json.",
+  "test": {
+    "kind": "unlock_resolution",
+    "params": {}
+  },
+  "status": "supported",
+  "revisions": [],
+  "last_result": {
+    "run": "run-003-full-pipeline",
+    "passed": true,
+    "summary": "all 27 unlock targets resolve"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "H001",
+  "statement": "A keystone has exactly one identity: the id in data/shadow_catalogue.json and the id of its encoded entry are the same string.",
+  "rationale": "The catalogue is the index and the entries are the records. If they disagree about what a thing is called, every join across them is unreliable and 'confirmed' status means nothing.",
+  "prediction": "Every catalogue row with status 'confirmed' resolves to an encoded entry with the same id, and every encoded entry appears in the catalogue.",
+  "test": {
+    "kind": "id_consistency",
+    "params": {}
+  },
+  "status": "supported",
+  "revisions": [],
+  "last_result": {
+    "run": "run-003-full-pipeline",
+    "passed": true,
+    "summary": "all 9 confirmed catalogue ids resolve to encoded entries"
+  }
+}

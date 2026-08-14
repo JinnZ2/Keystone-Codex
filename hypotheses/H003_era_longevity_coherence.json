@@ -1,0 +1,20 @@
+{
+  "id": "H003",
+  "statement": "metrics.longevity_years is derivable from the entry's own era, within a quarter.",
+  "rationale": "Longevity carries the heaviest weight in the rubric. If the number is entered by hand with no stated relationship to the era, the highest-weighted criterion in the codex is unauditable.",
+  "prediction": "For every entry, |longevity_years - (era.end - era.start)| / span <= 0.25, unless the entry declares a longevity_basis explaining what narrower thing it measures.",
+  "test": {
+    "kind": "era_longevity_coherence",
+    "params": {
+      "tolerance": 0.25,
+      "exempt_field": "longevity_basis"
+    }
+  },
+  "status": "supported",
+  "revisions": [],
+  "last_result": {
+    "run": "run-003-full-pipeline",
+    "passed": true,
+    "summary": "all 9 entries coherent within 25% (3 by declared basis)"
+  }
+}

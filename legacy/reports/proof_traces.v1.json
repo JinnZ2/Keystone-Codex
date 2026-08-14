@@ -1,0 +1,290 @@
+[
+  {
+    "id": "budj_bim",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=6600",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "great_law_of_peace",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "hxaro",
+    "is_keystone": false,
+    "score": 0.4,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=125",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "indus_plumbing",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=600",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "kula_ring",
+    "is_keystone": true,
+    "score": 0.75,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "lathe",
+    "is_keystone": true,
+    "score": 0.65,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=200",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.5",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "nunuku_covenant",
+    "is_keystone": true,
+    "score": 0.75,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=335",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.7",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "quipu",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=300",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "terra_preta",
+    "is_keystone": true,
+    "score": 1.0,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.15
+      }
+    ]
+  }
+]
