@@ -1,0 +1,61 @@
+{
+  "id": "cooperative_banking",
+  "name": "Cooperative Banking (Credit Unions & Mutual Societies)",
+  "domain": "economic",
+  "region": "Global (Germany, Ireland, India, Canada, Kenya, Japan)",
+  "era": {"start": 1849, "end": 2025},
+  "summary": "Member-owned financial institutions that pool savings and issue loans without shareholder profit extraction, formalising mutual-aid principles from ROSCAs and cowrie networks into regulated banking.",
+  "metrics": {
+    "longevity_years": 176,
+    "replication_regions": 6,
+    "decentralization_score": 0.85,
+    "ethical_alignment": 0.8
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Raiffeisen's rural credit cooperatives (1864) and Schulze-Delitzsch's urban ones (1849) independently solved credit access for populations excluded by commercial banks",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "Credit unions now serve over 400 million members in 118 countries, demonstrating replication at scale without loss of cooperative structure",
+      "evidence_refs": ["e2", "e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Cooperative banks proved more resilient than commercial banks during the 2008 financial crisis, with lower failure rates and continued lending",
+      "evidence_refs": ["e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "primary_text",
+      "source": "Raiffeisen (1866) Die Darlehnskassen-Vereine (The Credit Union Associations), Neuwied",
+      "quality": 0.75
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Birchall (2013) Resilience in a Downturn: The Power of Financial Cooperatives, ILO",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "field_measurement",
+      "source": "World Council of Credit Unions (2023) Statistical Report — 118 countries, 400M+ members",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Groeneveld & de Vries (2009) European Co-operative Banks: First Lessons from the Subprime Crisis, International Journal of Cooperative Management 4(2)",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "community_insurance"
+  ],
+  "notes": "Resolves 4 inbound links (rotating_credit, microfinance, cowrie_currency, silk_road). Fails longevity threshold (176yr vs 300) but strong on replication and decentralisation. Interesting proof case: the scoring system correctly identifies this as 'not yet a keystone' despite massive global adoption."
+}

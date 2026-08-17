@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+
+# Generated pipeline outputs
+proof_traces.json
+proof_report.md
+graph.json
+graph.dot
+timeline.md
+fieldlink_export.json

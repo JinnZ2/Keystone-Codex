@@ -1,0 +1,71 @@
+{
+  "id": "songlines",
+  "name": "Aboriginal Songlines (Dreaming Tracks)",
+  "domain": "information",
+  "region": "Australia (continent-wide)",
+  "era": {"start": -50000, "end": 2025},
+  "summary": "Oral-spatial encoding system that maps geography, law, ecology, and kinship into sung narratives traversing thousands of kilometres, functioning as a distributed database without writing.",
+  "metrics": {
+    "longevity_years": 52000,
+    "replication_regions": 3,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Songlines encode navigational, ecological, and legal information across continental distances with high fidelity over millennia",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "The system functions as a distributed database: no single person holds all knowledge, but the network preserves the whole",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Songline knowledge has been verified against archaeological and geological records, confirming accuracy of encoded environmental data spanning thousands of years",
+      "evidence_refs": ["e4", "e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "primary_text",
+      "source": "Chatwin (1987) The Songlines, Jonathan Cape",
+      "quality": 0.6
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Norris & Hamacher (2009) The Astronomy of Aboriginal Australia, IAU Symposium 260",
+      "uri": "doi:10.1017/S1743921311002377",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Kelly (2016) The Memory Code: The Secrets of Stonehenge, Easter Island and Other Ancient Monuments, Atlantic Books",
+      "quality": 0.75
+    },
+    {
+      "id": "e4",
+      "type": "oral_tradition_encoded",
+      "source": "Nunn & Reid (2016) Aboriginal Memories of Inundation of the Australian Coast Dating from More than 7000 Years Ago, Australian Geographer 47(1)",
+      "uri": "doi:10.1080/00049182.2015.1077539",
+      "quality": 0.85
+    },
+    {
+      "id": "e5",
+      "type": "archaeological_record",
+      "source": "Hamacher & Norris (2011) Bridging the Gap through Australian Aboriginal Meteorite Traditions, Archaeoastronomy 24",
+      "quality": 0.7
+    }
+  ],
+  "unlocks": [
+    "low_bandwidth_data",
+    "resilient_accounting",
+    "tactile_coding"
+  ],
+  "notes": "Possibly the oldest continuously operating information technology on Earth. Cross-links with quipu: both are non-written, decentralised data systems; both unlock the same three candidates. The two together demonstrate that 'information technology' is far older than writing."
+}

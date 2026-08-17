@@ -1,0 +1,68 @@
+{
+  "id": "communitarian_governance",
+  "name": "Communitarian Governance Systems",
+  "domain": "governance",
+  "region": "Global (Sub-Saharan Africa, Southeast Asia, Polynesia, Indigenous Americas)",
+  "era": {"start": -2000, "end": 2025},
+  "summary": "Governance frameworks grounded in collective welfare and relational personhood, where authority derives from community consensus and leaders serve as stewards rather than rulers.",
+  "metrics": {
+    "longevity_years": 4000,
+    "replication_regions": 5,
+    "decentralization_score": 0.9,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Ubuntu-based governance in southern Africa, gotong royong in Indonesia, and village council systems across Polynesia represent independent convergent evolution toward communitarian models",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Communitarian governance systems show greater resilience to external shocks than centralised hierarchies, maintaining social cohesion through colonial and post-colonial disruption",
+      "evidence_refs": ["e3", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Modern communitarian political theory draws directly on these Indigenous precedents, not solely on Western philosophical traditions",
+      "evidence_refs": ["e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Gyekye (1997) Tradition and Modernity: Philosophical Reflections on the African Experience, Oxford UP",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Bowen (1986) On the Political Construction of Tradition: Gotong Royong in Indonesia, Journal of Asian Studies 45(3)",
+      "uri": "doi:10.2307/2056525",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Mamdani (1996) Citizen and Subject: Contemporary Africa and the Legacy of Late Colonialism, Princeton UP",
+      "quality": 0.9
+    },
+    {
+      "id": "e4",
+      "type": "oral_tradition_encoded",
+      "source": "Samoan matai (chief) system oral governance traditions documented by Mead (1928, 1969)",
+      "quality": 0.65
+    },
+    {
+      "id": "e5",
+      "type": "peer_reviewed_study",
+      "source": "Bell (2016) Communitarianism, in Zalta (ed.) Stanford Encyclopedia of Philosophy",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "federalism_templates"
+  ],
+  "notes": "Resolves 3 inbound links (ubuntu_philosophy, restorative_justice, consensus_protocols). Connects the ethical and governance layers — Ubuntu's relational ethics feed into communitarian governance, which in turn feeds federalism templates. This is the Motherboard receiving signals from the BIOS."
+}

@@ -1,0 +1,62 @@
+{
+  "id": "silk_road",
+  "name": "Silk Road Trade Networks",
+  "domain": "economic",
+  "region": "Eurasia (China, Central Asia, Persia, Mediterranean, India)",
+  "era": {"start": -200, "end": 1450},
+  "summary": "Overland and maritime trade network spanning Eurasia that exchanged goods, technologies, religions, and diseases across civilisational boundaries for 1600 years.",
+  "metrics": {
+    "longevity_years": 1650,
+    "replication_regions": 5,
+    "decentralization_score": 0.8,
+    "ethical_alignment": 0.5
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The Silk Road transmitted not just goods but technologies (papermaking, gunpowder, printing) and numeral systems between civilisations",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "No single empire controlled the full route — trade persisted through the fall of Rome, Han, Kushan, Sassanid, and Mongol dynasties",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Caravanserai infrastructure created a decentralised logistics network with standardised rest stops every 30-40 km",
+      "evidence_refs": ["e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Liu (2010) The Silk Road in World History, Oxford UP",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Hansen (2012) The Silk Road: A New History, Oxford UP",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "archaeological_record",
+      "source": "Whitfield (2018) Silk, Slaves, and Stupas: Material Culture of the Silk Road, University of California Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "engineering_record",
+      "source": "Hillenbrand (1994) Islamic Architecture: Form, Function, and Meaning — chapter on caravanserai networks",
+      "quality": 0.75
+    }
+  ],
+  "unlocks": [
+    "cooperative_banking",
+    "community_insurance"
+  ],
+  "notes": "The ultimate I/O bus of the pre-modern world. Technology transfer along this network directly enabled arabic_numerals reaching Europe and papermaking reaching the Islamic world. Cross-links with multiple domains."
+}

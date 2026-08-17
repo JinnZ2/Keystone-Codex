@@ -1,0 +1,56 @@
+{
+  "id": "ubuntu_philosophy",
+  "name": "Ubuntu (Relational Ethics)",
+  "domain": "ethical",
+  "region": "Sub-Saharan Africa",
+  "era": {
+    "start": -500,
+    "end": 2025
+  },
+  "summary": "Ethical framework rooted in communal personhood — 'I am because we are' — encoding mutual obligation, restorative justice, and collective dignity.",
+  "metrics": {
+    "longevity_years": 2500,
+    "replication_regions": 3,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.95
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Ubuntu ethics provided the philosophical basis for South Africa's Truth and Reconciliation Commission",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "Relational personhood concepts appear independently across Bantu-speaking societies and beyond",
+      "evidence_refs": ["e2", "e3"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "primary_text",
+      "source": "Tutu (1999) No Future Without Forgiveness",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Metz (2007) Toward an African Moral Theory, Journal of Political Philosophy",
+      "uri": "doi:10.1111/j.1467-9760.2007.00280.x",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "oral_tradition_encoded",
+      "source": "Proverbs and oral traditions across Zulu, Xhosa, Shona, and Sotho cultures",
+      "quality": 0.65
+    }
+  ],
+  "unlocks": [
+    "restorative_justice",
+    "communitarian_governance",
+    "relational_ai_ethics"
+  ],
+  "notes": "Not merely a philosophy but an active social technology — shapes conflict resolution, resource sharing, and identity formation."
+}

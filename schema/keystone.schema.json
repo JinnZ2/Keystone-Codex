@@ -122,7 +122,18 @@
             "type": "string"
           },
           "type": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "archaeological_record",
+              "peer_reviewed_study",
+              "primary_text",
+              "engineering_record",
+              "replication_record",
+              "radiocarbon_date",
+              "standards_spec",
+              "field_measurement",
+              "oral_tradition_encoded"
+            ]
           },
           "source": {
             "type": "string"

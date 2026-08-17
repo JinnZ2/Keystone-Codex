@@ -1,0 +1,65 @@
+{
+  "id": "regenerative_agriculture",
+  "name": "Regenerative Agriculture",
+  "domain": "ecological",
+  "region": "Global (Amazon Basin, West Africa, Southeast Asia, North America, Australia)",
+  "era": {"start": -3000, "end": 2025},
+  "summary": "Farming systems that actively restore soil health, biodiversity, and water cycles rather than depleting them, drawing on Indigenous land management and modern agroecology.",
+  "metrics": {
+    "longevity_years": 5000,
+    "replication_regions": 6,
+    "decentralization_score": 0.9,
+    "ethical_alignment": 0.95
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Terra preta soils demonstrate that pre-Columbian farmers engineered self-renewing fertility lasting millennia",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "West African agroforestry systems maintain soil carbon and crop yields without synthetic inputs across centuries",
+      "evidence_refs": ["e2"]
+    },
+    {
+      "id": "c3",
+      "statement": "Modern regenerative practices (cover cropping, no-till, rotational grazing) measurably increase soil organic matter within 5-10 years",
+      "evidence_refs": ["e3", "e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Glaser, Haumaier, Guggenberger & Zech (2001) The Terra Preta phenomenon, Naturwissenschaften 88",
+      "uri": "doi:10.1007/s001140100202",
+      "quality": 0.9
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Fairhead & Leach (1996) Misreading the African Landscape: Society and Ecology in a Forest-Savanna Mosaic, Cambridge UP",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "field_measurement",
+      "source": "LaCanne & Lundgren (2018) Regenerative agriculture: merging farming and natural resource conservation profitably, PeerJ 6:e4428",
+      "uri": "doi:10.7717/peerj.4428",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Lal (2004) Soil carbon sequestration impacts on global climate change and food security, Science 304(5677)",
+      "uri": "doi:10.1126/science.1097396",
+      "quality": 0.9
+    }
+  ],
+  "unlocks": [
+    "carbon_sequestration",
+    "circular_waste_systems"
+  ],
+  "notes": "First resolved cross-link in the graph: terra_preta → regenerative_agriculture → carbon_sequestration. Demonstrates multi-generational lineage tracking."
+}

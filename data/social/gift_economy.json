@@ -1,0 +1,55 @@
+{
+  "id": "gift_economy",
+  "name": "Potlatch & Gift Economy Systems",
+  "domain": "social",
+  "region": "Pacific Northwest, Melanesia, Global",
+  "era": {
+    "start": -3000,
+    "end": 2025
+  },
+  "summary": "Reciprocal gift-giving ceremonies that redistribute wealth, establish social bonds, and maintain balance between communities.",
+  "metrics": {
+    "longevity_years": 5000,
+    "replication_regions": 4,
+    "decentralization_score": 0.9,
+    "ethical_alignment": 0.85
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Gift economies prevent wealth concentration and maintain social cohesion across extended kinship networks",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Potlatch-type ceremonies have independently arisen in multiple cultures as a wealth redistribution mechanism",
+      "evidence_refs": ["e3"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Mauss (1925) The Gift: Forms and Functions of Exchange in Archaic Societies",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "primary_text",
+      "source": "Boas (1966) Kwakiutl Ethnography — potlatch ceremony descriptions",
+      "quality": 0.75
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Sahlins (1972) Stone Age Economics — comparative gift economy analysis",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "reciprocity_norms",
+    "social_safety_nets",
+    "wealth_redistribution"
+  ],
+  "notes": "Banned by Canadian government 1885-1951; survival despite criminalization demonstrates resilience. Modern parallels in open-source software."
+}

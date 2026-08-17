@@ -1,0 +1,68 @@
+{
+  "id": "tactile_coding",
+  "name": "Tactile Coding Systems",
+  "domain": "information",
+  "region": "Global (Andes, West Africa, France, Polynesia, Mesopotamia)",
+  "era": {"start": -3000, "end": 2025},
+  "summary": "Non-visual encoding systems using knots, beads, notches, and raised characters to store and transmit information without dependence on sight or literacy.",
+  "metrics": {
+    "longevity_years": 5000,
+    "replication_regions": 5,
+    "decentralization_score": 0.85,
+    "ethical_alignment": 0.8
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Quipu knot systems, West African bead encoding, and Mesopotamian clay tokens represent independent inventions of tactile data storage",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Braille (1824) succeeded where previous tactile scripts failed because it used a combinatorial cell structure rather than raised Roman letters",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Tactile systems are inherently resilient: they function in darkness, require no electricity, and are accessible to visually impaired users",
+      "evidence_refs": ["e4", "e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Schmandt-Besserat (1992) Before Writing: From Counting to Cuneiform, University of Texas Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Urton (2003) Signs of the Inka Khipu, University of Texas Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "primary_text",
+      "source": "Braille (1829) Procédé pour Écrire les Paroles, la Musique et le Plain-Chant au Moyen de Points",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Jiménez, Olea, Torres & Alonso (2009) Biography of Louis Braille and Invention of the Braille Alphabet, Survey of Ophthalmology 54(1)",
+      "uri": "doi:10.1016/j.survophthal.2008.10.006",
+      "quality": 0.8
+    },
+    {
+      "id": "e5",
+      "type": "field_measurement",
+      "source": "WHO (2023) World Report on Vision — Braille literacy and accessibility metrics",
+      "quality": 0.75
+    }
+  ],
+  "unlocks": [
+    "low_bandwidth_data"
+  ],
+  "notes": "Promoted from candidate. Resolves a key cross-link: quipu → tactile_coding → low_bandwidth_data. Demonstrates that accessibility and resilience are design properties, not afterthoughts."
+}

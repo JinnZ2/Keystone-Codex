@@ -1,0 +1,69 @@
+{
+  "id": "writing_systems",
+  "name": "Writing Systems (Script Technologies)",
+  "domain": "information",
+  "region": "Global (Mesopotamia, Egypt, China, Mesoamerica, Indus Valley, Crete)",
+  "era": {"start": -3400, "end": 2025},
+  "summary": "Symbolic notation systems — cuneiform, hieroglyphs, Chinese characters, alphabets — that abstract knowledge from place and person, enabling storage, transmission, and accumulation of information beyond human memory.",
+  "metrics": {
+    "longevity_years": 5425,
+    "replication_regions": 6,
+    "decentralization_score": 0.6,
+    "ethical_alignment": 0.5
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Writing emerged independently at least four times (Mesopotamia, Egypt, China, Mesoamerica), each time enabling knowledge accumulation beyond the limits of oral memory and spatial encoding",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Alphabetic scripts dramatically lowered the symbol count required for literacy (from thousands to under 30), democratizing access to written knowledge across social classes",
+      "evidence_refs": ["e3", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Writing enabled legal codes, contracts, and administrative records that could be verified, copied, and transmitted — creating the infrastructure for governance at scale",
+      "evidence_refs": ["e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Schmandt-Besserat (1996) How Writing Came About, University of Texas Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Houston (2004) The First Writing: Script Invention as History and Process, Cambridge University Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Goldwasser (2006) Canaanites Reading Hieroglyphs, Egypt and the Levant 16",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "primary_text",
+      "source": "Sass (2005) The Alphabet at the Turn of the Millennium, Tel Aviv University",
+      "quality": 0.75
+    },
+    {
+      "id": "e5",
+      "type": "primary_text",
+      "source": "Roth (1997) Law Collections from Mesopotamia and Asia Minor, Scholars Press (Code of Hammurabi translation)",
+      "quality": 0.85
+    }
+  ],
+  "unlocks": [
+    "papermaking",
+    "library_systems",
+    "resilient_accounting"
+  ],
+  "notes": "The great abstraction layer. Living knowledge systems store data in organisms; monumental encoding stores it in stone; writing stores it in symbols that can be copied onto anything. This is the moment knowledge becomes fully portable. Note the ethical_alignment is moderate (0.5): writing also enabled centralized control, taxation, debt records, and class stratification — it is a dual-use technology. The codex already documents what came before writing (songlines, quipu, tactile coding); this entry fills the conspicuous gap of writing itself."
+}
