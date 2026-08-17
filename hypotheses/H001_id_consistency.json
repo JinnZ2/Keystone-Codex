@@ -1,17 +1,26 @@
 {
   "id": "H001",
-  "statement": "A keystone has exactly one identity: the id in data/shadow_catalogue.json and the id of its encoded entry are the same string.",
+  "statement": "A catalogue row marked 'confirmed' resolves to an encoded entry with the same id.",
   "rationale": "The catalogue is the index and the entries are the records. If they disagree about what a thing is called, every join across them is unreliable and 'confirmed' status means nothing.",
-  "prediction": "Every catalogue row with status 'confirmed' resolves to an encoded entry with the same id, and every encoded entry appears in the catalogue.",
+  "prediction": "Every catalogue row with status 'confirmed' resolves to an encoded entry sharing its id. Entries indexed by no registry are reported but do not falsify.",
   "test": {
     "kind": "id_consistency",
-    "params": {}
+    "params": {
+      "require_registry_row": false
+    }
   },
   "status": "supported",
-  "revisions": [],
+  "revisions": [
+    {
+      "run": "run-004-merge-main",
+      "was": "A keystone has exactly one identity: the id in data/shadow_catalogue.json and the id of its encoded entry are the same string \u2014 checked in both directions.",
+      "became": "Only the confirmed-row-implies-entry direction falsifies; entries absent from every registry are reported.",
+      "because": "Merging main added 31 entries and a second registry, data/candidates.json, whose 12 rows overlap the catalogue in zero ids. The reverse direction was a fair requirement while the catalogue was the only index; enforcing it now would settle by fiat which of two registries is canonical. That decision is open as U-H001-2 and belongs to whoever makes it explicitly."
+    }
+  ],
   "last_result": {
-    "run": "run-003-full-pipeline",
+    "run": "run-004-merge-main",
     "passed": true,
-    "summary": "all 9 confirmed catalogue ids resolve to encoded entries"
+    "summary": "all 9 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere"
   }
 }

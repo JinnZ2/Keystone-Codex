@@ -34,6 +34,14 @@ That regenerates `proof_report.v1.md` against whatever the corpus currently hold
 `reports/proof_report.v1.md` here is a snapshot of that command, kept so the
 difference between the two rubrics is legible without running anything.
 
+It also still earns its keep as a **control**. `tests/test_falsify.py` scores the
+current corpus under v1.0 and asserts that it *fails* the discrimination test —
+80% of entries at the maximum score, against v1.1's 32%. Without a runnable copy
+of the retired rubric there is nothing to measure the replacement against, and
+"v1.1 is an improvement" stays an assertion instead of a result. That is the
+concrete answer to "why not just delete it": the old rule set is the only
+calibration weight the project has.
+
 ### `references.md`
 
 The original Keystone Reference Atlas — a hand-maintained prose index of roughly

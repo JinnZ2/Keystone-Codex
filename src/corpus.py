@@ -86,3 +86,21 @@ def load_lineage_terms():
 
 def load_schema(name):
     return _read(os.path.join(ROOT, "schema", name))
+
+
+def evidence_types():
+    """
+    The declared evidence taxonomy, from the schema. Single source of truth —
+    src/validate.py and hypothesis H008 both read it from here rather than
+    keeping their own copies.
+    """
+    schema = load_schema("keystone.schema.json")
+    return schema["properties"]["evidence"]["items"]["properties"]["type"]["enum"]
+
+
+def load_candidates():
+    """Rows from the candidates registry. Absent file means none, not an error."""
+    path = os.path.join(DATA_DIR, "candidates.json")
+    if not os.path.exists(path):
+        return []
+    return _read(path).get("candidates", [])

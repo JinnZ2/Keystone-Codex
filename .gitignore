@@ -1,3 +1,24 @@
+# Python
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# Generated pipeline outputs — regenerable from data/ at any time
+proof_traces.json
+proof_report.md
+graph.json
+graph.dot
+timeline.md
+fieldlink_export.json
+falsification_report.md
+
+# NOT ignored, deliberately:
+#   ledger/runs.jsonl      append-only history; cannot be regenerated from data/
+#   ledger/LEDGER.md       renders that history
+#   unknowns/register.json carries hand-written resolutions
+#   UNKNOWNS.md            renders the register
+#   legacy/reports/*       snapshots under retired rule sets
+#
+# The line is whether a file can be rebuilt from the current corpus. A proof
+# report can — rerun the scorer. A ledger cannot: it records what was believed
+# before the corpus changed, which is the only reason it is worth keeping.

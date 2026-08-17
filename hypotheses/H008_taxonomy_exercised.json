@@ -1,29 +1,23 @@
 {
   "id": "H008",
   "statement": "The evidence taxonomy in CITATIONS.md describes how the codex actually works \u2014 every declared type is used, and no entry uses a type the taxonomy does not declare.",
-  "rationale": "CITATIONS.md lists oral_tradition_encoded as admissible evidence. If no entry ever uses it, the codex claims an openness to non-textual knowledge that its data does not practise, and the declared list is decoration.",
-  "prediction": "Each of the nine declared evidence types appears at least once in the encoded corpus, and every type used is declared.",
+  "rationale": "CITATIONS.md lists oral_tradition_encoded as admissible evidence. If no entry ever uses it, the codex claims an openness to non-textual knowledge that its data does not practise, and the declared list is decoration. The declared list is now read from the schema enum rather than restated in these params, so this test cannot pass by being given a conveniently short list of types.",
+  "prediction": "Every evidence type in the schema enum appears at least once in the encoded corpus, and every type used is declared there.",
   "test": {
     "kind": "taxonomy_exercised",
-    "params": {
-      "declared_types": [
-        "archaeological_record",
-        "ethnographic_record",
-        "peer_reviewed_study",
-        "primary_text",
-        "engineering_record",
-        "replication_record",
-        "radiocarbon_date",
-        "standards_spec",
-        "field_measurement",
-        "oral_tradition_encoded"
-      ]
-    }
+    "params": {}
   },
   "status": "supported",
-  "revisions": [],
+  "revisions": [
+    {
+      "run": "run-004-merge-main",
+      "was": "declared_types held a hardcoded list of nine types in this file",
+      "became": "declared_types is read from schema/keystone.schema.json",
+      "because": "Merging main revealed the taxonomy existed in three places \u2014 the schema enum, VALID_EVIDENCE_TYPES in validate.py, and these params \u2014 which had already drifted: ethnographic_record was in none of them and main's validator would have rejected four entries that use it. A test whose expected set is supplied by hand can be made to pass by editing the expectation."
+    }
+  ],
   "last_result": {
-    "run": "run-003-full-pipeline",
+    "run": "run-004-merge-main",
     "passed": true,
     "summary": "all 10 declared evidence types exercised"
   }

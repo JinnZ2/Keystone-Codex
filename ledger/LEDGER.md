@@ -48,3 +48,26 @@ Generated from `ledger/runs.jsonl` by `src/falsify.py`.
 | `H006` | supported | 7/9 pass, spread 0.380 — rubric discriminates |
 | `H007` | supported | phi-triads (7147) indistinguishable from chance (null mean 8079.1, p=0.970) — negative control holds |
 | `H008` | supported | all 10 declared evidence types exercised |
+
+## run-004-merge-main
+
+16 supported · 0 falsified
+
+| Hypothesis | Verdict | Summary |
+| --- | --- | --- |
+| `H001` | supported | all 9 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere |
+| `H001` | supported | all 9 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere |
+| `H002` | supported | all 85 unlock targets resolve, no id collisions |
+| `H002` | supported | all 85 unlock targets resolve, no id collisions |
+| `H003` | supported | all 40 entries coherent within 25% (3 by declared basis) |
+| `H003` | supported | all 40 entries coherent within 25% (3 by declared basis) |
+| `H004` | supported | every claim backed by ≥1 resolving ref; mean quality 0.804 |
+| `H004` | supported | every claim backed by ≥1 resolving ref; mean quality 0.804 |
+| `H005` | supported | all 8 domains have ≥1 encoded entries |
+| `H005` | supported | all 8 domains have ≥1 encoded entries |
+| `H006` | supported | 37/40 pass, 32% at ceiling, spread 0.380 — rubric discriminates |
+| `H006` | supported | 37/40 pass, 32% at ceiling, spread 0.380 — rubric discriminates |
+| `H007` | supported | phi-triads (7147) indistinguishable from chance (null mean 8079.1, p=0.970) — negative control holds |
+| `H007` | supported | phi-triads (7147) indistinguishable from chance (null mean 8079.1, p=0.970) — negative control holds |
+| `H008` | supported | all 10 declared evidence types exercised |
+| `H008` | supported | all 10 declared evidence types exercised |

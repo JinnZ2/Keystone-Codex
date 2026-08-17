@@ -10,8 +10,8 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-003-full-pipeline",
+    "run": "run-004-merge-main",
     "passed": true,
-    "summary": "all 27 unlock targets resolve"
+    "summary": "all 85 unlock targets resolve, no id collisions"
   }
 }

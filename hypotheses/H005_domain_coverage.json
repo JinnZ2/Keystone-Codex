@@ -12,7 +12,7 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-003-full-pipeline",
+    "run": "run-004-merge-main",
     "passed": true,
     "summary": "all 8 domains have \u22651 encoded entries"
   }

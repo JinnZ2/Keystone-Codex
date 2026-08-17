@@ -1,0 +1,68 @@
+{
+  "id": "papermaking",
+  "name": "Papermaking",
+  "domain": "information",
+  "region": "China → Islamic world → Europe → Global",
+  "era": {"start": -200, "end": 2025},
+  "summary": "Plant-fibre sheet technology that made written knowledge cheap, lightweight, and mass-reproducible — the physical medium that turned writing from an elite administrative tool into a universal knowledge carrier.",
+  "metrics": {
+    "longevity_years": 2225,
+    "replication_regions": 5,
+    "decentralization_score": 0.7,
+    "ethical_alignment": 0.7
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Paper reduced the cost and weight of written records by orders of magnitude compared to clay, stone, bamboo, or parchment, enabling portable knowledge at scale",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Papermaking spread via the Silk Road from China through the Islamic world to Europe, each region independently improving the process with local materials",
+      "evidence_refs": ["e3", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Paper enabled movable-type printing, mass literacy, and the scientific revolution by providing a cheap substrate for knowledge reproduction",
+      "evidence_refs": ["e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Tsien (1985) Paper and Printing, in Needham, Science and Civilisation in China Vol. 5 Part 1, Cambridge University Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "primary_text",
+      "source": "Fan Ye (445 CE) Book of the Later Han, biography of Cai Lun (earliest account of standardised papermaking, 105 CE)",
+      "quality": 0.7
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Bloom (2001) Paper Before Print: The History and Impact of Paper in the Islamic World, Yale University Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Hunter (1978) Papermaking: The History and Technique of an Ancient Craft, Dover Publications (reprint)",
+      "quality": 0.8
+    },
+    {
+      "id": "e5",
+      "type": "peer_reviewed_study",
+      "source": "Eisenstein (1979) The Printing Press as an Agent of Change, Cambridge University Press",
+      "quality": 0.85
+    }
+  ],
+  "unlocks": [
+    "library_systems",
+    "resilient_accounting"
+  ],
+  "notes": "Paper is to writing what writing is to monumental encoding: a radical reduction in the cost of copying. Clay tablets can't be mailed. Bamboo scrolls break armies to carry. Paper made knowledge weightless enough to travel trade routes. The Silk Road entry already mentions paper's transmission — this entry documents the medium itself. Made from plant fibres: knowledge storage returns to plant material, completing a circle with living knowledge systems."
+}

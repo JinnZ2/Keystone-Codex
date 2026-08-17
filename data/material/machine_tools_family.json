@@ -1,0 +1,62 @@
+{
+  "id": "machine_tools_family",
+  "name": "Machine Tools Family (Mills, Drills, Presses, Grinders)",
+  "domain": "material",
+  "region": "Global (China, Islamic world, Europe, North America, Japan)",
+  "era": {"start": -1200, "end": 2025},
+  "summary": "The lineage of rotary and reciprocating tools — mills, drills, boring machines, presses, and grinders — descended from lathe principles and metallurgical advances, enabling the production of interchangeable parts.",
+  "metrics": {
+    "longevity_years": 3200,
+    "replication_regions": 6,
+    "decentralization_score": 0.6,
+    "ethical_alignment": 0.5
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Bow drills appear in archaeological records from Egypt and Mesopotamia by 1200 BCE, and independently in Mesoamerica, establishing rotary tool principles before the formalisation of the lathe",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "Islamic-era engineers developed water-powered trip hammers, cam-driven mills, and crankshaft mechanisms that formed the mechanical vocabulary later adopted by European industrialisation",
+      "evidence_refs": ["e2"]
+    },
+    {
+      "id": "c3",
+      "statement": "Maudslay's screw-cutting lathe (1800) and Wilkinson's boring machine (1774) created the precision feedback loop: better machine tools produce better machine tools, enabling the Industrial Revolution's interchangeable-parts paradigm",
+      "evidence_refs": ["e3", "e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Stocks (2003) Experiments in Egyptian Archaeology: Stoneworking Technology in Ancient Egypt, Routledge",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Al-Hassan & Hill (1986) Islamic Technology: An Illustrated History, Cambridge UP / UNESCO",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "engineering_record",
+      "source": "Rolt (1965) Tools for the Job: A Short History of Machine Tools, Batsford; rev. ed. MIT Press 1986",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Rosenberg (1963) Technological Change in the Machine Tool Industry, 1840–1910, Journal of Economic History 23(4)",
+      "uri": "doi:10.1017/S0022050700109155",
+      "quality": 0.9
+    }
+  ],
+  "unlocks": [
+    "industrial_mass_production"
+  ],
+  "notes": "Resolves 3 inbound links (lathe, precision_engineering, damascus_steel). The self-reinforcing feedback loop — better tools make better tools — is the defining feature. Islamic-era contributions are critical and often under-documented in Western narratives."
+}

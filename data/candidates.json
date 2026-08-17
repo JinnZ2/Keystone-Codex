@@ -1,0 +1,77 @@
+{
+  "_description": "Candidate keystones referenced in 'unlocks' fields but not yet documented. Each entry here is a placeholder awaiting a full data file.",
+  "candidates": [
+    {
+      "id": "public_health_infrastructure",
+      "suggested_domain": "infrastructure",
+      "referenced_by": ["indus_plumbing", "roman_aqueducts"],
+      "notes": "Sanitation, water treatment, and disease prevention infrastructure."
+    },
+    {
+      "id": "modular_urbanism",
+      "suggested_domain": "infrastructure",
+      "referenced_by": ["indus_plumbing", "roman_aqueducts"],
+      "notes": "Standardized, repeatable urban design patterns."
+    },
+    {
+      "id": "household_utilities",
+      "suggested_domain": "infrastructure",
+      "referenced_by": ["indus_plumbing"],
+      "notes": "House-level access to water, sewage, and energy services."
+    },
+    {
+      "id": "veto_ethics",
+      "suggested_domain": "ethical",
+      "referenced_by": ["great_law_of_peace"],
+      "notes": "Ethical frameworks embedding the right to block harmful decisions."
+    },
+    {
+      "id": "resilient_accounting",
+      "suggested_domain": "information",
+      "referenced_by": ["quipu", "songlines", "arabic_numerals", "low_bandwidth_data"],
+      "notes": "Record-keeping systems that survive infrastructure collapse."
+    },
+    {
+      "id": "industrial_mass_production",
+      "suggested_domain": "economic",
+      "referenced_by": ["lathe", "precision_engineering", "machine_tools_family"],
+      "notes": "Factory-scale manufacturing enabled by interchangeable parts."
+    },
+    {
+      "id": "community_insurance",
+      "suggested_domain": "economic",
+      "referenced_by": ["rotating_credit", "microfinance", "cowrie_currency", "silk_road", "cooperative_banking"],
+      "notes": "Mutual aid and risk-pooling systems without corporate intermediaries."
+    },
+    {
+      "id": "social_safety_nets",
+      "suggested_domain": "social",
+      "referenced_by": ["gift_economy", "reciprocity_norms", "apprenticeship_systems", "conflict_mediation"],
+      "notes": "Community-based systems ensuring no member falls below a survival threshold."
+    },
+    {
+      "id": "wealth_redistribution",
+      "suggested_domain": "economic",
+      "referenced_by": ["gift_economy", "cowrie_currency"],
+      "notes": "Mechanisms that prevent extreme accumulation and spread resources."
+    },
+    {
+      "id": "relational_ai_ethics",
+      "suggested_domain": "ethical",
+      "referenced_by": ["ubuntu_philosophy"],
+      "notes": "AI ethics frameworks based on relational rather than individualist principles."
+    },
+    {
+      "id": "climate_resilient_agriculture",
+      "suggested_domain": "ecological",
+      "referenced_by": ["carbon_sequestration", "circular_waste_systems"],
+      "notes": "Farming systems designed to withstand climate volatility using traditional and modern techniques."
+    },
+    {
+      "id": "distributed_governance_protocols",
+      "suggested_domain": "governance",
+      "referenced_by": ["federalism_templates"],
+      "notes": "Digital and analog protocols for distributed decision-making (DAOs, liquid democracy, etc.)."
+    }
+  ]
+}

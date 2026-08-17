@@ -1,0 +1,62 @@
+{
+  "id": "precision_engineering",
+  "name": "Precision Engineering",
+  "domain": "material",
+  "region": "Global (Britain, Germany, Japan, United States)",
+  "era": {"start": 1770, "end": 2025},
+  "summary": "The discipline of machining and measuring to tight tolerances, enabling interchangeable parts and modern manufacturing, descended directly from lathe technology.",
+  "metrics": {
+    "longevity_years": 255,
+    "replication_regions": 4,
+    "decentralization_score": 0.4,
+    "ethical_alignment": 0.5
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Wilkinson's precision boring machine (1774) enabled Watt's steam engine by achieving cylinder tolerances previously impossible",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "Maudslay's screw-cutting lathe established the foundation for standardized measurement and interchangeable parts",
+      "evidence_refs": ["e2", "e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Japanese precision manufacturing achieved sub-micron tolerances by the 1970s, representing independent refinement of Western origins",
+      "evidence_refs": ["e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "engineering_record",
+      "source": "Rolt (1965) Tools for the Job: A History of Machine Tools to 1950, Batsford",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "engineering_record",
+      "source": "Maudslay's original screw-cutting lathe, Science Museum London, inventory 1900-56",
+      "quality": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Musson & Robinson (1969) Science and Technology in the Industrial Revolution, Manchester UP",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "standards_spec",
+      "source": "JIS B 0401 (Japanese Industrial Standards for tolerances and fits)",
+      "quality": 0.85
+    }
+  ],
+  "unlocks": [
+    "industrial_mass_production",
+    "machine_tools_family"
+  ],
+  "notes": "Borderline keystone: longevity below 300-year threshold, low decentralization (capital-intensive). Strong replication and lineage. Demonstrates how a technology can score differently depending on criteria weighting — a useful test case for the proof system."
+}

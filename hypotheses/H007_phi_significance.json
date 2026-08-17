@@ -23,7 +23,7 @@
     }
   ],
   "last_result": {
-    "run": "run-003-full-pipeline",
+    "run": "run-004-merge-main",
     "passed": true,
     "summary": "phi-triads (7147) indistinguishable from chance (null mean 8079.1, p=0.970) \u2014 negative control holds"
   }

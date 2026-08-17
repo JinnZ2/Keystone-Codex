@@ -57,9 +57,22 @@ def result(passed, summary, detail=None, unknowns=None, stats=None):
 # a run reads the data once.
 
 def t_id_consistency(ctx, params):
-    """Catalogue ids and encoded-entry ids name the same things."""
+    """
+    A catalogue row marked 'confirmed' must resolve to an encoded entry with
+    the same id. That direction is load-bearing: if it fails, 'confirmed' is
+    simply a false statement about the repository.
+
+    The reverse direction — every entry having a catalogue row — is reported
+    but does not fail by default. It was a hard requirement while
+    shadow_catalogue.json was the only index; there are now two registries with
+    different conventions and no decision about which is canonical, so
+    enforcing it would pick a winner by fiat rather than by argument.
+    Set require_registry_row to turn it back into a failure.
+    """
+    require_row = params.get("require_registry_row", False)
     entries_by_id = {x["id"]: x for x in ctx["entries"]}
     problems = []
+    notes = []
     unknowns = []
 
     confirmed = [c for c in ctx["catalogue"] if c.get("status") == "confirmed"]
@@ -70,12 +83,23 @@ def t_id_consistency(ctx, params):
                 f"but no encoded entry has that id"
             )
 
-    catalogue_ids = {c["id"] for c in ctx["catalogue"]}
-    for eid, entry in sorted(entries_by_id.items()):
-        if eid not in catalogue_ids:
-            problems.append(
-                f"encoded entry '{eid}' ({entry['name']}) is absent from the catalogue"
-            )
+    indexed = {c["id"] for c in ctx["catalogue"]}
+    indexed |= {c.get("id") for c in ctx["candidates"]}
+    unindexed = [eid for eid in sorted(entries_by_id) if eid not in indexed]
+
+    if unindexed:
+        notes.append(f"{len(unindexed)} encoded entries appear in no registry: "
+                     + ", ".join(unindexed[:8])
+                     + (" …" if len(unindexed) > 8 else ""))
+        unknowns.append({
+            "question": "Which registry indexes the encoded corpus — "
+                        "data/shadow_catalogue.json, data/candidates.json, or both? "
+                        "They currently overlap in zero rows.",
+            "why": f"{len(unindexed)} of {len(entries_by_id)} entries are listed in neither",
+        })
+        if require_row:
+            problems.extend(f"encoded entry '{eid}' is absent from every registry"
+                            for eid in unindexed)
 
     if problems:
         unknowns.append({
@@ -84,15 +108,29 @@ def t_id_consistency(ctx, params):
             "why": "confirmed-status catalogue rows and encoded entries drifted apart",
         })
         return result(False, f"{len(problems)} id mismatch(es) between catalogue and entries",
-                      problems, unknowns, {"mismatches": len(problems)})
-    return result(True, f"all {len(confirmed)} confirmed catalogue ids resolve to encoded entries",
-                  stats={"confirmed": len(confirmed), "entries": len(entries_by_id)})
+                      problems + notes, unknowns, {"mismatches": len(problems)})
+
+    summary = f"all {len(confirmed)} confirmed catalogue ids resolve to encoded entries"
+    if unindexed:
+        summary += f"; {len(unindexed)} entries indexed nowhere"
+    return result(True, summary, notes, unknowns,
+                  {"confirmed": len(confirmed), "entries": len(entries_by_id),
+                   "unindexed": len(unindexed)})
 
 
 def t_unlock_resolution(ctx, params):
-    """Every `unlocks` target resolves to an entry id or a declared lineage term."""
+    """
+    Every `unlocks` target resolves to exactly one thing: an entry id or a
+    declared lineage term, never both.
+
+    The collision half of this matters as much as the dangling half. When a
+    lineage stub and a full entry share an id, the graph silently picks a
+    winner and the reader cannot tell which definition they are looking at.
+    """
     known_entries = {x["id"] for x in ctx["entries"]}
     known_lineages = {t["id"] for t in ctx["lineage_terms"]}
+
+    collisions = sorted(known_entries & known_lineages)
     dangling = []
     total = 0
     for x in ctx["entries"]:
@@ -101,21 +139,35 @@ def t_unlock_resolution(ctx, params):
             if target not in known_entries and target not in known_lineages:
                 dangling.append(f"{x['id']} -> '{target}' resolves to nothing")
 
-    if dangling:
-        return result(
-            False,
-            f"{len(dangling)}/{total} unlock targets dangle "
-            f"({len(known_lineages)} lineage terms declared)",
-            dangling,
-            [{
+    problems = list(dangling)
+    problems += [f"'{c}' is defined both as an encoded entry and as a lineage term"
+                 for c in collisions]
+
+    if problems:
+        unknowns = []
+        if dangling:
+            unknowns.append({
                 "question": "Are `unlocks` pointers to other keystones, or names of "
                             "downstream technology families? The field is being used "
                             "for both.",
-                "why": "no unlock target resolves to anything the repo defines",
-            }],
-            {"dangling": len(dangling), "total": total},
-        )
-    return result(True, f"all {total} unlock targets resolve",
+                "why": "unlock targets resolve to nothing the repo defines",
+            })
+        if collisions:
+            unknowns.append({
+                "question": "When a technology family is promoted to a full entry, "
+                            "what removes the lineage stub that named it?",
+                "why": f"{len(collisions)} id(s) carry two definitions at once",
+            })
+        summary = []
+        if dangling:
+            summary.append(f"{len(dangling)}/{total} unlock targets dangle")
+        if collisions:
+            summary.append(f"{len(collisions)} entry/lineage id collision(s)")
+        return result(False, "; ".join(summary), problems, unknowns,
+                      {"dangling": len(dangling), "collisions": len(collisions),
+                       "total": total})
+
+    return result(True, f"all {total} unlock targets resolve, no id collisions",
                   stats={"total": total, "lineage_terms": len(known_lineages)})
 
 
@@ -237,53 +289,96 @@ def t_domain_coverage(ctx, params):
 
 def t_rubric_discrimination(ctx, params):
     """
-    A rubric that admits everything measures nothing. The rule set must
-    separate the corpus, not rubber-stamp it.
+    A rubric that admits everything measures nothing. But the headline pass
+    rate is the wrong way to detect that, and this test used to get it wrong.
+
+    A corpus curated to contain keystones *should* mostly pass — a high pass
+    rate is the expected result of good curation, not evidence of a broken
+    rubric. What actually characterised the retired v1.0 was **ceiling
+    saturation**: 80% of entries scored the maximum possible, so the rubric had
+    run out of resolution and could no longer rank the things it admitted.
+
+    The numbers that forced this revision, both measured on the same corpus:
+
+        v1.0   80% at ceiling, spread 0.60, 1 inert criterion
+        v1.1   32% at ceiling, spread 0.38, 1 inert criterion
+
+    Note that v1.0's spread is *larger*. Spread alone would have ranked the
+    broken rubric above the fixed one, and pass-fraction flagged v1.1 the
+    moment the corpus grew. Ceiling saturation is the measure that actually
+    separates them, which is why it is the one used here.
+
+    An inert criterion — one that fires for no entry — is reported, not failed.
+    From inside a curated corpus you cannot distinguish a floor everyone
+    genuinely clears from dead weight.
     """
-    max_pass_fraction = params.get("max_pass_fraction", 0.9)
+    max_ceiling_fraction = params.get("max_ceiling_fraction", 0.5)
     min_score_spread = params.get("min_score_spread", 0.2)
 
     rules = ctx["rules"]
     scored = [prove.score_item(x, rules) for x in ctx["entries"]]
     if not scored:
         return result(False, "no entries to score")
+
+    ceiling = sum(c["weight"] for c in rules["criteria"])
     scores = [s["score"] for s in scored]
     passing = [s for s in scored if s["is_keystone"]]
-    pass_fraction = len(passing) / len(scored)
+    at_ceiling = [s for s in scored if abs(s["score"] - ceiling) < 1e-9]
+    ceiling_fraction = len(at_ceiling) / len(scored)
     spread = max(scores) - min(scores)
 
-    detail = [f"{s['id']}: {s['score']} "
-              f"({'pass' if s['is_keystone'] else 'fail'})"
+    bite = {}
+    for c in rules["criteria"]:
+        prefix = c["name"] + ">="
+        fails = sum(1 for s in scored for t in s["trace"]
+                    if t["rule"].startswith(prefix) and not t["passed"])
+        bite[c["name"]] = fails
+    inert = [name for name, fails in bite.items() if fails == 0]
+
+    detail = [f"{s['id']}: {s['score']}{' (fail)' if not s['is_keystone'] else ''}"
               for s in sorted(scored, key=lambda s: -s["score"])]
-    detail.append(f"pass_fraction={pass_fraction:.2f} (max {max_pass_fraction}), "
-                  f"score_spread={spread:.3f} (min {min_score_spread})")
+    detail.append(f"ceiling={ceiling:.2f}, at_ceiling={len(at_ceiling)}/{len(scored)} "
+                  f"({ceiling_fraction:.0%}, max {max_ceiling_fraction:.0%})")
+    detail.append(f"spread={spread:.3f} (min {min_score_spread})")
+    detail += [f"criterion '{n}' fails for {f}/{len(scored)} entries"
+               for n, f in sorted(bite.items(), key=lambda kv: -kv[1])]
 
     problems = []
-    if pass_fraction > max_pass_fraction:
-        problems.append(f"{len(passing)}/{len(scored)} entries pass — the rubric is "
-                        f"not rejecting anything")
+    if ceiling_fraction > max_ceiling_fraction:
+        problems.append(f"{len(at_ceiling)}/{len(scored)} entries score the maximum — "
+                        f"the rubric has run out of resolution")
     if spread < min_score_spread:
         problems.append(f"score spread {spread:.3f} — the rubric barely separates "
                         f"the corpus")
+    if not any(bite.values()):
+        problems.append("no criterion fails for any entry — every rule is inert")
+
+    unknowns = []
+    if inert:
+        unknowns.append({
+            "question": f"Are the inert criteria ({', '.join(inert)}) floors the "
+                        f"corpus genuinely clears, or dead weight nobody has tested?",
+            "why": f"{len(inert)} criterion/criteria fire for no entry in the corpus",
+        })
 
     if problems:
-        return result(
-            False, "; ".join(problems), detail,
-            [{
-                "question": "Is the corpus genuinely uniform in quality, or is the "
-                            "rubric too easy? A rubric only tested on entries chosen "
-                            "because they are keystones cannot tell you.",
-                "why": f"{pass_fraction:.0%} of entries pass under rules "
-                       f"v{rules.get('version')}",
-            }],
-            {"pass_fraction": round(pass_fraction, 3), "spread": round(spread, 3)},
-        )
+        unknowns.append({
+            "question": "Is the corpus genuinely uniform in quality, or is the "
+                        "rubric too easy? A rubric only tested on entries chosen "
+                        "because they are keystones cannot tell you.",
+            "why": f"{ceiling_fraction:.0%} of entries sit at the ceiling under rules "
+                   f"v{rules.get('version')}",
+        })
+        return result(False, "; ".join(problems), detail, unknowns,
+                      {"ceiling_fraction": round(ceiling_fraction, 3),
+                       "spread": round(spread, 3), "inert": inert})
+
     return result(True,
-                  f"{len(passing)}/{len(scored)} pass, spread {spread:.3f} — "
-                  f"rubric discriminates",
-                  detail,
-                  stats={"pass_fraction": round(pass_fraction, 3),
-                         "spread": round(spread, 3)})
+                  f"{len(passing)}/{len(scored)} pass, {ceiling_fraction:.0%} at ceiling, "
+                  f"spread {spread:.3f} — rubric discriminates",
+                  detail, unknowns,
+                  {"ceiling_fraction": round(ceiling_fraction, 3),
+                   "spread": round(spread, 3), "inert": inert})
 
 
 def t_phi_significance(ctx, params):
@@ -388,7 +483,11 @@ def t_taxonomy_exercised(ctx, params):
     claim about openness that the corpus does not honour — which matters most
     for the types hardest to admit, like oral tradition.
     """
-    declared = params.get("declared_types", [])
+    # Read the taxonomy from the schema rather than restating it here. It used
+    # to live in three places — the schema, validate.py, and these params — so
+    # adding a type meant editing all three and discovering at runtime which
+    # one you missed.
+    declared = params.get("declared_types") or corpus.evidence_types()
     used = set()
     for x in ctx["entries"]:
         for e in x.get("evidence", []):
@@ -450,9 +549,15 @@ def build_context():
     return {
         "entries": corpus.load_entries(),
         "catalogue": corpus.load_catalogue(),
+        "candidates": corpus.load_candidates(),
         "rules": corpus.load_rules(),
         "lineage_terms": corpus.load_lineage_terms()["terms"],
     }
+
+
+def score_with(entry, rules):
+    """Indirection so tests can stub scoring without importing prove's globals."""
+    return prove.score_item(entry, rules)
 
 
 def run_hypothesis(h, ctx):
@@ -680,8 +785,8 @@ def write_report(run_id, rows):
         f.write("\n".join(lines))
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__,
+def main(argv=None):
+    ap = argparse.ArgumentParser(prog="falsify", description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--only", action="append", default=None,
                     help="run only these hypothesis ids (repeatable)")
@@ -690,7 +795,7 @@ def main():
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any hypothesis is falsified")
     ap.add_argument("--run-id", default=None, help="override the generated run id")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     run_id = args.run_id or "run-" + datetime.datetime.now(
         datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")

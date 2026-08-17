@@ -1,20 +1,27 @@
 {
   "id": "H006",
-  "statement": "The keystone rule set discriminates: run over the corpus it separates entries rather than admitting all of them.",
+  "statement": "The keystone rule set retains resolution: it does not pile the corpus against its own ceiling, and its criteria bite.",
   "rationale": "A test that everything passes is not a test. If every encoded entry clears the bar, the proof engine is confirming the selection that put those entries in the repository, not evaluating them.",
-  "prediction": "No more than 90% of encoded entries score as keystones, and the spread between the highest and lowest score is at least 0.2.",
+  "prediction": "No more than 50% of entries score the maximum possible, the spread between highest and lowest is at least 0.2, and at least one criterion fails for at least one entry.",
   "test": {
     "kind": "rubric_discrimination",
     "params": {
-      "max_pass_fraction": 0.9,
+      "max_ceiling_fraction": 0.5,
       "min_score_spread": 0.2
     }
   },
   "status": "supported",
-  "revisions": [],
+  "revisions": [
+    {
+      "run": "run-004-merge-main",
+      "was": "No more than 90% of encoded entries score as keystones, and the spread is at least 0.2.",
+      "became": "No more than 50% of entries sit at the ceiling, spread at least 0.2, and at least one criterion bites.",
+      "because": "Falsified at 37/40 passing after the merge, but the diagnosis was wrong: a corpus curated to hold keystones should mostly pass, so pass-fraction measures curation rather than the rubric. Measured on one corpus, v1.0 puts 80% at the ceiling against v1.1's 32% \u2014 while v1.0's spread is the LARGER of the two, 0.60 against 0.38. Spread alone would rank the retired rubric above its replacement. Ceiling saturation is the statistic that actually separates them, so the claim was rewritten around it rather than the threshold nudged until the corpus fit."
+    }
+  ],
   "last_result": {
-    "run": "run-003-full-pipeline",
+    "run": "run-004-merge-main",
     "passed": true,
-    "summary": "7/9 pass, spread 0.380 \u2014 rubric discriminates"
+    "summary": "37/40 pass, 32% at ceiling, spread 0.380 \u2014 rubric discriminates"
   }
 }

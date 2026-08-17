@@ -2,12 +2,35 @@
 """
 Apply keystone rules, score, and produce proof traces per item.
 
-The criteria are read from the rule set, not hardcoded, so any archived rule
-version can still be run:
+Criteria are read from the rule set rather than hardcoded, so any archived rule
+version still runs:
 
     python3 src/prove.py                                        # current rules
     python3 src/prove.py --rules legacy/rules/keystone_rules.v1.json \
                          --out-suffix .v1                       # reproduce v1.0 verdicts
+
+## On the two ways evidence got scored
+
+Two branches independently found the same flaw — v1.0 scored only what an
+author asserted about a technology and never the evidence behind it, so an
+entry could reach a perfect 1.0 on four hand-typed numbers. They fixed it
+differently:
+
+  - a multiplier: score = raw * (0.7 + 0.3 * mean_quality)
+  - explicit criteria: evidence_strength, evidence_independence, claim_coverage
+
+Applying both would penalise evidence twice, so this file keeps the criteria
+and drops the multiplier. The reason is auditability, which is the point of a
+proof trace: a multiplier reports "score 0.72, evidence quality 0.8" and leaves
+you to guess, while criteria report which evidence dimension failed. It also
+catches things a mean cannot see — four sources of one type look identical to
+four independent ones under an average, and a claim whose evidence_refs do not
+resolve is invisible to it entirely.
+
+The cost is real and worth stating: discrete thresholds are cliff-edged, so an
+entry at 0.74 mean quality loses the full weight that one at 0.75 keeps. The
+multiplier degraded gracefully there. `evidence_quality()` survives as the
+helper behind the evidence_strength criterion.
 """
 import argparse
 import datetime
@@ -19,6 +42,24 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import corpus  # noqa: E402
 
 ROOT = corpus.ROOT
+
+# Module-level defaults, kept for callers and tests that score against the
+# current rule set without threading it through.
+rules = corpus.load_rules()
+criteria_by_name = {c["name"]: c for c in rules["criteria"]}
+PASS_SCORE = rules["pass_score"]
+
+
+def load_items():
+    return corpus.load_entries()
+
+
+def evidence_quality(x):
+    """Mean evidence quality for an entry, in [0, 1]. 0 if nothing is scored."""
+    qualities = [ev["quality"] for ev in x.get("evidence", []) if "quality" in ev]
+    if not qualities:
+        return 0.0
+    return sum(qualities) / len(qualities)
 
 
 # ── Criterion evaluators ─────────────────────────────────────────────────
@@ -46,11 +87,11 @@ def _c_decentralization(x, thr):
 
 
 def _c_evidence_strength(x, thr):
-    qualities = [e.get("quality", 0.0) for e in x.get("evidence", [])]
-    if not qualities:
-        return False, "no evidence"
-    mean = sum(qualities) / len(qualities)
-    return mean >= thr, f"mean_evidence_quality={mean:.3f} over {len(qualities)} items"
+    n = len([e for e in x.get("evidence", []) if "quality" in e])
+    if not n:
+        return False, "no scored evidence"
+    mean = evidence_quality(x)
+    return mean >= thr, f"mean_evidence_quality={mean:.3f} over {n} items"
 
 
 def _c_evidence_independence(x, thr):
@@ -80,9 +121,11 @@ EVALUATORS = {
 }
 
 
-def score_item(x, rules):
+def score_item(x, rule_set=None):
+    """Score one entry. Defaults to the current rule set."""
+    rule_set = rule_set or rules
     trace = []
-    for c in rules["criteria"]:
+    for c in rule_set["criteria"]:
         evaluator = EVALUATORS.get(c["name"])
         if evaluator is None:
             raise KeyError(
@@ -99,14 +142,16 @@ def score_item(x, rules):
     score = sum(t["weight"] for t in trace if t["passed"])
     return {
         "id": x["id"],
-        "is_keystone": score >= rules["pass_score"],
+        "is_keystone": score >= rule_set["pass_score"],
         "score": round(score, 3),
-        "rules_version": rules.get("version", "unknown"),
+        "evidence_quality": round(evidence_quality(x), 3),
+        "rules_version": rule_set.get("version", "unknown"),
         "trace": trace,
     }
 
 
-def write_reports(results, rules, suffix=""):
+def write_reports(results, rule_set=None, suffix=""):
+    rule_set = rule_set or rules
     with open(os.path.join(ROOT, f"proof_traces{suffix}.json"), "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
 
@@ -114,15 +159,18 @@ def write_reports(results, rules, suffix=""):
     passing = sum(1 for r in results if r["is_keystone"])
     lines = [
         "# Proof Report",
-        f"_Rules version {rules.get('version', 'unknown')} · pass_score "
-        f"{rules['pass_score']} · generated {stamp}_",
+        f"_Rules version {rule_set.get('version', 'unknown')} · pass_score "
+        f"{rule_set['pass_score']} · generated {stamp}_",
         "",
         f"**{passing}/{len(results)} entries scored as keystones.**",
         "",
     ]
     for r in sorted(results, key=lambda r: (-r["score"], r["id"])):
         verdict = "✅ Keystone" if r["is_keystone"] else "❌ Not yet"
-        lines.append(f"## {r['id']} — {verdict} (score {r['score']})")
+        lines.append(
+            f"## {r['id']} — {verdict} (score {r['score']}, "
+            f"evidence quality {r.get('evidence_quality', 0)})"
+        )
         for t in r["trace"]:
             mark = "✔" if t["passed"] else "✖"
             lines.append(f"- {mark} **{t['rule']}** — {t['details']} (w={t['weight']})")
@@ -131,22 +179,24 @@ def write_reports(results, rules, suffix=""):
         f.write("\n".join(lines))
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+def main(argv=None):
+    ap = argparse.ArgumentParser(
+        prog="prove",
+        description="Score encoded keystones against a rule set.",
+    )
     ap.add_argument("--rules", default=None,
                     help="path to a rule set (default: rules/keystone_rules.json)")
     ap.add_argument("--out-suffix", default="",
                     help="suffix for output filenames, e.g. '.v1'")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
-    rules = corpus.load_rules(args.rules)
-    items = corpus.load_entries()
-    results = [score_item(x, rules) for x in items]
-    write_reports(results, rules, args.out_suffix)
+    rule_set = corpus.load_rules(args.rules) if args.rules else rules
+    items = load_items()
+    results = [score_item(x, rule_set) for x in items]
+    write_reports(results, rule_set, args.out_suffix)
 
     passing = sum(1 for r in results if r["is_keystone"])
-    print(f"Scored {len(results)} entries under rules v{rules.get('version')}: "
+    print(f"Scored {len(results)} entries under rules v{rule_set.get('version')}: "
           f"{passing} keystone, {len(results) - passing} not yet")
     print(f"Wrote proof_traces{args.out_suffix}.json and proof_report{args.out_suffix}.md")
 

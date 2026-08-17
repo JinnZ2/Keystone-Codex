@@ -122,7 +122,20 @@
             "type": "string"
           },
           "type": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "archaeological_record",
+              "peer_reviewed_study",
+              "ethnographic_record",
+              "primary_text",
+              "engineering_record",
+              "replication_record",
+              "radiocarbon_date",
+              "standards_spec",
+              "field_measurement",
+              "oral_tradition_encoded"
+            ],
+            "description": "Evidence taxonomy. This enum is the single source of truth: src/validate.py derives VALID_EVIDENCE_TYPES from it and hypothesis H008 checks that every type listed here is actually used somewhere in the corpus. Documented in CITATIONS.md."
           },
           "source": {
             "type": "string"
@@ -147,7 +160,7 @@
     },
     "longevity_basis": {
       "type": "string",
-      "description": "Required whenever metrics.longevity_years cannot be derived from era.end - era.start within 25%. States what the number actually measures — attested continuous operation, persistence after abandonment, or a conservative floor under a contested start date. Added after run-001-baseline falsified H003."
+      "description": "Required whenever metrics.longevity_years cannot be derived from era.end - era.start within 25%. States what the number actually measures \u2014 attested continuous operation, persistence after abandonment, or a conservative floor under a contested start date. Added after run-001-baseline falsified H003."
     },
     "notes": {
       "type": "string"

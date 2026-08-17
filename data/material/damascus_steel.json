@@ -1,0 +1,72 @@
+{
+  "id": "damascus_steel",
+  "name": "Damascus Steel (Wootz/Crucible Steel)",
+  "domain": "material",
+  "region": "India, Middle East, Central Asia",
+  "era": {"start": -300, "end": 1750},
+  "summary": "High-carbon crucible steel with distinctive watered pattern, produced by smelting techniques in India and forged in the Middle East, achieving cutting performance and flexibility unmatched by European metallurgy for over a millennium.",
+  "metrics": {
+    "longevity_years": 2050,
+    "replication_regions": 3,
+    "decentralization_score": 0.6,
+    "ethical_alignment": 0.4
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Wootz steel ingots produced in southern India were traded to Damascus and Central Asia where they were forged into blades with carbon nanotube structures not reproduced until modern materials science",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "The production technique required precise temperature control and specific ore compositions, representing advanced empirical metallurgy without formal chemistry",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "The technique was lost by approximately 1750 CE and has only been partially reconstructed by modern metallurgists",
+      "evidence_refs": ["e4", "e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Reibold et al. (2006) Carbon nanotubes in an ancient Damascus sabre, Nature 444",
+      "uri": "doi:10.1038/444286a",
+      "quality": 0.95
+    },
+    {
+      "id": "e2",
+      "type": "archaeological_record",
+      "source": "Srinivasan & Ranganathan (2004) India's Legendary Wootz Steel, National Institute of Advanced Studies",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Verhoeven, Pendray & Dauksch (1998) The Key Role of Impurities in Ancient Damascus Steel Blades, JOM 50(9)",
+      "uri": "doi:10.1007/s11837-998-0419-y",
+      "quality": 0.9
+    },
+    {
+      "id": "e4",
+      "type": "replication_record",
+      "source": "Verhoeven & Pendray (1992) Experiments to Reproduce the Pattern of Damascus Steel Blades, Materials Characterization 29(1)",
+      "uri": "doi:10.1016/1044-5803(92)90094-X",
+      "quality": 0.85
+    },
+    {
+      "id": "e5",
+      "type": "peer_reviewed_study",
+      "source": "Juleff (1996) An Ancient Wind-Powered Iron Smelting Technology in Sri Lanka, Nature 379",
+      "uri": "doi:10.1038/379060a0",
+      "quality": 0.9
+    }
+  ],
+  "unlocks": [
+    "precision_engineering",
+    "machine_tools_family"
+  ],
+  "notes": "Creates a new resolved cross-link: damascus_steel → precision_engineering → industrial_mass_production. Evidence quality is exceptionally high (Nature papers). Low ethical alignment reflects primary military application, but the metallurgical knowledge underpins all modern steelmaking."
+}

@@ -37,6 +37,28 @@
       "resolution": "The encoded entry is canonical; the catalogue indexes it. The Great Law of Peace was filed as `haudenosaunee_council` in the catalogue and `great_law_of_peace` in the entry \u2014 the entry id won and the catalogue was corrected. H001 now checks the link in both directions, so the two cannot drift again without a run failing."
     },
     {
+      "id": "U-H001-2",
+      "question": "Which registry indexes the encoded corpus \u2014 data/shadow_catalogue.json, data/candidates.json, or both?",
+      "raised_by": "H001",
+      "trigger": "Merging main produced two candidate registries whose rows overlap in zero ids, while 24 of 40 encoded entries appear in neither.",
+      "first_seen": "run-004-merge-main",
+      "last_seen": "run-004-merge-main",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "The two were built for different purposes and it shows. shadow_catalogue.json carries era, tags, and a confirmed/shadow status, and is what src/shadow_search.py searches. candidates.json is a shorter queue of things to write up. Neither currently indexes the corpus, so 'what is in this codex' has no single answer. H001 deliberately does not force one: picking a winner is a decision about what the registries are FOR, and enforcing it in a test would settle that by fiat. Whoever decides should set require_registry_row on H001 afterwards so the convention is enforced rather than merely intended."
+    },
+    {
+      "id": "U-H001-3",
+      "question": "Which registry indexes the encoded corpus \u2014 data/shadow_catalogue.json, data/candidates.json, or both? They currently overlap in zero rows.",
+      "raised_by": "H001",
+      "trigger": "24 of 40 entries are listed in neither",
+      "first_seen": "run-004-merge-main",
+      "last_seen": "run-004-merge-main",
+      "status": "open",
+      "resolution": null
+    },
+    {
       "id": "U-H002-1",
       "question": "Are `unlocks` pointers to other keystones, or names of downstream technology families? The field is being used for both.",
       "raised_by": "H002",
@@ -148,6 +170,28 @@
       "pinned": true,
       "resolution": null,
       "detail": "The lathe fails longevity because it is 228 years old, which is arguably the correct answer under a 300-year bar. Hxaro fails longevity and replication because nobody has dated the institution or shown its analogues independent \u2014 facts about archaeology's sampling bias toward metal and stone, not about risk pooling. If the rubric systematically ranks technologies by how well their records survived, it is measuring preservation and calling it merit. Testing this needs a corpus of things that are known not to be keystones, which the repository does not have and arguably cannot easily build."
+    },
+    {
+      "id": "U-H006-3",
+      "question": "Is claim_coverage a floor the corpus genuinely clears, or dead weight?",
+      "raised_by": "H006",
+      "trigger": "claim_coverage fails for 0 of 40 entries \u2014 it contributes a constant 0.12 to every score and ranks nothing.",
+      "first_seen": "run-004-merge-main",
+      "last_seen": "run-004-merge-main",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "Both readings fit the evidence. It may be a genuine floor \u2014 every author does wire evidence_refs correctly \u2014 in which case it is cheap insurance that would catch a bad entry on the day one arrives. Or the corpus is too small and too uniformly authored to have produced a violation yet. You cannot tell from inside a curated corpus, which is why H006 reports inert criteria rather than failing on them. A deliberately malformed entry in a fixture corpus would settle it."
+    },
+    {
+      "id": "U-H006-4",
+      "question": "Are the inert criteria (claim_coverage) floors the corpus genuinely clears, or dead weight nobody has tested?",
+      "raised_by": "H006",
+      "trigger": "1 criterion/criteria fire for no entry in the corpus",
+      "first_seen": "run-004-merge-main",
+      "last_seen": "run-004-merge-main",
+      "status": "open",
+      "resolution": null
     },
     {
       "id": "U-H007-1",

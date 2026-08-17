@@ -4,7 +4,7 @@ Questions this project does not have answers to. Most were opened by a hypothesi
 
 **Open** — live, and worth someone's time. **Resolved** — answered, with the answer written down. **Dormant** — the test that raised it stopped asking, and nobody ever answered it. Dormant is not resolved, and the two are kept apart on purpose: a question that goes quiet because the data changed under it is still open, it just lost its alarm.
 
-_Reconciled at `run-003-full-pipeline` · 6 open · 11 resolved · 0 dormant_
+_Reconciled at `run-004-merge-main` · 10 open · 11 resolved · 0 dormant_
 
 ## Open
 
@@ -15,6 +15,14 @@ _Reconciled at `run-003-full-pipeline` · 6 open · 11 resolved · 0 dormant_
 ### U-C-2 — Which era values in this codex would current archaeological methods revise, if anyone checked?
 - Raised by **curated** · first seen `run-002-post-repair` · **pinned**
 - Trigger: Airborne LIDAR, sedimentary and ancient DNA, dental calculus proteomics, and Bayesian radiocarbon modelling have overturned settlement-scale and chronology claims across the field since roughly 2018. No era value in data/ has been rechecked against any of them.
+
+### U-H001-2 — Which registry indexes the encoded corpus — data/shadow_catalogue.json, data/candidates.json, or both?
+- Raised by **H001** · first seen `run-004-merge-main` · **pinned**
+- Trigger: Merging main produced two candidate registries whose rows overlap in zero ids, while 24 of 40 encoded entries appear in neither.
+
+### U-H001-3 — Which registry indexes the encoded corpus — data/shadow_catalogue.json, data/candidates.json, or both? They currently overlap in zero rows.
+- Raised by **H001** · first seen `run-004-merge-main`
+- Trigger: 24 of 40 entries are listed in neither
 
 ### U-H003-2 — How old is hxaro?
 - Raised by **H003** · first seen `run-002-post-repair` · **pinned**
@@ -27,6 +35,14 @@ _Reconciled at `run-003-full-pipeline` · 6 open · 11 resolved · 0 dormant_
 ### U-H006-2 — Does the rubric discriminate correctly, or merely discriminate?
 - Raised by **H006** · first seen `run-002-post-repair` · **pinned**
 - Trigger: v1.1 rejects hxaro (0.68) and the lathe (0.62), and both rejections are about the surviving record rather than about the technology.
+
+### U-H006-3 — Is claim_coverage a floor the corpus genuinely clears, or dead weight?
+- Raised by **H006** · first seen `run-004-merge-main` · **pinned**
+- Trigger: claim_coverage fails for 0 of 40 entries — it contributes a constant 0.12 to every score and ranks nothing.
+
+### U-H006-4 — Are the inert criteria (claim_coverage) floors the corpus genuinely clears, or dead weight nobody has tested?
+- Raised by **H006** · first seen `run-004-merge-main`
+- Trigger: 1 criterion/criteria fire for no entry in the corpus
 
 ### U-H007-2 — Do the cross-domain resonance and shadow-lineage detectors survive the same null model the phi detector failed?
 - Raised by **H007** · first seen `run-002-post-repair` · **pinned**

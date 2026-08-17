@@ -13,8 +13,8 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-003-full-pipeline",
+    "run": "run-004-merge-main",
     "passed": true,
-    "summary": "all 9 entries coherent within 25% (3 by declared basis)"
+    "summary": "all 40 entries coherent within 25% (3 by declared basis)"
   }
 }

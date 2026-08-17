@@ -13,8 +13,8 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-003-full-pipeline",
+    "run": "run-004-merge-main",
     "passed": true,
-    "summary": "every claim backed by \u22651 resolving ref; mean quality 0.770"
+    "summary": "every claim backed by \u22651 resolving ref; mean quality 0.804"
   }
 }

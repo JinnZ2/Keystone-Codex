@@ -1,0 +1,77 @@
+{
+  "id": "living_knowledge_systems",
+  "name": "Living Knowledge Systems (Biotic Data Storage)",
+  "domain": "information",
+  "region": "Global (Amazonia, Southeast Asia, Pacific Islands, West Africa, Mesoamerica, Europe)",
+  "era": {"start": -12000, "end": 2025},
+  "summary": "Knowledge encoded in living organisms and managed landscapes — planted groves as experimental timers, forest gardens as pharmacopeias, shaped trees as boundary markers — functioning as self-maintaining, self-timestamping data storage.",
+  "metrics": {
+    "longevity_years": 14000,
+    "replication_regions": 6,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Deliberately planted tree groupings encode experimental duration and boundary knowledge through growth rings, providing self-timestamping data records without written notation",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Indigenous forest gardens function as living pharmacopeias: spatial arrangement encodes medicinal relationships, preparation sequences, and dosage information across generations",
+      "evidence_refs": ["e3", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Managed landscapes store ecological knowledge in species composition — indicator plants reveal soil conditions, water table depth, and seasonal timing without instruments",
+      "evidence_refs": ["e5", "e6"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Levis et al. (2017) Persistent effects of pre-Columbian plant domestication on Amazonian forest composition, Science 355(6328)",
+      "uri": "doi:10.1126/science.aal0157",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "field_measurement",
+      "source": "Heckenberger et al. (2003) Amazonia 1492: Pristine Forest or Cultural Parkland?, Science 301(5640)",
+      "uri": "doi:10.1126/science.1086112",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Voeks (2004) Disturbance Pharmacopoeias: Medicine and Myth from the Humid Tropics, Annals of the Association of American Geographers 94(4)",
+      "quality": 0.75
+    },
+    {
+      "id": "e4",
+      "type": "oral_tradition_encoded",
+      "source": "Posey (1985) Indigenous Management of Tropical Forest Ecosystems: The Case of the Kayapó Indians of the Brazilian Amazon, Agroforestry Systems 3(2)",
+      "quality": 0.8
+    },
+    {
+      "id": "e5",
+      "type": "peer_reviewed_study",
+      "source": "Ford & Nigh (2015) The Maya Forest Garden: Eight Millennia of Sustainable Cultivation of the Tropical Woodlands, Routledge",
+      "quality": 0.8
+    },
+    {
+      "id": "e6",
+      "type": "field_measurement",
+      "source": "Berkes (2012) Sacred Ecology: Traditional Ecological Knowledge and Resource Management, 3rd ed., Routledge",
+      "quality": 0.75
+    }
+  ],
+  "unlocks": [
+    "monumental_encoding",
+    "writing_systems",
+    "resilient_accounting"
+  ],
+  "notes": "The oldest knowledge storage medium: the living world itself. Three trees planted together — their age tells you how long the experiment has been running. A forest garden's layout is a pharmacopeia you walk through. This predates every other information technology in the codex except songlines, and unlike songlines it stores data in physical organisms rather than in human memory. The medium grows, self-repairs, and timestamps itself. Cross-links with terra_preta (ecological): managed soils and managed knowledge gardens are the same system seen from different angles."
+}

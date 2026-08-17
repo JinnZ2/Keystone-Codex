@@ -1,0 +1,69 @@
+{
+  "id": "low_bandwidth_data",
+  "name": "Low-Bandwidth Data Systems",
+  "domain": "information",
+  "region": "Global (Andes, Australia, West Africa, Pacific Islands, Arctic)",
+  "era": {"start": -50000, "end": 2025},
+  "summary": "Information systems that function without electricity, literacy, or high infrastructure — encoding knowledge in knots, songs, beads, tallies, smoke signals, and drum languages.",
+  "metrics": {
+    "longevity_years": 52000,
+    "replication_regions": 7,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.85
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Talking drums in West Africa transmitted messages at speeds comparable to optical telegraph, encoding tonal language in rhythmic patterns over distances exceeding 30 km",
+      "evidence_refs": ["e1"]
+    },
+    {
+      "id": "c2",
+      "statement": "Inuit and Polynesian wayfinding systems encode navigational data in oral traditions, star patterns, and wave-swell reading without any written or electronic instruments",
+      "evidence_refs": ["e2", "e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Low-bandwidth data principles are being rediscovered in modern contexts: mesh networks, delay-tolerant networking, and offline-first software design",
+      "evidence_refs": ["e4", "e5"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Carrington (1949) Talking Drums of Africa, Carey Kingsgate Press; updated by Gleick (2011) The Information, Pantheon",
+      "quality": 0.75
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Lewis (1972) We, the Navigators: The Ancient Art of Landfinding in the Pacific, University of Hawaii Press",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "oral_tradition_encoded",
+      "source": "MacDonald (1998) The Arctic Sky: Inuit Astronomy, Star Lore, and Legend, Royal Ontario Museum",
+      "quality": 0.7
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Fall (2003) A Delay-Tolerant Network Architecture for Challenged Internets, ACM SIGCOMM 2003",
+      "uri": "doi:10.1145/863955.863960",
+      "quality": 0.85
+    },
+    {
+      "id": "e5",
+      "type": "peer_reviewed_study",
+      "source": "Brewer et al. (2005) The Case for Technology in Developing Regions, IEEE Computer 38(6)",
+      "uri": "doi:10.1109/MC.2005.204",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "resilient_accounting"
+  ],
+  "notes": "Resolves 4 inbound links (quipu, songlines, arabic_numerals, tactile_coding). The culmination of the CPU/Memory layer's lineage — every information entry feeds into this meta-category. Bridges ancient and modern: delay-tolerant networking is functionally a digital songline."
+}

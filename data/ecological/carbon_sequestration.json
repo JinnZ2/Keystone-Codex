@@ -1,0 +1,64 @@
+{
+  "id": "carbon_sequestration",
+  "name": "Carbon Sequestration Practices",
+  "domain": "ecological",
+  "region": "Global (Amazonia, West Africa, East Asia, Northern Europe, Pacific Islands)",
+  "era": {"start": -7000, "end": 2025},
+  "summary": "Deliberate and incidental practices that capture atmospheric carbon and lock it into soils, biomass, or durable materials — from ancient biochar production to agroforestry and peat management.",
+  "metrics": {
+    "longevity_years": 9000,
+    "replication_regions": 6,
+    "decentralization_score": 0.85,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Terra preta soils in Amazonia sequester carbon for millennia via biochar; radiocarbon dating shows stable carbon pools 2000+ years old, proving that human land management can create permanent carbon sinks",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Traditional agroforestry systems (forest gardens) in Southeast Asia, West Africa, and Mesoamerica sequester 2–9x more carbon per hectare than monoculture, while maintaining food production",
+      "evidence_refs": ["e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Indigenous fire management (cultural burning) in Australia and North America maintains ecosystem carbon balance and prevents catastrophic wildfire carbon release",
+      "evidence_refs": ["e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "radiocarbon_date",
+      "source": "Glaser et al. (2001) The 'Terra Preta' Phenomenon: A Model for Sustainable Agriculture in the Humid Tropics, Naturwissenschaften 88(1)",
+      "uri": "doi:10.1007/s001140000193",
+      "quality": 0.9
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Lehmann et al. (2006) Bio-char Sequestration in Terrestrial Ecosystems — A Review, Mitigation and Adaptation Strategies for Global Change 11(2)",
+      "uri": "doi:10.1007/s11027-005-9006-5",
+      "quality": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Nair (2012) Carbon Sequestration Studies in Agroforestry Systems: A Reality-Check, Agroforestry Systems 86(2)",
+      "uri": "doi:10.1007/s10457-011-9434-z",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Gammage (2011) The Biggest Estate on Earth: How Aborigines Made Australia, Allen & Unwin",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "climate_resilient_agriculture"
+  ],
+  "notes": "Resolves 2 inbound links (terra_preta, regenerative_agriculture). The bridge between ancient soil management and modern climate mitigation. Indigenous practices are the proof-of-concept for what industrial carbon capture is trying to achieve."
+}
