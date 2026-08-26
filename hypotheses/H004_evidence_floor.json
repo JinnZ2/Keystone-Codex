@@ -1,0 +1,20 @@
+{
+  "id": "H004",
+  "statement": "No claim in the codex floats: each is tied to at least one evidence item that actually exists in its entry, and the corpus averages adequate source quality.",
+  "rationale": "evidence_refs are strings pointing at ids in the same file. Nothing checked that they land, so a typo silently converts an evidenced claim into an assertion.",
+  "prediction": "Every claim has >= 1 evidence_ref resolving to an evidence id in the same entry, and mean evidence quality across the corpus is >= 0.7.",
+  "test": {
+    "kind": "evidence_floor",
+    "params": {
+      "min_refs_per_claim": 1,
+      "min_mean_quality": 0.7
+    }
+  },
+  "status": "supported",
+  "revisions": [],
+  "last_result": {
+    "run": "run-005-recent-finds",
+    "passed": true,
+    "summary": "every claim backed by \u22651 resolving ref; mean quality 0.805"
+  }
+}

@@ -3,10 +3,13 @@
 Cross-entry analysis: domain coverage, regional gaps, shared evidence, dangling unlocks.
 Usage: python3 -m src analyze
 """
-import os, json
+import os, sys, json
 from collections import Counter
 
-ROOT = os.path.dirname(os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import corpus  # noqa: E402
+
+ROOT = corpus.ROOT
 
 ALL_DOMAINS = [
     "ecological", "economic", "social", "governance",
@@ -14,15 +17,8 @@ ALL_DOMAINS = [
 ]
 
 def load_items():
-    items = []
-    data_dir = os.path.join(ROOT, "data")
-    for base, _, files in os.walk(data_dir):
-        for f in files:
-            if f.endswith(".json") and f != "candidates.json":
-                p = os.path.join(base, f)
-                with open(p) as fh:
-                    items.append(json.load(fh))
-    return items
+    """Encoded keystone entries. See src/corpus.py for the entry/registry split."""
+    return corpus.load_entries()
 
 def load_candidates():
     path = os.path.join(ROOT, "data", "candidates.json")

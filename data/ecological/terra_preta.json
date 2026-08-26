@@ -14,6 +14,7 @@
     "decentralization_score": 0.8,
     "ethical_alignment": 0.9
   },
+  "longevity_basis": "Persistence after abandonment, not duration of practice. The era covers the period during which the soils were being made (c. 1000 BCE to 1500 CE); the keystone property being measured is that fertility survives roughly 500 years without further input, which is what modern field trials on abandoned sites demonstrate. Duration of practice and duration of effect are different numbers and this entry reports the second.",
   "claims": [
     {
       "id": "c1",
@@ -27,7 +28,8 @@
       "id": "c2",
       "statement": "Technique is replicable and revives degraded soils",
       "evidence_refs": [
-        "e3"
+        "e3",
+        "e4"
       ]
     }
   ],
@@ -48,7 +50,13 @@
     {
       "id": "e3",
       "type": "field_measurement",
-      "source": "Modern biochar field trials restoring yields",
+      "source": "Soil surveys of abandoned dark-earth sites showing retained fertility relative to adjacent oxisols",
+      "quality": 0.7
+    },
+    {
+      "id": "e4",
+      "type": "replication_record",
+      "source": "Modern biochar amendment trials reproducing the fertility and carbon-retention effect on degraded tropical soils outside Amazonia",
       "quality": 0.7
     }
   ],

@@ -1,0 +1,30 @@
+{
+  "id": "H007",
+  "statement": "Golden-ratio spacing among technology emergence dates in this catalogue is indistinguishable from chance, and the phi detector in src/shadow_search.py is retained as a negative control rather than as a finding.",
+  "rationale": "src/shadow_search.py shipped a phi-ratio detector whose output was reported as possible evidence of 'underlying systemic coupling patterns'. That is a strong empirical claim and it had never been compared against a null model. The first run compared it. The catalogue contains 2065 phi-spaced triads; dates thrown at random into the same window produce 2229 on average, p = 0.864 \u2014 the corpus has slightly fewer than chance would give. The claim was not weakened, it was replaced. What the detector is good for now is calibration: it is the control that shows how readily this kind of search manufactures pattern from 55 dates and a 52,000-year window.",
+  "prediction": "The number of phi-spaced triads among catalogue start dates does not exceed the number found in the same count of dates drawn uniformly from the same window, at p < 0.05 over 300 seeded trials.",
+  "test": {
+    "kind": "phi_significance",
+    "params": {
+      "tolerance": 0.1,
+      "trials": 300,
+      "alpha": 0.05,
+      "seed": 1618,
+      "direction": "indistinguishable"
+    }
+  },
+  "status": "supported",
+  "revisions": [
+    {
+      "run": "run-001-baseline",
+      "was": "Technology emergence dates in the catalogue cluster at golden-ratio intervals more often than chance, indicating systemic coupling.",
+      "became": "Golden-ratio spacing among technology emergence dates in this catalogue is indistinguishable from chance, and the phi detector is retained as a negative control.",
+      "because": "Falsified against a seeded uniform null model: observed 2065 phi-triads vs null mean 2229.2, p = 0.864. The direction of the test was inverted along with the claim, so a future corpus that genuinely does show phi structure will falsify the replacement in turn."
+    }
+  ],
+  "last_result": {
+    "run": "run-005-recent-finds",
+    "passed": true,
+    "summary": "phi-triads (9141) indistinguishable from chance (null mean 10415.0, p=0.983) \u2014 negative control holds"
+  }
+}

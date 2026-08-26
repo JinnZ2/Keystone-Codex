@@ -1,0 +1,61 @@
+{
+  "id": "crooked_tree_fisheries",
+  "name": "Crooked Tree Wetland Fisheries (Late Archaic Maya Lowlands)",
+  "domain": "infrastructure",
+  "region": "Crooked Tree wetlands, Belize River watershed",
+  "era": {
+    "start": -2000,
+    "end": 200
+  },
+  "summary": "Linear canals cut across a seasonally flooded wetland to steer annual floodwater into holding ponds, concentrating freshwater fish at harvestable density. Built by Late Archaic hunter-gatherer-fishers before maize agriculture and roughly two thousand years before Maya state formation in the region.",
+  "metrics": {
+    "longevity_years": 2200,
+    "replication_regions": 1,
+    "decentralization_score": 0.8,
+    "ethical_alignment": 0.75
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Canal-and-pond networks were engineered to convert a seasonal flood pulse into a year-round protein supply, not merely to catch fish opportunistically",
+      "evidence_refs": ["e1", "e3"]
+    },
+    {
+      "id": "c2",
+      "statement": "Construction dates to the Late Archaic, predating maize agriculture and Maya state formation in the region",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c3",
+      "statement": "The system stayed in use for roughly two millennia across the transition from forager to farming society, outlasting the subsistence regime that built it",
+      "evidence_refs": ["e1", "e2"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Harrison-Buck, E. et al. (2024) Late Archaic large-scale fisheries in the wetlands of the pre-Columbian Maya Lowlands, Science Advances 10(47)",
+      "uri": "doi:10.1126/sciadv.adq1444",
+      "quality": 0.9
+    },
+    {
+      "id": "e2",
+      "type": "radiocarbon_date",
+      "source": "AMS dates on canal fill placing initial construction at cal 2000–1900 BCE, with continued use through the Formative period",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "archaeological_record",
+      "source": "Mapped network of linear canals and associated holding ponds across the Crooked Tree Wildlife Sanctuary wetland, with freshwater faunal remains including catfish",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "managed_aquaculture",
+    "landscape_engineering",
+    "sedentary_forager_settlement"
+  ],
+  "notes": "Added August 2026. Scored replication_regions=1 on purpose, even though this entry is the strongest evidence in the codex that forager-built aquaculture was invented more than once. Counting Budj Bim and Lake Tesse toward this entry's replication would apply the very criterion U-C-1 says the project has not written down. The cross-continental argument belongs in that unknown, not smuggled into a metric — see U-C-1, where this find is now the primary evidence."
+}

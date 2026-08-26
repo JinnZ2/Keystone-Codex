@@ -1,0 +1,1388 @@
+[
+  {
+    "id": "apprenticeship_systems",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.825,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=50000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=12",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "arabic_numerals",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.84,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=1525",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=7",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.7",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "budj_bim",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.85,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=6600",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "carbon_sequestration",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.863,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=9000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "circular_waste_systems",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.787,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=7000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=7",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "communitarian_governance",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.8,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=4000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "conflict_mediation",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.812,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=12000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=8",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "consensus_protocols",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.72,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=3200",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "cooperative_banking",
+    "is_keystone": true,
+    "score": 0.65,
+    "evidence_quality": 0.8,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=176",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "cowrie_currency",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.8,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=3100",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "crooked_tree_fisheries",
+    "is_keystone": true,
+    "score": 0.75,
+    "evidence_quality": 0.85,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=2200",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "damascus_steel",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.88,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=2050",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.6",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "federalism_templates",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.82,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=3167",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "geological_knowledge_encoding",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.793,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=42000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "gift_economy",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.783,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=5000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=4",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "great_law_of_peace",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.762,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "hxaro",
+    "is_keystone": false,
+    "score": 0.4,
+    "evidence_quality": 0.8,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=125",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "indus_plumbing",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.75,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=600",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "kula_ring",
+    "is_keystone": true,
+    "score": 0.75,
+    "evidence_quality": 0.75,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "lake_tesse_translocation",
+    "is_keystone": true,
+    "score": 0.75,
+    "evidence_quality": 0.817,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=7000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "lathe",
+    "is_keystone": true,
+    "score": 0.65,
+    "evidence_quality": 0.7,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=200",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.5",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "library_systems",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.8,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=4625",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=8",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.55",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "living_knowledge_systems",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.792,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=14000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "low_bandwidth_data",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.78,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=52000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=7",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "machine_tools_family",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.85,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=3200",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.6",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "microfinance",
+    "is_keystone": true,
+    "score": 0.65,
+    "evidence_quality": 0.85,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=49",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.65",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "monumental_encoding",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.783,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=6600",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=7",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.5",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "nunuku_covenant",
+    "is_keystone": true,
+    "score": 0.75,
+    "evidence_quality": 0.762,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=335",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.7",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "papermaking",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.81,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=2225",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.7",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "precision_engineering",
+    "is_keystone": false,
+    "score": 0.5,
+    "evidence_quality": 0.85,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": false,
+        "details": "longevity_years=255",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=4",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": false,
+        "details": "decentralization_score=0.4",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "quipu",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.75,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=300",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "reciprocity_norms",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.883,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=100000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=12",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=1.0",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "regenerative_agriculture",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.863,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=5000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "restorative_justice",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.83,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=2500",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "roman_aqueducts",
+    "is_keystone": true,
+    "score": 0.85,
+    "evidence_quality": 0.825,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=812",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": false,
+        "details": "decentralization_score=0.4",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "rotating_credit",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.833,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=2000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "silk_road",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.812,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=1650",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "songlines",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.74,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=52000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "tactile_coding",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.81,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=5000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=5",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.85",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "terra_preta",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.775,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=500",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "ubuntu_philosophy",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.767,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=2500",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.95",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "writing_systems",
+    "is_keystone": true,
+    "score": 1.0,
+    "evidence_quality": 0.82,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=5425",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": true,
+        "details": "replication_regions=6",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.6",
+        "weight": 0.15
+      }
+    ]
+  }
+]

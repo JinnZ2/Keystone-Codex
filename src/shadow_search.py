@@ -5,11 +5,17 @@ Shadow Search Playground
 Interactive CLI for hunting hidden patterns among keystone technology candidates.
 
 Combines the Keystone-Codex catalogue with shadow-hunting methodology:
-  - Search & filter across all ~55 technology candidates
+  - Search & filter across all technology candidates
   - Detect cross-domain resonances (technologies sharing hidden connections)
-  - Find temporal clustering and phi-ratio spacing in timelines
   - Score shadow candidates against keystone criteria
   - Discover shadow lineages — unlock chains that cross domains
+  - Phi-ratio spacing — retained as a NEGATIVE CONTROL, see below
+
+A note on what this tool is for. Everything here generates candidate patterns;
+nothing here confirms one. The phi detector is kept as the standing reminder:
+its output looked like a finding until H007 put it against a null model, and
+then it was noise. Run anything this playground surfaces through
+`src/falsify.py` before believing it.
 
 Usage:
     python3 src/shadow_search.py                  # interactive mode
@@ -17,48 +23,61 @@ Usage:
     python3 src/shadow_search.py scan             # full shadow scan
 """
 import os
-import sys
-import json
-import math
 import re
+import sys
+import math
 from collections import defaultdict
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import corpus  # noqa: E402
+
+ROOT = corpus.ROOT
 PHI = (1 + math.sqrt(5)) / 2  # golden ratio ≈ 1.618
 
 # ── Data Loading ─────────────────────────────────────────────────────────
 
 def load_shadow_catalogue():
     """Load the unified shadow catalogue."""
-    path = os.path.join(ROOT, "data", "shadow_catalogue.json")
-    with open(path) as f:
-        return json.load(f)["entries"]
+    return corpus.load_catalogue()
 
 
 def load_confirmed_items():
-    """Load fully-encoded keystone entries from data/ subdirectories."""
-    items = []
-    data_dir = os.path.join(ROOT, "data")
-    for base, _, files in os.walk(data_dir):
-        for fname in files:
-            if fname.endswith(".json") and fname != "shadow_catalogue.json":
-                with open(os.path.join(base, fname)) as f:
-                    items.append(json.load(f))
-    return items
+    """Load fully-encoded keystone entries from data/<domain>/."""
+    return corpus.load_entries()
 
 
 def load_rules():
     """Load keystone scoring rules."""
-    with open(os.path.join(ROOT, "rules", "keystone_rules.json")) as f:
-        return json.load(f)
+    return corpus.load_rules()
+
+
+def h007_verdict():
+    """
+    The live verdict on the phi detector, read from the hypothesis file rather
+    than hardcoded, so this tool cannot end up quoting a stale p-value at you.
+    """
+    import json
+    path = os.path.join(ROOT, "hypotheses", "H007_phi_significance.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            last = json.load(f).get("last_result") or {}
+        return last.get("summary") or "not yet run — run src/falsify.py"
+    except (OSError, ValueError):
+        return "hypothesis file unavailable"
 
 
 # ── Search Engine ────────────────────────────────────────────────────────
 
 def text_search(entries, query):
-    """Full-text search across names, descriptions, tags, domains, regions."""
-    query_lower = query.lower()
-    terms = query_lower.split()
+    """
+    Full-text search across names, descriptions, tags, domains, regions.
+
+    Terms match at a word boundary, so 'eel' finds Budj Bim and not Damascus
+    Steel. Matching is still prefix-open — 'navigat' finds 'navigation' — which
+    is the behaviour you want when guessing at a tag.
+    """
+    terms = [t for t in query.lower().split() if t]
+    patterns = [re.compile(r"\b" + re.escape(t)) for t in terms]
     results = []
     for entry in entries:
         searchable = " ".join([
@@ -67,8 +86,9 @@ def text_search(entries, query):
             entry.get("domain", ""),
             entry.get("region", ""),
             " ".join(entry.get("tags", [])),
+            entry.get("source_note", ""),
         ]).lower()
-        score = sum(1 for t in terms if t in searchable)
+        score = sum(1 for p in patterns if p.search(searchable))
         if score > 0:
             results.append((score, entry))
     results.sort(key=lambda x: -x[0])
@@ -105,8 +125,17 @@ def filter_by_status(entries, status):
 def detect_phi_clustering(entries):
     """
     Hunt for phi-ratio spacing in technology emergence timelines.
-    When technologies emerge at intervals related to the golden ratio,
-    it may indicate underlying systemic coupling patterns.
+
+    NEGATIVE CONTROL. This detector once claimed its triads "may indicate
+    underlying systemic coupling patterns". Hypothesis H007 tested that against
+    a seeded uniform null model and the claim did not survive: the catalogue
+    produces no more phi-spaced triads than the same number of dates thrown at
+    random into the same window. The live verdict is in
+    hypotheses/H007_phi_significance.json.
+
+    The function is kept, and kept honest, because it demonstrates how much
+    apparent structure a triad search manufactures from a few dozen dates —
+    the failure mode every other detector in this file is also exposed to.
     """
     starts = sorted(
         [(e["era"]["start"], e) for e in entries if "era" in e],
@@ -248,10 +277,23 @@ def detect_domain_gaps(entries):
     return gaps
 
 
+# The criteria a shadow candidate can be guessed at from catalogue metadata
+# alone. The rest of the rule set reads an `evidence` array, which by
+# definition a shadow entry does not have.
+ESTIMABLE_CRITERIA = {"longevity", "replication", "unlocks_lineage", "decentralization"}
+
+
 def estimate_keystone_score(entry, rules):
     """
-    Estimate a shadow candidate's keystone potential based on era span
-    and available metadata. Returns a speculative score.
+    Estimate a shadow candidate's keystone potential from era span and
+    metadata. Speculative by construction — this is a triage score for
+    deciding what to encode next, not a verdict.
+
+    The score is normalised over the criteria it can actually estimate, then
+    compared to pass_score. Without that normalisation the estimator silently
+    broke when rules v1.1 landed: the four estimable criteria total 0.54 of the
+    new weight, so nothing could reach a 0.70 bar and every candidate came back
+    "needs more evidence" regardless of merit.
     """
     criteria = rules["criteria"]
     era = entry.get("era", {})
@@ -272,7 +314,10 @@ def estimate_keystone_score(entry, rules):
     # Replication estimate (heuristic: multi-region in name/region field)
     thr = next(c for c in criteria if c["name"] == "replication")
     region = entry.get("region", "")
-    multi = any(sep in region for sep in ["/", ",", "Global", "Eurasia"])
+    # A comma is not a region separator — "Oromia, Ethiopia" is one place
+    # written as place-in-country, and counting it as two made every such
+    # entry look independently replicated.
+    multi = any(sep in region for sep in ["/", " and ", "Global", "Eurasia"])
     passed_rep = multi
     trace.append({
         "rule": f"replication>={thr['threshold']}",
@@ -303,12 +348,16 @@ def estimate_keystone_score(entry, rules):
         "weight": thr["weight"],
     })
 
-    score = sum(t["weight"] for t in trace if t["passed"])
+    earned = sum(t["weight"] for t in trace if t["passed"])
+    available = sum(c["weight"] for c in criteria if c["name"] in ESTIMABLE_CRITERIA)
+    normalized = earned / available if available else 0.0
     return {
         "id": entry["id"],
         "name": entry["name"],
-        "estimated_score": round(score, 3),
-        "likely_keystone": score >= rules["pass_score"],
+        "estimated_score": round(normalized, 3),
+        "raw_score": round(earned, 3),
+        "estimable_weight": round(available, 3),
+        "likely_keystone": normalized >= rules["pass_score"],
         "confidence": "speculative",
         "trace": trace,
     }
@@ -399,7 +448,10 @@ def cmd_phi(entries):
     clusters = detect_phi_clustering(entries)
     print_divider(f"Phi-Ratio Temporal Clusters ({len(clusters)} found)")
     print(f"  Golden ratio (phi) = {PHI:.6f}")
-    print("  Technologies emerging at phi-spaced intervals:\n")
+    print("  !! NEGATIVE CONTROL — these triads are not a finding.")
+    print(f"     H007: {h007_verdict()}")
+    print("     Run 'python3 src/falsify.py --only H007' to reproduce.")
+    print("     Shown so you can see how convincing pure noise looks:\n")
     for i, c in enumerate(clusters, 1):
         print(f"  [{i}] {c['triad'][0]}  ->  {c['triad'][1]}  ->  {c['triad'][2]}")
         print(f"      Years: {c['years']}  |  Gaps: {c['gaps']}yr  |  "
@@ -441,7 +493,9 @@ def cmd_score(entries, rules, query):
     verdict = "LIKELY KEYSTONE" if result["likely_keystone"] else "NEEDS MORE EVIDENCE"
     print_divider(f"Shadow Score: {result['name']}")
     print(f"  Estimated Score: {result['estimated_score']}  |  Verdict: {verdict}")
-    print(f"  Confidence: {result['confidence']}\n")
+    print(f"  Confidence: {result['confidence']} — normalised over "
+          f"{result['estimable_weight']} of the rule set's weight; the "
+          f"evidence criteria cannot be estimated without an encoded entry.\n")
     for t in result["trace"]:
         mark = "+" if t["passed"] else "?"
         print(f"    {mark} {t['rule']:30s} {t['detail']:40s} (w={t['weight']})")
@@ -466,6 +520,8 @@ def cmd_scan(entries, confirmed, rules):
     likely.sort(key=lambda s: -s["estimated_score"])
 
     print_divider(f"High-Potential Shadow Candidates ({len(likely)}/{len(shadows)})")
+    print("  Triage only: scored on era and tags, normalised over the criteria")
+    print("  estimable without an encoded entry. Encode before believing.\n")
     for i, s in enumerate(likely, 1):
         print(f"  [{i:2d}] {s['name']:45s} score={s['estimated_score']:.3f}")
 
@@ -479,7 +535,8 @@ def cmd_scan(entries, confirmed, rules):
 
     # Phi clusters
     clusters = detect_phi_clustering(entries)
-    print_divider(f"Phi-Ratio Clusters (top 5 of {len(clusters)})")
+    print_divider(f"Phi-Ratio Clusters (top 5 of {len(clusters)}) — NEGATIVE CONTROL")
+    print(f"  Not a finding. H007: {h007_verdict()}")
     for i, c in enumerate(clusters[:5], 1):
         print(f"  [{i}] {c['triad'][0]:25s} -> {c['triad'][1]:25s} -> {c['triad'][2]:25s}")
         print(f"      ratio={c['ratio']}  deviation={c['phi_deviation']}")

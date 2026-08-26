@@ -1,0 +1,232 @@
+{
+  "note": "Reconciled by src/falsify.py on each run. Entries with pinned=true were added by hand and are never closed by the engine \u2014 they are questions no current test reaches. Write a `resolution` to close anything else; without one, a question that stops being raised goes dormant rather than resolved.",
+  "unknowns": [
+    {
+      "id": "U-C-1",
+      "question": "What makes two occurrences of a technology independent replications rather than one tradition?",
+      "raised_by": "curated",
+      "trigger": "budj_bim scores replication_regions=2 by counting Brewarrina; kula_ring scores 1 by refusing to count Melanesian ceremonial exchange rings. The two cases are close to parallel and the entries apply different standards to them.",
+      "first_seen": "run-002-post-repair",
+      "last_seen": "run-002-post-repair",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "replication carries 0.14 of the score, so this is not cosmetic \u2014 it is the difference between a pass and a fail for an entry sitting near the line. The honest options are a stated independence criterion (geographic separation? absence of a diffusion pathway? independent invention evidenced how?) or dropping the criterion for lack of one. Neither has been done.\n\nUPDATE 2026-08-26 \u2014 the strongest evidence yet, and it points at a usable criterion. Forager-built aquaculture infrastructure is now documented on three continents with no possible contact between them: Budj Bim (Gunditjmara, Australia, c. 4650 BCE), Lake Tesse (southern Norway, c. 5000 BCE, Mj\u00e6rum et al. 2026), and Crooked Tree (Belize, c. 2000 BCE, Harrison-Buck et al. 2024). Australia and Mesoamerica had no diffusion pathway before 1500 CE, so this is about as clean an independent-invention case as archaeology can produce. PROPOSED CRITERION, not yet adopted: replication counts as independent when no diffusion pathway existed between the occurrences \u2014 checkable from geography and date, unlike 'independently' which is currently checkable from nothing. Note what adopting it would cost: four encoded entries (kula_ring, hxaro, crooked_tree_fisheries, lake_tesse_translocation) currently take replication_regions=1 rather than assert independence they cannot defend, and all four fail that criterion. A criterion that lets them pass must be argued for, not back-fitted because the corpus would score better."
+    },
+    {
+      "id": "U-C-2",
+      "question": "Which era values in this codex would current archaeological methods revise, if anyone checked?",
+      "raised_by": "curated",
+      "trigger": "Airborne LIDAR, sedimentary and ancient DNA, dental calculus proteomics, and Bayesian radiocarbon modelling have overturned settlement-scale and chronology claims across the field since roughly 2018. No era value in data/ has been rechecked against any of them.",
+      "first_seen": "run-002-post-repair",
+      "last_seen": "run-002-post-repair",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "See anthropology/FRONTIER.md for which method bears on which entry. The Upano Valley result (Rostain et al. 2024) is the clearest warning: an entire settlement system in a region the literature described as sparsely occupied.\n\nUPDATE 2026-08-26 \u2014 first worked example, and it is a clean hit for the method this register predicted. Mutin et al. (2025, Scientific Reports, doi:10.1038/s41598-025-92621-5) redated the aceramic Neolithic at Mehrgarh from c. 8000 BCE to 5223\u20134914 BCE by dating tooth enamel apatite instead of charcoal, which is contamination-prone \u2014 roughly 2,800 years removed from the runway to Indus urbanism. It does NOT move data/infrastructure/indus_plumbing.json, whose era brackets the Mature Harappan phase and is unaffected; the honest reading is that the gap between farming and engineered urban sanitation is far shorter than the entry's context implies, which makes the achievement faster rather than older. Recorded here precisely because the temptation was to claim it revised an entry when it does not."
+    },
+    {
+      "id": "U-H001-1",
+      "question": "Is the catalogue id or the entry id the canonical name for a keystone, and what enforces the link?",
+      "raised_by": "H001",
+      "trigger": "confirmed-status catalogue rows and encoded entries drifted apart",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "The encoded entry is canonical; the catalogue indexes it. The Great Law of Peace was filed as `haudenosaunee_council` in the catalogue and `great_law_of_peace` in the entry \u2014 the entry id won and the catalogue was corrected. H001 now checks the link in both directions, so the two cannot drift again without a run failing."
+    },
+    {
+      "id": "U-H001-2",
+      "question": "Which registry indexes the encoded corpus \u2014 data/shadow_catalogue.json, data/candidates.json, or both? They currently overlap in zero rows.",
+      "raised_by": "H001",
+      "trigger": "Merging main produced two candidate registries whose rows overlap in zero ids, while 24 of 40 encoded entries appear in neither.",
+      "first_seen": "run-004-merge-main",
+      "last_seen": "run-005-recent-finds",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "The two were built for different purposes and it shows. shadow_catalogue.json carries era, tags, and a confirmed/shadow status, and is what src/shadow_search.py searches. candidates.json is a shorter queue of things to write up. Neither currently indexes the corpus, so 'what is in this codex' has no single answer. H001 deliberately does not force one: picking a winner is a decision about what the registries are FOR, and enforcing it in a test would settle that by fiat. Whoever decides should set require_registry_row on H001 afterwards so the convention is enforced rather than merely intended. [Merged with U-H001-3 on 2026-08-26: a curated unknown and an engine-raised one described the same question in different words, and the engine matches on exact text, so it forked a duplicate. Curated entries must copy the raiser's wording verbatim.]"
+    },
+    {
+      "id": "U-H002-1",
+      "question": "Are `unlocks` pointers to other keystones, or names of downstream technology families? The field is being used for both.",
+      "raised_by": "H002",
+      "trigger": "no unlock target resolved to anything the repo defines",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "Both, and now explicitly. A target is either another entry id (a direct descent claim) or a term declared in rules/lineage_terms.json (a family claim). The vocabulary file was created with 27 terms covering every target in the corpus, and build_graph.py renders the two kinds as different node shapes rather than silently inventing nodes for free text."
+    },
+    {
+      "id": "U-H003-1",
+      "question": "Does longevity_years mean attested continuous use, survival of the artefact, or revivability? Each gives a different number for the same technology.",
+      "raised_by": "H003",
+      "trigger": "stated longevity and era span disagreed with no declared basis",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "It is not one thing, and entries now have to say which one they mean. Three bases are in use: persistence after abandonment (terra_preta \u2014 the era covers 2500 years of practice while the metric reports ~500 years of retained fertility), attested operational span (indus_plumbing \u2014 600 of 900 era years evidenced as maintained rather than merely extant), and conservative floor under a contested start date (great_law_of_peace, kula_ring, nunuku_covenant, hxaro). Any entry drifting more than 25% from its era span must declare a longevity_basis or fail H003."
+    },
+    {
+      "id": "U-H003-2",
+      "question": "How old is hxaro?",
+      "raised_by": "H003",
+      "trigger": "data/social/hxaro.json enters 125 years as a deliberate floor and takes a failing score rather than assert a number the evidence does not support.",
+      "first_seen": "run-002-post-repair",
+      "last_seen": "run-002-post-repair",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "Ostrich eggshell bead exchange networks across southern Africa are dated to roughly 50,000\u201333,000 BP and are exactly the material signature hxaro produces (Miller & Wang 2022, Nature 601). Nothing establishes institutional continuity across the intervening gap, and it is not obvious what evidence could. Resolving this would move hxaro from a rubric failure to one of the oldest entries in the codex, which is precisely why it should not be resolved by assertion."
+    },
+    {
+      "id": "U-H003-3",
+      "question": "When was the Kayanerenk\u00f3:wa founded?",
+      "raised_by": "H003",
+      "trigger": "great_law_of_peace declares a longevity_basis of 500 years as a floor because the founding date is contested.",
+      "first_seen": "run-002-post-repair",
+      "last_seen": "run-002-post-repair",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "Estimates run from the 12th century to c. 1450. The eclipse-based 1142 date is disputed on both astronomical and historical grounds. Haudenosaunee tradition and the archaeological sequence of village aggregation are the two independent lines of evidence and they have not been reconciled. Under the earliest estimates the entry's longevity exceeds 800 years."
+    },
+    {
+      "id": "U-H005-1",
+      "question": "What keystone belongs in the 'economic' domain, and why has nothing been encoded there yet \u2014 absence of candidates, or absence of attention?",
+      "raised_by": "H005",
+      "trigger": "domain 'economic' had 0 encoded entries",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "Absence of attention. The catalogue already listed seven economic candidates that nobody had written up. kula_ring is now encoded."
+    },
+    {
+      "id": "U-H005-2",
+      "question": "What keystone belongs in the 'social' domain, and why has nothing been encoded there yet \u2014 absence of candidates, or absence of attention?",
+      "raised_by": "H005",
+      "trigger": "domain 'social' had 0 encoded entries",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "The domain had never been used because no source document in this repo distinguished it from governance. hxaro is now encoded there, which also settles U-H005-4."
+    },
+    {
+      "id": "U-H005-3",
+      "question": "What keystone belongs in the 'ethical' domain, and why has nothing been encoded there yet \u2014 absence of candidates, or absence of attention?",
+      "raised_by": "H005",
+      "trigger": "domain 'ethical' had 0 encoded entries",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "Absence of attention. nunuku_covenant is now encoded, with its failure mode stated as a claim rather than omitted."
+    },
+    {
+      "id": "U-H005-4",
+      "question": "Are 'social' and 'governance' distinct domains, or one domain listed twice in the schema enum?",
+      "raised_by": "H005",
+      "trigger": "governance was populated while social had never been used",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "Distinct, and the distinction is now demonstrated rather than asserted. Governance is binding collective decision-making with authority behind it (great_law_of_peace). Social is relational infrastructure with no authority at all \u2014 obligation networks, risk pooling, cohort structure (hxaro). Every prose document in this repo, references.md and SYSTEMS_ANALOGY.md included, had run the two together under one heading, which is why the enum slot sat empty."
+    },
+    {
+      "id": "U-H006-1",
+      "question": "Is the corpus genuinely uniform in quality, or is the rubric too easy? A rubric only tested on entries chosen because they are keystones cannot tell you.",
+      "raised_by": "H006",
+      "trigger": "100% of entries passed under rules v1.0",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "The rubric was too easy. Under v1.0 all five entries passed and four scored a perfect 1.0, because every criterion read a number the author had typed and none read the evidence behind it. v1.1 keeps those four at reduced weight and adds evidence_strength, evidence_independence, and claim_coverage. Seven of nine now pass with a spread of 0.38. Whether it discriminates *correctly* is a different question \u2014 see U-H006-2."
+    },
+    {
+      "id": "U-H006-2",
+      "question": "Does the rubric discriminate correctly, or merely discriminate?",
+      "raised_by": "H006",
+      "trigger": "v1.1 rejects hxaro (0.68) and the lathe (0.62), and both rejections are about the surviving record rather than about the technology.",
+      "first_seen": "run-002-post-repair",
+      "last_seen": "run-002-post-repair",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "The lathe fails longevity because it is 228 years old, which is arguably the correct answer under a 300-year bar. Hxaro fails longevity and replication because nobody has dated the institution or shown its analogues independent \u2014 facts about archaeology's sampling bias toward metal and stone, not about risk pooling. If the rubric systematically ranks technologies by how well their records survived, it is measuring preservation and calling it merit. Testing this needs a corpus of things that are known not to be keystones, which the repository does not have and arguably cannot easily build."
+    },
+    {
+      "id": "U-H006-3",
+      "question": "Is claim_coverage a floor the corpus genuinely clears, or dead weight?",
+      "raised_by": "H006",
+      "trigger": "claim_coverage fails for 0 of 40 entries \u2014 it contributes a constant 0.12 to every score and ranks nothing.",
+      "first_seen": "run-004-merge-main",
+      "last_seen": "run-004-merge-main",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "Both readings fit the evidence. It may be a genuine floor \u2014 every author does wire evidence_refs correctly \u2014 in which case it is cheap insurance that would catch a bad entry on the day one arrives. Or the corpus is too small and too uniformly authored to have produced a violation yet. You cannot tell from inside a curated corpus, which is why H006 reports inert criteria rather than failing on them. A deliberately malformed entry in a fixture corpus would settle it."
+    },
+    {
+      "id": "U-H006-4",
+      "question": "Are the inert criteria (claim_coverage) floors the corpus genuinely clears, or dead weight nobody has tested?",
+      "raised_by": "H006",
+      "trigger": "1 criterion/criteria fire for no entry in the corpus",
+      "first_seen": "run-004-merge-main",
+      "last_seen": "run-005-recent-finds",
+      "status": "open",
+      "resolution": null
+    },
+    {
+      "id": "U-H007-1",
+      "question": "Does any temporal-spacing regularity survive a null model, or is every such pattern an artefact of the number of dates and the width of the window?",
+      "raised_by": "H007",
+      "trigger": "the phi detector's output was indistinguishable from random dates",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "For phi specifically: no. p = 0.970 against a seeded uniform null over 300 trials; the catalogue produces fewer phi-triads than random dates in the same window. The claim was replaced rather than weakened and the detector is retained as a negative control. The general question is not closed \u2014 it is now U-H007-2."
+    },
+    {
+      "id": "U-H007-2",
+      "question": "Do the cross-domain resonance and shadow-lineage detectors survive the same null model the phi detector failed?",
+      "raised_by": "H007",
+      "trigger": "only one of the four pattern detectors in src/shadow_search.py has ever been tested against chance.",
+      "first_seen": "run-002-post-repair",
+      "last_seen": "run-002-post-repair",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "Resonance is scored on shared tags, and the tags were written by hand by the same people who chose the entries \u2014 so tag-overlap resonance may be measuring the tagger rather than the technologies. A null model would need to shuffle tags within domain while preserving tag frequency. Shadow lineages match unlock terms against tags by string overlap, which has the same problem plus a tokenisation artefact: 'public_health_infrastructure' splits into 'public', 'health', 'infrastructure' and will match on the common word."
+    },
+    {
+      "id": "U-H008-1",
+      "question": "Under what conditions does the codex accept oral tradition as evidence, and at what quality weight? The type is declared but has never been used.",
+      "raised_by": "H008",
+      "trigger": "an evidence type the project claims to admit had zero uses",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "Accepted on transmission control, not on medium. CITATIONS.md now states the criterion, and five entries use the type at qualities from 0.7 to 0.85. A law recited under ceremonial verification by trained holders (great_law_of_peace, 0.8) weighs more than a general community account (hxaro, 0.7). Budj Bim is the calibration case: Gunditjmara tradition asserted the eel traps' antiquity, and the radiocarbon dates arrived later and confirmed it."
+    },
+    {
+      "id": "U-H008-2",
+      "question": "Is the unused half of the evidence taxonomy aspirational or dead vocabulary?",
+      "raised_by": "H008",
+      "trigger": "3 of 9 declared evidence types were unused",
+      "first_seen": "run-001-baseline",
+      "last_seen": "run-001-baseline",
+      "status": "resolved",
+      "closed_in": "run-002-post-repair",
+      "resolution": "It was dead vocabulary; it is now exercised. All nine original types appear in the corpus, and ethnographic_record was added to the taxonomy because the anthropological entries needed a category that peer_reviewed_study was being stretched to cover."
+    }
+  ]
+}
