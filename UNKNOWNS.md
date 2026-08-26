@@ -4,7 +4,7 @@ Questions this project does not have answers to. Most were opened by a hypothesi
 
 **Open** — live, and worth someone's time. **Resolved** — answered, with the answer written down. **Dormant** — the test that raised it stopped asking, and nobody ever answered it. Dormant is not resolved, and the two are kept apart on purpose: a question that goes quiet because the data changed under it is still open, it just lost its alarm.
 
-_Reconciled at `run-004-merge-main` · 10 open · 11 resolved · 0 dormant_
+_Reconciled at `run-005-recent-finds` · 9 open · 11 resolved · 0 dormant_
 
 ## Open
 
@@ -16,13 +16,9 @@ _Reconciled at `run-004-merge-main` · 10 open · 11 resolved · 0 dormant_
 - Raised by **curated** · first seen `run-002-post-repair` · **pinned**
 - Trigger: Airborne LIDAR, sedimentary and ancient DNA, dental calculus proteomics, and Bayesian radiocarbon modelling have overturned settlement-scale and chronology claims across the field since roughly 2018. No era value in data/ has been rechecked against any of them.
 
-### U-H001-2 — Which registry indexes the encoded corpus — data/shadow_catalogue.json, data/candidates.json, or both?
+### U-H001-2 — Which registry indexes the encoded corpus — data/shadow_catalogue.json, data/candidates.json, or both? They currently overlap in zero rows.
 - Raised by **H001** · first seen `run-004-merge-main` · **pinned**
 - Trigger: Merging main produced two candidate registries whose rows overlap in zero ids, while 24 of 40 encoded entries appear in neither.
-
-### U-H001-3 — Which registry indexes the encoded corpus — data/shadow_catalogue.json, data/candidates.json, or both? They currently overlap in zero rows.
-- Raised by **H001** · first seen `run-004-merge-main`
-- Trigger: 24 of 40 entries are listed in neither
 
 ### U-H003-2 — How old is hxaro?
 - Raised by **H003** · first seen `run-002-post-repair` · **pinned**

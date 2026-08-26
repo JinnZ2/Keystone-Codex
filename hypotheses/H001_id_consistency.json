@@ -19,8 +19,8 @@
     }
   ],
   "last_result": {
-    "run": "run-004-merge-main",
+    "run": "run-005-recent-finds",
     "passed": true,
-    "summary": "all 9 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere"
+    "summary": "all 11 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere"
   }
 }

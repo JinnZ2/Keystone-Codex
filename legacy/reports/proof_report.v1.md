@@ -1,7 +1,7 @@
 # Proof Report
-_Rules version 1.0 · pass_score 0.65 · generated 2026-08-17T02:30:13.192430+00:00_
+_Rules version 1.0 · pass_score 0.65 · generated 2026-08-26T15:04:04.527577+00:00_
 
-**38/40 entries scored as keystones.**
+**40/42 entries scored as keystones.**
 
 ## apprenticeship_systems — ✅ Keystone (score 1.0, evidence quality 0.825)
 - ✔ **longevity>=300** — longevity_years=50000 (w=0.35)
@@ -201,10 +201,22 @@ _Rules version 1.0 · pass_score 0.65 · generated 2026-08-17T02:30:13.192430+00
 - ✔ **unlocks_lineage>=1** — unlocks=2 (w=0.25)
 - ✖ **decentralization>=0.5** — decentralization_score=0.4 (w=0.15)
 
+## crooked_tree_fisheries — ✅ Keystone (score 0.75, evidence quality 0.85)
+- ✔ **longevity>=300** — longevity_years=2200 (w=0.35)
+- ✖ **replication>=2** — replication_regions=1 (w=0.25)
+- ✔ **unlocks_lineage>=1** — unlocks=3 (w=0.25)
+- ✔ **decentralization>=0.5** — decentralization_score=0.8 (w=0.15)
+
 ## kula_ring — ✅ Keystone (score 0.75, evidence quality 0.75)
 - ✔ **longevity>=300** — longevity_years=500 (w=0.35)
 - ✖ **replication>=2** — replication_regions=1 (w=0.25)
 - ✔ **unlocks_lineage>=1** — unlocks=3 (w=0.25)
+- ✔ **decentralization>=0.5** — decentralization_score=0.9 (w=0.15)
+
+## lake_tesse_translocation — ✅ Keystone (score 0.75, evidence quality 0.817)
+- ✔ **longevity>=300** — longevity_years=7000 (w=0.35)
+- ✖ **replication>=2** — replication_regions=1 (w=0.25)
+- ✔ **unlocks_lineage>=1** — unlocks=2 (w=0.25)
 - ✔ **decentralization>=0.5** — decentralization_score=0.9 (w=0.15)
 
 ## nunuku_covenant — ✅ Keystone (score 0.75, evidence quality 0.762)

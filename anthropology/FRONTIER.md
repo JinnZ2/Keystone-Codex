@@ -57,6 +57,24 @@ ate it, at a resolution site-level plant remains cannot reach. Bears on any
 subsistence-technology entry, and would give `chuno` an evidence base far stronger
 than the ethnographic account it would currently be encoded on.
 
+### Direct dating of enamel apatite
+
+**The first entry on this page to produce a result.** Mutin et al. (2025) redated
+the aceramic Neolithic at Mehrgarh — the site that anchors the pre-Indus farming
+sequence — by dating tooth enamel apatite from 23 burials rather than charcoal.
+Charcoal is contamination-prone and had put the earliest occupation near 8000
+BCE; enamel puts it at 5223–4914 BCE. Roughly 2,800 years vanish from the run-up
+to Indus urbanism, and the Neolithic cemetery turns out to have been in use for
+under 500 years, possibly under 200.
+
+**Pressure on this codex.** None on `indus_plumbing` directly — its era brackets
+the Mature Harappan phase and is untouched. That is worth stating plainly,
+because the tempting move was to claim a revision this result does not support.
+What it does change is the surrounding story: the interval between farming and
+engineered urban sanitation in the region is far shorter than the entry's
+framing implies, which makes the achievement look faster rather than older.
+Recorded against **U-C-2**.
+
 ### Bayesian radiocarbon modelling
 
 Chronological modelling that combines dates with stratigraphic priors, tightening
@@ -105,6 +123,32 @@ enough entries to shape it.
 ---
 
 ## Shifts in framing
+
+### Environmental management is not downstream of farming
+
+The strongest recent convergence, and it lands on ground the codex already bet
+on. Three independent lines, three continents, no contact between them:
+
+| System | Region | Date | Source |
+| --- | --- | --- | --- |
+| Budj Bim eel aquaculture | Australia | c. 4650 BCE | McNiven et al. 2012 |
+| Lake Tesse trout translocation | Norway | c. 5000 BCE | Mjærum et al. 2026 |
+| Crooked Tree wetland fisheries | Belize | c. 2000 BCE | Harrison-Buck et al. 2024 |
+
+Each is foragers restructuring an ecosystem — cutting canals, moving a species
+across a barrier it could not pass, converting a seasonal flood into a
+year-round supply. None of them had agriculture. The Norwegian case is the
+sharpest, because a trout above a waterfall is not an ambiguous signal: either
+someone carried it or it is not there.
+
+**Pressure on this codex.** Mostly confirmatory, which is worth being suspicious
+of — a pattern that flatters an existing entry deserves more scrutiny, not less.
+The real work it does is on **U-C-1**: three occurrences with no diffusion
+pathway is the concrete case for defining independent replication as *absence of
+a contact route*, rather than leaving the criterion undefined. Both new entries
+still take `replication_regions=1`, because using a criterion to score entries
+before the criterion has been argued for is exactly the failure the register
+exists to prevent.
 
 ### The stage model keeps failing
 
@@ -157,9 +201,15 @@ it is the only entry that does.
 
 Ordered by how much a result would change:
 
-1. **Encode `budj_bim`'s sibling.** `brewarrina_fish_traps` is in the catalogue.
-   Encoding it is the empirical route into **U-C-1**, since the two systems are the
-   codex's clearest test of what independent replication means.
+1. **Settle the independence criterion.** **U-C-1** now has evidence rather than
+   just a complaint: forager aquaculture on three continents with no contact route
+   between them. Write the criterion, or drop `replication` for want of one — four
+   encoded entries currently take a penalty rather than assert independence they
+   cannot defend, so the cost of leaving this open is being paid every run.
+2. **Encode `monte_sierpe`.** The one new candidate that would extend an existing
+   lineage rather than sit beside it: its segmented structure echoes khipu, and
+   `quipu` is already encoded. Encoding it makes the `unlocks` edge between an
+   object-based and a landscape-based register something the graph can show.
 2. **A `failure_mode` field.** `nunuku_covenant` demonstrates that a technology's
    boundary conditions are engineering content. Needs three or four more entries
    before the field can be designed rather than guessed.

@@ -10,8 +10,8 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-004-merge-main",
+    "run": "run-005-recent-finds",
     "passed": true,
-    "summary": "all 85 unlock targets resolve, no id collisions"
+    "summary": "all 90 unlock targets resolve, no id collisions"
   }
 }

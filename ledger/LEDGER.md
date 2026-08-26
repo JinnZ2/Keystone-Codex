@@ -71,3 +71,18 @@ Generated from `ledger/runs.jsonl` by `src/falsify.py`.
 | `H007` | supported | phi-triads (7147) indistinguishable from chance (null mean 8079.1, p=0.970) — negative control holds |
 | `H008` | supported | all 10 declared evidence types exercised |
 | `H008` | supported | all 10 declared evidence types exercised |
+
+## run-005-recent-finds
+
+8 supported · 0 falsified
+
+| Hypothesis | Verdict | Summary |
+| --- | --- | --- |
+| `H001` | supported | all 11 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere |
+| `H002` | supported | all 90 unlock targets resolve, no id collisions |
+| `H003` | supported | all 42 entries coherent within 25% (3 by declared basis) |
+| `H004` | supported | every claim backed by ≥1 resolving ref; mean quality 0.805 |
+| `H005` | supported | all 8 domains have ≥1 encoded entries |
+| `H006` | supported | 39/42 pass, 31% at ceiling, spread 0.380 — rubric discriminates |
+| `H007` | supported | phi-triads (9141) indistinguishable from chance (null mean 10415.0, p=0.983) — negative control holds |
+| `H008` | supported | all 10 declared evidence types exercised |

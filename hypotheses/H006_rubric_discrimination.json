@@ -20,8 +20,8 @@
     }
   ],
   "last_result": {
-    "run": "run-004-merge-main",
+    "run": "run-005-recent-finds",
     "passed": true,
-    "summary": "37/40 pass, 32% at ceiling, spread 0.380 \u2014 rubric discriminates"
+    "summary": "39/42 pass, 31% at ceiling, spread 0.380 \u2014 rubric discriminates"
   }
 }

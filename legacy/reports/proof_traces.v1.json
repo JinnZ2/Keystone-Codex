@@ -330,6 +330,39 @@
     ]
   },
   {
+    "id": "crooked_tree_fisheries",
+    "is_keystone": true,
+    "score": 0.75,
+    "evidence_quality": 0.85,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=2200",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.8",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
     "id": "damascus_steel",
     "is_keystone": true,
     "score": 1.0,
@@ -583,6 +616,39 @@
         "rule": "unlocks_lineage>=1",
         "passed": true,
         "details": "unlocks=3",
+        "weight": 0.25
+      },
+      {
+        "rule": "decentralization>=0.5",
+        "passed": true,
+        "details": "decentralization_score=0.9",
+        "weight": 0.15
+      }
+    ]
+  },
+  {
+    "id": "lake_tesse_translocation",
+    "is_keystone": true,
+    "score": 0.75,
+    "evidence_quality": 0.817,
+    "rules_version": "1.0",
+    "trace": [
+      {
+        "rule": "longevity>=300",
+        "passed": true,
+        "details": "longevity_years=7000",
+        "weight": 0.35
+      },
+      {
+        "rule": "replication>=2",
+        "passed": false,
+        "details": "replication_regions=1",
+        "weight": 0.25
+      },
+      {
+        "rule": "unlocks_lineage>=1",
+        "passed": true,
+        "details": "unlocks=2",
         "weight": 0.25
       },
       {

@@ -11,7 +11,7 @@
       "status": "open",
       "pinned": true,
       "resolution": null,
-      "detail": "replication carries 0.14 of the score, so this is not cosmetic \u2014 it is the difference between a pass and a fail for an entry sitting near the line. The honest options are a stated independence criterion (geographic separation? absence of a diffusion pathway? independent invention evidenced how?) or dropping the criterion for lack of one. Neither has been done."
+      "detail": "replication carries 0.14 of the score, so this is not cosmetic \u2014 it is the difference between a pass and a fail for an entry sitting near the line. The honest options are a stated independence criterion (geographic separation? absence of a diffusion pathway? independent invention evidenced how?) or dropping the criterion for lack of one. Neither has been done.\n\nUPDATE 2026-08-26 \u2014 the strongest evidence yet, and it points at a usable criterion. Forager-built aquaculture infrastructure is now documented on three continents with no possible contact between them: Budj Bim (Gunditjmara, Australia, c. 4650 BCE), Lake Tesse (southern Norway, c. 5000 BCE, Mj\u00e6rum et al. 2026), and Crooked Tree (Belize, c. 2000 BCE, Harrison-Buck et al. 2024). Australia and Mesoamerica had no diffusion pathway before 1500 CE, so this is about as clean an independent-invention case as archaeology can produce. PROPOSED CRITERION, not yet adopted: replication counts as independent when no diffusion pathway existed between the occurrences \u2014 checkable from geography and date, unlike 'independently' which is currently checkable from nothing. Note what adopting it would cost: four encoded entries (kula_ring, hxaro, crooked_tree_fisheries, lake_tesse_translocation) currently take replication_regions=1 rather than assert independence they cannot defend, and all four fail that criterion. A criterion that lets them pass must be argued for, not back-fitted because the corpus would score better."
     },
     {
       "id": "U-C-2",
@@ -23,7 +23,7 @@
       "status": "open",
       "pinned": true,
       "resolution": null,
-      "detail": "See anthropology/FRONTIER.md for which method bears on which entry. The Upano Valley result (Rostain et al. 2024) is the clearest warning: an entire settlement system in a region the literature described as sparsely occupied."
+      "detail": "See anthropology/FRONTIER.md for which method bears on which entry. The Upano Valley result (Rostain et al. 2024) is the clearest warning: an entire settlement system in a region the literature described as sparsely occupied.\n\nUPDATE 2026-08-26 \u2014 first worked example, and it is a clean hit for the method this register predicted. Mutin et al. (2025, Scientific Reports, doi:10.1038/s41598-025-92621-5) redated the aceramic Neolithic at Mehrgarh from c. 8000 BCE to 5223\u20134914 BCE by dating tooth enamel apatite instead of charcoal, which is contamination-prone \u2014 roughly 2,800 years removed from the runway to Indus urbanism. It does NOT move data/infrastructure/indus_plumbing.json, whose era brackets the Mature Harappan phase and is unaffected; the honest reading is that the gap between farming and engineered urban sanitation is far shorter than the entry's context implies, which makes the achievement faster rather than older. Recorded here precisely because the temptation was to claim it revised an entry when it does not."
     },
     {
       "id": "U-H001-1",
@@ -38,25 +38,15 @@
     },
     {
       "id": "U-H001-2",
-      "question": "Which registry indexes the encoded corpus \u2014 data/shadow_catalogue.json, data/candidates.json, or both?",
+      "question": "Which registry indexes the encoded corpus \u2014 data/shadow_catalogue.json, data/candidates.json, or both? They currently overlap in zero rows.",
       "raised_by": "H001",
       "trigger": "Merging main produced two candidate registries whose rows overlap in zero ids, while 24 of 40 encoded entries appear in neither.",
       "first_seen": "run-004-merge-main",
-      "last_seen": "run-004-merge-main",
+      "last_seen": "run-005-recent-finds",
       "status": "open",
       "pinned": true,
       "resolution": null,
-      "detail": "The two were built for different purposes and it shows. shadow_catalogue.json carries era, tags, and a confirmed/shadow status, and is what src/shadow_search.py searches. candidates.json is a shorter queue of things to write up. Neither currently indexes the corpus, so 'what is in this codex' has no single answer. H001 deliberately does not force one: picking a winner is a decision about what the registries are FOR, and enforcing it in a test would settle that by fiat. Whoever decides should set require_registry_row on H001 afterwards so the convention is enforced rather than merely intended."
-    },
-    {
-      "id": "U-H001-3",
-      "question": "Which registry indexes the encoded corpus \u2014 data/shadow_catalogue.json, data/candidates.json, or both? They currently overlap in zero rows.",
-      "raised_by": "H001",
-      "trigger": "24 of 40 entries are listed in neither",
-      "first_seen": "run-004-merge-main",
-      "last_seen": "run-004-merge-main",
-      "status": "open",
-      "resolution": null
+      "detail": "The two were built for different purposes and it shows. shadow_catalogue.json carries era, tags, and a confirmed/shadow status, and is what src/shadow_search.py searches. candidates.json is a shorter queue of things to write up. Neither currently indexes the corpus, so 'what is in this codex' has no single answer. H001 deliberately does not force one: picking a winner is a decision about what the registries are FOR, and enforcing it in a test would settle that by fiat. Whoever decides should set require_registry_row on H001 afterwards so the convention is enforced rather than merely intended. [Merged with U-H001-3 on 2026-08-26: a curated unknown and an engine-raised one described the same question in different words, and the engine matches on exact text, so it forked a duplicate. Curated entries must copy the raiser's wording verbatim.]"
     },
     {
       "id": "U-H002-1",
@@ -189,7 +179,7 @@
       "raised_by": "H006",
       "trigger": "1 criterion/criteria fire for no entry in the corpus",
       "first_seen": "run-004-merge-main",
-      "last_seen": "run-004-merge-main",
+      "last_seen": "run-005-recent-finds",
       "status": "open",
       "resolution": null
     },

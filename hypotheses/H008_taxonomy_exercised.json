@@ -17,7 +17,7 @@
     }
   ],
   "last_result": {
-    "run": "run-004-merge-main",
+    "run": "run-005-recent-finds",
     "passed": true,
     "summary": "all 10 declared evidence types exercised"
   }
