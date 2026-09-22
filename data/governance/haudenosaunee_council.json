@@ -1,47 +1,61 @@
 {
   "id": "great_law_of_peace",
-  "name": "Haudenosaunee Confederacy Councils (Great Law of Peace)",
+  "name": "Haudenosaunee Confederacy Councils (Kayanerenkó:wa, the Great Law of Peace)",
   "domain": "governance",
   "region": "Northeastern North America",
   "era": {
     "start": 1200,
     "end": 2025
   },
-  "summary": "Distributed council system with checks (including women\u2019s roles) that enabled inter\u2011nation peace and resilient decision\u2011making.",
+  "summary": "Distributed council system binding five (later six) nations under a common law, with clan mothers holding nomination and removal power over chiefs; enabled inter-nation peace and decision-making that survives the collapse of the states that surrounded it.",
   "metrics": {
     "longevity_years": 500,
     "replication_regions": 2,
     "decentralization_score": 0.9,
     "ethical_alignment": 0.9
   },
+  "longevity_basis": "Conservative floor, not era span. The founding date is genuinely contested — estimates range from the 12th century to c. 1450, and the 1142 eclipse-based date is disputed. 500 years measures from the latest credible founding estimate to the present, so the figure understates rather than overstates. Under the earliest estimates the true figure exceeds 800 years. See U-H003-1.",
   "claims": [
     {
       "id": "c1",
-      "statement": "Distributed governance reduced single\u2011point failure",
-      "evidence_refs": [
-        "e1"
-      ]
+      "statement": "Distributed councils with no single executive removed the single-point failure that killed neighbouring polities",
+      "evidence_refs": ["e1", "e2", "e4"]
     },
     {
       "id": "c2",
-      "statement": "Influenced later federal structures",
-      "evidence_refs": [
-        "e2"
-      ]
+      "statement": "Clan mothers hold the power to nominate and depose chiefs, placing a structural check outside the deliberating body",
+      "evidence_refs": ["e1", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "The system remained continuously operative through European invasion, partition, and settler state formation",
+      "evidence_refs": ["e2", "e3"]
     }
   ],
   "evidence": [
     {
       "id": "e1",
       "type": "primary_text",
-      "source": "Recensions of the Great Law; oral histories",
-      "quality": 0.7
+      "source": "Parker, A. C. (1916) The Constitution of the Five Nations, New York State Museum Bulletin 184 — the Chiefs' recension of the Great Law",
+      "quality": 0.8
     },
     {
       "id": "e2",
       "type": "peer_reviewed_study",
-      "source": "Comparative political analyses",
+      "source": "Fenton, W. N. (1998) The Great Law and the Longhouse: A Political History of the Iroquois Confederacy, University of Oklahoma Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Comparative political analyses of confederated and federal structures in the early Americas",
       "quality": 0.6
+    },
+    {
+      "id": "e4",
+      "type": "oral_tradition_encoded",
+      "source": "Recitation of the Kayanerenkó:wa by condoled chiefs at the Condolence Ceremony, transmitted with wampum as mnemonic index; the law is carried and verified by performance rather than by manuscript",
+      "quality": 0.8
     }
   ],
   "unlocks": [
@@ -49,5 +63,5 @@
     "consensus_protocols",
     "veto_ethics"
   ],
-  "notes": "Ethical and social keystone; embeds reciprocity and balance of power."
+  "notes": "Ethical and social keystone; embeds reciprocity and balance of power. The oral evidence item is weighted at 0.8 deliberately: a law recited under ceremonial verification by trained holders is a controlled transmission channel, not hearsay, and scoring it low would be a bias in the rubric rather than a fact about the source. See UNKNOWNS.md U-H008-1."
 }

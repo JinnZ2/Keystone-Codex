@@ -1,0 +1,61 @@
+{
+  "id": "lake_tesse_translocation",
+  "name": "Lake Tesse Trout Translocation (Scandinavian Mesolithic)",
+  "domain": "ecological",
+  "region": "Jotunheimen uplands, southern Norway",
+  "era": {
+    "start": -5000,
+    "end": 2025
+  },
+  "summary": "Brown trout carried by hand above waterfalls and rapids the fish could not pass, into high-altitude lakes that held none, and harvested with wooden traps. The earliest documented case of humans deliberately moving a species into a new water body — a stocking programme run seven thousand years before anyone farmed in Scandinavia.",
+  "metrics": {
+    "longevity_years": 7000,
+    "replication_regions": 1,
+    "decentralization_score": 0.9,
+    "ethical_alignment": 0.65
+  },
+  "longevity_basis": "Persistence of the outcome, not continuous operation of the equipment. The wooden traps are radiocarbon-dated from c. 5000 BCE and their use across the whole span is not attested. What has persisted is the introduced ecosystem: self-sustaining brown trout in lakes that had none, still fished today. This entry measures how long the modification lasted, which for an ecological intervention is the property that matters.",
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Brown trout were carried above natural migration barriers into lakes they could not have colonised unaided, making the introduction deliberate rather than incidental",
+      "evidence_refs": ["e1", "e3"]
+    },
+    {
+      "id": "c2",
+      "statement": "Wooden trap structures at Lake Tesse date from c. 5000 BCE, centuries before farming reached Scandinavia",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c3",
+      "statement": "The introduced populations are self-sustaining and still support fishing, so the modification has outlived every institution that made it",
+      "evidence_refs": ["e1", "e3"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "peer_reviewed_study",
+      "source": "Mjærum, A. et al. (2026) Fish traps at Lake Tesse and Mesolithic translocation of brown trout in the southern Norwegian mountains, Antiquity",
+      "uri": "doi:10.15184/aqy.2026.10392",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "radiocarbon_date",
+      "source": "Radiocarbon dates on the wooden trap structures at Lake Tesse, placing use from c. 5000 BCE onward",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "field_measurement",
+      "source": "Surveys of present-day brown trout (Salmo trutta) populations in upland lakes lying above waterfalls and rapids impassable to migrating fish",
+      "quality": 0.75
+    }
+  ],
+  "unlocks": [
+    "managed_aquaculture",
+    "landscape_engineering"
+  ],
+  "notes": "Added August 2026. ethical_alignment is scored 0.65 rather than high, and that is deliberate: this is the earliest known deliberate species introduction, and species introduction is the mechanism behind a large share of modern ecological damage. The codex should not score a technology well merely because it is old and Indigenous. What earns the score it does get is that the intervention was legible, local, and has proved stable for seven millennia — which is more than can be said for most 19th-century acclimatisation programmes built on the same idea."
+}

@@ -1,30 +1,50 @@
 {
-  "version": "1.0",
+  "version": "1.1",
+  "supersedes": "legacy/rules/keystone_rules.v1.json",
+  "revision_note": "Revised after run-001-baseline falsified H006. Under v1.0 every encoded entry passed, four of five with a perfect score: the rubric was confirming the selection that put entries in the repository rather than evaluating them. v1.0 scored only what an author asserted about a technology (longevity, regions, unlocks, decentralization) and never scored the evidence behind the assertion, so an entry could reach 1.0 on four numbers typed by hand. v1.1 keeps the four original criteria at reduced weight and adds three that read the evidence array. Nothing was made harder to game by raising a threshold; the change is in what gets measured. v1.0 is retained and remains runnable — see legacy/README.md.",
   "criteria": [
     {
       "name": "longevity",
-      "description": ">= 300 years durable or revivable",
+      "description": ">= 300 years durable or revivable; where the figure is not derivable from the era, the entry must declare a longevity_basis",
       "threshold": 300,
-      "weight": 0.35
+      "weight": 0.18
     },
     {
       "name": "replication",
       "description": ">= 2 regions independently",
       "threshold": 2,
-      "weight": 0.25
+      "weight": 0.14
     },
     {
       "name": "unlocks_lineage",
-      "description": "unlocks >=1 downstream families",
-      "threshold": 1,
-      "weight": 0.25
+      "description": ">= 2 downstream families, each resolving to an entry id or a term in rules/lineage_terms.json",
+      "threshold": 2,
+      "weight": 0.12
     },
     {
       "name": "decentralization",
       "description": ">= 0.5 (0..1) systemic decentralization",
       "threshold": 0.5,
-      "weight": 0.15
+      "weight": 0.1
+    },
+    {
+      "name": "evidence_strength",
+      "description": "mean quality across the entry's evidence >= 0.75",
+      "threshold": 0.75,
+      "weight": 0.2
+    },
+    {
+      "name": "evidence_independence",
+      "description": ">= 3 distinct evidence types, so a verdict does not rest on one kind of record",
+      "threshold": 3,
+      "weight": 0.14
+    },
+    {
+      "name": "claim_coverage",
+      "description": "every claim backed by at least one evidence_ref that resolves within the entry",
+      "threshold": 1.0,
+      "weight": 0.12
     }
   ],
-  "pass_score": 0.65
+  "pass_score": 0.7
 }

@@ -42,19 +42,21 @@ class TestValidEntry(unittest.TestCase):
         self.assertTrue(check_item("test.json", entry))
 
     def test_all_real_data_files_pass(self):
-        """Every JSON file in data/ must pass validation."""
-        data_dir = os.path.join(ROOT, "data")
-        count = 0
-        for base, _, files in os.walk(data_dir):
-            for f in files:
-                if f.endswith(".json") and f != "candidates.json":
-                    p = os.path.join(base, f)
-                    import json
-                    with open(p) as fh:
-                        obj = json.load(fh)
-                    self.assertTrue(check_item(p, obj), f"Validation failed for {p}")
-                    count += 1
-        self.assertGreater(count, 0, "No data files found")
+        """
+        Every encoded entry must validate — including its location on disk.
+
+        This used to walk data/ excluding candidates.json by name, which meant
+        every new registry file dropped at the top of data/ got validated as
+        though it were an entry. Loading goes through src.corpus now, where the
+        entry-vs-registry rule lives in one place.
+        """
+        from src import corpus
+        pairs = corpus.load_entries_with_paths()
+        self.assertGreater(len(pairs), 0, "No data files found")
+        for p, obj in pairs:
+            rel = os.path.relpath(p, ROOT)
+            self.assertTrue(check_item(rel, obj, strict_location=True),
+                            f"Validation failed for {rel}")
 
 
 class TestMissingFields(unittest.TestCase):

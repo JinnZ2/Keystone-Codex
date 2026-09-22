@@ -1,0 +1,67 @@
+{
+  "id": "kula_ring",
+  "name": "Kula Ring (Massim ceremonial exchange)",
+  "domain": "economic",
+  "region": "Massim archipelago, southeastern Papua New Guinea",
+  "era": {
+    "start": 1500,
+    "end": 2025
+  },
+  "summary": "A circuit of inter-island partnerships across which two classes of valuable move in fixed opposite directions — soulava necklaces clockwise, mwali armshells counter-clockwise — neither of which is consumed, sold, or permanently held. The valuables are the ledger; the trade in food, pots, and tools moves safely alongside them.",
+  "metrics": {
+    "longevity_years": 500,
+    "replication_regions": 1,
+    "decentralization_score": 0.9,
+    "ethical_alignment": 0.7
+  },
+  "longevity_basis": "Conservative floor. Direct attestation runs from the earliest European accounts and Malinowski's fieldwork through to present-day practice. Greater antiquity is argued from the distribution of shell valuables and voyaging canoe technology across the Massim, but the Kula circuit as such is not independently dated, so this entry reports the interval that is attested rather than the interval that is likely.",
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Objects with no use value sustain a trust network spanning politically independent islands with no common authority",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Each named valuable carries a recited history of prior holders, making reputation an auditable property of the object rather than a rumour about the person",
+      "evidence_refs": ["e1", "e3"]
+    },
+    {
+      "id": "c3",
+      "statement": "Ordinary utilitarian trade travels the ceremonial circuit, which is what makes long-distance exchange survivable between groups with no peace treaty",
+      "evidence_refs": ["e2", "e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "ethnographic_record",
+      "source": "Malinowski, B. (1922) Argonauts of the Western Pacific, Routledge — the first systematic account, based on fieldwork in the Trobriands 1915–18",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Leach, J. W. & Leach, E. (eds., 1983) The Kula: New Perspectives on Massim Exchange, Cambridge University Press — sixty years of restudy, including substantial corrections to Malinowski",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "oral_tradition_encoded",
+      "source": "Partnership histories and named-valuable genealogies held by Kula participants; each soulava and mwali carries a recited chain of prior holders that establishes its rank",
+      "quality": 0.75
+    },
+    {
+      "id": "e4",
+      "type": "archaeological_record",
+      "source": "Distribution of shell valuables, pottery, and voyaging canoe technology across the Massim indicating long-standing inter-island circulation",
+      "quality": 0.6
+    }
+  ],
+  "unlocks": [
+    "regional_trust_networks",
+    "non_market_exchange",
+    "reputation_systems"
+  ],
+  "notes": "Scored replication_regions=1 deliberately. Ceremonial exchange rings exist elsewhere in Melanesia, but calling them independent replications of the Kula would be an assertion this entry cannot evidence, so it takes the penalty instead. The Kula is the standing counter-example to the claim that money must be scarce, portable, and fungible: these valuables are none of those things and do the job anyway."
+}

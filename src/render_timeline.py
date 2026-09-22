@@ -1,33 +1,46 @@
 #!/usr/bin/env python3
 """
-Render a simple markdown timeline sorted by era.start.
+Render a markdown timeline of encoded keystones, sorted by era start.
 """
-import os, json
+import os
+import sys
 
-ROOT = os.path.dirname(os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import corpus  # noqa: E402
 
-def load_items():
-    items = []
-    data_dir = os.path.join(ROOT, "data")
-    for base, _, files in os.walk(data_dir):
-        for f in files:
-            if f.endswith(".json") and f != "candidates.json":
-                p = os.path.join(base, f)
-                with open(p) as fh:
-                    items.append(json.load(fh))
-    return items
+ROOT = corpus.ROOT
+
+
+def fmt_year(y):
+    return f"{abs(y)} BCE" if y < 0 else f"{y} CE"
+
 
 def main():
-    items = load_items()
+    items = corpus.load_entries()
     items.sort(key=lambda x: x["era"]["start"])
-    lines = ["# Timeline", ""]
+
+    lines = [
+        "# Timeline",
+        "",
+        f"{len(items)} encoded keystones, ordered by first attestation. "
+        "Candidates not yet encoded live in `data/shadow_catalogue.json`.",
+        "",
+    ]
     for x in items:
-        s = x["era"]["start"]
-        e = x["era"]["end"]
-        lines.append(f"- **{s} → {e}** — **{x['name']}** ({x['domain']}, {x['region']}) — {x['summary']}")
-    with open(os.path.join(ROOT, "timeline.md"), "w") as f:
-        f.write("\n".join(lines))
-    print("Wrote timeline.md")
+        era = x["era"]
+        m = x["metrics"]
+        lines.append(
+            f"- **{fmt_year(era['start'])} → {fmt_year(era['end'])}** — "
+            f"**{x['name']}** ({x['domain']}, {x['region']})  \n"
+            f"  {x['summary']}  \n"
+            f"  _longevity {m['longevity_years']}yr · "
+            f"{m['replication_regions']} regions · "
+            f"decentralization {m['decentralization_score']}_"
+        )
+    with open(os.path.join(ROOT, "timeline.md"), "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    print(f"Wrote timeline.md ({len(items)} entries)")
+
 
 if __name__ == "__main__":
     main()

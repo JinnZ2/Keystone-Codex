@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "criteria": [
+    {
+      "name": "longevity",
+      "description": ">= 300 years durable or revivable",
+      "threshold": 300,
+      "weight": 0.35
+    },
+    {
+      "name": "replication",
+      "description": ">= 2 regions independently",
+      "threshold": 2,
+      "weight": 0.25
+    },
+    {
+      "name": "unlocks_lineage",
+      "description": "unlocks >=1 downstream families",
+      "threshold": 1,
+      "weight": 0.25
+    },
+    {
+      "name": "decentralization",
+      "description": ">= 0.5 (0..1) systemic decentralization",
+      "threshold": 0.5,
+      "weight": 0.15
+    }
+  ],
+  "pass_score": 0.65
+}

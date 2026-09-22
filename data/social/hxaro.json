@@ -1,0 +1,67 @@
+{
+  "id": "hxaro",
+  "name": "Hxaro (Ju/'hoansi delayed reciprocal exchange)",
+  "domain": "social",
+  "region": "Kalahari, southern Africa",
+  "era": {
+    "start": 1900,
+    "end": 2025
+  },
+  "summary": "A network of named, lifelong partnerships across which gifts move with deliberately delayed and non-equivalent return. The goods are largely beside the point: what the exchange maintains is a standing claim on the water, food, and shelter of distant groups, callable when local conditions fail.",
+  "metrics": {
+    "longevity_years": 125,
+    "replication_regions": 1,
+    "decentralization_score": 0.95,
+    "ethical_alignment": 0.9
+  },
+  "longevity_basis": "Deliberately a floor, and knowingly too low. Direct ethnographic attestation covers the twentieth century onward, and that is the only interval this entry will assert. Ostrich eggshell bead exchange networks across the same region are documented archaeologically from roughly 50,000 to 33,000 years ago — the exact material signature hxaro produces — but no evidence establishes institutional continuity across the intervening gap. Entering a large number here would score well and prove nothing. The entry takes the failing score instead. See U-H003-2.",
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The function is insurance, not trade: partnerships are held in ecologically distinct areas so that local failure and partner failure are uncorrelated",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "Delay and non-equivalence are load-bearing — immediate or matched return would close the obligation and dissolve the standing claim",
+      "evidence_refs": ["e1", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "The network operates without authority, enforcement, or accounting, and spans distances far exceeding the co-resident group",
+      "evidence_refs": ["e1", "e3", "e4"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "ethnographic_record",
+      "source": "Wiessner, P. (1982) Risk, reciprocity and social influences on !Kung San economics, in Leacock & Lee (eds.) Politics and History in Band Societies, Cambridge University Press",
+      "quality": 0.85
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Wiessner, P. (2002) Hunting, healing, and hxaro exchange: a long-term perspective on !Kung (Ju/'hoansi) large-game hunting, Evolution and Human Behavior 23(6)",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "archaeological_record",
+      "source": "Miller, J. M. & Wang, Y. V. (2022) Ostrich eggshell beads reveal 50,000-year-old social network in Africa, Nature 601 — regional bead exchange networks matching the material signature hxaro produces, cited here for the signature and not for continuity",
+      "quality": 0.8
+    },
+    {
+      "id": "e4",
+      "type": "oral_tradition_encoded",
+      "source": "Ju/'hoansi accounts of named hxaro partnerships, their inheritance, and the obligations attaching to each, recorded during and after Harvard Kalahari Research Group fieldwork",
+      "quality": 0.7
+    }
+  ],
+  "unlocks": [
+    "distributed_risk_pooling",
+    "mutual_aid_networks",
+    "drought_resilience"
+  ],
+  "notes": "This entry is expected to fail the current rubric, and is kept failing on purpose. Every criterion it fails is a criterion about the record rather than about the technology: longevity, because the institution has not been dated; replication, because analogues have not been shown independent. A rubric that ranks the lathe above a risk-pooling network on evidence of age is telling you about archaeology's sampling bias toward things made of metal and stone. Hxaro is the codex's calibration weight — the entry to check first when someone proposes loosening the rules."
+}

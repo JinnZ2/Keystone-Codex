@@ -1,0 +1,66 @@
+{
+  "id": "budj_bim",
+  "name": "Budj Bim Eel Aquaculture (Gunditjmara)",
+  "domain": "infrastructure",
+  "region": "Western Victoria, Australia",
+  "era": {
+    "start": -4650,
+    "end": 2025
+  },
+  "summary": "Stone channels, weirs, and holding ponds cut into a lava flow to divert water and hold short-finned eels (kooyang) at harvestable density year-round; hydraulic infrastructure built and maintained by people with no agriculture and no domesticated animals.",
+  "metrics": {
+    "longevity_years": 6600,
+    "replication_regions": 2,
+    "decentralization_score": 0.85,
+    "ethical_alignment": 0.9
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Water was engineered at landscape scale to farm a wild species, not merely to catch it",
+      "evidence_refs": ["e1", "e2", "e3"]
+    },
+    {
+      "id": "c2",
+      "statement": "The system supported permanent settlement, evidenced by stone dwelling foundations alongside the channels",
+      "evidence_refs": ["e2", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Construction predates the agricultural transition in most of the world, refuting the sequence in which farming precedes sedentism precedes monumental construction",
+      "evidence_refs": ["e1", "e2"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "radiocarbon_date",
+      "source": "McNiven, I. J. et al. (2012) Dating Aboriginal stone-walled fishtraps at Lake Condah, southeast Australia, Journal of Archaeological Science 39(2) — channel construction dated to at least c. 6600 cal BP",
+      "quality": 0.9
+    },
+    {
+      "id": "e2",
+      "type": "archaeological_record",
+      "source": "Excavated channels, weirs, and holding ponds across the Budj Bim lava flow, with associated stone-walled dwelling foundations indicating year-round occupation",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "oral_tradition_encoded",
+      "source": "Gunditjmara accounts of the formation of Budj Bim and of the construction, tenure, and seasonal operation of the eel traps, maintained through continuous connection to Country and submitted as evidence in the World Heritage nomination",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "primary_text",
+      "source": "Budj Bim Cultural Landscape, UNESCO World Heritage List inscription (2019), criteria (iii) and (v) — the first Australian property inscribed exclusively for Aboriginal cultural values",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "managed_aquaculture",
+    "landscape_engineering",
+    "sedentary_forager_settlement"
+  ],
+  "notes": "replication_regions=2 counts Baiame's Ngunnhu at Brewarrina as an independent occurrence of Aboriginal stone aquaculture engineering. That judgement is not backed by a stated independence criterion, and data/economic/kula_ring.json refuses the parallel judgement for Melanesian exchange rings — the two entries currently apply different standards. See U-C-1. The oldest entry in the codex by an order of magnitude. Its significance is partly negative: it falsifies a sequencing assumption — agriculture, then surplus, then sedentism, then monumental works — that much of this repository's framing quietly inherits. Gunditjmara oral tradition asserted the eel traps' antiquity long before the radiocarbon dates arrived; the dates confirmed the tradition rather than the reverse, which is a data point about evidence weighting as much as about eels."
+}

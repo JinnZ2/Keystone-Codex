@@ -1,0 +1,151 @@
+{
+  "version": "1.1",
+  "description": "Declared downstream technology families that an entry's `unlocks` may point at. Created in response to run-001-baseline, which falsified H002: all 15 unlock targets in the corpus resolved to nothing, so build_graph.py was drawing edges to invented nodes and the unlocks_lineage criterion was counting strings. An unlock target must now be either another keystone id (a direct descent claim) or a term declared here (a family claim). Adding a term is cheap; adding it silently is what this file prevents.",
+  "terms": [
+    {
+      "id": "climate_resilient_agriculture",
+      "name": "Climate-resilient agriculture",
+      "domain": "ecological",
+      "description": "Cultivation designed to hold yield through the variability it expects rather than the average it hopes for."
+    },
+    {
+      "id": "drought_resilience",
+      "name": "Drought resilience",
+      "domain": "ecological",
+      "description": "Practices that carry a population through predictable subsistence failure."
+    },
+    {
+      "id": "landscape_engineering",
+      "name": "Landscape engineering",
+      "domain": "ecological",
+      "description": "Modification of hydrology, fire regime, or terrain at watershed scale."
+    },
+    {
+      "id": "managed_aquaculture",
+      "name": "Managed aquaculture",
+      "domain": "ecological",
+      "description": "Deliberate husbandry of aquatic species through built water infrastructure."
+    },
+    {
+      "id": "community_insurance",
+      "name": "Community insurance",
+      "domain": "economic",
+      "description": "Pooled liability against individual shock, underwritten by membership rather than by premium."
+    },
+    {
+      "id": "non_market_exchange",
+      "name": "Non-market exchange",
+      "domain": "economic",
+      "description": "Circulation of goods governed by obligation rather than price."
+    },
+    {
+      "id": "regional_trust_networks",
+      "name": "Regional trust networks",
+      "domain": "economic",
+      "description": "Standing relationships that make exchange safe across political boundaries."
+    },
+    {
+      "id": "reputation_systems",
+      "name": "Reputation systems",
+      "domain": "economic",
+      "description": "Durable public record of conduct used to price trust."
+    },
+    {
+      "id": "wealth_redistribution",
+      "name": "Wealth redistribution",
+      "domain": "economic",
+      "description": "Mechanisms that move accumulated surplus back down a gradient before it hardens into permanent rank."
+    },
+    {
+      "id": "binding_pacifism",
+      "name": "Binding pacifism",
+      "domain": "ethical",
+      "description": "Renunciation of lethal force enforced as law rather than urged as virtue."
+    },
+    {
+      "id": "conflict_ritualization",
+      "name": "Conflict ritualization",
+      "domain": "ethical",
+      "description": "Channelling dispute into bounded contest that terminates before killing."
+    },
+    {
+      "id": "intergenerational_covenants",
+      "name": "Intergenerational covenants",
+      "domain": "ethical",
+      "description": "Commitments binding on people who did not consent to them and cannot renegotiate."
+    },
+    {
+      "id": "relational_ai_ethics",
+      "name": "Relational AI ethics",
+      "domain": "ethical",
+      "description": "Ethics grounded in the quality of relationships between agents rather than in rules applied to isolated actors. The only forward-looking term here, and the one most likely to need revision."
+    },
+    {
+      "id": "veto_ethics",
+      "name": "Veto ethics",
+      "domain": "ethical",
+      "description": "Structural power to block, held by those who bear a decision's cost."
+    },
+    {
+      "id": "distributed_governance_protocols",
+      "name": "Distributed governance protocols",
+      "domain": "governance",
+      "description": "Procedures letting autonomous units reach binding joint decisions without surrendering autonomy to a centre."
+    },
+    {
+      "id": "resilient_accounting",
+      "name": "Resilient accounting",
+      "domain": "information",
+      "description": "Record systems that remain auditable after institutional collapse."
+    },
+    {
+      "id": "household_utilities",
+      "name": "Household utilities",
+      "domain": "infrastructure",
+      "description": "Service delivery terminating inside the dwelling rather than at a public point."
+    },
+    {
+      "id": "modular_urbanism",
+      "name": "Modular urbanism",
+      "domain": "infrastructure",
+      "description": "Cities composed of repeatable units that can be extended without redesign."
+    },
+    {
+      "id": "public_health_infrastructure",
+      "name": "Public health infrastructure",
+      "domain": "infrastructure",
+      "description": "Built systems whose function is population-scale disease reduction."
+    },
+    {
+      "id": "sedentary_forager_settlement",
+      "name": "Sedentary forager settlement",
+      "domain": "infrastructure",
+      "description": "Permanent settlement supported without domesticated staple crops."
+    },
+    {
+      "id": "industrial_mass_production",
+      "name": "Industrial mass production",
+      "domain": "material",
+      "description": "Interchangeable parts manufactured to tolerance at volume."
+    },
+    {
+      "id": "distributed_risk_pooling",
+      "name": "Distributed risk pooling",
+      "domain": "social",
+      "description": "Spreading subsistence shock across a network wider than the co-resident group."
+    },
+    {
+      "id": "mutual_aid_networks",
+      "name": "Mutual aid networks",
+      "domain": "social",
+      "description": "Reciprocal support obligations maintained outside kinship and outside the state."
+    },
+    {
+      "id": "social_safety_nets",
+      "name": "Social safety nets",
+      "domain": "social",
+      "description": "Standing obligations that catch a person whose own household has failed, before destitution is reached."
+    }
+  ],
+  "revision_note": "Nine terms removed in the merge with main: regenerative_agriculture, carbon_sequestration, circular_waste_systems, low_bandwidth_data, tactile_coding, federalism_templates, consensus_protocols, machine_tools_family, and precision_engineering were promoted to full keystone entries on that branch. An encoded entry beats a vocabulary stub, and holding both would give one id two definitions \u2014 H002 now fails on that collision rather than letting the graph pick a winner silently. Six terms added for targets that main's new entries left dangling."
+}

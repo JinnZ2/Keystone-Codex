@@ -1,0 +1,72 @@
+{
+  "id": "nunuku_covenant",
+  "name": "Nunuku-whenua's Covenant (Moriori)",
+  "domain": "ethical",
+  "region": "Rēkohu / Chatham Islands",
+  "era": {
+    "start": 1500,
+    "end": 1835
+  },
+  "summary": "An absolute proscription on killing, adopted after inter-group fighting on Rēkohu and enforced as law rather than urged as virtue. Disputes were settled by single combat with staves, stopped at first blood; the loser conceded and the matter ended. It held for roughly three centuries.",
+  "metrics": {
+    "longevity_years": 335,
+    "replication_regions": 1,
+    "decentralization_score": 0.7,
+    "ethical_alignment": 1.0
+  },
+  "longevity_basis": "Matches the era, but both ends carry uncertainty worth stating. The start is taken from Moriori tradition placing Nunuku-whenua's proscription in the generations after settlement of Rēkohu; settlement itself is dated variously from c. 1400 to c. 1500, so the figure is a floor. The end is exact: 1835.",
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Lethal violence was renounced as binding law, not as counsel, and the renunciation was honoured across roughly three centuries",
+      "evidence_refs": ["e1", "e2", "e3"]
+    },
+    {
+      "id": "c2",
+      "statement": "Conflict was not suppressed but ritualised — bounded staff combat terminating at first blood substituted for killing",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c3",
+      "statement": "Rēkohu lacks the fortified sites ubiquitous in contemporaneous mainland Aotearoa, an independent material correlate of the covenant",
+      "evidence_refs": ["e4"]
+    },
+    {
+      "id": "c4",
+      "statement": "The covenant was internally robust and externally fatal: it survived every internal dispute for three centuries and offered no defence against the 1835 invasion, in which the Moriori decided in council to uphold it and were killed or enslaved",
+      "evidence_refs": ["e2", "e3"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "oral_tradition_encoded",
+      "source": "Moriori accounts of Nunuku-whenua's proscription and of the staff-combat procedure, transmitted as binding law and recited by Moriori elders across generations",
+      "quality": 0.8
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "King, M. (1989) Moriori: A People Rediscovered, Viking — the standard history, drawing on Moriori testimony, court records, and missionary accounts",
+      "quality": 0.8
+    },
+    {
+      "id": "e3",
+      "type": "primary_text",
+      "source": "Testimony of Moriori claimants before the Native Land Court sitting on the Chatham Islands, 1870, recorded in the court minute books — Moriori witnesses recounting the covenant and the decision taken in council in 1835",
+      "quality": 0.75
+    },
+    {
+      "id": "e4",
+      "type": "archaeological_record",
+      "source": "Rēkohu settlement archaeology: rākau momori (dendroglyphs) and the absence of pā-type fortifications of the kind found throughout contemporaneous mainland Aotearoa",
+      "quality": 0.7
+    }
+  ],
+  "unlocks": [
+    "binding_pacifism",
+    "conflict_ritualization",
+    "intergenerational_covenants"
+  ],
+  "notes": "Encoded with its failure mode stated as a claim, because the failure is the engineering content. A norm that survives three centuries of internal stress and collapses on first external contact has a characterisable boundary condition: it regulates parties who are inside it and has no term for parties who are not. Reading the 1835 invasion as proof the covenant was naive gets the analysis backwards — it was a control system operating outside its specified input range. Moriori are not extinct; the covenant's authority is asserted by Moriori today, and the Moriori Claims Settlement Act 2020 records the Crown's acknowledgement. The era closes at 1835 because that is when it stopped being enforced law, not when it stopped mattering."
+}

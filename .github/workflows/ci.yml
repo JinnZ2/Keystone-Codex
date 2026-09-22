@@ -24,6 +24,11 @@ jobs:
       - name: Validate data entries
         run: python3 -m src validate
 
+      - name: Run falsification suite
+        # Not --strict: a falsified hypothesis is a finding, not a broken
+        # build. This step fails only if the engine itself errors.
+        run: python3 -m src falsify
+
       - name: Run proof scoring
         run: python3 -m src score
 

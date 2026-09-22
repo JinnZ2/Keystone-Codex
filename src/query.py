@@ -5,18 +5,14 @@ Usage: python3 -m src query [--domain X] [--region X] [--era-after Y] [--era-bef
 """
 import os, sys, json
 
-ROOT = os.path.dirname(os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import corpus  # noqa: E402
+
+ROOT = corpus.ROOT
 
 def load_items():
-    items = []
-    data_dir = os.path.join(ROOT, "data")
-    for base, _, files in os.walk(data_dir):
-        for f in files:
-            if f.endswith(".json") and f != "candidates.json":
-                p = os.path.join(base, f)
-                with open(p) as fh:
-                    items.append(json.load(fh))
-    return items
+    """Encoded keystone entries. See src/corpus.py for the entry/registry split."""
+    return corpus.load_entries()
 
 def load_scores():
     """Load proof traces if available, keyed by id."""

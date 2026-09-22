@@ -25,23 +25,49 @@ data/                       # Keystone entries organized by domain (8 domains)
   material/                 # e.g., lathe.json
   ethical/                  # e.g., ubuntu_philosophy.json
   infrastructure/           # e.g., indus_plumbing.json
+  shadow_catalogue.json     # REGISTRY — candidates + confirmed index
+  candidates.json           # REGISTRY — shortlist queue
 schema/
-  keystone.schema.json      # Main data schema (with evidence type enum)
+  keystone.schema.json      # Main data schema (evidence type enum lives here)
   proof.schema.json         # Schema for proof trace output
+  hypothesis.schema.json    # Schema for falsifiable claims
 rules/
-  keystone_rules.json       # Scoring criteria, weights, thresholds
+  keystone_rules.json       # Scoring criteria, weights, thresholds (v1.1)
+  lineage_terms.json        # Declared vocabulary that `unlocks` may point at
+hypotheses/                 # H001–H008: falsifiable claims bound to test kinds
+ledger/
+  runs.jsonl                # APPEND-ONLY run history. Never edited.
+  LEDGER.md                 # Rendered from runs.jsonl
+unknowns/
+  register.json             # Open/resolved/dormant questions
+anthropology/
+  FRONTIER.md               # Methods and findings that would revise entries here
+legacy/                     # Superseded and still runnable — see legacy/README.md
+tests/                      # unittest suite
 src/
   __main__.py               # Unified CLI entry point
+  corpus.py                 # THE loader. Everything reads data/ through this.
   validate.py               # Deep schema validation with cross-reference checks
-  prove.py                  # Scoring engine with evidence quality weighting
-  build_graph.py            # Graph topology with placeholder node detection
+  prove.py                  # Scoring engine, rule-set driven
+  falsify.py                # Falsification engine + test kinds
+  build_graph.py            # Graph topology; keystone/lineage/dangling nodes
   render_timeline.py        # Markdown timeline renderer
   query.py                  # Query/filter entries by domain, score, region, era
   analyze.py                # Cross-entry analysis (coverage, gaps, integrity)
+  health.py                 # System health dashboard
+  fieldlink_export.py       # BioGrid2.0 export
   scaffold.py               # Generate new entry templates
+  shadow_search.py          # Interactive candidate playground
 examples/
   run_all.sh                # Convenience script to run full pipeline
 ```
+
+**Loading rule — important.** Files in `data/<domain>/` are entries. Files at the
+top of `data/` are registries. Everything loads through `src/corpus.py`; never
+write a new `os.walk` over `data/`. There used to be eight of them, each
+excluding registry files by name, and `prove.py` crashed on both branches at
+merge time because they knew about `candidates.json` but not
+`shadow_catalogue.json`.
 
 ## Common Commands
 
@@ -57,6 +83,15 @@ python3 -m src validate          # Validate all entries against schema
 python3 -m src score             # Score entries → proof_traces.json, proof_report.md
 python3 -m src graph             # Build graph → graph.json, graph.dot
 python3 -m src timeline          # Render timeline → timeline.md
+python3 -m src falsify           # Run hypotheses → ledger, unknowns
+python3 -m src falsify --only H007 --dry-run
+python3 -m src falsify --strict  # exit 1 if any hypothesis is falsified
+
+# Tests
+python3 -m unittest discover -s tests
+
+# Score under a retired rule set (verdicts stay reproducible)
+python3 -m src score --rules legacy/rules/keystone_rules.v1.json --out-suffix .v1
 
 # Query and analysis
 python3 -m src query --domain governance
@@ -99,18 +134,57 @@ Each entry in `data/{domain}/` is a JSON file following `schema/keystone.schema.
 
 Defined in `rules/keystone_rules.json`:
 
+Rules **v1.1**. Four criteria describe the technology; three describe the record
+behind it.
+
 | Criterion | Weight | Threshold |
 |-----------|--------|-----------|
-| Longevity | 0.35 | ≥ 300 years |
-| Replication | 0.25 | ≥ 2 regions |
-| Unlocks lineage | 0.25 | ≥ 1 downstream tech |
-| Decentralization | 0.15 | ≥ 0.5 score |
+| Longevity | 0.18 | ≥ 300 years |
+| Replication | 0.14 | ≥ 2 regions |
+| Unlocks lineage | 0.12 | ≥ 2 downstream families |
+| Decentralization | 0.10 | ≥ 0.5 score |
+| Evidence strength | 0.20 | mean quality ≥ 0.75 |
+| Evidence independence | 0.14 | ≥ 3 distinct evidence types |
+| Claim coverage | 0.12 | every claim backed by a resolving ref |
 
-**Pass threshold**: 0.65 aggregate.
+**Pass threshold**: 0.70 aggregate.
 
-**Evidence quality modifier**: The raw criteria score is scaled by evidence quality (range 0.7–1.0). High-quality evidence preserves the score; poor evidence can reduce it by up to 30%. This means entries with weak sourcing need stronger metrics to pass.
+**No evidence-quality multiplier.** An earlier design scaled the raw score by
+mean evidence quality. Both mechanisms address the same flaw and applying both
+would penalise evidence twice, so the explicit criteria won: a trace saying
+`evidence_independence ✖` tells you what to fix, while a silently scaled score
+does not. The trade-off — discrete thresholds are cliff-edged where a
+multiplier degrades smoothly — is documented at the top of `src/prove.py`.
 
-Output includes per-criterion pass/fail, weighted score, evidence quality, `is_keystone` flag, and full proof trace.
+`rules/keystone_rules.json` carries a `revision_note` naming the run that forced
+each change. v1.0 is retired to `legacy/` and still runnable.
+
+Output includes per-criterion pass/fail, weighted score, evidence quality,
+`is_keystone`, `rules_version`, and the full proof trace.
+
+## Falsification Loop
+
+`src/falsify.py` is the part that checks whether the codex is telling the truth
+about itself. Each file in `hypotheses/` states a claim, binds it to a test kind
+implemented in `falsify.py`, and carries its revision history.
+
+```
+hypothesize → run → falsified? → edit the claim → register unknowns → rerun
+```
+
+Rules for working in here:
+
+- **A falsified hypothesis is a result, not a broken build.** The engine exits 0.
+  CI runs it without `--strict` deliberately.
+- **Edit the claim, not the data.** If a test fails because the corpus is wrong,
+  fix the corpus. If it fails because the claim was wrong, rewrite the claim and
+  append to its `revisions` array saying which run forced it.
+- **Never silently retune a threshold to make a test pass.** H006's revision is
+  the worked example: it was re-derived around a different statistic, with the
+  measurements that justified the change recorded in the revision.
+- **`ledger/runs.jsonl` is append-only.** Never edit or reorder it.
+- **Dormant ≠ resolved.** A question whose hypothesis stops failing goes
+  `dormant`, not `resolved`. Only a written `resolution` resolves it.
 
 ## Adding a New Keystone Entry
 
@@ -136,7 +210,12 @@ Output includes per-criterion pass/fail, weighted score, evidence quality, `is_k
 ## Evidence Types
 
 Valid values for `evidence.type` (enforced by schema):
-`archaeological_record`, `peer_reviewed_study`, `primary_text`, `engineering_record`, `replication_record`, `radiocarbon_date`, `standards_spec`, `field_measurement`, `oral_tradition_encoded`
+`archaeological_record`, `peer_reviewed_study`, `ethnographic_record`, `primary_text`, `engineering_record`, `replication_record`, `radiocarbon_date`, `standards_spec`, `field_measurement`, `oral_tradition_encoded`
+
+**Single source of truth**: the enum in `schema/keystone.schema.json`.
+`validate.py` derives `VALID_EVIDENCE_TYPES` from it and H008 checks every
+declared type is actually used. Do not restate the list anywhere else — it
+previously lived in three places and had already drifted.
 
 ## Code Conventions
 
@@ -158,6 +237,13 @@ All generated files are gitignored (see `.gitignore`):
 | `graph.json` | JSON | Nodes (real + placeholder) and edges |
 | `graph.dot` | Graphviz DOT | Visual graph with dashed placeholder nodes |
 | `timeline.md` | Markdown | Date-sorted keystone list |
+| `falsification_report.md` | Markdown | Latest run: every hypothesis and verdict |
+
+**Not gitignored**, deliberately: `ledger/runs.jsonl`, `ledger/LEDGER.md`,
+`unknowns/register.json`, `UNKNOWNS.md`, `legacy/reports/*`. The line is whether
+a file can be rebuilt from the current corpus. A proof report can. A ledger
+cannot — it records what was believed before the corpus changed, which is the
+only reason it is worth keeping.
 
 ## Integration
 
@@ -165,7 +251,12 @@ The `.fieldlink.json` file connects this repo to the [BioGrid2.0 Atlas](https://
 
 ## CI/CD
 
-No CI pipelines are configured. Validation is manual via `python3 -m src validate`.
+`.github/workflows/ci.yml` runs on push and PR to `main`, across Python 3.8,
+3.10, and 3.12: validate → falsify → score → graph → timeline → analyze →
+`unittest discover -s tests`.
+
+The falsify step runs without `--strict`, so a falsified hypothesis reports but
+does not fail the build. That is deliberate.
 
 ## Key Design Decisions
 
@@ -174,5 +265,8 @@ No CI pipelines are configured. Validation is manual via `python3 -m src validat
 - **Transparent thresholds**: All scoring rules live in `keystone_rules.json` and are fully auditable
 - **Offline-first**: No external API calls; suitable for rural/off-grid workflows
 - **Cross-cultural equity**: No prestige bias; non-Western sources are weighted equally
-- **Mosaic perspective**: No single culture had all keystones — the reference atlas (`references.md`) makes this explicit
+- **Mosaic perspective**: No single culture had all keystones — the reference atlas (`legacy/references.md`) makes this explicit
+- **Self-falsification**: The codex tests its own claims and records the failures. `ledger/LEDGER.md` is the honest history; `UNKNOWNS.md` is what is still open
+- **Retire, don't delete**: Superseded rule sets stay runnable. v1.0 is the control that demonstrates v1.1 is an improvement rather than merely a change
+- **Entries may fail on purpose**: `data/social/hxaro.json` enters the longevity floor it can defend and takes the failing score. Never inflate a metric to clear a bar
 - **Graph integrity**: Placeholder nodes make dangling unlock references visible rather than silently broken

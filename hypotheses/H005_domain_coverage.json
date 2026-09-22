@@ -1,0 +1,19 @@
+{
+  "id": "H005",
+  "statement": "The encoded corpus covers the domains the schema declares \u2014 the codex is not quietly a catalogue of one or two kinds of technology.",
+  "rationale": "The project's stated purpose is breadth over supremacy. A schema listing eight domains while the data occupies four is a supremacy narrative reproduced by omission, which is exactly the failure SYSTEMS_ANALOGY.md warns about.",
+  "prediction": "Every domain in the schema enum has at least one fully encoded entry.",
+  "test": {
+    "kind": "domain_coverage",
+    "params": {
+      "min_entries_per_domain": 1
+    }
+  },
+  "status": "supported",
+  "revisions": [],
+  "last_result": {
+    "run": "run-005-recent-finds",
+    "passed": true,
+    "summary": "all 8 domains have \u22651 encoded entries"
+  }
+}

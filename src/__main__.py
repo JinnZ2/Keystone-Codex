@@ -7,6 +7,7 @@ Usage:
 
 Commands:
     validate          Validate all data entries against the schema
+    falsify           Run the hypothesis suite; update ledger and unknowns
     score             Score entries and generate proof reports
     graph             Build dependency graph (graph.json + graph.dot)
     timeline          Render markdown timeline sorted by era
@@ -15,7 +16,7 @@ Commands:
     new               Scaffold a new keystone entry template
     fieldlink-export  Export entries to BioGrid2.0 glyph/protocol format
     health            System health dashboard across architecture layers
-    all               Run full pipeline (validate → score → graph → timeline)
+    all               Run full pipeline (validate → falsify → score → graph → timeline)
 """
 import sys, os
 
@@ -30,10 +31,17 @@ def main():
         usage()
 
     cmd = sys.argv[1]
+    rest = sys.argv[2:]
+    # Subcommands parse their own flags; hand them the remainder rather than
+    # the whole of sys.argv, which would make argparse choke on the command.
+    sys.argv = [f"{sys.argv[0]} {cmd}"] + rest
 
     if cmd == "validate":
         from src.validate import main as run
         run()
+    elif cmd == "falsify":
+        from src.falsify import main as run
+        run(rest)
     elif cmd == "score":
         from src.prove import main as run
         run()
@@ -60,13 +68,17 @@ def main():
         run()
     elif cmd == "all":
         from src.validate import run as validate
+        from src.falsify import main as falsify
         from src.prove import main as score
         from src.build_graph import main as graph
         from src.render_timeline import main as timeline
         if not validate():
             print("Validation failed. Aborting pipeline.")
             sys.exit(1)
-        score()
+        # Falsification runs but does not gate: a falsified hypothesis is a
+        # result, not a broken build. Use `falsify --strict` to disagree.
+        falsify([])
+        score([])
         graph()
         timeline()
     else:
