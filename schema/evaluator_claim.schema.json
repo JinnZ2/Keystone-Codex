@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvaluatorClaimRegister",
+  "description": "Records of one source rejecting a design attributed to one origin while accepting the same STRUCTURE attributed to another. SYSTEMS_ANALOGY.md calls this a semantic bypass: the evaluation tracks the origin rather than the structure. The register exists so that the claim can be checked instead of asserted, and it ships empty. An empty register supports nothing. Hypothesis H-BYPASS reads it and returns 'no data' rather than 'pass', because a claim with no records against it has not been tested.",
+  "type": "object",
+  "required": [
+    "version",
+    "claims"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "evaluating_source",
+          "rejected",
+          "accepted",
+          "structural_equivalence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "evaluating_source": {
+            "type": "object",
+            "description": "The document, standard, ruling or publication in which both the rejection and the acceptance appear. A source, not a person: this register records what a text did, and carries no description of anybody.",
+            "required": [
+              "citation"
+            ],
+            "properties": {
+              "citation": {
+                "type": "string"
+              },
+              "uri": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              }
+            }
+          },
+          "rejected": {
+            "type": "object",
+            "required": [
+              "design",
+              "attributed_origin",
+              "stated_reason",
+              "locator"
+            ],
+            "properties": {
+              "design": {
+                "type": "string"
+              },
+              "attributed_origin": {
+                "type": "string"
+              },
+              "stated_reason": {
+                "type": "string",
+                "description": "The reason the source itself gives, quoted or closely paraphrased. Not an inferred motive."
+              },
+              "locator": {
+                "type": "string",
+                "description": "Where in the source: page, section, clause."
+              }
+            }
+          },
+          "accepted": {
+            "type": "object",
+            "required": [
+              "design",
+              "attributed_origin",
+              "locator"
+            ],
+            "properties": {
+              "design": {
+                "type": "string"
+              },
+              "attributed_origin": {
+                "type": "string"
+              },
+              "locator": {
+                "type": "string"
+              }
+            }
+          },
+          "structural_equivalence": {
+            "type": "object",
+            "description": "The load-bearing field. Without it the record says only that a source liked one thing and not another, which is not a bypass. The equivalence has to be argued on structure and the argument has to be checkable by somebody who disagrees.",
+            "required": [
+              "statement",
+              "basis"
+            ],
+            "properties": {
+              "statement": {
+                "type": "string"
+              },
+              "basis": {
+                "type": "string"
+              },
+              "contested_by": {
+                "type": "string",
+                "description": "Any published disagreement with the equivalence claim. Present and non-empty is not a disqualification; it is a declaration that the record is disputed."
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "recorded",
+              "contested",
+              "withdrawn"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

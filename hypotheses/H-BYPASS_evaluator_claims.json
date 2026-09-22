@@ -1,0 +1,24 @@
+{
+  "id": "H-BYPASS",
+  "statement": "There are recorded instances of one source rejecting a design attributed to one origin while accepting the same structure attributed to another.",
+  "rationale": "SYSTEMS_ANALOGY.md's semantic-bypass section states this as a pattern and cites no instance of it. The register data/evaluator_claims.json was created to hold instances and shipped empty, so this hypothesis reports NO DATA rather than passing. That distinction is the point: a claim with nothing recorded against it has not been tested, it has been left alone, and a test that returns 'supported' over zero rows would turn the absence of a search into evidence for the thing nobody searched for. The claim is about what a source did, with a locator for each half; it carries no statement about anybody's reasoning or motive, and the register has no field in which to put one.",
+  "prediction": "At least three records in data/evaluator_claims.json are usable: each names one source, gives a locator and the source's own stated reason for the rejection, gives a locator for the acceptance, and argues the structural equivalence between the two on structure rather than asserting it.",
+  "test": {
+    "kind": "evaluator_bypass",
+    "params": {
+      "min_records": 3
+    }
+  },
+  "measures": {
+    "target": "whether evaluation in these sources tracks the structure or the attribution",
+    "rendering": "counting usable paired rejection/acceptance records in data/evaluator_claims.json",
+    "target_question": "Does evaluation in any surveyed body of sources track the structure of a design or its attributed origin, and what corpus would settle it?",
+    "target_reached": false
+  },
+  "status": "no_data",
+  "last_result": {
+    "run": "run-006b-architecture-layer",
+    "passed": null,
+    "summary": "data/evaluator_claims.json exists and holds 0 records \u2014 no data"
+  }
+}

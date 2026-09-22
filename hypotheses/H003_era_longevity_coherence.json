@@ -13,7 +13,7 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-005-recent-finds",
+    "run": "run-006b-architecture-layer",
     "passed": true,
     "summary": "all 42 entries coherent within 25% (3 by declared basis)"
   }

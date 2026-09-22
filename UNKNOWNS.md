@@ -2,11 +2,66 @@
 
 Questions this project does not have answers to. Most were opened by a hypothesis that failed; some were pinned by hand because they matter and no test reaches them yet.
 
-**Open** — live, and worth someone's time. **Resolved** — answered, with the answer written down. **Dormant** — the test that raised it stopped asking, and nobody ever answered it. Dormant is not resolved, and the two are kept apart on purpose: a question that goes quiet because the data changed under it is still open, it just lost its alarm.
+**Open** — live, and worth someone's time. **Resolved** — answered, with the answer written down. **Dormant** — the test that raised it stopped asking, and nobody ever answered it. Dormant is not resolved, and the two are kept apart on purpose: a question that goes quiet because the data changed under it is still open, it just lost its alarm. **Frame-level** — not a gap in a value but a question about the frame the values are read in; these do not resolve by filling a field, so they are listed apart rather than mixed into the work queue.
 
-_Reconciled at `run-005-recent-finds` · 9 open · 11 resolved · 0 dormant_
+Some entries are marked *target-level* or *rendering-level*. A rendering is a specific method or claim; a target is what it was aimed at. Falsifying a rendering closes the rendering. See CLAUDE.md RULE 1.
+
+_Reconciled at `run-006b-architecture-layer` · 13 open · 11 resolved · 0 dormant · 9 frame-level_
+
+## Frame-level
+
+_Questions about the frame rather than about a value in it: where the entry boundary was cut, what a metric is being read as, what the rubric has no row for. These are kept out of the Open list because they do not resolve by filling a field. Each declares the frame it was raised from._
+
+### F1 — Where was the boundary cut that makes this one entry, and on what grounds?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: Every entry is a node drawn around a piece of a continuous system, and the cut is a claim that nothing is being reported about. Terra preta is soil, waste handling, settlement pattern and fire practice; the codex carries one entry. schema/keystone.schema.json now has a separation_claim field and 0 entries declare it.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
+
+### F2 — Do longevity_years and replication_regions measure fit, or do they measure how long something was carried and how far it was pushed?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: The rubric weights longevity at 0.18 and replication at 0.14 and neither distinguishes a technology adopted because it worked in the receiving conditions from one that arrived with a population or was installed by a party with power over the receiving population. schema now has a spread_mechanism field (FIT / CARRIED / IMPOSED / UNKNOWN) and 0 entries declare it. Until it is declared, a high replication count and a high score are the same number read twice.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
+
+### F3 — Where the holders of a technology were destroyed, the record thins for a reason. In which direction does that bias run, and by how much?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: Distinct from U-H006-2, which asks whether the rubric discriminates correctly on the surviving record. This asks about the record itself, and the difference is that the sign is known in advance: conquest and displacement remove holders, transmission and documentation both, so the deficit is not noise distributed evenly. The evidence_strength and evidence_independence criteria together carry 0.34 of the rubric and both read the surviving record with no term for this.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
+
+### F4 — Does this entry's attribution to this region and era rest on a text naming the technology, or on dating of physical remains?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: evidence.type records what backs an individual claim. Nothing records what backs the entry's own identity, and the two are different questions: a corpus that admits textual attribution on the same footing as material dating will over-represent the technologies of literate societies without any single entry being wrong. schema now has an attribution_basis field (MATERIAL / TEXTUAL / ORAL / CONTESTED) and 0 entries declare it.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
+
+### F5 — What does this technology require in order to operate, and is its endurance being read without that?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: Endurance scored with no dependency footprint is endurance measured on one side of the ledger. A technology that lasted 500 years while consuming little and one that lasted 500 years on continuous input score the same under longevity_years. schema now has a dependency_load field and 0 entries declare it.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
+
+### F6 — What conditions was this technology selected against — what is its operating envelope?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: Nothing in the codex records the constraints an entry passed through, so nothing distinguishes a technology that held under stress from one that was never stressed. This is the field that would let 'endured across crises' in the project's own first sentence be checked rather than asserted. schema now has an adapted_to field and 0 entries declare it.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
+
+### F7 — What does the rubric have no row for?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: Seven criteria: longevity, replication, unlocks, decentralization, evidence strength, evidence independence, claim coverage. None reads how the technology failed, what it cost to deliver, or what it consumed while running. A dimension with no row cannot score low; it scores nothing, and an entry weak on it is indistinguishable from an entry strong on it.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
+
+### F8 — Is decentralization a property of these technologies, or a selection preference of this codex filed as a property?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: decentralization_score is weighted 0.10 with a threshold of 0.5, so a centralized technology loses points for being centralized. Nothing in the repository establishes that decentralization is a keystone property rather than a value held by the people assembling the corpus. The criterion reads a number the author typed, which is the same defect H006 found in the retired v1.0 rubric and repaired for the four metric criteria by adding evidence-reading criteria beside them, not by fixing the four.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
+
+### F9 — Can this loop raise a question about a row it never opened?
+- Raised by **external-review** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: Every hypothesis in hypotheses/ tests a field that exists. The falsification loop reads the corpus through the schema, so a dimension the schema has no field for produces no failure anywhere and leaves no trace of its absence. That makes F1 through F8 unreachable from inside: each of them names something the loop was structurally unable to notice. This is the frame-level question that governs the other eight, and no test in this repository reaches it.
+- Reviewer frame: external review 2026-09-22, read against SYSTEMS_ANALOGY.md and the coupling-default frame
 
 ## Open
+
+### U-ARCH-1 — When a source assigns a ROLE and a corpus files a CATEGORY, which one is the entry's, and what decides it?
+- Raised by **architecture-layer** · first seen `run-006-architecture-layer` · **pinned**
+- Trigger: Opened by ledger note N-001. domain and layer_role are now separate fields and they disagree in the first declared system: ubuntu_philosophy is filed 'ethical' and named by SYSTEMS_ANALOGY.md under Motherboard + Bus; gift_economy is filed 'social' and named under the I/O system. The integration report reports the disagreement and resolves neither side, because a role may be relational -- a property of the assembly an entry sits in rather than of the entry -- in which case the same entry carries different roles in different systems and neither field is wrong. Nothing in the repository establishes whether that is so. Two artifacts already in the repository disagree about it and neither declares that it is answering it. `.fieldlink.json`'s layer_map assigns layers by DOMAIN (motherboard_bus <- {social, governance}, bios_firmware <- {ethical}) and lists gift_economy under motherboard_bus and ubuntu_philosophy under bios_firmware. SYSTEMS_ANALOGY.md names the potlatch under the I/O system and Ubuntu under Motherboard + Bus. Those are the same two entries the first declared system flags, reached from the opposite direction: the fieldlink map derives role from domain, the source assigns role directly, and where they differ src/health.py prints a verdict ('weakest layer: bios_firmware') computed on the derived assignment. Neither file is changed by the architecture layer and neither is wrong on its own terms; what is missing is a statement of which assignment is the entry's.
 
 ### U-C-1 — What makes two occurrences of a technology independent replications rather than one tradition?
 - Raised by **curated** · first seen `run-002-post-repair` · **pinned**
@@ -15,6 +70,14 @@ _Reconciled at `run-005-recent-finds` · 9 open · 11 resolved · 0 dormant_
 ### U-C-2 — Which era values in this codex would current archaeological methods revise, if anyone checked?
 - Raised by **curated** · first seen `run-002-post-repair` · **pinned**
 - Trigger: Airborne LIDAR, sedimentary and ancient DNA, dental calculus proteomics, and Bayesian radiocarbon modelling have overturned settlement-scale and chronology claims across the field since roughly 2018. No era value in data/ has been rechecked against any of them.
+
+### U-H-ARCH-1-1 — Can this corpus be read as an architecture, and what would have to be declared before that question has an answer?
+- Raised by **H-ARCH-1** · first seen `run-006-architecture-layer`
+- Trigger: the rendering was falsified (42/42 entries declare no layer_role (100%) — the architecture layer exists and is empty); the target it was aimed at -- whether this corpus can be read as an architecture rather than as a list -- is not closed by that
+
+### U-H-ARCH-3-1 — Does the integration report discriminate between assemblies, or does it only describe the one set that has been declared so far?
+- Raised by **H-ARCH-3** · first seen `run-006-architecture-layer`
+- Trigger: the rendering was falsified (1 evaluable system(s), below the 2 needed for saturation to mean anything — with one reading the spread is zero by construction; 1/1 systems report full satisfaction — the report cannot tell an integrated system from an unchecked one; spread 0.000 — the report barely separates the systems it reads); the target it was aimed at -- whether the integration report discriminates between assemblies -- is not closed by that
 
 ### U-H001-2 — Which registry indexes the encoded corpus — data/shadow_catalogue.json, data/candidates.json, or both? They currently overlap in zero rows.
 - Raised by **H001** · first seen `run-004-merge-main` · **pinned**
@@ -41,8 +104,14 @@ _Reconciled at `run-005-recent-finds` · 9 open · 11 resolved · 0 dormant_
 - Trigger: 1 criterion/criteria fire for no entry in the corpus
 
 ### U-H007-2 — Do the cross-domain resonance and shadow-lineage detectors survive the same null model the phi detector failed?
-- Raised by **H007** · first seen `run-002-post-repair` · **pinned**
+- Raised by **H007** · first seen `run-002-post-repair` · **pinned** · rendering-level
 - Trigger: only one of the four pattern detectors in src/shadow_search.py has ever been tested against chance.
+- Rendering of: H007
+
+### U-H007-3 — Does cross-domain systemic coupling exist among these technologies, and what would measure it?
+- Raised by **H007** · first seen `run-006-architecture-layer` · **pinned** · target-level
+- Trigger: CLAUDE.md RULE 1 applied retroactively. The phi detector was the rendering and it was falsified (p = 0.864 at run-001-baseline, 0.983 at run-005-recent-finds). H007 now reports supported because the claim was replaced by its own negation, which is a true statement about the detector and no statement about the target. Nothing in this repository has measured cross-domain coupling. U-H007-2 asks whether two further detectors survive the same null; that is also rendering-level and also does not reach this.
+- Target of: H007
 
 ## Resolved
 

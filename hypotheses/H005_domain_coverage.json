@@ -12,7 +12,7 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-005-recent-finds",
+    "run": "run-006b-architecture-layer",
     "passed": true,
     "summary": "all 8 domains have \u22651 encoded entries"
   }

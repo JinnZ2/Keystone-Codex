@@ -13,6 +13,7 @@ Commands:
     timeline          Render markdown timeline sorted by era
     query             Query/filter entries by domain, score, region, era
     analyze           Cross-entry analysis (coverage, gaps, shared evidence)
+    systems           Integration report over systems/ (coverage and gaps; no score)
     new               Scaffold a new keystone entry template
     fieldlink-export  Export entries to BioGrid2.0 glyph/protocol format
     health            System health dashboard across architecture layers
@@ -57,6 +58,9 @@ def main():
     elif cmd == "analyze":
         from src.analyze import main as run
         run()
+    elif cmd == "systems":
+        from src.systems import main as run
+        run(rest)
     elif cmd == "new":
         from src.scaffold import main as run
         run()

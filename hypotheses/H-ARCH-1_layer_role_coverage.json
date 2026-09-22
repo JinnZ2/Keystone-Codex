@@ -1,0 +1,24 @@
+{
+  "id": "H-ARCH-1",
+  "statement": "The architecture layer is populated: most of the corpus has been read for its layer_role, whether that reading returned a role or returned UNSET.",
+  "rationale": "SYSTEMS_ANALOGY.md's measurand is integration, and integration cannot be read off a corpus where nothing declares what it does in an assembly. This hypothesis exists to report the coverage rather than let the architecture layer be assumed. UNSET counts as declared on purpose: an entry saying nobody has read it for its role is a reading, and it is a different state from a field that was never touched. Only the second is a coverage gap.",
+  "prediction": "At most half the encoded entries have no layer_role field at all.",
+  "test": {
+    "kind": "layer_role_coverage",
+    "params": {
+      "max_undeclared_fraction": 0.5
+    }
+  },
+  "measures": {
+    "target": "whether this corpus can be read as an architecture rather than as a list",
+    "rendering": "counting entries whose layer_role field is present",
+    "target_question": "Can this corpus be read as an architecture, and what would have to be declared before that question has an answer?",
+    "target_reached": false
+  },
+  "status": "falsified",
+  "last_result": {
+    "run": "run-006b-architecture-layer",
+    "passed": false,
+    "summary": "42/42 entries declare no layer_role (100%) \u2014 the architecture layer exists and is empty"
+  }
+}
