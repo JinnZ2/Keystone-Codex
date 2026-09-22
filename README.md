@@ -212,4 +212,4 @@ A verdict reached under an old rubric is still a verdict that was reached. See
 
 ## Credits
 
-Initiated by JinnZ2 × ChatGPT. MIT licensed.
+Initiated by JinnZ2 × ChatGPT. CC0-1.0.
