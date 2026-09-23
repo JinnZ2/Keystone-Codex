@@ -11,7 +11,7 @@ Design principles: offline-first, zero dependencies, schema-driven, culturally p
 - **Language**: Python 3.8+ (stdlib only — no external dependencies)
 - **Data format**: JSON with JSON Schema validation (Draft 2020-12)
 - **Graph output**: Optional Graphviz (.dot)
-- **License**: MIT
+- **License**: CC0-1.0
 
 ## Repository Structure
 
