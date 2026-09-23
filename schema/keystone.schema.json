@@ -78,6 +78,7 @@
         },
         "ethical_alignment": {
           "type": "number",
+          "description": "Operator sense: self-assessment RECORD of a frame-entry practice \u2014 entering another culture's or intelligence's frame as closely as possible by thought-reasoning, not feeling. NOT ethical alignment in the AI sense. Recorded, not scored. Label is a model rendering; see animal intelligence repo.",
           "minimum": 0,
           "maximum": 1
         }
