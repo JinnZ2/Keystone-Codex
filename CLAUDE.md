@@ -110,6 +110,7 @@ unknowns/
   register.json             # Open/resolved/dormant questions
 anthropology/
   FRONTIER.md               # Methods and findings that would revise entries here
+  findings/                 # Research packages that actually revised an entry
 legacy/                     # Superseded and still runnable — see legacy/README.md
 tests/                      # unittest suite
 src/

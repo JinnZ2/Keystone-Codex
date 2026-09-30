@@ -145,7 +145,37 @@
       "name": "Social safety nets",
       "domain": "social",
       "description": "Standing obligations that catch a person whose own household has failed, before destitution is reached."
+    },
+    {
+      "id": "subterranean_climate_control",
+      "name": "Subterranean climate control",
+      "domain": "infrastructure",
+      "description": "Using the thermal mass of excavated rock or earth to hold a usable temperature without continuous fuel."
+    },
+    {
+      "id": "crisis_refuge_architecture",
+      "name": "Crisis refuge architecture",
+      "domain": "infrastructure",
+      "description": "Built spaces a community can enter under threat and leave when the threat passes, without becoming a permanent residence."
+    },
+    {
+      "id": "rock_cut_architecture",
+      "name": "Rock-cut architecture",
+      "domain": "infrastructure",
+      "description": "Habitable or ritual space made by subtracting from living rock rather than by assembling materials."
+    },
+    {
+      "id": "long_distance_credit",
+      "name": "Long-distance credit",
+      "domain": "economic",
+      "description": "Value advanced across a journey, recovered by tablet, witness, and family rather than by coin on the spot."
+    },
+    {
+      "id": "prosopographic_record_systems",
+      "name": "Prosopographic record systems",
+      "domain": "information",
+      "description": "Archives in which a name is an occurrence of a person in a document, not a translation of a word."
     }
   ],
-  "revision_note": "Nine terms removed in the merge with main: regenerative_agriculture, carbon_sequestration, circular_waste_systems, low_bandwidth_data, tactile_coding, federalism_templates, consensus_protocols, machine_tools_family, and precision_engineering were promoted to full keystone entries on that branch. An encoded entry beats a vocabulary stub, and holding both would give one id two definitions \u2014 H002 now fails on that collision rather than letting the graph pick a winner silently. Six terms added for targets that main's new entries left dangling."
+  "revision_note": "Nine terms removed in the merge with main: regenerative_agriculture, carbon_sequestration, circular_waste_systems, low_bandwidth_data, tactile_coding, federalism_templates, consensus_protocols, machine_tools_family, and precision_engineering were promoted to full keystone entries on that branch. An encoded entry beats a vocabulary stub, and holding both would give one id two definitions — H002 now fails on that collision rather than letting the graph pick a winner silently. Six terms added for targets that main's new entries left dangling. Five terms added 2026-09-30 for derinkuyu_tuff_complex and kanis_merchant_archives: subterranean_climate_control, crisis_refuge_architecture, rock_cut_architecture, long_distance_credit, prosopographic_record_systems."
 }

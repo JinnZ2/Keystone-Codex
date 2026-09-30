@@ -10,8 +10,8 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": true,
-    "summary": "all 90 unlock targets resolve, no id collisions"
+    "summary": "all 98 unlock targets resolve, no id collisions"
   }
 }

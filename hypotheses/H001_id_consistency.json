@@ -19,8 +19,8 @@
     }
   ],
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": true,
-    "summary": "all 11 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere"
+    "summary": "all 13 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere"
   }
 }

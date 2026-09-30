@@ -1,0 +1,130 @@
+{
+  "id": "kanis_pilot_names",
+  "description": "Seed table from the 2026 Kültepe/Kaniš name-semantics research. A row is an attestation hypothesis, not a translation. Confidence is per claim-type (attestation / language / parse), not a single score for the name. Names at D for attestation are excluded from any numerator. Source: Kultepe-name-semantics-deep-research.md.",
+  "unit_chain": ["name", "person", "attestation", "document", "family_or_network", "semantic_coding"],
+  "control_set": "ordinary Old Assyrian legal and commercial vocabulary, coded with the same semantic ontology",
+  "confidence_scale": {
+    "A": "secure for the relevant claim",
+    "B": "probable; usable with caution",
+    "C": "possible; sensitivity analysis only",
+    "D": "unresolved; excluded from numerator counts"
+  },
+  "semantic_domains": [
+    "deity/theophoric",
+    "kinship",
+    "status/office",
+    "legal/obligation",
+    "property/economy",
+    "protection/shelter",
+    "strength/power",
+    "purity/quality",
+    "natural_world",
+    "animal",
+    "body/physical",
+    "unknown/unresolved"
+  ],
+  "names": [
+    {
+      "normalized": "Ḫalkiaššu",
+      "working_class": "Anatolian/Hittitoid",
+      "attestation_status": "overview_only",
+      "role_evidence": null,
+      "semantic_status": "theophoric possibility involving Ḫalki must be tested from sign sequence, not assumed",
+      "confidence": {"language": "B", "attestation": "D", "parse": "C"},
+      "next": "raw spellings, office contexts, date/level, family links"
+    },
+    {
+      "normalized": "Ilališkan",
+      "working_class": "Anatolian/Hittitoid",
+      "attestation_status": "tablet_level",
+      "role_evidence": [
+        "Anatolian smith list, Kt 94/k 788:23 (Michel 2015)",
+        "loan of 18 shekels of silver with Humadašu to Hana and Pitianalka, house pledge (Michel 2016)"
+      ],
+      "semantic_status": "do not code meaning yet; code roles first: smith; credit party",
+      "confidence": {"language": "B", "attestation": "A-", "parse": "C"},
+      "next": "disambiguate whether smith Ilališkan and loan Ilališkan are the same person"
+    },
+    {
+      "normalized": "Išputaḫšu",
+      "working_class": "Anatolian/Hittitoid",
+      "attestation_status": "secondary_context",
+      "role_evidence": ["level-II seal/text study: Anatolian co-debtor/husband in one context (Ricetti)"],
+      "semantic_status": "unsettled; element comparison with išpud-/išpant- belongs in Kloekhorst-style analysis",
+      "confidence": {"language": "B", "attestation": "B", "parse": "C"},
+      "next": "full sign sequence, sex, spouse/family, debt role, archive"
+    },
+    {
+      "normalized": "Tiwatia",
+      "working_class": "Luwian-associated",
+      "attestation_status": "tablet_level",
+      "role_evidence": ["kt 88/k 90 seals over a debt of 1 mina of refined silver owed to Puzur-Ištar (Çeçen)"],
+      "semantic_status": "theophoric solar link plausible but must remain an analysis, not a gloss",
+      "confidence": {"language": "B+", "attestation": "B", "parse": "C"},
+      "next": "confirm Tiwatia vs Tiwitia; extract all attestations"
+    },
+    {
+      "normalized": "Ruwatia",
+      "working_class": "Luwian-associated",
+      "attestation_status": "secondary_context",
+      "role_evidence": ["administrative list 'Ruwatia Sapala'; discussion of Ruwatia as chief of kennels (Bilgiç)"],
+      "semantic_status": "do not collapse to divine-name etymology without sign sequence",
+      "confidence": {"language": "B", "attestation": "C", "parse": "C"},
+      "next": "full publication context for the administrative list and office title"
+    },
+    {
+      "normalized": "Wašunani",
+      "working_class": "listed Luwian; normalization unstable",
+      "attestation_status": "overview_only",
+      "role_evidence": null,
+      "semantic_status": "flag: possible reading/normalization problem (Wa-su-na-ni in Luwian-name discussion)",
+      "confidence": {"language": "C", "attestation": "D", "parse": "D"},
+      "next": "check Kloekhorst and OAPD/CDLI spellings before retaining as a name"
+    },
+    {
+      "normalized": "Pikašnurikizi",
+      "working_class": "unassigned/unclear Anatolian",
+      "attestation_status": "lexicographic",
+      "role_evidence": ["sign sequence pí-kà-áš-nu-ri-ki-zi (BYU OARE)"],
+      "semantic_status": "unresolved by design; do not force Hattic or unknown-language etymology",
+      "confidence": {"language": "C", "attestation": "C", "parse": "D"},
+      "next": "extract document, role, sex, date/level; test whether one person or several"
+    },
+    {
+      "normalized": "Atamakuni",
+      "working_class": "unassigned/unclear Anatolian",
+      "attestation_status": "overview_only",
+      "role_evidence": null,
+      "semantic_status": "unresolved",
+      "confidence": {"language": "C", "attestation": "D", "parse": "D"},
+      "next": "find tablet citation; if none, keep out of statistical numerator"
+    },
+    {
+      "normalized": "Taripiazi",
+      "working_class": "unassigned/unclear Anatolian",
+      "attestation_status": "overview_only",
+      "role_evidence": null,
+      "semantic_status": "unresolved",
+      "confidence": {"language": "C", "attestation": "D", "parse": "D"},
+      "next": "find tablet citation; if none, keep out of statistical numerator"
+    },
+    {
+      "normalized": "Ḫarpatiwa",
+      "working_class": "Hurrian",
+      "attestation_status": "secondary_context",
+      "role_evidence": ["political/office context as rabi simmiltim ('chief of the staircase'); once treated as king"],
+      "semantic_status": "Hurrian name; social meaning must come from office and period",
+      "confidence": {"language": "B", "attestation": "B", "parse": "C"},
+      "next": "confirm one official or multiple; extract level Ib contexts"
+    },
+    {
+      "normalized": "Imrimuša",
+      "working_class": "Hurrian",
+      "attestation_status": "overview_only",
+      "role_evidence": null,
+      "semantic_status": "Hurrian classification only; no semantic coding",
+      "confidence": {"language": "B", "attestation": "D", "parse": "D"},
+      "next": "extract from Wilhelm 2008 or indexes before using in counts"
+    }
+  ]
+}

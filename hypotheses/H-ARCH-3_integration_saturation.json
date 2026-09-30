@@ -19,7 +19,7 @@
   },
   "status": "falsified",
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": false,
     "summary": "1 evaluable system(s), below the 2 needed for saturation to mean anything \u2014 with one reading the spread is zero by construction; 1/1 systems report full satisfaction \u2014 the report cannot tell an integrated system from an unchecked one; spread 0.000 \u2014 the report barely separates the systems it reads"
   }

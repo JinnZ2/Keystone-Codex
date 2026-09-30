@@ -13,8 +13,8 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": true,
-    "summary": "all 42 entries coherent within 25% (3 by declared basis)"
+    "summary": "all 44 entries coherent within 25% (3 by declared basis)"
   }
 }
