@@ -384,3 +384,17 @@ does not fail the build. That is deliberate.
 - **No score on a part, in the systems layer**: no combined score, no ranking of members, no ordering of systems by satisfaction. A number attached to a part turns an integration measure back into a supremacy measure. `tests/test_systems.py` asserts the absence rather than trusting it
 - **Absent is not zero**: a `runs_on` fraction is `None` when nothing was declared. Zero-of-zero and zero-of-eleven are different results and a float cannot hold both
 - **Report the disagreement, resolve neither side**: where an entry and a system declare different roles for the same member, the conflict is reported and neither wins. Picking one would settle `U-ARCH-1` by fiat
+
+<!-- clone-refspec-note v1 -->
+## Cloning and pushing
+Shallow clones are single-branch by default.
+Before pushing any branch other than main, run:
+
+    git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+    git fetch --depth 1
+
+Or clone with: git clone --depth 1 --no-single-branch <url>
+Without this, the first push of a new branch
+fails the tracking-ref check even when the
+commit landed.
+<!-- /clone-refspec-note v1 -->
