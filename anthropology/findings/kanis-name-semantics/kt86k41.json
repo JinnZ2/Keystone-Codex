@@ -1,0 +1,100 @@
+{
+  "id": "kt_86_k_41",
+  "publication": "Veenhof, K. R. (2024) Kültepe Tabletleri XII, text no. 3, TTKY VI/33c1, Ankara",
+  "tablet": "Kt 86/k 41",
+  "excavated": "1986-08-02",
+  "genre": "bare onomasticon — no verbs, commodities, or sums",
+  "consulted_via": "Akkadian OCR Corpus reproduction of KT 12 transliteration and commentary",
+  "editor_description": "a small list of 'Anatolian' names, many of which are unique and may have different linguistic affiliations",
+  "closed_shortcuts": [
+    "watar is not a title in this text (Donbaz, Studies Veenhof p. 94 n. 56, rejected)",
+    "Nuan is not nuʾāʾum 'native Anatolian' (Donbaz NABU 1995/113, rejected)"
+  ],
+  "kloekhorst_verdict": "Does not recognize these as names of Anatolians; hardly any elements in common with Kanišite Hittite (2019); coincidental matches with Hittite common words (harzi 'he holds', watar 'water', haršan 'ploughed', taripia(n)zi 'they plough'); cannot be read as Hittite sentences.",
+  "distribution": "hapax_cluster",
+  "distribution_note": "Eleven of eleven names are unique or nearly unique in the published Old Assyrian corpus after false-positive removal. Ordinary merchant lists overlap the recurring kārum onomasticon. Captive/slave/dependent-roster is an inference from distribution, not a reading of the tablet.",
+  "names": [
+    {
+      "normalized": "Peruwaḫšati",
+      "raw": "pá-ú-wa-ra-áš-tí",
+      "oare_spelling_hits": 1,
+      "genuine_attestations": 1,
+      "notes": "Hapax. Peruwa- head looks theophoric; the whole recurs nowhere."
+    },
+    {
+      "normalized": "Taripiazi",
+      "raw": "ta-ri-pí-a-zi",
+      "oare_spelling_hits": 1,
+      "genuine_attestations": 1,
+      "notes": "Hapax. Resembles Hittite taripia(n)zi 'they plough' per Kloekhorst. Grouped by Zehnder 2010 with Pikašnurikizi and Atamakuni as Hattian or unknown, not Hittite or Luwian."
+    },
+    {
+      "normalized": "Ḫattaet",
+      "raw": "ḫa-ta-e-et",
+      "oare_spelling_hits": 1,
+      "genuine_attestations": 1,
+      "notes": "Hapax."
+    },
+    {
+      "normalized": "Šarat",
+      "raw": "ša-ra-at",
+      "oare_spelling_hits": 5,
+      "genuine_attestations": 1,
+      "notes": "Other hits are Šarrat-Ištar names or word-boundary artifacts."
+    },
+    {
+      "normalized": "Paḫar",
+      "raw": "pá-ḫa-ar",
+      "oare_spelling_hits": 16,
+      "genuine_attestations": 1,
+      "notes": "Other hits are Akkadian paḫārum 'to assemble / assembly'."
+    },
+    {
+      "normalized": "Ḫarza",
+      "raw": "ḫa-ar-zi",
+      "oare_spelling_hits": 4,
+      "genuine_attestations": "2-3",
+      "notes": "Only name with a family: Ḫarziūna (BIN 4 83; KTS 1 35a), Ḫarziga (Kt 91/k 422). Also matches Hittite harzi 'he holds'."
+    },
+    {
+      "normalized": "Nuan",
+      "raw": "nu-a-an",
+      "oare_spelling_hits": 1,
+      "genuine_attestations": 1,
+      "notes": "Hapax. Donbaz nuʾāʾum link rejected by Veenhof."
+    },
+    {
+      "normalized": "Piššiša",
+      "raw": "pi-ši-ša",
+      "oare_spelling_hits": 4,
+      "genuine_attestations": 1,
+      "notes": "Other hits are artifacts of nēpešum spellings."
+    },
+    {
+      "normalized": "Ḫaršan",
+      "raw": "ḫa-ar-ša-an",
+      "oare_spelling_hits": 1,
+      "genuine_attestations": 1,
+      "notes": "Hapax. Matches Hittite haršan 'ploughed'."
+    },
+    {
+      "normalized": "Nu(w)at",
+      "raw": "nu-a-at",
+      "oare_spelling_hits": 6,
+      "genuine_attestations": 1,
+      "notes": "Other hits are artifacts of mu-nu-a-at spellings."
+    },
+    {
+      "normalized": "Pikašnurikizi",
+      "raw": "pi-kà-aš-nu-ri-ki-sí",
+      "oare_spelling_hits": 1,
+      "genuine_attestations": 1,
+      "notes": "Hapax. KT 12 reads final SÍ, not the -zi of earlier secondary quotation. No internal segment recurs except possible tail -kizi ≈ independent PN Kizi, which is insufficient for a parse. Sex is inherited from Zehnder's Frauennamen catalogue, not marked on the tablet."
+    }
+  ],
+  "method_control": {
+    "id": "babala_ahayatum_kt12",
+    "note": "KT 12 also edits a marriage contract in which Babala is an Anatolian man's name and A-ha-a-tum looks identical to Assyrian Ahātum. Homographic traps of this kind must be flagged at attestation level; name-based sex assignment is an argument, not a datum."
+  },
+  "next_test": "Search OARE for other small tablets whose name strings return corpus counts of one — converting an unanswerable question about one name into an answerable question about a genre."
+}
