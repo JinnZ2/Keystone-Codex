@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Maps a term as it appears in this repository to the sense the operator holds for it, where the two differ. A repo term is a model rendering until the operator marks its fit.",
+  "not_a_scoring_input": "No criterion in rules/keystone_rules.json or legacy/rules/keystone_rules.v1.json reads any field named here, and src/prove.py does not reference them. Verified 2026-09-23.",
+  "miss_class_values": {
+    "NARROWER_REFERENT": "the term covers less of the same thing",
+    "REMOVES_INTENDED_USE": "the term covers a different purpose; the overlap is real and useless for the job",
+    "WRONG_FRAME": "the term is coherent and points into a different domain's ontology, carrying that domain's assumptions; the overlap is incidental, not partial"
+  },
+  "rows": [
+    {
+      "repo_term": "ethical_alignment",
+      "operator_sense": "Operator sense: self-assessment RECORD of a frame-entry practice \u2014 entering another culture's or intelligence's frame as closely as possible by thought-reasoning, not feeling. NOT ethical alignment in the AI sense. Recorded, not scored. Label is a model rendering; see animal intelligence repo.",
+      "miss_class": "WRONG_FRAME",
+      "candidates": [
+        {
+          "term": "cognitive empathy / perspective-taking",
+          "basis": "model_recall",
+          "fit": "UNRATED"
+        },
+        {
+          "term": "Umwelt reconstruction (Uexk\u00fcll)",
+          "basis": "model_recall",
+          "fit": "UNRATED"
+        },
+        {
+          "term": "epoch\u00e9",
+          "basis": "model_recall",
+          "fit": "UNRATED"
+        },
+        {
+          "term": "participant observation",
+          "basis": "model_recall",
+          "fit": "UNRATED"
+        }
+      ],
+      "rejected_names": [
+        "meditation",
+        "experience"
+      ],
+      "operator_fit": "UNSET"
+    }
+  ]
+}
