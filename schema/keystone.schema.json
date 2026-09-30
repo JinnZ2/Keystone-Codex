@@ -162,6 +162,74 @@
       "type": "string",
       "description": "Required whenever metrics.longevity_years cannot be derived from era.end - era.start within 25%. States what the number actually measures \u2014 attested continuous operation, persistence after abandonment, or a conservative floor under a contested start date. Added after run-001-baseline falsified H003."
     },
+    "layer_role": {
+      "type": "string",
+      "enum": [
+        "PSU",
+        "CPU_MEMORY",
+        "BUS",
+        "IO",
+        "FIRMWARE",
+        "PERIPHERAL",
+        "UNSET"
+      ],
+      "description": "What this entry DOES in an assembly, as distinct from what KIND of thing it is. `domain` is the category; layer_role is the function. The two are separate fields on purpose: SYSTEMS_ANALOGY.md assigned Social/Governance the motherboard-and-bus ROLE (routing and timing), which is not the same statement as a domain. UNSET is an explicit declaration that nobody has read this entry for its role yet, and is distinct from the field being absent, which means nobody has looked. Optional; absent is the default state of the corpus."
+    },
+    "runs_on": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Layers this entry requires underneath it in order to operate. Each target is either another entry id or a layer_role token. An empty array is a declaration that nothing sits beneath it; an absent field is a declaration of nothing at all."
+    },
+    "adapted_to": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Environmental constraints this entry passed through. The operating envelope: what it was selected against, not what it achieved."
+    },
+    "dependency_load": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Inputs required to operate. Endurance read without a dependency footprint is endurance measured on one side of the ledger only."
+    },
+    "field_rebuildable": {
+      "type": "string",
+      "enum": [
+        "YES",
+        "PARTIAL",
+        "NO",
+        "UNSET"
+      ],
+      "description": "Can this be rebuilt in the field from locally available inputs by people who did not build the original? UNSET means the question was left open explicitly."
+    },
+    "spread_mechanism": {
+      "type": "string",
+      "enum": [
+        "FIT",
+        "CARRIED",
+        "IMPOSED",
+        "UNKNOWN"
+      ],
+      "description": "How the technology reached the regions counted in metrics.replication_regions. FIT: adopted because it worked in the receiving conditions. CARRIED: moved with a migrating or trading population. IMPOSED: installed by a party with power over the receiving population. UNKNOWN: not established. replication_regions counts regions without distinguishing these, so a high count can record spread rather than fit."
+    },
+    "attribution_basis": {
+      "type": "string",
+      "enum": [
+        "MATERIAL",
+        "TEXTUAL",
+        "ORAL",
+        "CONTESTED"
+      ],
+      "description": "What the attribution of this technology to this region and era rests on. MATERIAL: dating of physical remains. TEXTUAL: a document naming it. ORAL: transmitted account. CONTESTED: the attribution is disputed in the literature. Distinct from evidence.type, which records what backs individual claims; this records what backs the entry's own identity."
+    },
+    "separation_claim": {
+      "type": "string",
+      "description": "What was cut to make this one entry. Every entry draws a boundary around a piece of a continuous system, and the boundary is a claim. States what was excluded and on what grounds."
+    },
     "notes": {
       "type": "string"
     }

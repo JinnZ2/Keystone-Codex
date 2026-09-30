@@ -3,11 +3,19 @@
   "title": "Hypothesis",
   "description": "A falsifiable claim about the codex or its corpus, bound to a test kind implemented in src/falsify.py.",
   "type": "object",
-  "required": ["id", "statement", "rationale", "prediction", "test", "status"],
+  "required": [
+    "id",
+    "statement",
+    "rationale",
+    "prediction",
+    "test",
+    "status"
+  ],
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^H[0-9]{3}$"
+      "pattern": "^(H[0-9]{3}|H-[A-Z]+(-[0-9]+)?)$",
+      "description": "H001..H008 are the original numbered series. H-ARCH-n and H-BYPASS belong to the architecture layer, which was added beside the numbered series rather than renumbering it."
     },
     "statement": {
       "type": "string",
@@ -15,7 +23,7 @@
     },
     "rationale": {
       "type": "string",
-      "description": "Why this is worth testing — what breaks if the claim is false."
+      "description": "Why this is worth testing \u2014 what breaks if the claim is false."
     },
     "prediction": {
       "type": "string",
@@ -23,7 +31,9 @@
     },
     "test": {
       "type": "object",
-      "required": ["kind"],
+      "required": [
+        "kind"
+      ],
       "properties": {
         "kind": {
           "type": "string",
@@ -36,7 +46,11 @@
             "domain_coverage",
             "rubric_discrimination",
             "phi_significance",
-            "taxonomy_exercised"
+            "taxonomy_exercised",
+            "layer_role_coverage",
+            "system_runs_on",
+            "integration_saturation",
+            "evaluator_bypass"
           ]
         },
         "params": {
@@ -45,22 +59,65 @@
         }
       }
     },
+    "measures": {
+      "type": "object",
+      "description": "CLAUDE.md RULE 1. A hypothesis is an attempt to measure a TARGET through a RENDERING. Falsifying the rendering does not close the target. When a hypothesis carrying this block is falsified, src/falsify.py raises target_question as an open unknown, unless target_reached is true.",
+      "required": [
+        "target",
+        "rendering"
+      ],
+      "properties": {
+        "target": {
+          "type": "string",
+          "description": "What this is trying to measure."
+        },
+        "rendering": {
+          "type": "string",
+          "description": "The specific method or claim that carries the attempt, and the thing a falsification lands on."
+        },
+        "target_question": {
+          "type": "string",
+          "description": "The target written as a question, for the unknowns register."
+        },
+        "target_reached": {
+          "type": "boolean",
+          "description": "True only when the test reaches the target itself and not merely its rendering. Default false. Setting it true suppresses the auto-raise, so it is a claim and belongs in revisions if it changes."
+        }
+      }
+    },
     "status": {
       "type": "string",
-      "enum": ["open", "supported", "falsified", "retired"],
-      "description": "Written by the engine on each run. 'open' means never run."
+      "enum": [
+        "open",
+        "supported",
+        "falsified",
+        "no_data",
+        "retired"
+      ],
+      "description": "Written by the engine on each run. 'open' means never run. 'no_data' means the test ran and could not reach a verdict \u2014 distinct from both other outcomes, and never counted as a pass."
     },
     "revisions": {
       "type": "array",
       "description": "Edits made to the claim after a falsification. Append only; the ledger holds the runs that forced them.",
       "items": {
         "type": "object",
-        "required": ["run", "because"],
+        "required": [
+          "run",
+          "because"
+        ],
         "properties": {
-          "run": {"type": "string"},
-          "was": {"type": "string"},
-          "became": {"type": "string"},
-          "because": {"type": "string"}
+          "run": {
+            "type": "string"
+          },
+          "was": {
+            "type": "string"
+          },
+          "became": {
+            "type": "string"
+          },
+          "because": {
+            "type": "string"
+          }
         }
       }
     },
@@ -68,9 +125,19 @@
       "type": "object",
       "description": "Written by the engine. The ledger is the durable record; this is a convenience.",
       "properties": {
-        "run": {"type": "string"},
-        "passed": {"type": "boolean"},
-        "summary": {"type": "string"}
+        "run": {
+          "type": "string"
+        },
+        "passed": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "true supported, false falsified, null no data."
+        },
+        "summary": {
+          "type": "string"
+        }
       }
     }
   }

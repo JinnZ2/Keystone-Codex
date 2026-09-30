@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "System",
+  "description": "A system is a set of entry ids plus declared joints. It is the unit at which INTEGRATION is measured. Entries are the parts; a system is an assembly of them. The integration report over a system reports coverage and gaps and emits no combined score and no ranking of the entries in it, because ranking parts is the supremacy frame SYSTEMS_ANALOGY.md was written against.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "status",
+    "membership_rule",
+    "members",
+    "joints"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "illustrative",
+        "proposed",
+        "attested"
+      ],
+      "description": "illustrative: assembled to exercise the report, not a claim that these parts ever ran together. proposed: someone is arguing this is an assembly. attested: the assembly is evidenced."
+    },
+    "summary": {
+      "type": "string"
+    },
+    "membership_rule": {
+      "type": "string",
+      "description": "The stated rule by which membership was decided, so that the set is reproducible by someone else and is not a preference. Required: a system whose membership rule is unstated cannot be checked."
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "entry"
+        ],
+        "properties": {
+          "entry": {
+            "type": "string",
+            "description": "An entry id under data/<domain>/."
+          },
+          "layer_role": {
+            "type": "string",
+            "enum": [
+              "PSU",
+              "CPU_MEMORY",
+              "BUS",
+              "IO",
+              "FIRMWARE",
+              "PERIPHERAL",
+              "UNSET"
+            ],
+            "description": "The role this entry plays IN THIS SYSTEM. A role is relational, so the same entry can carry different roles in different assemblies. If the entry also declares layer_role, the two are compared and a disagreement is reported rather than resolved."
+          },
+          "role_basis": {
+            "type": "string",
+            "description": "Required whenever layer_role is declared here. Where the role assignment came from. A role with no basis is a guess with a field around it."
+          },
+          "runs_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Entry ids or layer_role tokens this member requires beneath it, in this system. Empty array declares that nothing sits beneath it. Absent declares nothing."
+          },
+          "runs_on_basis": {
+            "type": "string",
+            "description": "Required whenever runs_on is declared here."
+          }
+        }
+      }
+    },
+    "joints": {
+      "type": "array",
+      "description": "Declared connections between two members. A joint is entry-to-entry. Layer-level dependency is carried by runs_on and is not a joint. An empty list is a finding, not a formality: it says the assembly has members and no declared connections between them.",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "kind",
+          "basis"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "description": "What passes across the joint."
+          },
+          "basis": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

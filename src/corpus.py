@@ -8,6 +8,11 @@ Layout convention (enforced here, documented in README):
                                  schema/keystone.schema.json
     data/<name>.json          -> a REGISTRY (catalogues, indexes); never
                                  treated as an entry
+    systems/<id>.json         -> a SYSTEM: a set of entry ids plus declared
+                                 joints, validated against
+                                 schema/system.schema.json. Systems live
+                                 outside data/ because a system is an assembly
+                                 OF entries, not another entry.
 
 Before this module existed each script did its own os.walk over data/ and
 picked up every *.json it found. When data/shadow_catalogue.json landed at the
@@ -21,6 +26,7 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, "data")
 RULES_DIR = os.path.join(ROOT, "rules")
+SYSTEMS_DIR = os.path.join(ROOT, "systems")
 
 
 def _read(path):
@@ -104,3 +110,46 @@ def load_candidates():
     if not os.path.exists(path):
         return []
     return _read(path).get("candidates", [])
+
+
+def load_systems():
+    """
+    Every declared system, sorted by id. Absent directory means no systems
+    have been declared — an empty architecture layer, not an error, so the
+    falsifier reports on that state rather than crashing on it.
+    """
+    if not os.path.isdir(SYSTEMS_DIR):
+        return []
+    items = []
+    for fname in sorted(os.listdir(SYSTEMS_DIR)):
+        if fname.endswith(".json"):
+            items.append(_read(os.path.join(SYSTEMS_DIR, fname)))
+    items.sort(key=lambda x: x.get("id", ""))
+    return items
+
+
+def layer_roles():
+    """
+    The declared layer_role vocabulary, from the schema. Single source of
+    truth, same arrangement as evidence_types(): src/systems.py and the
+    H-ARCH hypotheses read it from here rather than keeping copies.
+
+    UNSET is in the enum and is excluded here, because UNSET is a declaration
+    that the role is unread, not a role a system can be missing.
+    """
+    schema = load_schema("keystone.schema.json")
+    enum = schema["properties"]["layer_role"]["enum"]
+    return [r for r in enum if r != "UNSET"]
+
+
+def load_evaluator_claims():
+    """
+    Rows from the evaluator-claim register. Absent file means the register has
+    not been created; an existing file with zero rows means it was created and
+    is empty. The two are different states and are returned as such: None for
+    absent, a list (possibly empty) for present.
+    """
+    path = os.path.join(DATA_DIR, "evaluator_claims.json")
+    if not os.path.exists(path):
+        return None
+    return _read(path).get("claims", [])

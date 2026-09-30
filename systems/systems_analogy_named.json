@@ -1,0 +1,89 @@
+{
+  "id": "systems_analogy_named",
+  "name": "The assembly SYSTEMS_ANALOGY.md names",
+  "status": "illustrative",
+  "source": "SYSTEMS_ANALOGY.md, section 'Architecture Map'",
+  "summary": "The keystones that SYSTEMS_ANALOGY.md lists as examples under each architecture role, restricted to the ones this corpus has encoded. Assembled to exercise the integration report. It is not a claim that these eleven technologies ever ran together anywhere.",
+  "membership_rule": "Every keystone named as an example in the SYSTEMS_ANALOGY.md architecture map that exists as an encoded entry under data/<domain>/. Named examples with no encoded entry (qanats, firestick farming, Athenian sortition, women's war councils, Ashoka's edicts, hospitality laws, the compass) are absent from this set for that reason and for no other. The rule is stated so the set is reproducible by someone else rather than being a preference.",
+  "members": [
+    {
+      "entry": "terra_preta",
+      "layer_role": "PSU",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Ecology = Power Supply (PSU)' with Terra Preta named as an example keystone.",
+      "runs_on": [],
+      "runs_on_basis": "The source places the PSU layer at the bottom of the stack and names nothing beneath it. The empty array declares that; it is not a claim that the layer is unconditioned."
+    },
+    {
+      "entry": "quipu",
+      "layer_role": "CPU_MEMORY",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Information = CPU + Memory', Quipu named as an example keystone.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md on the PSU layer: 'Provides the baseline current. Without ecological stability, no system survives.' That is the only dependency the source states, and it states it for every layer above the PSU."
+    },
+    {
+      "entry": "songlines",
+      "layer_role": "CPU_MEMORY",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Information = CPU + Memory', Songlines named as an example keystone.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    },
+    {
+      "entry": "arabic_numerals",
+      "layer_role": "CPU_MEMORY",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Information = CPU + Memory', Arabic numerals named as an example keystone.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    },
+    {
+      "entry": "great_law_of_peace",
+      "layer_role": "BUS",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Social / Governance = Motherboard + Bus. Routes communication, connects components, regulates timing.' Haudenosaunee Confederacy named as an example keystone.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    },
+    {
+      "entry": "ubuntu_philosophy",
+      "layer_role": "BUS",
+      "role_basis": "SYSTEMS_ANALOGY.md names Ubuntu (Africa) as an example keystone under 'Social / Governance = Motherboard + Bus'. The entry's own domain is 'ethical'. The role assignment is transcribed from the source and the domain is left as the corpus filed it; the two disagree and the integration report says so rather than picking one.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    },
+    {
+      "entry": "gift_economy",
+      "layer_role": "IO",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Economy = I/O System. Channels goods and energy in/out.' Potlatch (Pacific NW) named as an example keystone. The entry's own domain is 'social'.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    },
+    {
+      "entry": "silk_road",
+      "layer_role": "IO",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Economy = I/O System', Silk Road named as an example keystone.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    },
+    {
+      "entry": "cowrie_currency",
+      "layer_role": "IO",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Economy = I/O System', Cowrie shells named as an example keystone.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    },
+    {
+      "entry": "lathe",
+      "layer_role": "PERIPHERAL",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Material / Mechanical = Peripherals + Fabrication', Lathe named as an example keystone.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    },
+    {
+      "entry": "damascus_steel",
+      "layer_role": "PERIPHERAL",
+      "role_basis": "SYSTEMS_ANALOGY.md: 'Material / Mechanical = Peripherals + Fabrication', Damascus steel named as an example keystone.",
+      "runs_on": ["PSU"],
+      "runs_on_basis": "SYSTEMS_ANALOGY.md: 'Without ecological stability, no system survives.'"
+    }
+  ],
+  "joints": [],
+  "notes": "The joints list is empty and that is the finding, not an omission. SYSTEMS_ANALOGY.md declares dependency at the layer level ('without ecological stability, no system survives') and declares no connection between any two named keystones. Eleven members and zero declared joints is a set, not yet an assembly. Filling the joints list requires evidence that two specific entries exchanged something, which nothing in this repository currently carries."
+}

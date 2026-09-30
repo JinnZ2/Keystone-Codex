@@ -43,6 +43,23 @@ PHI = (1 + math.sqrt(5)) / 2
 
 
 def result(passed, summary, detail=None, unknowns=None, stats=None):
+    """
+    `passed` has three values, not two.
+
+        True   the prediction held
+        False  the prediction failed -- the claim is falsified
+        None   the test could not reach a verdict: NO DATA
+
+    None was added with the architecture layer. H-BYPASS reads a register that
+    ships empty, and an empty register must not report as supported: a claim
+    with no records against it has not been tested, it has been left alone.
+    Collapsing "no data" into either verdict launders a silence into a finding,
+    which is the same error the dormant/resolved split in the unknowns register
+    exists to prevent.
+
+    --strict exits 1 on False only. An untested claim does not break a build;
+    it also does not count as a pass anywhere in the report or the ledger.
+    """
     return {
         "passed": passed,
         "summary": summary,
@@ -50,6 +67,50 @@ def result(passed, summary, detail=None, unknowns=None, stats=None):
         "unknowns": unknowns or [],
         "stats": stats or {},
     }
+
+
+def no_data(summary, detail=None, unknowns=None, stats=None):
+    """A verdict of neither. See result()."""
+    return result(None, summary, detail, unknowns, stats)
+
+
+def verdict_of(res):
+    return {True: "supported", False: "falsified"}.get(res["passed"], "no data")
+
+
+def target_unknown(h, res):
+    """
+    RULE 1, enforced rather than requested.
+
+    A hypothesis binds a TARGET (what it is trying to measure) to a RENDERING
+    (the specific method or claim that carries the attempt). Falsifying the
+    rendering does not close the target. When a hypothesis declaring both is
+    falsified, its target is raised as an open unknown, unless the hypothesis
+    declares `target_reached: true` -- that is, unless the test reached the
+    target itself rather than only its rendering.
+
+    Returns (unknown_or_None, note_or_None). The note fires when a falsified
+    hypothesis declares no split at all, so the gap is visible in the report
+    instead of being inferred from silence.
+    """
+    if res["passed"] is not False:
+        return None, None
+    m = h.get("measures")
+    if not m:
+        return None, (f"{h['id']} declares no target/rendering split, so what "
+                      f"this falsification closes is unrecorded (CLAUDE.md RULE 1)")
+    if m.get("target_reached"):
+        return None, (f"{h['id']} declares target_reached -- the falsification "
+                      f"reaches the target, not only the rendering")
+    q = m.get("target_question")
+    if not q:
+        return None, (f"{h['id']} declares a target but no target_question, so "
+                      f"the target cannot be raised as an unknown (CLAUDE.md RULE 1)")
+    return {
+        "question": q,
+        "why": (f"the rendering was falsified ({res['summary']}); the target "
+                f"it was aimed at -- {m.get('target')} -- is not closed by that"),
+    }, None
 
 
 # ── Tests ────────────────────────────────────────────────────────────────
@@ -523,6 +584,257 @@ def t_taxonomy_exercised(ctx, params):
     return result(True, f"all {len(declared)} declared evidence types exercised", detail)
 
 
+# ── Architecture-layer tests ─────────────────────────────────────────────
+# Added beside the per-entry rubric, not in place of it. The rubric measures
+# an entry against thresholds; these measure whether an assembly is declared
+# well enough to be checked at all. Different measurand, different tests, and
+# neither reads the other's output.
+
+def t_layer_role_coverage(ctx, params):
+    """
+    How much of the corpus has been read for its ROLE rather than its category?
+
+    UNSET counts as DECLARED. An entry saying "nobody has read this one for
+    its role" is a different state from an entry where the field is absent,
+    and only the second is a gap in coverage. The test reports the fraction
+    either way; the threshold only decides whether the claim about coverage
+    survives.
+    """
+    max_undeclared = params.get("max_undeclared_fraction", 0.5)
+    roles = ctx["layer_roles"]
+
+    declared, undeclared, unset, by_role = [], [], [], {}
+    for x in ctx["entries"]:
+        role = x.get("layer_role")
+        if role is None:
+            undeclared.append(x["id"])
+            continue
+        declared.append(x["id"])
+        if role == "UNSET":
+            unset.append(x["id"])
+        else:
+            by_role.setdefault(role, []).append(x["id"])
+
+    total = len(ctx["entries"])
+    if total == 0:
+        return no_data("no entries to read for layer_role")
+    undeclared_fraction = len(undeclared) / total
+
+    detail = [f"{len(declared)}/{total} declare layer_role "
+              f"({len(unset)} of those declare UNSET)",
+              f"{len(undeclared)}/{total} undeclared "
+              f"({undeclared_fraction:.0%}, max {max_undeclared:.0%})"]
+    detail += [f"{r}: {len(by_role.get(r, []))} entries" for r in roles]
+    if undeclared:
+        detail.append("undeclared: " + ", ".join(undeclared[:10])
+                      + (" …" if len(undeclared) > 10 else ""))
+
+    stats = {"total": total, "declared": len(declared), "unset": len(unset),
+             "undeclared": len(undeclared),
+             "undeclared_fraction": round(undeclared_fraction, 4),
+             "by_role": {r: len(by_role.get(r, [])) for r in roles}}
+
+    if undeclared_fraction > max_undeclared:
+        return result(
+            False,
+            f"{len(undeclared)}/{total} entries declare no layer_role "
+            f"({undeclared_fraction:.0%}) — the architecture layer exists and "
+            f"is empty",
+            detail, [], stats)
+    return result(True,
+                  f"{len(declared)}/{total} entries declare a layer_role "
+                  f"({len(unset)} UNSET)", detail, [], stats)
+
+
+def t_system_runs_on(ctx, params):
+    """
+    In each declared system, does every member's runs_on resolve to a member
+    that is present?
+
+    What is NOT checked: that the resolved member is LOWER in the stack. No
+    document in this repository declares a total order over layer roles, and
+    inventing one to make the test stricter would settle by fiat a question
+    nobody has answered. The gap is reported in every run rather than fixed
+    quietly.
+    """
+    import systems as systems_mod
+
+    if not ctx["systems"]:
+        return no_data("no systems declared under systems/ — nothing to check",
+                       ["An absent architecture layer is not a satisfied one."])
+
+    entries_by_id = {x["id"]: x for x in ctx["entries"]}
+    reports = [systems_mod.integration_report(sysdef, entries_by_id,
+                                              ctx["layer_roles"])
+               for sysdef in ctx["systems"]]
+
+    problems, detail = [], []
+    evaluable = 0
+    for r in reports:
+        ro = r["runs_on"]
+        if ro["targets"] == 0:
+            detail.append(f"{r['system']}: no runs_on declared by any member — "
+                          f"not evaluable")
+        else:
+            evaluable += 1
+            detail.append(f"{r['system']}: {ro['satisfied']}/{ro['targets']} "
+                          f"runs_on targets resolve ({ro['fraction']:.0%})")
+        for u in ro["unmet"]:
+            problems.append(f"{r['system']}: {u['entry']} -> {u['target']}: {u['why']}")
+        for eid in r["missing_entries"]:
+            problems.append(f"{r['system']}: member '{eid}' names no encoded entry")
+        for c in r["conflicts"]:
+            problems.append(f"{r['system']}: {c['entry']}: "
+                            + (c["role_conflict"] or c["runs_on_conflict"]))
+        if r["missing_layers"]:
+            detail.append(f"{r['system']}: layers with no member — "
+                          + ", ".join(r["missing_layers"]))
+    detail.append(systems_mod.UNCHECKED_NOTE)
+
+    stats = {"systems": len(reports), "evaluable": evaluable,
+             "unmet": sum(len(r["runs_on"]["unmet"]) for r in reports)}
+
+    if evaluable == 0:
+        return no_data(f"{len(reports)} system(s) declared, none declaring any "
+                       f"runs_on — nothing to resolve", detail, [], stats)
+    if problems:
+        return result(False, f"{len(problems)} unresolved runs_on target(s) or "
+                             f"member conflict(s)", problems + detail, [], stats)
+    return result(True, f"every runs_on target in {evaluable} evaluable "
+                        f"system(s) resolves to a present member", detail, [], stats)
+
+
+def t_integration_saturation(ctx, params):
+    """
+    The same ceiling-saturation check H006 applies to the rubric, applied to
+    the integration report — so the architecture layer can fail in the way the
+    per-entry layer already can.
+
+    A report that has only ever returned full satisfaction cannot distinguish
+    an integrated system from an unchecked one. Saturation is the measure that
+    catches that, for the reason set out in H006's revision: a high pass rate
+    on a curated set is expected, and it is running out of resolution that is
+    the defect.
+    """
+    max_ceiling_fraction = params.get("max_ceiling_fraction", 0.5)
+    min_spread = params.get("min_spread", 0.2)
+    min_systems = params.get("min_systems", 2)
+    import systems as systems_mod
+
+    entries_by_id = {x["id"]: x for x in ctx["entries"]}
+    reports = [systems_mod.integration_report(sysdef, entries_by_id,
+                                              ctx["layer_roles"])
+               for sysdef in ctx["systems"]]
+    fractions = [r["runs_on"]["fraction"] for r in reports
+                 if r["runs_on"]["fraction"] is not None]
+
+    if not fractions:
+        return no_data("no system reports a runs_on fraction — the integration "
+                       "report has produced no readings to saturate",
+                       [f"{len(reports)} system(s) declared"], [],
+                       {"systems": len(reports), "evaluable": 0})
+
+    at_ceiling = [f for f in fractions if abs(f - 1.0) < 1e-9]
+    ceiling_fraction = len(at_ceiling) / len(fractions)
+    spread = max(fractions) - min(fractions)
+
+    detail = [f"{r['system']}: {r['runs_on']['fraction']}"
+              for r in reports if r["runs_on"]["fraction"] is not None]
+    detail.append(f"at ceiling: {len(at_ceiling)}/{len(fractions)} "
+                  f"({ceiling_fraction:.0%}, max {max_ceiling_fraction:.0%})")
+    detail.append(f"spread: {spread:.3f} (min {min_spread})")
+    detail.append(f"evaluable systems: {len(fractions)} (min {min_systems})")
+
+    stats = {"evaluable": len(fractions),
+             "ceiling_fraction": round(ceiling_fraction, 4),
+             "spread": round(spread, 4)}
+
+    problems = []
+    if len(fractions) < min_systems:
+        problems.append(f"{len(fractions)} evaluable system(s), below the {min_systems} "
+                        f"needed for saturation to mean anything — with one reading "
+                        f"the spread is zero by construction")
+    if ceiling_fraction > max_ceiling_fraction:
+        problems.append(f"{len(at_ceiling)}/{len(fractions)} systems report full "
+                        f"satisfaction — the report cannot tell an integrated "
+                        f"system from an unchecked one")
+    if spread < min_spread:
+        problems.append(f"spread {spread:.3f} — the report barely separates the "
+                        f"systems it reads")
+
+    if problems:
+        return result(False, "; ".join(problems), detail, [], stats)
+    return result(True, f"{ceiling_fraction:.0%} of {len(fractions)} systems at "
+                        f"ceiling, spread {spread:.3f} — the integration report "
+                        f"has resolution", detail, [], stats)
+
+
+def t_evaluator_bypass(ctx, params):
+    """
+    Reads data/evaluator_claims.json: records of one source rejecting a design
+    under one attribution and accepting the same structure under another.
+
+    The register ships EMPTY, and an empty register returns NO DATA rather than
+    a pass. SYSTEMS_ANALOGY.md's semantic-bypass section is an unmeasured claim
+    until somebody puts records in this file; reporting "supported" over zero
+    rows would turn the absence of a search into evidence.
+
+    A record only counts once its structural equivalence is argued and both
+    halves carry a locator. Without that it says a source liked one thing and
+    not another, which is not a bypass.
+    """
+    min_records = params.get("min_records", 3)
+    claims = ctx["evaluator_claims"]
+
+    if claims is None:
+        return no_data("data/evaluator_claims.json does not exist — the register "
+                       "has not been created")
+    if not claims:
+        return no_data(
+            "data/evaluator_claims.json exists and holds 0 records — no data",
+            ["The register was created by the architecture layer and left empty.",
+             "An empty register supports nothing and refutes nothing.",
+             "Filling it requires, per record: one source, a rejection with a "
+             "locator and the reason the source itself gives, an acceptance with "
+             "a locator, and an argued structural equivalence between the two."],
+            [], {"records": 0, "usable": 0})
+
+    live = [c for c in claims if c.get("status") != "withdrawn"]
+    incomplete = []
+    usable = []
+    for c in live:
+        missing = []
+        eq = c.get("structural_equivalence") or {}
+        if not eq.get("statement"):
+            missing.append("structural_equivalence.statement")
+        if not eq.get("basis"):
+            missing.append("structural_equivalence.basis")
+        for half in ("rejected", "accepted"):
+            if not (c.get(half) or {}).get("locator"):
+                missing.append(f"{half}.locator")
+        if not (c.get("rejected") or {}).get("stated_reason"):
+            missing.append("rejected.stated_reason")
+        if missing:
+            incomplete.append(f"{c.get('id', '?')}: missing " + ", ".join(missing))
+        else:
+            usable.append(c.get("id", "?"))
+
+    detail = [f"{len(claims)} record(s), {len(live)} not withdrawn, "
+              f"{len(usable)} usable"] + incomplete
+    stats = {"records": len(claims), "live": len(live), "usable": len(usable),
+             "incomplete": len(incomplete)}
+
+    if len(usable) < min_records:
+        return result(
+            False,
+            f"{len(usable)} usable record(s), below the {min_records} the claim "
+            f"rests on ({len(incomplete)} record(s) incomplete)",
+            detail, [], stats)
+    return result(True, f"{len(usable)} usable record(s) of a source rejecting a "
+                        f"structure under one attribution and accepting it under "
+                        f"another", detail, [], stats)
+
+
 TESTS = {
     "id_consistency": t_id_consistency,
     "unlock_resolution": t_unlock_resolution,
@@ -532,6 +844,10 @@ TESTS = {
     "rubric_discrimination": t_rubric_discrimination,
     "phi_significance": t_phi_significance,
     "taxonomy_exercised": t_taxonomy_exercised,
+    "layer_role_coverage": t_layer_role_coverage,
+    "system_runs_on": t_system_runs_on,
+    "integration_saturation": t_integration_saturation,
+    "evaluator_bypass": t_evaluator_bypass,
 }
 
 
@@ -552,6 +868,9 @@ def build_context():
         "candidates": corpus.load_candidates(),
         "rules": corpus.load_rules(),
         "lineage_terms": corpus.load_lineage_terms()["terms"],
+        "systems": corpus.load_systems(),
+        "layer_roles": corpus.layer_roles(),
+        "evaluator_claims": corpus.load_evaluator_claims(),
     }
 
 
@@ -640,8 +959,24 @@ def reconcile_unknowns(raised, run_id, dry_run):
 
 
 def render_unknowns(register, run_id):
+    """
+    Four sections, not three.
+
+    FRAME-LEVEL is separate because those questions are not about a value in
+    the corpus; they are about the frame the corpus is read in — where the
+    entry boundary was cut, what the rubric has no row for, what a metric is
+    being read as. A frame-level question mixed into the open list reads as
+    one more item of work. Kept apart, it reads as what it is: a statement
+    that the instrument may be pointed at the wrong measurand. Each one
+    declares whose frame raised it, because a frame-level question asked from
+    inside the frame is a different object from one asked from outside it.
+    """
     buckets = {"open": [], "resolved": [], "dormant": []}
+    frame = []
     for u in register["unknowns"]:
+        if u.get("level") == "frame":
+            frame.append(u)
+            continue
         buckets.setdefault(u["status"], []).append(u)
 
     lines = [
@@ -655,10 +990,18 @@ def render_unknowns(register, run_id):
         "answer written down. **Dormant** — the test that raised it stopped asking, "
         "and nobody ever answered it. Dormant is not resolved, and the two are kept "
         "apart on purpose: a question that goes quiet because the data changed under "
-        "it is still open, it just lost its alarm.",
+        "it is still open, it just lost its alarm. **Frame-level** — not a gap in a "
+        "value but a question about the frame the values are read in; these do not "
+        "resolve by filling a field, so they are listed apart rather than mixed into "
+        "the work queue.",
+        "",
+        "Some entries are marked *target-level* or *rendering-level*. A rendering is "
+        "a specific method or claim; a target is what it was aimed at. Falsifying a "
+        "rendering closes the rendering. See CLAUDE.md RULE 1.",
         "",
         f"_Reconciled at `{run_id}` · {len(buckets['open'])} open · "
-        f"{len(buckets['resolved'])} resolved · {len(buckets['dormant'])} dormant_",
+        f"{len(buckets['resolved'])} resolved · {len(buckets['dormant'])} dormant · "
+        f"{len(frame)} frame-level_",
         "",
     ]
 
@@ -670,16 +1013,31 @@ def render_unknowns(register, run_id):
             out += [note, ""]
         for u in items:
             pin = " · **pinned**" if u.get("pinned") else ""
+            level = ""
+            if u.get("level") in ("target", "rendering"):
+                level = f" · {u['level']}-level"
             out += [
                 f"### {u['id']} — {u['question']}",
-                f"- Raised by **{u['raised_by']}** · first seen `{u['first_seen']}`{pin}",
+                f"- Raised by **{u['raised_by']}** · first seen `{u['first_seen']}`{pin}{level}",
                 f"- Trigger: {u['trigger']}",
             ]
+            if u.get("frame"):
+                out.append(f"- Reviewer frame: {u['frame']}")
+            if u.get("rendering_of"):
+                out.append(f"- Rendering of: {u['rendering_of']}")
+            if u.get("target_of"):
+                out.append(f"- Target of: {u['target_of']}")
             if u.get("resolution"):
                 out.append(f"- **Resolution** (`{u.get('closed_in', run_id)}`): {u['resolution']}")
             out.append("")
         return out
 
+    lines += render(
+        "Frame-level", frame,
+        "_Questions about the frame rather than about a value in it: where the "
+        "entry boundary was cut, what a metric is being read as, what the rubric "
+        "has no row for. These are kept out of the Open list because they do not "
+        "resolve by filling a field. Each declares the frame it was raised from._")
     lines += render("Open", buckets["open"], None)
     lines += render("Resolved", buckets["resolved"], None)
     lines += render(
@@ -705,13 +1063,16 @@ def render_ledger():
     path = os.path.join(LEDGER_DIR, "runs.jsonl")
     if not os.path.exists(path):
         return
-    runs = {}
+    runs, notes = {}, []
     with open(path, encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if not line:
                 continue
             rec = json.loads(line)
+            if rec.get("kind") == "note":
+                notes.append(rec)
+                continue
             runs.setdefault(rec["run"], []).append(rec)
 
     lines = [
@@ -737,20 +1098,43 @@ def render_ledger():
             "| --- | --- | --- |",
         ]
         for r in records:
-            verdict = "supported" if r["passed"] else "**falsified**"
+            verdict = {True: "supported", False: "**falsified**"}.get(
+                r["passed"], "_no data_")
             summary = r["summary"].replace("|", "\\|")
             lines.append(f"| `{r['hypothesis']}` | {verdict} | {summary} |")
         lines.append("")
+
+    if notes:
+        lines += [
+            "## Notes",
+            "",
+            "Corrections and clarifications appended to the ledger without "
+            "rewriting the run they correct. A note never edits an earlier "
+            "record; the earlier record and the note both stand, and a reader "
+            "sees what was believed and what was said about it afterwards.",
+            "",
+        ]
+        for n in sorted(notes, key=lambda r: (r.get("date", ""), r.get("id", ""))):
+            lines += [f"### {n.get('id', 'note')} — {n.get('title', '')}",
+                      "",
+                      f"_appended {n.get('date', 'undated')}"
+                      + (f" · concerns `{n['concerns']}`" if n.get("concerns") else "")
+                      + "_",
+                      "",
+                      n.get("body", ""),
+                      ""]
     with open(os.path.join(LEDGER_DIR, "LEDGER.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
 
 def write_report(run_id, rows):
-    falsified = [r for r in rows if not r["result"]["passed"]]
+    falsified = [r for r in rows if r["result"]["passed"] is False]
+    untested = [r for r in rows if r["result"]["passed"] is None]
+    supported = [r for r in rows if r["result"]["passed"] is True]
     lines = [
         "# Falsification Report",
-        f"_Run `{run_id}` · {len(rows) - len(falsified)} supported · "
-        f"{len(falsified)} falsified_",
+        f"_Run `{run_id}` · {len(supported)} supported · "
+        f"{len(falsified)} falsified · {len(untested)} no data_",
         "",
         "A falsified hypothesis is a result, not a bug. The loop is: state the "
         "claim, run it, and when the data says no, edit the claim rather than the "
@@ -760,7 +1144,8 @@ def write_report(run_id, rows):
     ]
     for row in rows:
         h, res = row["hypothesis"], row["result"]
-        mark = "✅ supported" if res["passed"] else "❌ falsified"
+        mark = {True: "✅ supported", False: "❌ falsified"}.get(
+            res["passed"], "⬜ no data")
         lines += [
             f"## {h['id']} — {mark}",
             "",
@@ -771,6 +1156,20 @@ def write_report(run_id, rows):
             f"**Test.** `{h['test']['kind']}` — {res['summary']}",
             "",
         ]
+        m = h.get("measures")
+        if m:
+            lines += [
+                f"**Target.** {m.get('target', '—')}",
+                "",
+                f"**Rendering.** {m.get('rendering', '—')}",
+                "",
+            ]
+            if res["passed"] is False and not m.get("target_reached"):
+                lines += [
+                    "**What this falsification closes.** The rendering, not the "
+                    "target. The target is open in `UNKNOWNS.md`.",
+                    "",
+                ]
         if res["detail"]:
             lines.append("<details><summary>detail</summary>\n")
             for d in res["detail"]:
@@ -812,10 +1211,19 @@ def main(argv=None):
     rows, ledger_records, raised = [], [], []
     for path, h in hypotheses:
         res = run_hypothesis(h, ctx)
-        rows.append({"hypothesis": h, "result": res})
 
-        status = "supported" if res["passed"] else "falsified"
-        mark = "✅" if res["passed"] else "❌"
+        # RULE 1. A falsified rendering does not close its target.
+        tu, note = target_unknown(h, res)
+        if tu:
+            raised.append((h["id"], tu))
+            res["detail"] = list(res["detail"]) + [
+                f"RULE 1: target still open — {tu['question']}"]
+        if note:
+            res["detail"] = list(res["detail"]) + [f"RULE 1: {note}"]
+        rows.append({"hypothesis": h, "result": res, "rule1_note": note})
+
+        status = verdict_of(res)
+        mark = {True: "✅", False: "❌"}.get(res["passed"], "⬜")
         print(f"{mark} {h['id']} {status}: {res['summary']}")
 
         ledger_records.append({
@@ -825,6 +1233,7 @@ def main(argv=None):
             "test": h["test"]["kind"],
             "params": h["test"].get("params", {}),
             "passed": res["passed"],
+            "verdict": verdict_of(res),
             "summary": res["summary"],
             "stats": res["stats"],
             "rules_version": ctx["rules"].get("version"),
@@ -833,7 +1242,7 @@ def main(argv=None):
             raised.append((h["id"], u))
 
         if not args.dry_run:
-            h["status"] = status
+            h["status"] = status.replace(" ", "_")
             h["last_result"] = {
                 "run": run_id,
                 "passed": res["passed"],
@@ -849,14 +1258,19 @@ def main(argv=None):
         write_report(run_id, rows)
     register = reconcile_unknowns(raised, run_id, args.dry_run)
 
-    falsified = [r for r in rows if not r["result"]["passed"]]
+    falsified = [r for r in rows if r["result"]["passed"] is False]
+    untested = [r for r in rows if r["result"]["passed"] is None]
+    supported = [r for r in rows if r["result"]["passed"] is True]
     openq = [u for u in register["unknowns"] if u["status"] == "open"]
-    print(f"\n{run_id}: {len(rows) - len(falsified)} supported, "
-          f"{len(falsified)} falsified, {len(openq)} open unknowns")
+    frame = [u for u in register["unknowns"] if u.get("level") == "frame"]
+    print(f"\n{run_id}: {len(supported)} supported, {len(falsified)} falsified, "
+          f"{len(untested)} no data, {len(openq)} open unknowns "
+          f"({len(frame)} frame-level)")
     if not args.dry_run:
         print("Wrote falsification_report.md, UNKNOWNS.md, "
               "ledger/runs.jsonl, ledger/LEDGER.md, unknowns/register.json")
 
+    # No data is not a failure and is not a pass. --strict reads False only.
     if args.strict and falsified:
         sys.exit(1)
 

@@ -13,6 +13,13 @@
       "direction": "indistinguishable"
     }
   },
+  "measures": {
+    "target": "cross-domain systemic coupling among the technologies in this catalogue",
+    "rendering": "the golden-ratio triad detector in src/shadow_search.py, run against a seeded uniform null over catalogue start dates",
+    "target_question": "Does cross-domain systemic coupling exist among these technologies, and what would measure it? The phi rendering was falsified; the target it was aimed at was never reached.",
+    "target_reached": false,
+    "note": "Added retroactively when CLAUDE.md RULE 1 was written. At run-001-baseline the phi RENDERING was falsified (p = 0.97 at run-005-recent-finds; 0.864 at the baseline run). The claim was replaced by its own negation and H007 now reports supported, which is correct about the rendering and says nothing about the target. Nothing in this repository has measured cross-domain coupling; the detector that was going to is a negative control. The target is open at U-H007-3."
+  },
   "status": "supported",
   "revisions": [
     {
@@ -23,7 +30,7 @@
     }
   ],
   "last_result": {
-    "run": "run-005-recent-finds",
+    "run": "run-006b-architecture-layer",
     "passed": true,
     "summary": "phi-triads (9141) indistinguishable from chance (null mean 10415.0, p=0.983) \u2014 negative control holds"
   }

@@ -1,0 +1,22 @@
+{
+  "id": "H-ARCH-2",
+  "statement": "In every declared system, each member's runs_on resolves to another member that is present in the system.",
+  "rationale": "A system that names a dependency it does not contain is describing something other than itself. This is the cheapest integrity check the architecture layer can run and it is the one that catches a declared assembly being a wish list. It deliberately does not check that the resolved member is LOWER in the stack: no document in this repository declares a total order over the layer roles, and inventing one to make the test stricter would settle by fiat a question nobody has answered. The gap is printed on every run.",
+  "prediction": "Across all systems under systems/, zero runs_on targets fail to resolve to a present member, zero members name an entry that does not exist, and zero members carry a role or runs_on declaration that conflicts with the entry's own.",
+  "test": {
+    "kind": "system_runs_on",
+    "params": {}
+  },
+  "measures": {
+    "target": "whether the declared assemblies hold together as assemblies",
+    "rendering": "resolving runs_on targets against system membership",
+    "target_question": "Does a system whose runs_on all resolve actually hold together, or does resolution only show that the declarations are internally consistent?",
+    "target_reached": false
+  },
+  "status": "supported",
+  "last_result": {
+    "run": "run-006b-architecture-layer",
+    "passed": true,
+    "summary": "every runs_on target in 1 evaluable system(s) resolves to a present member"
+  }
+}

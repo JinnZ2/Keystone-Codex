@@ -1,0 +1,26 @@
+{
+  "id": "H-ARCH-3",
+  "statement": "The integration report retains resolution: it does not pile every declared system against full satisfaction, and it reads enough systems for the measurement to mean anything.",
+  "rationale": "This is H006's ceiling-saturation check pointed at the new layer, and it is here so that the architecture layer can fail in the way the per-entry layer already can. A report that has only ever returned full satisfaction cannot distinguish an integrated system from an unchecked one, and a layer added without a test that can refuse it is a layer that will confirm whatever it is given. The same reasoning H006's revision records applies: a high satisfaction rate over a set someone assembled is the expected result of assembling it, and running out of resolution is the defect that measures.",
+  "prediction": "At least two systems report a runs_on fraction, at most half of them sit at full satisfaction, and the spread between highest and lowest is at least 0.2.",
+  "test": {
+    "kind": "integration_saturation",
+    "params": {
+      "max_ceiling_fraction": 0.5,
+      "min_spread": 0.2,
+      "min_systems": 2
+    }
+  },
+  "measures": {
+    "target": "whether the integration report discriminates between assemblies",
+    "rendering": "ceiling saturation and spread over the runs_on fractions the report produces",
+    "target_question": "Does the integration report discriminate between assemblies, or does it only describe the one set that has been declared so far?",
+    "target_reached": false
+  },
+  "status": "falsified",
+  "last_result": {
+    "run": "run-006b-architecture-layer",
+    "passed": false,
+    "summary": "1 evaluable system(s), below the 2 needed for saturation to mean anything \u2014 with one reading the spread is zero by construction; 1/1 systems report full satisfaction \u2014 the report cannot tell an integrated system from an unchecked one; spread 0.000 \u2014 the report barely separates the systems it reads"
+  }
+}

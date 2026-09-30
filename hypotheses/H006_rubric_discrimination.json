@@ -20,7 +20,7 @@
     }
   ],
   "last_result": {
-    "run": "run-005-recent-finds",
+    "run": "run-006b-architecture-layer",
     "passed": true,
     "summary": "39/42 pass, 31% at ceiling, spread 0.380 \u2014 rubric discriminates"
   }

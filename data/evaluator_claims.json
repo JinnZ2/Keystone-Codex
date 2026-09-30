@@ -1,0 +1,5 @@
+{
+  "version": "1.0",
+  "note": "Empty on purpose. This register was created by the architecture layer with no records in it, and the hypothesis that reads it (H-BYPASS) returns 'no data' rather than 'supported'. Filling it requires locating sources in which the same structure is rejected under one attribution and accepted under another, with a locator for each half and an argued structural equivalence. Until that exists, the semantic-bypass section of SYSTEMS_ANALOGY.md is an unmeasured claim and the codex says so here rather than in prose. Schema: schema/evaluator_claim.schema.json",
+  "claims": []
+}
