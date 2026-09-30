@@ -6,7 +6,7 @@ Questions this project does not have answers to. Most were opened by a hypothesi
 
 Some entries are marked *target-level* or *rendering-level*. A rendering is a specific method or claim; a target is what it was aimed at. Falsifying a rendering closes the rendering. See CLAUDE.md RULE 1.
 
-_Reconciled at `run-006b-architecture-layer` · 13 open · 11 resolved · 0 dormant · 9 frame-level_
+_Reconciled at `run-007-anatolia-findings` · 15 open · 11 resolved · 0 dormant · 9 frame-level_
 
 ## Frame-level
 
@@ -70,6 +70,14 @@ _Questions about the frame rather than about a value in it: where the entry boun
 ### U-C-2 — Which era values in this codex would current archaeological methods revise, if anyone checked?
 - Raised by **curated** · first seen `run-002-post-repair` · **pinned**
 - Trigger: Airborne LIDAR, sedimentary and ancient DNA, dental calculus proteomics, and Bayesian radiocarbon modelling have overturned settlement-scale and chronology claims across the field since roughly 2018. No era value in data/ has been rechecked against any of them.
+
+### U-C-3 — When a rock-cut complex cannot be dated because later carving destroys earlier surfaces, what may an entry's era legitimately claim?
+- Raised by **curated** · first seen `run-007-anatolia-findings` · **pinned**
+- Trigger: derinkuyu_tuff_complex encodes 780–1923 as attested use of the mature complex and declines to enter an Iron Age or Hittite start date. Tourism literature and several scholarly origin stories treat later function as original purpose. The same tuff-dating problem applies to any rock-cut keystone the codex might later add.
+
+### U-C-4 — When is a personal name evidence of a culture, and when is it only evidence that a name was written?
+- Raised by **curated** · first seen `run-007-anatolia-findings` · **pinned**
+- Trigger: kanis_merchant_archives was encoded as an information technology rather than as a list of translated Anatolian names. The attached Kültepe name-semantics research shows that most pilot names are overview-only, that namesakes are common, and that language assignment is not ethnicity.
 
 ### U-H-ARCH-1-1 — Can this corpus be read as an architecture, and what would have to be declared before that question has an answer?
 - Raised by **H-ARCH-1** · first seen `run-006-architecture-layer`

@@ -1,0 +1,87 @@
+{
+  "id": "kanis_merchant_archives",
+  "name": "Kaniš Merchant Archives (Old Assyrian Private Tablets)",
+  "domain": "information",
+  "region": "Kültepe/Kaniš Lower Town, Central Anatolia, with counterpart archives at Assur",
+  "era": {
+    "start": -1970,
+    "end": -1710
+  },
+  "summary": "The earliest large private commercial archive: roughly 23,000 clay tablets from Old Assyrian family firms at Kaniš, in which people appear as creditors, debtors, witnesses, guarantors, judges, craftspeople, and kin — a queryable social database written 1,500 years before the Silk Road.",
+  "metrics": {
+    "longevity_years": 260,
+    "replication_regions": 1,
+    "decentralization_score": 0.75,
+    "ethical_alignment": 0.55
+  },
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "The Kültepe tablets are merchant-archive documents, not isolated lexical specimens: people appear in them with roles (creditor, debtor, witness, guarantor, judge, attorney, craftsperson, kin), so the archive is a relational record of a trading society",
+      "evidence_refs": ["e1", "e2", "e3"]
+    },
+    {
+      "id": "c2",
+      "statement": "The chronological bias is load-bearing: the vast majority of ~23,000 tablets come from Lower Town level II (c. 1970–1835 BCE); level Ib (c. 1835–1710 BCE) has yielded only around 450, so raw name counts cannot be read as cultural change without that exposure offset",
+      "evidence_refs": ["e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Language assignment of personal names is not ethnicity: the documents are in Old Assyrian, local names are Kanišite Hittite, Luwic, Hurrian, Hattic, or unassigned, and the texts generally lump locals as nuwaʿum rather than recording self-ascription",
+      "evidence_refs": ["e4", "e5"]
+    },
+    {
+      "id": "c4",
+      "statement": "A name is not a person: namesakes are common, a comprehensive Old Assyrian prosopography does not yet exist, and social claims from onomastics require the chain name → person → attestation → document → family/network, with ordinary legal vocabulary as a control set",
+      "evidence_refs": ["e2", "e3", "e6"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "archaeological_record",
+      "source": "Kültepe/Kaniš Lower Town excavations: private houses of Assyrian merchants containing tablet archives in warehouse rooms, conventionally level II c. 1970–1835 BCE and level Ib c. 1835–1710 BCE.",
+      "quality": 0.9
+    },
+    {
+      "id": "e2",
+      "type": "peer_reviewed_study",
+      "source": "Larsen, M. T. (2015) Ancient Kanesh: A Merchant Colony in Bronze Age Anatolia, Cambridge University Press — appendix 'Families and Names' and index of Old Assyrian names.",
+      "uri": "https://www.cambridge.org/core/books/ancient-kanesh/families-and-names/F378FD9C5CB2622A4DB75E901CCD39B5",
+      "quality": 0.9
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Veenhof, K. R. (2020) Kültepe Texts chronique, Revue d'Assyriologie 114 — scale of personal-name material, role categories in indexes, and the continuing lack of a comprehensive Old Assyrian prosopography.",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Kloekhorst, A. (2019) Kanišite Hittite: The Earliest Attested Record of Indo-European, Brill — phonological and morphological method for local personal names; dialect argument; level II vs Ib exposure.",
+      "quality": 0.9
+    },
+    {
+      "id": "e5",
+      "type": "peer_reviewed_study",
+      "source": "Goedegebuure, P. (2008) Central Anatolian Languages and Language Communities in the Colony Period, in Dercksen ed., Anatolia and the Jazira during the Old Assyrian Period — language community rather than ethnicity; nuwaʿum as the Assyrian lump category.",
+      "uri": "https://voices.uchicago.edu/goedegebuure/files/2020/07/07_Goedegebuure.pdf",
+      "quality": 0.85
+    },
+    {
+      "id": "e6",
+      "type": "peer_reviewed_study",
+      "source": "Michel, C. (2015) professions at Kaneš; Michel, C. (2016) women and real estate. Pilot attestations: Ilališkan among Anatolian smiths (Kt 94/k 788:23) and in an 18-shekel silver loan with house pledge.",
+      "uri": "https://shs.hal.science/halshs-01359688/document",
+      "quality": 0.85
+    }
+  ],
+  "unlocks": [
+    "resilient_accounting",
+    "regional_trust_networks",
+    "long_distance_credit",
+    "prosopographic_record_systems"
+  ],
+  "notes": "Added September 2026 from anthropology/findings/kanis-name-semantics/. longevity_years=260 is the attested kārum window and will fail the 300-year bar — the same honest failure as the lathe. Do not inflate it with later Hittite archives or with the lifespan of cuneiform. replication_regions=1: Assur and the Anatolian kārums are two nodes of one carried system, not independent inventions. ethical_alignment=0.55 because the same archive that preserves family and craft also records debt, house pledge, and legal exposure. The research finding is methodological, not etymological: Ilališkan is usable because it has tablet-level roles; Atamakuni and Taripiazi are not yet statistically usable. The kārum credit system the tablets record is a downstream economic lineage, catalogued separately as karum_credit_trade. See U-C-4."
+}

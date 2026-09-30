@@ -20,8 +20,8 @@
     }
   ],
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": true,
-    "summary": "39/42 pass, 31% at ceiling, spread 0.380 \u2014 rubric discriminates"
+    "summary": "40/44 pass, 30% at ceiling, spread 0.460 \u2014 rubric discriminates"
   }
 }

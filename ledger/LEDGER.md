@@ -125,6 +125,25 @@ Generated from `ledger/runs.jsonl` by `src/falsify.py`.
 | `H007` | supported | phi-triads (9141) indistinguishable from chance (null mean 10415.0, p=0.983) — negative control holds |
 | `H008` | supported | all 10 declared evidence types exercised |
 
+## run-007-anatolia-findings
+
+9 supported · 3 falsified
+
+| Hypothesis | Verdict | Summary |
+| --- | --- | --- |
+| `H-ARCH-1` | **falsified** | 44/44 entries declare no layer_role (100%) — the architecture layer exists and is empty |
+| `H-ARCH-2` | supported | every runs_on target in 1 evaluable system(s) resolves to a present member |
+| `H-ARCH-3` | **falsified** | 1 evaluable system(s), below the 2 needed for saturation to mean anything — with one reading the spread is zero by construction; 1/1 systems report full satisfaction — the report cannot tell an integrated system from an unchecked one; spread 0.000 — the report barely separates the systems it reads |
+| `H-BYPASS` | _no data_ | data/evaluator_claims.json exists and holds 0 records — no data |
+| `H001` | supported | all 13 confirmed catalogue ids resolve to encoded entries; 24 entries indexed nowhere |
+| `H002` | supported | all 98 unlock targets resolve, no id collisions |
+| `H003` | supported | all 44 entries coherent within 25% (3 by declared basis) |
+| `H004` | supported | every claim backed by ≥1 resolving ref; mean quality 0.808 |
+| `H005` | supported | all 8 domains have ≥1 encoded entries |
+| `H006` | supported | 40/44 pass, 30% at ceiling, spread 0.460 — rubric discriminates |
+| `H007` | supported | phi-triads (10084) indistinguishable from chance (null mean 11525.7, p=0.983) — negative control holds |
+| `H008` | supported | all 10 declared evidence types exercised |
+
 ## run-20260922T165824Z
 
 9 supported · 3 falsified

@@ -1,0 +1,101 @@
+{
+  "id": "derinkuyu_tuff_complex",
+  "name": "Derinkuyu Tuff Complex (Cappadocian Underground Cities)",
+  "domain": "infrastructure",
+  "region": "Cappadocia, Central Anatolia (Derinkuyu/Malakopi; cluster including Kaymaklı/Anaku, Mazıköy, Özkonak, Koramaz Valley)",
+  "era": {
+    "start": 780,
+    "end": 1923
+  },
+  "summary": "Multi-level settlements cut into Cappadocian volcanic tuff: self-supporting voids holding a steady 8–13 °C climate, with wells, stores, kitchens, stables, and later churches, used as inherited village infrastructure and as refuge. A functional palimpsest — later use is documented; first-carving is not.",
+  "metrics": {
+    "longevity_years": 1143,
+    "replication_regions": 1,
+    "decentralization_score": 0.8,
+    "ethical_alignment": 0.7
+  },
+  "longevity_basis": "Attested operational span of the mature complex as village infrastructure and refuge, from the Arab–Byzantine wars through abandonment in the 1923–24 population exchange. First-carving is archaeologically invisible in tuff (each enlargement destroys earlier surfaces) and may be Iron Age; that hypothesis is not entered as longevity.",
+  "claims": [
+    {
+      "id": "c1",
+      "statement": "Cappadocian volcanic tuff can be cut with simple tools yet is self-supporting once exposed, and holds a deep temperature of roughly 8–13 °C, making climate-controlled storage and shelter possible without continuous fuel",
+      "evidence_refs": ["e1", "e2"]
+    },
+    {
+      "id": "c2",
+      "statement": "The visitor complex is a functional palimpsest: professional survey records five levels, ~55 m depth, and 3,786 m², against the tourism figures of 18 levels / 85 m / 20,000 people, and first-carving dates cannot be fixed because each enlargement destroys earlier surfaces",
+      "evidence_refs": ["e2", "e3", "e4"]
+    },
+    {
+      "id": "c3",
+      "statement": "Refuge and worship are documented late functions, not proven original ones: Cappadocian Greek speakers called the tunnels καταφύγια, used them in 1909, and abandoned them in the 1923–24 exchange; no ancient Greek, Hittite, or Assyrian text names Derinkuyu",
+      "evidence_refs": ["e5", "e6", "e7"]
+    },
+    {
+      "id": "c4",
+      "statement": "The type is regional, not unique: 200–360 artificial-cavity settlements are recorded across Cappadocia's tuff, several of them multi-level, so Derinkuyu is a deep type-case rather than a one-off monument",
+      "evidence_refs": ["e2", "e3", "e8"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "type": "engineering_record",
+      "source": "Heritage for People / University of Florence feature on Derinkuyu: tuff workability, visitor-route stratigraphy (stables uppermost; stores and kitchens; communal-religious spaces deepest), and self-supporting excavation.",
+      "uri": "https://heritageforpeople.unifi.it/feature/19",
+      "quality": 0.75
+    },
+    {
+      "id": "e2",
+      "type": "field_measurement",
+      "source": "Yamaç, A. and colleagues, survey of Cappadocian underground cities: Derinkuyu recorded at 1,880 m of tunnel, 489 stations, 3,786 m², described as five levels and 55 m deep; Mazıköy larger at 4,453 m².",
+      "quality": 0.85
+    },
+    {
+      "id": "e3",
+      "type": "peer_reviewed_study",
+      "source": "Yamaç, A. (2023) survey of Koramaz Valley underground cities near Kayseri: Cappadocian subterranean complexes had diverse original functions (storage, agricultural cavities, refuges) with no single template.",
+      "uri": "https://link.springer.com/chapter/10.1007/978-3-031-29374-0_5",
+      "quality": 0.85
+    },
+    {
+      "id": "e4",
+      "type": "peer_reviewed_study",
+      "source": "Bixio, R. et al. (2023) Intended Use and Dating of Dovecotes — typology-based dating for Cappadocian rock-cut architecture; first-carving dates can rarely be fixed because later reuse overwrites earlier surfaces.",
+      "quality": 0.85
+    },
+    {
+      "id": "e5",
+      "type": "ethnographic_record",
+      "source": "Dawkins, R. M. (1916) Modern Greek in Asia Minor, p. 16 — Cappadocian Greek καταφύγια; 1909 Adana-massacre refuge at Axo; local memory of Timurid-era use.",
+      "quality": 0.9
+    },
+    {
+      "id": "e6",
+      "type": "primary_text",
+      "source": "Xenophon, Anabasis 4.5.25 — underground houses with well-mouths, livestock ramps, stores and barley-wine; written from the 401 BCE march. Geography is Western Armenia (Erzurum–Aşkale), not Cappadocia. Documents the regional practice, not this site.",
+      "uri": "https://topostext.org/work/90",
+      "quality": 0.8
+    },
+    {
+      "id": "e7",
+      "type": "peer_reviewed_study",
+      "source": "Paradeisopoulos, G. K. (2013) route analysis of Anabasis 4.5, Greek, Roman, and Byzantine Studies 53 — localizes Xenophon's underground villages to the Erzurum–Aşkale plain.",
+      "quality": 0.85
+    },
+    {
+      "id": "e8",
+      "type": "primary_text",
+      "source": "UNESCO World Heritage List, Göreme National Park and the Rock Sites of Cappadocia (inscribed 1985, criteria i, iii, v, vii) — subterranean towns named as part of the troglodyte-village tradition.",
+      "uri": "https://whc.unesco.org/en/list/357/",
+      "quality": 0.8
+    }
+  ],
+  "unlocks": [
+    "subterranean_climate_control",
+    "crisis_refuge_architecture",
+    "rock_cut_architecture",
+    "household_utilities"
+  ],
+  "notes": "Added September 2026 from anthropology/findings/derinkuyu/. replication_regions=1 because the 200–360 Cappadocian complexes are one tuff tradition, not independent inventions; Xenophon's Armenian houses are a related practice in a different place. Attribution of first-carving is contested: Hittite and Phrygian origin claims remain hypotheses, and the Kültepe tablets ~75 km away are silent on city-scale underground complexes. Tourism figures (18 levels / 85 m / 20,000 people) are rejected in c2 rather than encoded. Boundary cut: this is the tuff-cut complex as climate-controlled, inheritable infrastructure — not Göreme cliff churches, not Hittite offering-pit ritual, not Anabasis 4.5.25."
+}

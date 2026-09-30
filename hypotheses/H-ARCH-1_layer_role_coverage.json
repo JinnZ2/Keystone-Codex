@@ -17,8 +17,8 @@
   },
   "status": "falsified",
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": false,
-    "summary": "42/42 entries declare no layer_role (100%) \u2014 the architecture layer exists and is empty"
+    "summary": "44/44 entries declare no layer_role (100%) \u2014 the architecture layer exists and is empty"
   }
 }

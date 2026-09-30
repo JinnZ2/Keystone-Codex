@@ -30,8 +30,8 @@
     }
   ],
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": true,
-    "summary": "phi-triads (9141) indistinguishable from chance (null mean 10415.0, p=0.983) \u2014 negative control holds"
+    "summary": "phi-triads (10084) indistinguishable from chance (null mean 11525.7, p=0.983) \u2014 negative control holds"
   }
 }

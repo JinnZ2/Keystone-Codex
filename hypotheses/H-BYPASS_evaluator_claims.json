@@ -17,7 +17,7 @@
   },
   "status": "no_data",
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": null,
     "summary": "data/evaluator_claims.json exists and holds 0 records \u2014 no data"
   }

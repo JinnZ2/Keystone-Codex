@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "description": "Shadow catalogue of keystone technology candidates. A row with status 'confirmed' MUST have a fully encoded entry at data/<domain>/ carrying the same id — H001 checks this both ways, after run-001-baseline found the Great Law of Peace filed under two different ids. A row with status 'shadow' is a candidate nobody has encoded yet; it is a research target, not a claim.",
   "entries": [
     {
@@ -1735,6 +1735,72 @@
         "neotropics"
       ],
       "source_note": "Reported 2026; extent and dating not yet well characterised, which is why this is a research target and not a claim. Listed because it is the same failure mode as Upano: 'no sites here' meaning 'nobody has flown a laser over it'."
+    },
+    {
+      "id": "derinkuyu_tuff_complex",
+      "name": "Derinkuyu Tuff Complex",
+      "domain": "infrastructure",
+      "region": "Cappadocia, Central Anatolia",
+      "era": {
+        "start": 780,
+        "end": 1923
+      },
+      "description": "Multi-level tuff-cut settlements used as climate-controlled storage and later as refuge; a functional palimpsest whose first-carving is not dated.",
+      "status": "confirmed",
+      "tags": [
+        "tuff",
+        "underground",
+        "refuge",
+        "storage",
+        "cappadocia",
+        "rock_cut",
+        "climate"
+      ],
+      "source_note": "Yamaç survey (5 levels / 55 m / 3,786 m²); Bixio typology dating; Dawkins 1916 ethnographic record. Research: anthropology/findings/derinkuyu/."
+    },
+    {
+      "id": "kanis_merchant_archives",
+      "name": "Kaniš Merchant Archives",
+      "domain": "information",
+      "region": "Kültepe/Kaniš Lower Town, Central Anatolia",
+      "era": {
+        "start": -1970,
+        "end": -1710
+      },
+      "description": "Private Old Assyrian commercial archive of ~23,000 tablets in which people appear as creditors, debtors, witnesses, and kin — a relational record, not a name list.",
+      "status": "confirmed",
+      "tags": [
+        "cuneiform",
+        "archive",
+        "kanis",
+        "old_assyrian",
+        "prosopography",
+        "credit",
+        "names"
+      ],
+      "source_note": "Larsen 2015; Veenhof 2020; Kloekhorst 2019; Goedegebuure 2008; Michel 2015/2016. Research: anthropology/findings/kanis-name-semantics/."
+    },
+    {
+      "id": "karum_credit_trade",
+      "name": "Kārum Credit Trade",
+      "domain": "economic",
+      "region": "Assur and the Anatolian kārums, especially Kaniš",
+      "era": {
+        "start": -1970,
+        "end": -1710
+      },
+      "description": "Family-firm tin and textile caravans financed by silver loans, house pledges, and tablet-enforced credit between Assur and the Anatolian plateau.",
+      "status": "shadow",
+      "tags": [
+        "credit",
+        "caravan",
+        "assyrian",
+        "kanis",
+        "tin",
+        "textiles",
+        "family_firm"
+      ],
+      "source_note": "Downstream of kanis_merchant_archives. Not encoded: the archive is the information technology; the credit system is the economic lineage it records. Encoding it would need a longevity_basis that does not launder tablet survival into institutional endurance."
     }
   ]
 }

@@ -72,6 +72,12 @@
       "suggested_domain": "governance",
       "referenced_by": ["federalism_templates"],
       "notes": "Digital and analog protocols for distributed decision-making (DAOs, liquid democracy, etc.)."
+    },
+    {
+      "id": "karum_credit_trade",
+      "suggested_domain": "economic",
+      "referenced_by": ["kanis_merchant_archives"],
+      "notes": "The Old Assyrian family-firm credit system recorded by the Kültepe tablets. Shadow-catalogued; not encoded, so the archive is not silently scored as a bank."
     }
   ]
 }

@@ -120,6 +120,44 @@ than against what a chronicle said it did.
 obvious next schema addition and is deliberately not being added until there are
 enough entries to shape it.
 
+### Typology dating of rock-cut architecture
+
+**A method that produced a refusal rather than a date.** Volcanic tuff carries no
+deposition layers: each enlargement of a Cappadocian underground complex destroys
+the surfaces of the phase before. Bixio's typology method — the regional standard —
+and Yamaç's surveys both warn that first-carving dates can rarely be fixed for
+individual complexes (Bixio et al. 2023; Yamaç 2023; Yamaç & Tok 2026). The
+documented life of Derinkuyu is Byzantine-to-Ottoman refuge and village
+infrastructure; the Hittite and Phrygian origin claims remain hypotheses. Measured
+survey is five levels, 55 m, 3,786 m² — not the tourism triad of 18 / 85 / 20,000.
+
+**Pressure on this codex.** Encoded as `derinkuyu_tuff_complex` on the span that
+can be defended (c. 780–1923), with a `longevity_basis` that says so. Encoding an
+Iron Age start would have been the same inflation `hxaro` refused. Opens **U-C-3**:
+when origin is archaeologically invisible, what may `era.start` claim? The schema
+currently forbids a null start, so the honest move is a conservative floor, not a
+blank. Full argument in `anthropology/findings/derinkuyu/`.
+
+### Relational onomastics in a contact-zone archive
+
+**The second method on this page to produce a result, and the result is a data
+model.** The Kültepe/Kaniš tablets (~23,000, mostly Lower Town II, c. 1970–1835
+BCE) are merchant-archive documents in which people appear as creditors, debtors,
+witnesses, guarantors, and kin. They will support quantitative work on name
+semantics only if the unit is name → person → attestation → document, with
+ordinary Old Assyrian legal vocabulary as a control (Larsen 2015; Veenhof 2020;
+Kloekhorst 2019). Goedegebuure (2008) supplies the sociolinguistic warning:
+language community is not ethnicity, and the texts generally lump locals as
+*nuwaʿum*. Most names in a first pilot are overview-only; Ilališkan is usable
+because Michel cites a tablet and a role, not because a gloss is pretty.
+
+**Pressure on this codex.** Encoded as `kanis_merchant_archives` in `information`,
+not as a list of translated names and not as the kārum credit system (that is
+shadow-catalogued as `karum_credit_trade` and left unencoded). Longevity is 260
+years and will fail the 300-year bar — the lathe's failure mode, entered on
+purpose. Opens **U-C-4**. Design and seed table in
+`anthropology/findings/kanis-name-semantics/`.
+
 ---
 
 ## Shifts in framing
@@ -223,6 +261,13 @@ Ordered by how much a result would change:
 6. **Encode the governance candidates.** `gadaa` and `xeer` are both live systems
    with substantial literature, and both test whether the rubric's
    `decentralization_score` means anything precise.
+7. **Do not encode `karum_credit_trade` until the archive/economy cut is argued.**
+   The tablets record a credit system; encoding that system on the same 260-year
+   window as the archive would score one survival twice. **U-C-4** has to move
+   before that entry does.
+8. **Decide what `era.start` means for undatable rock-cut sites.** **U-C-3**.
+   Derinkuyu used a conservative floor because the schema requires a start date.
+   That is a workaround, not a criterion.
 
 ## Candidate hypotheses
 

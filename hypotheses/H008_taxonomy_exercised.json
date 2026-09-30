@@ -17,7 +17,7 @@
     }
   ],
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": true,
     "summary": "all 10 declared evidence types exercised"
   }

@@ -154,12 +154,36 @@
       "detail": "See anthropology/FRONTIER.md for which method bears on which entry. The Upano Valley result (Rostain et al. 2024) is the clearest warning: an entire settlement system in a region the literature described as sparsely occupied.\n\nUPDATE 2026-08-26 \u2014 first worked example, and it is a clean hit for the method this register predicted. Mutin et al. (2025, Scientific Reports, doi:10.1038/s41598-025-92621-5) redated the aceramic Neolithic at Mehrgarh from c. 8000 BCE to 5223\u20134914 BCE by dating tooth enamel apatite instead of charcoal, which is contamination-prone \u2014 roughly 2,800 years removed from the runway to Indus urbanism. It does NOT move data/infrastructure/indus_plumbing.json, whose era brackets the Mature Harappan phase and is unaffected; the honest reading is that the gap between farming and engineered urban sanitation is far shorter than the entry's context implies, which makes the achievement faster rather than older. Recorded here precisely because the temptation was to claim it revised an entry when it does not."
     },
     {
+      "id": "U-C-3",
+      "question": "When a rock-cut complex cannot be dated because later carving destroys earlier surfaces, what may an entry's era legitimately claim?",
+      "raised_by": "curated",
+      "trigger": "derinkuyu_tuff_complex encodes 780\u20131923 as attested use of the mature complex and declines to enter an Iron Age or Hittite start date. Tourism literature and several scholarly origin stories treat later function as original purpose. The same tuff-dating problem applies to any rock-cut keystone the codex might later add.",
+      "first_seen": "run-007-anatolia-findings",
+      "last_seen": "run-007-anatolia-findings",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "Functional succession is the finding, not a hedge. Bixio's typology method and Yama\u00e7's surveys both warn that first-carving is rarely recoverable. Encoding the documented medieval-to-1923 span is the honest floor; encoding Phrygian-era first galleries would be the same inflation hxaro refused. The remaining question is whether 'era' should be allowed to mean attested use at all, or whether an undatable origin should leave start null \u2014 which the schema currently forbids."
+    },
+    {
+      "id": "U-C-4",
+      "question": "When is a personal name evidence of a culture, and when is it only evidence that a name was written?",
+      "raised_by": "curated",
+      "trigger": "kanis_merchant_archives was encoded as an information technology rather than as a list of translated Anatolian names. The attached K\u00fcltepe name-semantics research shows that most pilot names are overview-only, that namesakes are common, and that language assignment is not ethnicity.",
+      "first_seen": "run-007-anatolia-findings",
+      "last_seen": "run-007-anatolia-findings",
+      "status": "open",
+      "pinned": true,
+      "resolution": null,
+      "detail": "The defensible unit is name \u2192 person \u2192 attestation \u2192 document \u2192 family/network, with ordinary Old Assyrian legal vocabulary as a control. Ilali\u0161kan can carry a role analysis because Michel cites a tablet; Atamakuni and Taripiazi cannot, because this pass found no tablet-level attestation. Building the corpus is the next step, not reading meanings off a list. A premature etymology table would score as evidence_strength while measuring the researcher's glosses."
+    },
+    {
       "id": "U-H-ARCH-1-1",
       "question": "Can this corpus be read as an architecture, and what would have to be declared before that question has an answer?",
       "raised_by": "H-ARCH-1",
       "trigger": "the rendering was falsified (42/42 entries declare no layer_role (100%) \u2014 the architecture layer exists and is empty); the target it was aimed at -- whether this corpus can be read as an architecture rather than as a list -- is not closed by that",
       "first_seen": "run-006-architecture-layer",
-      "last_seen": "run-006b-architecture-layer",
+      "last_seen": "run-007-anatolia-findings",
       "status": "open",
       "resolution": null
     },
@@ -169,7 +193,7 @@
       "raised_by": "H-ARCH-3",
       "trigger": "the rendering was falsified (1 evaluable system(s), below the 2 needed for saturation to mean anything \u2014 with one reading the spread is zero by construction; 1/1 systems report full satisfaction \u2014 the report cannot tell an integrated system from an unchecked one; spread 0.000 \u2014 the report barely separates the systems it reads); the target it was aimed at -- whether the integration report discriminates between assemblies -- is not closed by that",
       "first_seen": "run-006-architecture-layer",
-      "last_seen": "run-006b-architecture-layer",
+      "last_seen": "run-007-anatolia-findings",
       "status": "open",
       "resolution": null
     },
@@ -190,7 +214,7 @@
       "raised_by": "H001",
       "trigger": "Merging main produced two candidate registries whose rows overlap in zero ids, while 24 of 40 encoded entries appear in neither.",
       "first_seen": "run-004-merge-main",
-      "last_seen": "run-006b-architecture-layer",
+      "last_seen": "run-007-anatolia-findings",
       "status": "open",
       "pinned": true,
       "resolution": null,
@@ -327,7 +351,7 @@
       "raised_by": "H006",
       "trigger": "1 criterion/criteria fire for no entry in the corpus",
       "first_seen": "run-004-merge-main",
-      "last_seen": "run-006b-architecture-layer",
+      "last_seen": "run-007-anatolia-findings",
       "status": "open",
       "resolution": null
     },

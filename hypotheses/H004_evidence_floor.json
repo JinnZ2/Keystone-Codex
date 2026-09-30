@@ -13,8 +13,8 @@
   "status": "supported",
   "revisions": [],
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": true,
-    "summary": "every claim backed by \u22651 resolving ref; mean quality 0.805"
+    "summary": "every claim backed by \u22651 resolving ref; mean quality 0.808"
   }
 }

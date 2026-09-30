@@ -104,6 +104,7 @@ hypotheses/     Falsifiable claims about the corpus, bound to tests
 ledger/         Append-only run history. The durable record.
 unknowns/       Open questions, with the run that raised each
 anthropology/   Frontier methods and findings, and what they'd revise here
+                findings/ holds the research packages that actually revised an entry
 legacy/         Superseded and still runnable. Precedence carries.
 src/            Loader, validator, proof engine, falsifier, exporters
 examples/       Quick scripts
@@ -157,7 +158,7 @@ decentralization. Three describe the record behind it — mean evidence quality,
 number of distinct evidence types, and whether every claim is actually backed.
 Pass score is 0.70.
 
-Currently 37 of 40 entries pass, 32% at the ceiling. The three that don't are
+Currently 40 of 44 entries pass, 30% at the ceiling. The four that don't are
 worth understanding:
 
 - **the lathe** (0.62) fails longevity at 228 years against a 300-year bar. That is
@@ -166,6 +167,11 @@ worth understanding:
   archaeological record, not because of anything about risk-pooling networks.
 - **microfinance** (0.68) fails on age, which for a 20th-century institution is
   the rubric working rather than the rubric misfiring.
+- **kanis_merchant_archives** (0.54) fails longevity at 260 years, replication
+  (one carried system, not independent inventions), and evidence independence
+  (the record is excavation plus scholarship). The kārum window is the number
+  the tablets support; inflating it with later cuneiform would be the failure
+  this loop exists to catch.
 
 Which raises the question the rubric cannot answer about itself: if it
 systematically ranks technologies by how well their records survived, it is

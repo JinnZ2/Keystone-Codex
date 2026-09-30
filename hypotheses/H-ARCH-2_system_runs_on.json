@@ -15,7 +15,7 @@
   },
   "status": "supported",
   "last_result": {
-    "run": "run-006b-architecture-layer",
+    "run": "run-007-anatolia-findings",
     "passed": true,
     "summary": "every runs_on target in 1 evaluable system(s) resolves to a present member"
   }
