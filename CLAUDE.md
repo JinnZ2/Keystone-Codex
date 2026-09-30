@@ -386,10 +386,11 @@ does not fail the build. That is deliberate.
 - **Absent is not zero**: a `runs_on` fraction is `None` when nothing was declared. Zero-of-zero and zero-of-eleven are different results and a float cannot hold both
 - **Report the disagreement, resolve neither side**: where an entry and a system declare different roles for the same member, the conflict is reported and neither wins. Picking one would settle `U-ARCH-1` by fiat
 
-<!-- clone-refspec-note v1 -->
+<!-- clone-refspec-note v1.1 -->
 ## Cloning and pushing
 Shallow clones are single-branch by default.
-Before pushing any branch other than main, run:
+Before pushing any branch other than the default
+branch, run:
 
     git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
     git fetch --depth 1
@@ -398,4 +399,4 @@ Or clone with: git clone --depth 1 --no-single-branch <url>
 Without this, the first push of a new branch
 fails the tracking-ref check even when the
 commit landed.
-<!-- /clone-refspec-note v1 -->
+<!-- /clone-refspec-note v1.1 -->
