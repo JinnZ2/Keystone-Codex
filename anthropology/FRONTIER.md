@@ -158,6 +158,15 @@ years and will fail the 300-year bar — the lathe's failure mode, entered on
 purpose. Opens **U-C-4**. Design and seed table in
 `anthropology/findings/kanis-name-semantics/`.
 
+A first tablet-level result arrived with the KT 12 edition of **Kt 86/k 41**:
+eleven names, all hapaxes or near-hapaxes, which Kloekhorst does not recognize as
+Kanišite Anatolian. Pikašnurikizi and Taripiazi move from overview-only to
+attestation-anchored *without gaining a gloss*. The cultural information is the
+tablet's distribution (a hapax cluster, unlike ordinary merchant lists), not a
+translation of any name. Captive/slave/dependent-roster remains an inference.
+Recorded as claim c5 on the archive entry and as `kt86k41.json`. Does not close
+**U-C-4**; it gives that question its first worked example.
+
 ---
 
 ## Shifts in framing
